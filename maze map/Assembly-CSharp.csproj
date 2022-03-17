@@ -56,11 +56,12 @@
     <Analyzer Include="C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\Common7\IDE\Extensions\Microsoft\Visual Studio Tools for Unity\Analyzers\Microsoft.Unity.Analyzers.dll" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Assets\Script\CameraManager.cs" />
-    <Compile Include="Assets\Script\StartGame.cs" />
-    <Compile Include="Assets\Script\MovingObject.cs" />
-    <Compile Include="Assets\Script\DialogueManager.cs" />
-    <Compile Include="Assets\Script\EndGame.cs" />
+    <Compile Include="Assets\Scripts\CameraManager.cs" />
+    <Compile Include="Assets\Scripts\StartGame.cs" />
+    <Compile Include="Assets\Scripts\EndGame.cs" />
+    <Compile Include="Assets\Scripts\MovingObject.cs" />
+    <Compile Include="Assets\Scripts\DialogueManager.cs" />
+    <Compile Include="Assets\Scripts\MovingScenes.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Assets\SimplePixelUI\fonts\Font2\license.txt" />

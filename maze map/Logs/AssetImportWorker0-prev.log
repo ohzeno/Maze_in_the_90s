@@ -15,11 +15,11 @@ C:/Users/SSAFY/Desktop/SSAFY/특화프로젝트/S06P22E101/maze map
 -logFile
 Logs/AssetImportWorker0.log
 -srvPort
-64471
+54390
 Successfully changed project path to: C:/Users/SSAFY/Desktop/SSAFY/특화프로젝트/S06P22E101/maze map
 C:/Users/SSAFY/Desktop/SSAFY/특화프로젝트/S06P22E101/maze map
 Using Asset Import Pipeline V2.
-Refreshing native plugins compatible for Editor in 63.41 ms, found 3 plugins.
+Refreshing native plugins compatible for Editor in 68.98 ms, found 3 plugins.
 Preloading 0 native plugins for Editor in 0.00 ms.
 Initialize engine version: 2020.3.30f1 (1fb1bf06830e)
 [Subsystems] Discovering subsystems at path C:/Program Files/Unity/Hub/Editor/2020.3.30f1/Editor/Data/Resources/UnitySubsystems
@@ -35,92 +35,92 @@ Initialize mono
 Mono path[0] = 'C:/Program Files/Unity/Hub/Editor/2020.3.30f1/Editor/Data/Managed'
 Mono path[1] = 'C:/Program Files/Unity/Hub/Editor/2020.3.30f1/Editor/Data/MonoBleedingEdge/lib/mono/unityjit'
 Mono config path = 'C:/Program Files/Unity/Hub/Editor/2020.3.30f1/Editor/Data/MonoBleedingEdge/etc'
-Using monoOptions --debugger-agent=transport=dt_socket,embedding=1,server=y,suspend=n,address=127.0.0.1:56360
+Using monoOptions --debugger-agent=transport=dt_socket,embedding=1,server=y,suspend=n,address=127.0.0.1:56884
 Begin MonoManager ReloadAssembly
 Registering precompiled unity dll's ...
 Register platform support module: C:/Program Files/Unity/Hub/Editor/2020.3.30f1/Editor/Data/PlaybackEngines/WebGLSupport/UnityEditor.WebGL.Extensions.dll
 Register platform support module: C:/Program Files/Unity/Hub/Editor/2020.3.30f1/Editor/Data/PlaybackEngines/WindowsStandaloneSupport/UnityEditor.WindowsStandalone.Extensions.dll
-Registered in 0.001410 seconds.
+Registered in 0.001443 seconds.
 Native extension for WindowsStandalone target not found
 Native extension for WebGL target not found
-Refreshing native plugins compatible for Editor in 61.40 ms, found 3 plugins.
+Refreshing native plugins compatible for Editor in 65.35 ms, found 3 plugins.
 Preloading 0 native plugins for Editor in 0.00 ms.
 Mono: successfully reloaded assembly
-- Completed reload, in  0.540 seconds
+- Completed reload, in  0.543 seconds
 Domain Reload Profiling:
-	ReloadAssembly (540ms)
-		BeginReloadAssembly (63ms)
+	ReloadAssembly (544ms)
+		BeginReloadAssembly (58ms)
 			ExecutionOrderSort (0ms)
 			DisableScriptedObjects (0ms)
 			BackupInstance (0ms)
 			ReleaseScriptingObjects (0ms)
 			CreateAndSetChildDomain (1ms)
-		EndReloadAssembly (416ms)
-			LoadAssemblies (63ms)
+		EndReloadAssembly (428ms)
+			LoadAssemblies (59ms)
 			RebuildTransferFunctionScriptingTraits (0ms)
-			SetupTypeCache (134ms)
+			SetupTypeCache (132ms)
 			ReleaseScriptCaches (0ms)
-			RebuildScriptCaches (25ms)
-			SetupLoadedEditorAssemblies (170ms)
+			RebuildScriptCaches (26ms)
+			SetupLoadedEditorAssemblies (178ms)
 				LogAssemblyErrors (0ms)
-				InitializePlatformSupportModulesInManaged (4ms)
+				InitializePlatformSupportModulesInManaged (5ms)
 				SetLoadedEditorAssemblies (0ms)
-				RefreshPlugins (61ms)
+				RefreshPlugins (65ms)
 				BeforeProcessingInitializeOnLoad (14ms)
-				ProcessInitializeOnLoadAttributes (66ms)
-				ProcessInitializeOnLoadMethodAttributes (24ms)
+				ProcessInitializeOnLoadAttributes (68ms)
+				ProcessInitializeOnLoadMethodAttributes (25ms)
 				AfterProcessingInitializeOnLoad (0ms)
 				EditorAssembliesLoaded (0ms)
 			ExecutionOrderSort2 (0ms)
 			AwakeInstancesAfterBackupRestoration (0ms)
 Platform modules already initialized, skipping
 Registering precompiled user dll's ...
-Registered in 0.002484 seconds.
+Registered in 0.002626 seconds.
 Begin MonoManager ReloadAssembly
 Native extension for WindowsStandalone target not found
 Native extension for WebGL target not found
-Refreshing native plugins compatible for Editor in 60.20 ms, found 3 plugins.
+Refreshing native plugins compatible for Editor in 61.02 ms, found 3 plugins.
 Preloading 0 native plugins for Editor in 0.00 ms.
 Mono: successfully reloaded assembly
-- Completed reload, in  0.970 seconds
+- Completed reload, in  0.973 seconds
 Domain Reload Profiling:
-	ReloadAssembly (971ms)
-		BeginReloadAssembly (135ms)
+	ReloadAssembly (974ms)
+		BeginReloadAssembly (139ms)
 			ExecutionOrderSort (0ms)
 			DisableScriptedObjects (4ms)
 			BackupInstance (0ms)
 			ReleaseScriptingObjects (0ms)
 			CreateAndSetChildDomain (16ms)
-		EndReloadAssembly (787ms)
-			LoadAssemblies (94ms)
+		EndReloadAssembly (786ms)
+			LoadAssemblies (96ms)
 			RebuildTransferFunctionScriptingTraits (0ms)
-			SetupTypeCache (257ms)
+			SetupTypeCache (249ms)
 			ReleaseScriptCaches (0ms)
-			RebuildScriptCaches (40ms)
-			SetupLoadedEditorAssemblies (306ms)
+			RebuildScriptCaches (39ms)
+			SetupLoadedEditorAssemblies (312ms)
 				LogAssemblyErrors (0ms)
 				InitializePlatformSupportModulesInManaged (3ms)
 				SetLoadedEditorAssemblies (0ms)
-				RefreshPlugins (60ms)
-				BeforeProcessingInitializeOnLoad (67ms)
-				ProcessInitializeOnLoadAttributes (160ms)
-				ProcessInitializeOnLoadMethodAttributes (13ms)
-				AfterProcessingInitializeOnLoad (2ms)
+				RefreshPlugins (61ms)
+				BeforeProcessingInitializeOnLoad (68ms)
+				ProcessInitializeOnLoadAttributes (161ms)
+				ProcessInitializeOnLoadMethodAttributes (15ms)
+				AfterProcessingInitializeOnLoad (3ms)
 				EditorAssembliesLoaded (0ms)
 			ExecutionOrderSort2 (0ms)
-			AwakeInstancesAfterBackupRestoration (5ms)
+			AwakeInstancesAfterBackupRestoration (6ms)
 Platform modules already initialized, skipping
 ========================================================================
 Worker process is ready to serve import requests
 Launched and connected shader compiler UnityShaderCompiler.exe after 0.03 seconds
-Refreshing native plugins compatible for Editor in 0.86 ms, found 3 plugins.
+Refreshing native plugins compatible for Editor in 0.68 ms, found 3 plugins.
 Preloading 0 native plugins for Editor in 0.00 ms.
 Unloading 2215 Unused Serialized files (Serialized files now loaded: 0)
 System memory in use before: 103.4 MB.
-System memory in use after: 103.3 MB.
+System memory in use after: 103.4 MB.
 
 Unloading 31 unused Assets to reduce memory usage. Loaded Objects now: 2647.
-Total: 2.570200 ms (FindLiveObjects: 0.152800 ms CreateObjectMapping: 0.062400 ms MarkObjects: 2.239700 ms  DeleteObjects: 0.114600 ms)
+Total: 2.575400 ms (FindLiveObjects: 0.150400 ms CreateObjectMapping: 0.078500 ms MarkObjects: 2.232500 ms  DeleteObjects: 0.113300 ms)
 
 AssetImportParameters requested are different than current active one (requested -> active):
   custom:framework-win-MediaFoundation: 216162199b28c13a410421893ffa2e32 -> 
@@ -134,55 +134,55 @@ AssetImportParameters requested are different than current active one (requested
   custom:audio-encoder-webm-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
 ========================================================================
 Received Import Request.
-  path: Assets/Scenes/LogIn.unity
+  path: Assets/Scenes/Signup.unity
   artifactKey: Guid(69e60d43bb28d93408c1f86def449f1e) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Scenes/LogIn.unity using Guid(69e60d43bb28d93408c1f86def449f1e) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'a9f19ffbebf4e1f66e8f5797598b1a01') in 0.012774 seconds 
+Start importing Assets/Scenes/Signup.unity using Guid(69e60d43bb28d93408c1f86def449f1e) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'eea4addc0cf91295c818c67e23f02517') in 0.012584 seconds 
 ========================================================================
 Received Prepare
 Registering precompiled user dll's ...
-Registered in 0.002746 seconds.
+Registered in 0.002966 seconds.
 Begin MonoManager ReloadAssembly
 Native extension for WindowsStandalone target not found
 Native extension for WebGL target not found
-Refreshing native plugins compatible for Editor in 0.75 ms, found 3 plugins.
+Refreshing native plugins compatible for Editor in 0.71 ms, found 3 plugins.
 Preloading 0 native plugins for Editor in 0.00 ms.
 Mono: successfully reloaded assembly
-- Completed reload, in  0.896 seconds
+- Completed reload, in  0.881 seconds
 Domain Reload Profiling:
-	ReloadAssembly (896ms)
-		BeginReloadAssembly (107ms)
+	ReloadAssembly (881ms)
+		BeginReloadAssembly (103ms)
 			ExecutionOrderSort (0ms)
-			DisableScriptedObjects (6ms)
+			DisableScriptedObjects (5ms)
 			BackupInstance (0ms)
 			ReleaseScriptingObjects (0ms)
-			CreateAndSetChildDomain (30ms)
-		EndReloadAssembly (741ms)
-			LoadAssemblies (92ms)
+			CreateAndSetChildDomain (29ms)
+		EndReloadAssembly (730ms)
+			LoadAssemblies (88ms)
 			RebuildTransferFunctionScriptingTraits (0ms)
-			SetupTypeCache (252ms)
+			SetupTypeCache (249ms)
 			ReleaseScriptCaches (1ms)
-			RebuildScriptCaches (42ms)
-			SetupLoadedEditorAssemblies (274ms)
+			RebuildScriptCaches (39ms)
+			SetupLoadedEditorAssemblies (267ms)
 				LogAssemblyErrors (0ms)
-				InitializePlatformSupportModulesInManaged (5ms)
+				InitializePlatformSupportModulesInManaged (6ms)
 				SetLoadedEditorAssemblies (1ms)
 				RefreshPlugins (1ms)
-				BeforeProcessingInitializeOnLoad (82ms)
+				BeforeProcessingInitializeOnLoad (76ms)
 				ProcessInitializeOnLoadAttributes (173ms)
-				ProcessInitializeOnLoadMethodAttributes (10ms)
-				AfterProcessingInitializeOnLoad (3ms)
+				ProcessInitializeOnLoadMethodAttributes (9ms)
+				AfterProcessingInitializeOnLoad (2ms)
 				EditorAssembliesLoaded (0ms)
 			ExecutionOrderSort2 (0ms)
 			AwakeInstancesAfterBackupRestoration (8ms)
 Platform modules already initialized, skipping
-Refreshing native plugins compatible for Editor in 0.74 ms, found 3 plugins.
+Refreshing native plugins compatible for Editor in 0.71 ms, found 3 plugins.
 Preloading 0 native plugins for Editor in 0.00 ms.
 Unloading 2197 Unused Serialized files (Serialized files now loaded: 0)
 System memory in use before: 102.1 MB.
 System memory in use after: 102.0 MB.
 
 Unloading 20 unused Assets to reduce memory usage. Loaded Objects now: 2649.
-Total: 3.240000 ms (FindLiveObjects: 0.133900 ms CreateObjectMapping: 0.075500 ms MarkObjects: 2.885000 ms  DeleteObjects: 0.144800 ms)
+Total: 2.826900 ms (FindLiveObjects: 0.167100 ms CreateObjectMapping: 0.114500 ms MarkObjects: 2.438200 ms  DeleteObjects: 0.106500 ms)
 
 AssetImportParameters requested are different than current active one (requested -> active):
   custom:framework-win-MediaFoundation: 216162199b28c13a410421893ffa2e32 -> 
@@ -196,44 +196,1619 @@ AssetImportParameters requested are different than current active one (requested
   custom:audio-encoder-webm-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
 ========================================================================
 Received Import Request.
-  Time since last request: 79.521667 seconds.
-  path: Assets/Scenes/Room.unity
-  artifactKey: Guid(7438b528c0474c3429a94ac0b3aa151c) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Scenes/Room.unity using Guid(7438b528c0474c3429a94ac0b3aa151c) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '481cd9f1e5c4ab7313cab44305055c7c') in 0.012333 seconds 
+  Time since last request: 20.383708 seconds.
+  path: Assets/Scenes/지울거.unity
+  artifactKey: Guid(59b580978f1397e4b8d250f1a627ea25) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Scenes/지울거.unity using Guid(59b580978f1397e4b8d250f1a627ea25) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '8d80d1d955570f213ee3725f38b764e3') in 0.012855 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 23.815915 seconds.
+  path: Assets/Gutty Kreum/JRPG Character Pack
+  artifactKey: Guid(22199df84805aaa449acc32e99f0798b) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Gutty Kreum/JRPG Character Pack using Guid(22199df84805aaa449acc32e99f0798b) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '352a5036d9561cdd66cb54407957f809') in 0.004069 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 3.921801 seconds.
+  path: Assets/Gutty Kreum/JRPG Character Pack/Spritesheets
+  artifactKey: Guid(ff349d4cd65fef246be9ba1a37f082a5) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Gutty Kreum/JRPG Character Pack/Spritesheets using Guid(ff349d4cd65fef246be9ba1a37f082a5) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'b5ba1f8b0586411c292367e43d737889') in 0.003821 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 2.178456 seconds.
+  path: Assets/Gutty Kreum/JRPG Character Pack/Spritesheets/Witch
+  artifactKey: Guid(74dec9fc631041a4ba7a9c5dc722a2a4) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Gutty Kreum/JRPG Character Pack/Spritesheets/Witch using Guid(74dec9fc631041a4ba7a9c5dc722a2a4) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '7882cf287ee956b6d77bf6da53c3d50f') in 0.003727 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 1.291989 seconds.
+  path: Assets/Gutty Kreum/JRPG Character Pack/Spritesheets/Witch/Witch.png
+  artifactKey: Guid(e7ffd909396ddb14baaa8d81aade8809) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Gutty Kreum/JRPG Character Pack/Spritesheets/Witch/Witch.png using Guid(e7ffd909396ddb14baaa8d81aade8809) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '8931d02b07ee7f475e58dc1cca267578') in 0.171914 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 25.550305 seconds.
+  path: Assets/Gutty Kreum/JRPG Character Pack/Spritesheets/Template/Template.png
+  artifactKey: Guid(499cffd56cc86744bb24b4bc809dfbc5) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Gutty Kreum/JRPG Character Pack/Spritesheets/Template/Template.png using Guid(499cffd56cc86744bb24b4bc809dfbc5) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'adbda3ac009f6b3687175f636ba73599') in 0.095801 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.513792 seconds.
+  path: Assets/Gutty Kreum/JRPG Character Pack/Spritesheets/ShibaInu/ShibaInu.png
+  artifactKey: Guid(660d991fb10995a4bae552222420ba20) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Gutty Kreum/JRPG Character Pack/Spritesheets/ShibaInu/ShibaInu.png using Guid(660d991fb10995a4bae552222420ba20) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'da137202bed44a767b2045b40b509214') in 0.065777 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 45.716870 seconds.
+  path: Assets/Gutty Kreum/Dark Tokyo Game Assets/Tilemap/Dark Tokyo.prefab
+  artifactKey: Guid(9d05dc6e89dccf34b98dce00ed21f30f) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Gutty Kreum/Dark Tokyo Game Assets/Tilemap/Dark Tokyo.prefab using Guid(9d05dc6e89dccf34b98dce00ed21f30f) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '67cd71326df3afafc8bb6d4728662565') in 0.732060 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000200 seconds.
+  path: Assets/Gutty Kreum/Dark Tokyo Game Assets/Tilemap/Tilemap.png
+  artifactKey: Guid(f16ca8e403a1e01458e26c93990fd804) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Gutty Kreum/Dark Tokyo Game Assets/Tilemap/Tilemap.png using Guid(f16ca8e403a1e01458e26c93990fd804) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '3bf2f512a20b35f7f8b1bcef91a11e22') in 1.317562 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000228 seconds.
+  path: Assets/Gutty Kreum/Dark Tokyo Game Assets/Tiles/Tilemap_45.asset
+  artifactKey: Guid(37ea580dd6255934a80895c5e84cfd89) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Gutty Kreum/Dark Tokyo Game Assets/Tiles/Tilemap_45.asset using Guid(37ea580dd6255934a80895c5e84cfd89) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '84e316a874de8ffabf6ae20cb23d2050') in 0.016593 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000182 seconds.
+  path: Assets/Gutty Kreum/Dark Tokyo Game Assets/Tiles/Tilemap_5.asset
+  artifactKey: Guid(e56fe1444ee97e049ac4c1ecdd75c008) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Gutty Kreum/Dark Tokyo Game Assets/Tiles/Tilemap_5.asset using Guid(e56fe1444ee97e049ac4c1ecdd75c008) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '8a3c655f255d6f8ee8de4871d831fab1') in 0.013804 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000173 seconds.
+  path: Assets/Gutty Kreum/Dark Tokyo Game Assets/Tiles/Tilemap_47.asset
+  artifactKey: Guid(e9a3a0f4de5bcef4eb89af21a0fbbb66) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Gutty Kreum/Dark Tokyo Game Assets/Tiles/Tilemap_47.asset using Guid(e9a3a0f4de5bcef4eb89af21a0fbbb66) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '7a2b08d2a3db341448ddba5f317ee718') in 0.011946 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000138 seconds.
+  path: Assets/Gutty Kreum/Dark Tokyo Game Assets/Tiles/Tilemap_33.asset
+  artifactKey: Guid(18616af226b8f1248839448eb444f7ea) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Gutty Kreum/Dark Tokyo Game Assets/Tiles/Tilemap_33.asset using Guid(18616af226b8f1248839448eb444f7ea) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '27a5ad4d42168c6379c4dd8d2296135b') in 0.012555 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000147 seconds.
+  path: Assets/Gutty Kreum/Dark Tokyo Game Assets/Tiles/Tilemap_19.asset
+  artifactKey: Guid(56a5a1d46b3239942bdd3f886b7b6c5e) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Gutty Kreum/Dark Tokyo Game Assets/Tiles/Tilemap_19.asset using Guid(56a5a1d46b3239942bdd3f886b7b6c5e) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'f11ceb71f74e75d9ab6060d44e082ff9') in 0.015411 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000132 seconds.
+  path: Assets/Gutty Kreum/Dark Tokyo Game Assets/Tiles/Tilemap_25.asset
+  artifactKey: Guid(2e01a8a0610b4bb49a1326a126e87d5e) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Gutty Kreum/Dark Tokyo Game Assets/Tiles/Tilemap_25.asset using Guid(2e01a8a0610b4bb49a1326a126e87d5e) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '3eb720f8f73e1653bfb0736fe5c9ad26') in 0.012661 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000141 seconds.
+  path: Assets/Gutty Kreum/Dark Tokyo Game Assets/Tiles/Tilemap_34.asset
+  artifactKey: Guid(11fe4c8674c459447a3e3a0b9d1e5190) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Gutty Kreum/Dark Tokyo Game Assets/Tiles/Tilemap_34.asset using Guid(11fe4c8674c459447a3e3a0b9d1e5190) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'd310f2275913a3a3d4ffbdd562c3f661') in 0.015112 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000166 seconds.
+  path: Assets/Gutty Kreum/Dark Tokyo Game Assets/Tiles/Tilemap_29.asset
+  artifactKey: Guid(92656a2fbeca2a841b9434a1935c63d1) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Gutty Kreum/Dark Tokyo Game Assets/Tiles/Tilemap_29.asset using Guid(92656a2fbeca2a841b9434a1935c63d1) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'fb160ff147b8b5ac2ecb8557c52f63f7') in 0.012974 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000143 seconds.
+  path: Assets/Gutty Kreum/Dark Tokyo Game Assets/Tiles/Tilemap_13.asset
+  artifactKey: Guid(72a985ce0f7ce26459514d23100ea89f) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Gutty Kreum/Dark Tokyo Game Assets/Tiles/Tilemap_13.asset using Guid(72a985ce0f7ce26459514d23100ea89f) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '6c3764492e49f0eaafbc0a202c43ab40') in 0.014707 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000186 seconds.
+  path: Assets/Gutty Kreum/Dark Tokyo Game Assets/Tiles/Tilemap_21.asset
+  artifactKey: Guid(2e913d928f08cb445a3df537879632f2) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Gutty Kreum/Dark Tokyo Game Assets/Tiles/Tilemap_21.asset using Guid(2e913d928f08cb445a3df537879632f2) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'fcf9b71723b1afa4647d04049c372382') in 0.012725 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000151 seconds.
+  path: Assets/Gutty Kreum/Dark Tokyo Game Assets/Tiles/Tilemap_23.asset
+  artifactKey: Guid(8eb8f8bd7937b5f46a70b3e1d552df36) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Gutty Kreum/Dark Tokyo Game Assets/Tiles/Tilemap_23.asset using Guid(8eb8f8bd7937b5f46a70b3e1d552df36) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '022019da76d3f1b2f134cdb2b3fe31ac') in 0.011627 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000183 seconds.
+  path: Assets/Gutty Kreum/Dark Tokyo Game Assets/Tiles/Tilemap_7.asset
+  artifactKey: Guid(30dffd9e5a3d293419b73bd0df64feca) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Gutty Kreum/Dark Tokyo Game Assets/Tiles/Tilemap_7.asset using Guid(30dffd9e5a3d293419b73bd0df64feca) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '65292c86d23b25ad8b10ae656c1e375a') in 0.019891 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000144 seconds.
+  path: Assets/Gutty Kreum/Dark Tokyo Game Assets/Tiles/Tilemap_10.asset
+  artifactKey: Guid(67ff7df7901fd4f48a50bd6d93356240) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Gutty Kreum/Dark Tokyo Game Assets/Tiles/Tilemap_10.asset using Guid(67ff7df7901fd4f48a50bd6d93356240) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '9d11fb41f26d7fb8b9f3bcb25590767f') in 0.013716 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000142 seconds.
+  path: Assets/Gutty Kreum/Dark Tokyo Game Assets/Tiles/Tilemap_37.asset
+  artifactKey: Guid(b2a1492b8eef9634dbfd3d7ac14d43ad) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Gutty Kreum/Dark Tokyo Game Assets/Tiles/Tilemap_37.asset using Guid(b2a1492b8eef9634dbfd3d7ac14d43ad) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '1376e89549be99c52b07dcf6ffb5197e') in 0.016155 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000136 seconds.
+  path: Assets/Gutty Kreum/Dark Tokyo Game Assets/Tiles/Tilemap_8.asset
+  artifactKey: Guid(b937a4f05cee89f4e8e872ea74f0d7f3) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Gutty Kreum/Dark Tokyo Game Assets/Tiles/Tilemap_8.asset using Guid(b937a4f05cee89f4e8e872ea74f0d7f3) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '393cd9fb7f0642b86a8cf0b7a585a740') in 0.011482 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000228 seconds.
+  path: Assets/Gutty Kreum/Dark Tokyo Game Assets/Tiles/Tilemap_11.asset
+  artifactKey: Guid(1a5a31e08758ad34e959bce78bf0b073) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Gutty Kreum/Dark Tokyo Game Assets/Tiles/Tilemap_11.asset using Guid(1a5a31e08758ad34e959bce78bf0b073) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '626aef92e11639ddeeecaeb7dfccf11a') in 0.011281 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000172 seconds.
+  path: Assets/Gutty Kreum/Dark Tokyo Game Assets/Tiles/Tilemap_16.asset
+  artifactKey: Guid(4a19c8ae059db9242a596bbc5f5d0fbb) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Gutty Kreum/Dark Tokyo Game Assets/Tiles/Tilemap_16.asset using Guid(4a19c8ae059db9242a596bbc5f5d0fbb) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '522b35a04987e1f2692756dcb5892399') in 0.010999 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000229 seconds.
+  path: Assets/Gutty Kreum/Dark Tokyo Game Assets/Tiles/Tilemap_36.asset
+  artifactKey: Guid(ba70a2a0114333d48a47a451cfc699c7) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Gutty Kreum/Dark Tokyo Game Assets/Tiles/Tilemap_36.asset using Guid(ba70a2a0114333d48a47a451cfc699c7) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '998c28c6013b292086c592985ad52d15') in 0.012857 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000211 seconds.
+  path: Assets/Gutty Kreum/Dark Tokyo Game Assets/Tiles/Tilemap_32.asset
+  artifactKey: Guid(d5ce21305d7f88147b624534ab28ab8e) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Gutty Kreum/Dark Tokyo Game Assets/Tiles/Tilemap_32.asset using Guid(d5ce21305d7f88147b624534ab28ab8e) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'd5eb935e142ddfd44a369e2c3751487e') in 0.010604 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000203 seconds.
+  path: Assets/Gutty Kreum/Dark Tokyo Game Assets/Tiles/Tilemap_35.asset
+  artifactKey: Guid(75debcece493a4643b338bea4b426537) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Gutty Kreum/Dark Tokyo Game Assets/Tiles/Tilemap_35.asset using Guid(75debcece493a4643b338bea4b426537) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '209c952146d40f5724355f1b4e366634') in 0.009413 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000173 seconds.
+  path: Assets/Gutty Kreum/Dark Tokyo Game Assets/Tiles/Tilemap_52.asset
+  artifactKey: Guid(986366888288c4c40afb18cbecaf43d5) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Gutty Kreum/Dark Tokyo Game Assets/Tiles/Tilemap_52.asset using Guid(986366888288c4c40afb18cbecaf43d5) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '3f95ab71a1def856bcf8640e02f3a6cf') in 0.010214 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000197 seconds.
+  path: Assets/Gutty Kreum/Dark Tokyo Game Assets/Tiles/Tilemap_57.asset
+  artifactKey: Guid(274c263040b5a0e46b988380b4a292d1) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Gutty Kreum/Dark Tokyo Game Assets/Tiles/Tilemap_57.asset using Guid(274c263040b5a0e46b988380b4a292d1) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '757e3b3da8f37f3980d254df38200366') in 0.012741 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000185 seconds.
+  path: Assets/Gutty Kreum/Dark Tokyo Game Assets/Tiles/Tilemap_74.asset
+  artifactKey: Guid(635c6e403ccfce64caedc452c1629ad2) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Gutty Kreum/Dark Tokyo Game Assets/Tiles/Tilemap_74.asset using Guid(635c6e403ccfce64caedc452c1629ad2) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '53761d6c5fe3631ba4ea64f3d0e99099') in 0.009355 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000181 seconds.
+  path: Assets/Gutty Kreum/Dark Tokyo Game Assets/Tiles/Tilemap_66.asset
+  artifactKey: Guid(8d2fc4dae2aa96e488a8f57a5dc5e5a5) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Gutty Kreum/Dark Tokyo Game Assets/Tiles/Tilemap_66.asset using Guid(8d2fc4dae2aa96e488a8f57a5dc5e5a5) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '0953a3f3bcebb93818b2d6d32660322b') in 0.009069 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000211 seconds.
+  path: Assets/Gutty Kreum/Dark Tokyo Game Assets/Tiles/Tilemap_68.asset
+  artifactKey: Guid(5ed341e648ff16b4db75a4f065570cd4) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Gutty Kreum/Dark Tokyo Game Assets/Tiles/Tilemap_68.asset using Guid(5ed341e648ff16b4db75a4f065570cd4) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '6909038d54f29edd15a71be213ef01c4') in 0.010835 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000146 seconds.
+  path: Assets/Gutty Kreum/Dark Tokyo Game Assets/Tiles/Tilemap_61.asset
+  artifactKey: Guid(09236369f8bf78642b412e6094cdbc45) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Gutty Kreum/Dark Tokyo Game Assets/Tiles/Tilemap_61.asset using Guid(09236369f8bf78642b412e6094cdbc45) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '8e986dd1e7b258d9b9ba64d8c354b9e1') in 0.010526 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000144 seconds.
+  path: Assets/Gutty Kreum/Dark Tokyo Game Assets/Tiles/Tilemap_65.asset
+  artifactKey: Guid(98d756280925e1a47843a0488971c42d) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Gutty Kreum/Dark Tokyo Game Assets/Tiles/Tilemap_65.asset using Guid(98d756280925e1a47843a0488971c42d) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'b334895a34a97926fe2a62d4ce5b119c') in 0.010119 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000181 seconds.
+  path: Assets/Gutty Kreum/Dark Tokyo Game Assets/Tiles/Tilemap_81.asset
+  artifactKey: Guid(b2795796c882f7446a189c0d12847398) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Gutty Kreum/Dark Tokyo Game Assets/Tiles/Tilemap_81.asset using Guid(b2795796c882f7446a189c0d12847398) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '3c3fa54e57b7dab1eaf20d31aef9693e') in 0.011189 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000201 seconds.
+  path: Assets/Gutty Kreum/Dark Tokyo Game Assets/Tiles/Tilemap_60.asset
+  artifactKey: Guid(4139fd7551ab6cf44b4063beac0811e4) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Gutty Kreum/Dark Tokyo Game Assets/Tiles/Tilemap_60.asset using Guid(4139fd7551ab6cf44b4063beac0811e4) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '42b8a7305ec1b4369737b4add88b988c') in 0.010684 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000217 seconds.
+  path: Assets/Gutty Kreum/Dark Tokyo Game Assets/Tiles/Tilemap_67.asset
+  artifactKey: Guid(476f6a889f3f655448b9f71e869da627) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Gutty Kreum/Dark Tokyo Game Assets/Tiles/Tilemap_67.asset using Guid(476f6a889f3f655448b9f71e869da627) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'da14411d0505b51062223719eeb02cc5') in 0.011187 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000223 seconds.
+  path: Assets/Gutty Kreum/Dark Tokyo Game Assets/Tiles/Tilemap_85.asset
+  artifactKey: Guid(d380a163d0f1e8745af906cbb24d1220) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Gutty Kreum/Dark Tokyo Game Assets/Tiles/Tilemap_85.asset using Guid(d380a163d0f1e8745af906cbb24d1220) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'bc61b60812a68ec689be3225d016fa26') in 0.010849 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000166 seconds.
+  path: Assets/Gutty Kreum/Dark Tokyo Game Assets/Tiles/Tilemap_98.asset
+  artifactKey: Guid(9445fae5920642748b4a7962cbfc3190) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Gutty Kreum/Dark Tokyo Game Assets/Tiles/Tilemap_98.asset using Guid(9445fae5920642748b4a7962cbfc3190) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'e0aa2633945dcd6a30aadedc49f0418f') in 0.009613 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000153 seconds.
+  path: Assets/Gutty Kreum/Dark Tokyo Game Assets/Tiles/Tilemap_63.asset
+  artifactKey: Guid(5bc67f7d7aac8e84bb642e15c5fb0597) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Gutty Kreum/Dark Tokyo Game Assets/Tiles/Tilemap_63.asset using Guid(5bc67f7d7aac8e84bb642e15c5fb0597) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'b571e092e4a1c1ed8012dc35fce6ea48') in 0.009886 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000147 seconds.
+  path: Assets/Gutty Kreum/Dark Tokyo Game Assets/Tiles/Tilemap_0.asset
+  artifactKey: Guid(50b60db0364d0174a9af58e2d84dabae) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Gutty Kreum/Dark Tokyo Game Assets/Tiles/Tilemap_0.asset using Guid(50b60db0364d0174a9af58e2d84dabae) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'b70787d49126e2dd2004d87f5203abbd') in 0.010941 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000247 seconds.
+  path: Assets/Gutty Kreum/Dark Tokyo Game Assets/Tiles/Tilemap_24.asset
+  artifactKey: Guid(df3b665321b563d42a4c1b18b9819164) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Gutty Kreum/Dark Tokyo Game Assets/Tiles/Tilemap_24.asset using Guid(df3b665321b563d42a4c1b18b9819164) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '519ede236fd2b05d57b1425a52218b40') in 0.010570 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000173 seconds.
+  path: Assets/Gutty Kreum/Dark Tokyo Game Assets/Tiles/Tilemap_14.asset
+  artifactKey: Guid(ab1316041fdc5094084c6796594e83d2) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Gutty Kreum/Dark Tokyo Game Assets/Tiles/Tilemap_14.asset using Guid(ab1316041fdc5094084c6796594e83d2) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'ce5eac7d6ca6fb445279ee9099b0d726') in 0.010016 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000133 seconds.
+  path: Assets/Gutty Kreum/Dark Tokyo Game Assets/Tiles/Tilemap_12.asset
+  artifactKey: Guid(d849048aca75cbe4c8a5cf508d638ad1) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Gutty Kreum/Dark Tokyo Game Assets/Tiles/Tilemap_12.asset using Guid(d849048aca75cbe4c8a5cf508d638ad1) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '9b0e511b9f9637748c5e6be3e1184e2a') in 0.010124 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000191 seconds.
+  path: Assets/Gutty Kreum/Dark Tokyo Game Assets/Tiles/Tilemap_31.asset
+  artifactKey: Guid(539d5af0eb56ecd4c85c2d537db405e5) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Gutty Kreum/Dark Tokyo Game Assets/Tiles/Tilemap_31.asset using Guid(539d5af0eb56ecd4c85c2d537db405e5) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '5fd44e4e56662ed4085be9ae04c167c2') in 0.010271 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000188 seconds.
+  path: Assets/Gutty Kreum/Dark Tokyo Game Assets/Tiles/Tilemap_20.asset
+  artifactKey: Guid(5f58d2b6f4c781a40a7de183ba197b8c) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Gutty Kreum/Dark Tokyo Game Assets/Tiles/Tilemap_20.asset using Guid(5f58d2b6f4c781a40a7de183ba197b8c) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '2172b620476b073b6b1c0ba20c27264f') in 0.010038 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000170 seconds.
+  path: Assets/Gutty Kreum/Dark Tokyo Game Assets/Tiles/Tilemap_83.asset
+  artifactKey: Guid(f846637425e5db7499ad968f03068e58) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Gutty Kreum/Dark Tokyo Game Assets/Tiles/Tilemap_83.asset using Guid(f846637425e5db7499ad968f03068e58) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '40d42d505cbc4908c47a9b6630a843dc') in 0.010633 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000172 seconds.
+  path: Assets/Gutty Kreum/Dark Tokyo Game Assets/Tiles/Tilemap_91.asset
+  artifactKey: Guid(2a35db8898bd5484cbed811fc09512c5) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Gutty Kreum/Dark Tokyo Game Assets/Tiles/Tilemap_91.asset using Guid(2a35db8898bd5484cbed811fc09512c5) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'b101096c0964ebb4b518158e676bd63c') in 0.010199 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000163 seconds.
+  path: Assets/Gutty Kreum/Dark Tokyo Game Assets/Tiles/Tilemap_97.asset
+  artifactKey: Guid(fb2528e4c11c23a4f925065ae33677f7) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Gutty Kreum/Dark Tokyo Game Assets/Tiles/Tilemap_97.asset using Guid(fb2528e4c11c23a4f925065ae33677f7) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '31dc985b385fcde328bada7289dfbd70') in 0.010501 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000236 seconds.
+  path: Assets/Gutty Kreum/Dark Tokyo Game Assets/Tiles/Tilemap_42.asset
+  artifactKey: Guid(050a54f96a9f5ed408520bee4db86cb4) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Gutty Kreum/Dark Tokyo Game Assets/Tiles/Tilemap_42.asset using Guid(050a54f96a9f5ed408520bee4db86cb4) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '258e6cad5db7de905c3ad8a4a79c894a') in 0.010117 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000145 seconds.
+  path: Assets/Gutty Kreum/Dark Tokyo Game Assets/Tiles/Tilemap_9.asset
+  artifactKey: Guid(9011ece8f2b82794db33947fc6574157) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Gutty Kreum/Dark Tokyo Game Assets/Tiles/Tilemap_9.asset using Guid(9011ece8f2b82794db33947fc6574157) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '41c286eeea729d5c2542e8806dd319e5') in 0.010394 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000164 seconds.
+  path: Assets/Gutty Kreum/Dark Tokyo Game Assets/Tiles/Tilemap_55.asset
+  artifactKey: Guid(55fb9cb7ee7fdc4409c405057c0f8892) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Gutty Kreum/Dark Tokyo Game Assets/Tiles/Tilemap_55.asset using Guid(55fb9cb7ee7fdc4409c405057c0f8892) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'e6ad1b8befed122a071699eaabb6b116') in 0.010164 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000244 seconds.
+  path: Assets/Gutty Kreum/Dark Tokyo Game Assets/Tiles/Tilemap_72.asset
+  artifactKey: Guid(2c3f66482552cca4a9f21801fad4e60a) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Gutty Kreum/Dark Tokyo Game Assets/Tiles/Tilemap_72.asset using Guid(2c3f66482552cca4a9f21801fad4e60a) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '3e1f470273080b2a3f0c689de7cdf8bd') in 0.011759 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000231 seconds.
+  path: Assets/Gutty Kreum/Dark Tokyo Game Assets/Tiles/Tilemap_22.asset
+  artifactKey: Guid(b20372ecd5c36e04e99fa3b8d65bdf92) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Gutty Kreum/Dark Tokyo Game Assets/Tiles/Tilemap_22.asset using Guid(b20372ecd5c36e04e99fa3b8d65bdf92) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'b2e7a5902a3af189bf98ccf8b0793cf5') in 0.009570 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000170 seconds.
+  path: Assets/Gutty Kreum/Dark Tokyo Game Assets/Tiles/Tilemap_41.asset
+  artifactKey: Guid(d9ddc634052fcac48bd3147b02d298fc) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Gutty Kreum/Dark Tokyo Game Assets/Tiles/Tilemap_41.asset using Guid(d9ddc634052fcac48bd3147b02d298fc) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'f90d98acfe283819ddacaf60f38e8c2e') in 0.010793 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000159 seconds.
+  path: Assets/Gutty Kreum/Dark Tokyo Game Assets/Tiles/Tilemap_92.asset
+  artifactKey: Guid(ef5c4a39d69087f4ab2835f0be2bea67) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Gutty Kreum/Dark Tokyo Game Assets/Tiles/Tilemap_92.asset using Guid(ef5c4a39d69087f4ab2835f0be2bea67) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '0dca3332b209b1bbc6105ccbf50672ae') in 0.010236 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000147 seconds.
+  path: Assets/Gutty Kreum/Dark Tokyo Game Assets/Tiles/Tilemap_79.asset
+  artifactKey: Guid(2571e3ca8a815a14aab8fcf18ecc7b21) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Gutty Kreum/Dark Tokyo Game Assets/Tiles/Tilemap_79.asset using Guid(2571e3ca8a815a14aab8fcf18ecc7b21) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'c7afc6853cb458ff1d4d74cd3b16f7a9') in 0.010077 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000208 seconds.
+  path: Assets/Gutty Kreum/Dark Tokyo Game Assets/Tiles/Tilemap_2.asset
+  artifactKey: Guid(0b8b42eb4ba8bcc4ab1fcf17f50f9ab7) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Gutty Kreum/Dark Tokyo Game Assets/Tiles/Tilemap_2.asset using Guid(0b8b42eb4ba8bcc4ab1fcf17f50f9ab7) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '425b94a717df5a60c1c1fc4a58330a13') in 0.012418 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000164 seconds.
+  path: Assets/Gutty Kreum/Dark Tokyo Game Assets/Tiles/Tilemap_6.asset
+  artifactKey: Guid(58ac761c28230b747be8dfda41542ec8) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Gutty Kreum/Dark Tokyo Game Assets/Tiles/Tilemap_6.asset using Guid(58ac761c28230b747be8dfda41542ec8) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '79343f4f7f5e8d7cad417ebef7b375dd') in 0.008871 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000176 seconds.
+  path: Assets/Gutty Kreum/Dark Tokyo Game Assets/Tiles/Tilemap_18.asset
+  artifactKey: Guid(c3f7a2869ece9014ab847a542498aaf7) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Gutty Kreum/Dark Tokyo Game Assets/Tiles/Tilemap_18.asset using Guid(c3f7a2869ece9014ab847a542498aaf7) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '0610de2e74296f61b57a1fa71d30bc04') in 0.010245 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000185 seconds.
+  path: Assets/Gutty Kreum/Dark Tokyo Game Assets/Tiles/Tilemap_89.asset
+  artifactKey: Guid(b4c3e7cfdd894e342a2182e31e1a5cbc) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Gutty Kreum/Dark Tokyo Game Assets/Tiles/Tilemap_89.asset using Guid(b4c3e7cfdd894e342a2182e31e1a5cbc) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '49a866951c958b173a174f48dceea086') in 0.010198 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000190 seconds.
+  path: Assets/Gutty Kreum/Dark Tokyo Game Assets/Tiles/Tilemap_28.asset
+  artifactKey: Guid(d18c82c7d4ab8a64ca27546893b3f016) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Gutty Kreum/Dark Tokyo Game Assets/Tiles/Tilemap_28.asset using Guid(d18c82c7d4ab8a64ca27546893b3f016) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '3db84872430b348bfb2d1f15475178fc') in 0.010493 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000235 seconds.
+  path: Assets/Gutty Kreum/Dark Tokyo Game Assets/Tiles/Tilemap_51.asset
+  artifactKey: Guid(542f90becf7fa33498d0083d5cfa8e71) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Gutty Kreum/Dark Tokyo Game Assets/Tiles/Tilemap_51.asset using Guid(542f90becf7fa33498d0083d5cfa8e71) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '8944fffefe28e3daad062dc7407c7563') in 0.010652 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000168 seconds.
+  path: Assets/Gutty Kreum/Dark Tokyo Game Assets/Tiles/Tilemap_27.asset
+  artifactKey: Guid(36d6c268f40ec684b84b23ed57c5f520) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Gutty Kreum/Dark Tokyo Game Assets/Tiles/Tilemap_27.asset using Guid(36d6c268f40ec684b84b23ed57c5f520) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'ece13bb09ae3f31fe555819e19a4297c') in 0.010647 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000173 seconds.
+  path: Assets/Gutty Kreum/Dark Tokyo Game Assets/Tiles/Tilemap_99.asset
+  artifactKey: Guid(7f7171ce38110764292c04a257a025e3) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Gutty Kreum/Dark Tokyo Game Assets/Tiles/Tilemap_99.asset using Guid(7f7171ce38110764292c04a257a025e3) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'ebda4fab5bdedc6ee917089fb6ec48b4') in 0.009983 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000212 seconds.
+  path: Assets/Gutty Kreum/Dark Tokyo Game Assets/Tiles/Tilemap_17.asset
+  artifactKey: Guid(01680d032b34a5f46902a246fc13c811) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Gutty Kreum/Dark Tokyo Game Assets/Tiles/Tilemap_17.asset using Guid(01680d032b34a5f46902a246fc13c811) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'd54a4676c7d9686008348932923e3126') in 0.009806 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000237 seconds.
+  path: Assets/Gutty Kreum/Dark Tokyo Game Assets/Tiles/Tilemap_90.asset
+  artifactKey: Guid(7443d56071a2ace44b4fa86ac28217ec) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Gutty Kreum/Dark Tokyo Game Assets/Tiles/Tilemap_90.asset using Guid(7443d56071a2ace44b4fa86ac28217ec) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '770cc271a48913fa76ce40bd93fa2c80') in 0.011307 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000195 seconds.
+  path: Assets/Gutty Kreum/Dark Tokyo Game Assets/Tiles/Tilemap_70.asset
+  artifactKey: Guid(c2fa2a98216e79741a2366e943c1cffc) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Gutty Kreum/Dark Tokyo Game Assets/Tiles/Tilemap_70.asset using Guid(c2fa2a98216e79741a2366e943c1cffc) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '5435ab0fba596e5bb7d19a2f45d63ce5') in 0.010877 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000314 seconds.
+  path: Assets/Gutty Kreum/Dark Tokyo Game Assets/Tiles/Tilemap_53.asset
+  artifactKey: Guid(74de3900fc882c94c8672dfade7df5f5) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Gutty Kreum/Dark Tokyo Game Assets/Tiles/Tilemap_53.asset using Guid(74de3900fc882c94c8672dfade7df5f5) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '02a0a85b6361e5d501d945b619bb4824') in 0.009140 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000181 seconds.
+  path: Assets/Gutty Kreum/Dark Tokyo Game Assets/Tiles/Tilemap_95.asset
+  artifactKey: Guid(c339549c0748fc747ac62ad46a13bc7c) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Gutty Kreum/Dark Tokyo Game Assets/Tiles/Tilemap_95.asset using Guid(c339549c0748fc747ac62ad46a13bc7c) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '30c391ff5535454cdaef24cb570a26f1') in 0.010781 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000145 seconds.
+  path: Assets/Gutty Kreum/Dark Tokyo Game Assets/Tiles/Tilemap_87.asset
+  artifactKey: Guid(4bc2aa7030a47b743a97f3aa6888d769) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Gutty Kreum/Dark Tokyo Game Assets/Tiles/Tilemap_87.asset using Guid(4bc2aa7030a47b743a97f3aa6888d769) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '110df3b785d75d13003e49f1614a7d58') in 0.009953 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000154 seconds.
+  path: Assets/Gutty Kreum/Dark Tokyo Game Assets/Tiles/Tilemap_56.asset
+  artifactKey: Guid(e1cf776b39f925b4ca35505f61485be2) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Gutty Kreum/Dark Tokyo Game Assets/Tiles/Tilemap_56.asset using Guid(e1cf776b39f925b4ca35505f61485be2) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '549cbbc96962e602c9bee3bbe21d3aa4') in 0.011066 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000156 seconds.
+  path: Assets/Gutty Kreum/Dark Tokyo Game Assets/Tiles/Tilemap_69.asset
+  artifactKey: Guid(ee8abbe5764b71946ab156a1db3b3a91) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Gutty Kreum/Dark Tokyo Game Assets/Tiles/Tilemap_69.asset using Guid(ee8abbe5764b71946ab156a1db3b3a91) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '7b85fedb1ba5f4ddf264c33ac9bc694c') in 0.010376 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000162 seconds.
+  path: Assets/Gutty Kreum/Dark Tokyo Game Assets/Tiles/Tilemap_84.asset
+  artifactKey: Guid(c5990a8ede1fa55478534430cafbcd5c) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Gutty Kreum/Dark Tokyo Game Assets/Tiles/Tilemap_84.asset using Guid(c5990a8ede1fa55478534430cafbcd5c) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'd231ff4644e2814f37df92bfd472312b') in 0.010162 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000199 seconds.
+  path: Assets/Gutty Kreum/Dark Tokyo Game Assets/Tiles/Tilemap_82.asset
+  artifactKey: Guid(b1bf09d8ce63e9a458c60b26e03e1794) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Gutty Kreum/Dark Tokyo Game Assets/Tiles/Tilemap_82.asset using Guid(b1bf09d8ce63e9a458c60b26e03e1794) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'd2b63b27acd21c2b25f4c145834df094') in 0.010186 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000195 seconds.
+  path: Assets/Gutty Kreum/Dark Tokyo Game Assets/Tiles/Tilemap_88.asset
+  artifactKey: Guid(11c0e38226422b24495d61615d7beb2e) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Gutty Kreum/Dark Tokyo Game Assets/Tiles/Tilemap_88.asset using Guid(11c0e38226422b24495d61615d7beb2e) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'a4de71fad20ee6178ec488cb8d1b829f') in 0.010633 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000181 seconds.
+  path: Assets/Gutty Kreum/Dark Tokyo Game Assets/Tiles/Tilemap_75.asset
+  artifactKey: Guid(dc39462b55cdd79418473dfe6f9ec3a8) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Gutty Kreum/Dark Tokyo Game Assets/Tiles/Tilemap_75.asset using Guid(dc39462b55cdd79418473dfe6f9ec3a8) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '002ff0a2752c022c8f514b2a76d7154d') in 0.010736 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000155 seconds.
+  path: Assets/Gutty Kreum/Dark Tokyo Game Assets/Tiles/Tilemap_48.asset
+  artifactKey: Guid(56d98731ecb6ecd4499fb0f44dd22214) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Gutty Kreum/Dark Tokyo Game Assets/Tiles/Tilemap_48.asset using Guid(56d98731ecb6ecd4499fb0f44dd22214) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '584d737a382913229fa43c6801d8bcfd') in 0.010023 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000168 seconds.
+  path: Assets/Gutty Kreum/Dark Tokyo Game Assets/Tiles/Tilemap_77.asset
+  artifactKey: Guid(d456c88d1dbfc424b8989cf7fde86a40) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Gutty Kreum/Dark Tokyo Game Assets/Tiles/Tilemap_77.asset using Guid(d456c88d1dbfc424b8989cf7fde86a40) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '5f6019b215ed393a6199a7991ab34bae') in 0.010353 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000162 seconds.
+  path: Assets/Gutty Kreum/Dark Tokyo Game Assets/Tiles/Tilemap_76.asset
+  artifactKey: Guid(ade35ab92cac98648aa8de6aeb9d8724) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Gutty Kreum/Dark Tokyo Game Assets/Tiles/Tilemap_76.asset using Guid(ade35ab92cac98648aa8de6aeb9d8724) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '41b5a3fbacac992f9c02cc3e00293d3c') in 0.010006 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000232 seconds.
+  path: Assets/Gutty Kreum/Dark Tokyo Game Assets/Tiles/Tilemap_38.asset
+  artifactKey: Guid(6fc478134a3a88c45aec8149afbd525d) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Gutty Kreum/Dark Tokyo Game Assets/Tiles/Tilemap_38.asset using Guid(6fc478134a3a88c45aec8149afbd525d) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '122b3533829469d4a14c47a05aa21fe1') in 0.010731 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000165 seconds.
+  path: Assets/Gutty Kreum/Dark Tokyo Game Assets/Tiles/Tilemap_3.asset
+  artifactKey: Guid(b5f8b0cca1ff2d5489dc611c7e1d72bd) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Gutty Kreum/Dark Tokyo Game Assets/Tiles/Tilemap_3.asset using Guid(b5f8b0cca1ff2d5489dc611c7e1d72bd) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '841b755ee5d2481fa12b472f8d7c17bb') in 0.011121 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000148 seconds.
+  path: Assets/Gutty Kreum/Dark Tokyo Game Assets/Tiles/Tilemap_4.asset
+  artifactKey: Guid(f49ca8ee4a7ca464fadfdbcae3638327) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Gutty Kreum/Dark Tokyo Game Assets/Tiles/Tilemap_4.asset using Guid(f49ca8ee4a7ca464fadfdbcae3638327) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '10b25683ef6c7f5a6f4176f6d928a1c8') in 0.009730 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000170 seconds.
+  path: Assets/Gutty Kreum/Dark Tokyo Game Assets/Tiles/Tilemap_26.asset
+  artifactKey: Guid(0cf214302ff83e846ad81e0c23ffff90) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Gutty Kreum/Dark Tokyo Game Assets/Tiles/Tilemap_26.asset using Guid(0cf214302ff83e846ad81e0c23ffff90) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'd158fb12c43421c43ab124dd5bae13c2') in 0.011789 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000126 seconds.
+  path: Assets/Gutty Kreum/Dark Tokyo Game Assets/Tiles/Tilemap_80.asset
+  artifactKey: Guid(022539c7d4136c2459f6c2e6b64b4016) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Gutty Kreum/Dark Tokyo Game Assets/Tiles/Tilemap_80.asset using Guid(022539c7d4136c2459f6c2e6b64b4016) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '775316e5ce13b3544b8fc6d11ec9811e') in 0.009505 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000165 seconds.
+  path: Assets/Gutty Kreum/Dark Tokyo Game Assets/Tiles/Tilemap_54.asset
+  artifactKey: Guid(de6eb69cd63c8e2428b74bc9437efc09) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Gutty Kreum/Dark Tokyo Game Assets/Tiles/Tilemap_54.asset using Guid(de6eb69cd63c8e2428b74bc9437efc09) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'e0b9ab627553d36745c3aa5b93377cad') in 0.010133 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000201 seconds.
+  path: Assets/Gutty Kreum/Dark Tokyo Game Assets/Tiles/Tilemap_39.asset
+  artifactKey: Guid(994fea2e93027e64daf39c4b7499f242) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Gutty Kreum/Dark Tokyo Game Assets/Tiles/Tilemap_39.asset using Guid(994fea2e93027e64daf39c4b7499f242) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '91e0a90739f698f4a0e96eaa10527b65') in 0.010779 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000166 seconds.
+  path: Assets/Gutty Kreum/Dark Tokyo Game Assets/Tiles/Tilemap_78.asset
+  artifactKey: Guid(7ae1cc1fb2abf9a4fb4fe7f4dde8a9d8) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Gutty Kreum/Dark Tokyo Game Assets/Tiles/Tilemap_78.asset using Guid(7ae1cc1fb2abf9a4fb4fe7f4dde8a9d8) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'c8885463e382e12b503b80a9121434f2') in 0.009653 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000219 seconds.
+  path: Assets/Gutty Kreum/Dark Tokyo Game Assets/Tiles/Tilemap_62.asset
+  artifactKey: Guid(175fb86065c7e8c4893384fa191869e2) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Gutty Kreum/Dark Tokyo Game Assets/Tiles/Tilemap_62.asset using Guid(175fb86065c7e8c4893384fa191869e2) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'd1eb645c7e4eb48717e92451267378d1') in 0.010627 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000179 seconds.
+  path: Assets/Gutty Kreum/Dark Tokyo Game Assets/Tiles/Tilemap_71.asset
+  artifactKey: Guid(b8fd67fa9ebece14eab11e06003668e1) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Gutty Kreum/Dark Tokyo Game Assets/Tiles/Tilemap_71.asset using Guid(b8fd67fa9ebece14eab11e06003668e1) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'd2f07c7218dc40e3d8e7d5bc6d165f7b') in 0.010728 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000181 seconds.
+  path: Assets/Gutty Kreum/Dark Tokyo Game Assets/Tiles/Tilemap_46.asset
+  artifactKey: Guid(fe610932d6acc4248b0599dada6c4475) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Gutty Kreum/Dark Tokyo Game Assets/Tiles/Tilemap_46.asset using Guid(fe610932d6acc4248b0599dada6c4475) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '3a0c427432e870c07e97f106e6f32eb4') in 0.010594 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000194 seconds.
+  path: Assets/Gutty Kreum/Dark Tokyo Game Assets/Tiles/Tilemap_86.asset
+  artifactKey: Guid(c76fe6dfa829c3a4ea469d0a3b10538f) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Gutty Kreum/Dark Tokyo Game Assets/Tiles/Tilemap_86.asset using Guid(c76fe6dfa829c3a4ea469d0a3b10538f) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '2cb56d211ed190d92a1ba4319bfda1b4') in 0.010170 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000163 seconds.
+  path: Assets/Gutty Kreum/Dark Tokyo Game Assets/Tiles/Tilemap_50.asset
+  artifactKey: Guid(2992bffa3b180ea40987f449dac268fe) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Gutty Kreum/Dark Tokyo Game Assets/Tiles/Tilemap_50.asset using Guid(2992bffa3b180ea40987f449dac268fe) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'ca45010bfc0095a42b4174e0e7c4e45b') in 0.010677 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000218 seconds.
+  path: Assets/Gutty Kreum/Dark Tokyo Game Assets/Tiles/Tilemap_93.asset
+  artifactKey: Guid(8930b0d7c17d7234598e069d81093a9e) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Gutty Kreum/Dark Tokyo Game Assets/Tiles/Tilemap_93.asset using Guid(8930b0d7c17d7234598e069d81093a9e) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '17abba9abba3f4bfbaa490c2ef3b407d') in 0.010167 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000220 seconds.
+  path: Assets/Gutty Kreum/Dark Tokyo Game Assets/Tiles/Tilemap_64.asset
+  artifactKey: Guid(934f5331e7448434e9f62afdace82e8e) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Gutty Kreum/Dark Tokyo Game Assets/Tiles/Tilemap_64.asset using Guid(934f5331e7448434e9f62afdace82e8e) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'e6564aef32d9200337f18fe1148b19b5') in 0.011808 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000176 seconds.
+  path: Assets/Gutty Kreum/Dark Tokyo Game Assets/Tiles/Tilemap_58.asset
+  artifactKey: Guid(8e2e3ae76e12b8644ab4179b649a1e3e) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Gutty Kreum/Dark Tokyo Game Assets/Tiles/Tilemap_58.asset using Guid(8e2e3ae76e12b8644ab4179b649a1e3e) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '30d4e91e86ee1d29eee0b2af8e27a972') in 0.010331 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000150 seconds.
+  path: Assets/Gutty Kreum/Dark Tokyo Game Assets/Tiles/Tilemap_30.asset
+  artifactKey: Guid(47855e8de0e619f44ab9a384a23f8aaa) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Gutty Kreum/Dark Tokyo Game Assets/Tiles/Tilemap_30.asset using Guid(47855e8de0e619f44ab9a384a23f8aaa) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'f2494039fd7315d0143f263e57538637') in 0.010561 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000154 seconds.
+  path: Assets/Gutty Kreum/Dark Tokyo Game Assets/Tiles/Tilemap_94.asset
+  artifactKey: Guid(4dfc76cbe4b40d840af3fc7c0c9ba737) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Gutty Kreum/Dark Tokyo Game Assets/Tiles/Tilemap_94.asset using Guid(4dfc76cbe4b40d840af3fc7c0c9ba737) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '30f11f1d3bb78acd4f4bdb5a5378e01f') in 0.009310 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000218 seconds.
+  path: Assets/Gutty Kreum/Dark Tokyo Game Assets/Tiles/Tilemap_15.asset
+  artifactKey: Guid(d3a6c2faac0b0ac4c87c41aacc4a81fc) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Gutty Kreum/Dark Tokyo Game Assets/Tiles/Tilemap_15.asset using Guid(d3a6c2faac0b0ac4c87c41aacc4a81fc) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'b849c98f17451e13241ceaf112586cda') in 0.011498 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000139 seconds.
+  path: Assets/Gutty Kreum/Dark Tokyo Game Assets/Tiles/Tilemap_1.asset
+  artifactKey: Guid(d5b167dbfb25f914694897d24c5280e1) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Gutty Kreum/Dark Tokyo Game Assets/Tiles/Tilemap_1.asset using Guid(d5b167dbfb25f914694897d24c5280e1) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '6125aa0f4ec276e074ffc6fd49f983ac') in 0.009605 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000166 seconds.
+  path: Assets/Gutty Kreum/Dark Tokyo Game Assets/Tiles/Tilemap_73.asset
+  artifactKey: Guid(a2b2d38a7d38a304f9ed1070644d1313) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Gutty Kreum/Dark Tokyo Game Assets/Tiles/Tilemap_73.asset using Guid(a2b2d38a7d38a304f9ed1070644d1313) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'f7548f2d34950be523f915fbc2519fc8') in 0.010531 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000187 seconds.
+  path: Assets/Gutty Kreum/Dark Tokyo Game Assets/Tiles/Tilemap_96.asset
+  artifactKey: Guid(295e8905f77a30c40a74c2805f5caa09) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Gutty Kreum/Dark Tokyo Game Assets/Tiles/Tilemap_96.asset using Guid(295e8905f77a30c40a74c2805f5caa09) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '0fab3b93608a5a46b98702c3b556c6bf') in 0.009960 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000186 seconds.
+  path: Assets/Gutty Kreum/Dark Tokyo Game Assets/Tiles/Tilemap_59.asset
+  artifactKey: Guid(b75a2f6b256002e4e88c8d1c67702a6b) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Gutty Kreum/Dark Tokyo Game Assets/Tiles/Tilemap_59.asset using Guid(b75a2f6b256002e4e88c8d1c67702a6b) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '409c1070ddaac207398285bc5b6e63be') in 0.010294 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000191 seconds.
+  path: Assets/Gutty Kreum/Dark Tokyo Game Assets/Tiles/Tilemap_44.asset
+  artifactKey: Guid(f74a46db14cf8b3498a94ac4b964fffd) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Gutty Kreum/Dark Tokyo Game Assets/Tiles/Tilemap_44.asset using Guid(f74a46db14cf8b3498a94ac4b964fffd) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '0ad1a1a83343482562ec0300ee8f8aac') in 0.010166 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000201 seconds.
+  path: Assets/Gutty Kreum/Dark Tokyo Game Assets/Tiles/Tilemap_40.asset
+  artifactKey: Guid(f394264f15026c54998707fe6c1ad8ca) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Gutty Kreum/Dark Tokyo Game Assets/Tiles/Tilemap_40.asset using Guid(f394264f15026c54998707fe6c1ad8ca) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '7b300bf72bdaf1104a12dbf66183adec') in 0.010921 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000159 seconds.
+  path: Assets/Gutty Kreum/Dark Tokyo Game Assets/Tiles/Tilemap_43.asset
+  artifactKey: Guid(36d6a02fe3b810940bc49b5e15f03fd0) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Gutty Kreum/Dark Tokyo Game Assets/Tiles/Tilemap_43.asset using Guid(36d6a02fe3b810940bc49b5e15f03fd0) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'd49040090c07e90d210246fc438479e8') in 0.010027 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000257 seconds.
+  path: Assets/Gutty Kreum/Dark Tokyo Game Assets/Tiles/Tilemap_49.asset
+  artifactKey: Guid(cc03e31f436da0c4699d7e1e1074efe8) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Gutty Kreum/Dark Tokyo Game Assets/Tiles/Tilemap_49.asset using Guid(cc03e31f436da0c4699d7e1e1074efe8) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '4b7a9470b11ad78a13d3d287035bdb12') in 0.009614 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000185 seconds.
+  path: Assets/Gutty Kreum/Dark Tokyo Game Assets/Tiles/Tilemap_101.asset
+  artifactKey: Guid(2e0055746b7486249b13e1adc254782d) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Gutty Kreum/Dark Tokyo Game Assets/Tiles/Tilemap_101.asset using Guid(2e0055746b7486249b13e1adc254782d) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '2d2192809ffcdd325d744015d8838e65') in 0.011546 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000155 seconds.
+  path: Assets/Gutty Kreum/Dark Tokyo Game Assets/Tiles/Tilemap_109.asset
+  artifactKey: Guid(816d77c5cf1ac7049af360e1746cfca9) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Gutty Kreum/Dark Tokyo Game Assets/Tiles/Tilemap_109.asset using Guid(816d77c5cf1ac7049af360e1746cfca9) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'b99fc0a2406d86e75f361f62741482e3') in 0.010475 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000193 seconds.
+  path: Assets/Gutty Kreum/Dark Tokyo Game Assets/Tiles/Tilemap_108.asset
+  artifactKey: Guid(db7eaba01010a354b9feb7d1686e5d77) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Gutty Kreum/Dark Tokyo Game Assets/Tiles/Tilemap_108.asset using Guid(db7eaba01010a354b9feb7d1686e5d77) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '9565f6872472e20a66147f2feb05d5a3') in 0.010215 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000181 seconds.
+  path: Assets/Gutty Kreum/Dark Tokyo Game Assets/Tiles/Tilemap_105.asset
+  artifactKey: Guid(81fcc6579b1487544b3fdae684247900) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Gutty Kreum/Dark Tokyo Game Assets/Tiles/Tilemap_105.asset using Guid(81fcc6579b1487544b3fdae684247900) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '17ced63546e2db5478bd475e6a667e33') in 0.010343 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000241 seconds.
+  path: Assets/Gutty Kreum/Dark Tokyo Game Assets/Tiles/Tilemap_130.asset
+  artifactKey: Guid(76c631c297fbed545bafaf2a8f38492d) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Gutty Kreum/Dark Tokyo Game Assets/Tiles/Tilemap_130.asset using Guid(76c631c297fbed545bafaf2a8f38492d) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '86a2ea87e17cd54c621c50c8785c3fca') in 0.010627 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000179 seconds.
+  path: Assets/Gutty Kreum/Dark Tokyo Game Assets/Tiles/Tilemap_111.asset
+  artifactKey: Guid(272d5fa40182d3e498cf0518f6fe78f3) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Gutty Kreum/Dark Tokyo Game Assets/Tiles/Tilemap_111.asset using Guid(272d5fa40182d3e498cf0518f6fe78f3) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '2b7dae1672d1b967551389656fb17d9c') in 0.011454 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000282 seconds.
+  path: Assets/Gutty Kreum/Dark Tokyo Game Assets/Tiles/Tilemap_118.asset
+  artifactKey: Guid(055b0c204a7bd414f978a23c3f6b6fe9) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Gutty Kreum/Dark Tokyo Game Assets/Tiles/Tilemap_118.asset using Guid(055b0c204a7bd414f978a23c3f6b6fe9) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '55f5d4babff974edc89e0a3a5be9d477') in 0.010168 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000161 seconds.
+  path: Assets/Gutty Kreum/Dark Tokyo Game Assets/Tiles/Tilemap_113.asset
+  artifactKey: Guid(a672fc89393ee6549be39803c2a1097f) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Gutty Kreum/Dark Tokyo Game Assets/Tiles/Tilemap_113.asset using Guid(a672fc89393ee6549be39803c2a1097f) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'cb6f9b0e77659682001f32893dec8c65') in 0.010464 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000165 seconds.
+  path: Assets/Gutty Kreum/Dark Tokyo Game Assets/Tiles/Tilemap_129.asset
+  artifactKey: Guid(21077c7135978334bade09f1cbe5e571) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Gutty Kreum/Dark Tokyo Game Assets/Tiles/Tilemap_129.asset using Guid(21077c7135978334bade09f1cbe5e571) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'ebf50af01c80bdd88b1b336adc92f88f') in 0.009391 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000203 seconds.
+  path: Assets/Gutty Kreum/Dark Tokyo Game Assets/Tiles/Tilemap_100.asset
+  artifactKey: Guid(34991764563a01a4bade48aa05be21cf) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Gutty Kreum/Dark Tokyo Game Assets/Tiles/Tilemap_100.asset using Guid(34991764563a01a4bade48aa05be21cf) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '923e6b9cf6c9b0e2896a3a6cba1be409') in 0.010279 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000167 seconds.
+  path: Assets/Gutty Kreum/Dark Tokyo Game Assets/Tiles/Tilemap_114.asset
+  artifactKey: Guid(b123b8aaa7a99164eb2454aefc907db5) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Gutty Kreum/Dark Tokyo Game Assets/Tiles/Tilemap_114.asset using Guid(b123b8aaa7a99164eb2454aefc907db5) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'f30db82dde1db21b550dababf1e72b4c') in 0.010704 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000207 seconds.
+  path: Assets/Gutty Kreum/Dark Tokyo Game Assets/Tiles/Tilemap_107.asset
+  artifactKey: Guid(8855ed517931de04fa519a56a883dded) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Gutty Kreum/Dark Tokyo Game Assets/Tiles/Tilemap_107.asset using Guid(8855ed517931de04fa519a56a883dded) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '75a54282b007a53ff4ac9b51f9664919') in 0.009950 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000191 seconds.
+  path: Assets/Gutty Kreum/Dark Tokyo Game Assets/Tiles/Tilemap_127.asset
+  artifactKey: Guid(da5aa374db893e940add7f997d2f27e4) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Gutty Kreum/Dark Tokyo Game Assets/Tiles/Tilemap_127.asset using Guid(da5aa374db893e940add7f997d2f27e4) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'b8789ac21eaf3211cdaaa3678a5f56e4') in 0.011016 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000156 seconds.
+  path: Assets/Gutty Kreum/Dark Tokyo Game Assets/Tiles/Tilemap_103.asset
+  artifactKey: Guid(a39c7077bff87bd4bab5fb43a00b9e8e) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Gutty Kreum/Dark Tokyo Game Assets/Tiles/Tilemap_103.asset using Guid(a39c7077bff87bd4bab5fb43a00b9e8e) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'dc6ed5c4299e965635ddc64b7137b357') in 0.010175 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000170 seconds.
+  path: Assets/Gutty Kreum/Dark Tokyo Game Assets/Tiles/Tilemap_106.asset
+  artifactKey: Guid(33370766572bc4c48aeb9ceefe1610d5) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Gutty Kreum/Dark Tokyo Game Assets/Tiles/Tilemap_106.asset using Guid(33370766572bc4c48aeb9ceefe1610d5) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '0a12b5dc9ec48674266a23e9560d4da2') in 0.011173 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000164 seconds.
+  path: Assets/Gutty Kreum/Dark Tokyo Game Assets/Tiles/Tilemap_121.asset
+  artifactKey: Guid(4dcb409d290d72e4f99af8aca6414997) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Gutty Kreum/Dark Tokyo Game Assets/Tiles/Tilemap_121.asset using Guid(4dcb409d290d72e4f99af8aca6414997) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'c7a5d0afbf8bb3779012e6f905500a08') in 0.010068 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000174 seconds.
+  path: Assets/Gutty Kreum/Dark Tokyo Game Assets/Tiles/Tilemap_125.asset
+  artifactKey: Guid(5d9be112e3ac944498e9022786019755) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Gutty Kreum/Dark Tokyo Game Assets/Tiles/Tilemap_125.asset using Guid(5d9be112e3ac944498e9022786019755) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '9d878d66935a96e0a85bbec992b61db0') in 0.010792 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000275 seconds.
+  path: Assets/Gutty Kreum/Dark Tokyo Game Assets/Tiles/Tilemap_123.asset
+  artifactKey: Guid(c13591104e858fe419ffdf0352f39797) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Gutty Kreum/Dark Tokyo Game Assets/Tiles/Tilemap_123.asset using Guid(c13591104e858fe419ffdf0352f39797) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '9d9cf83d986fb6521e2e526fd6d4cd24') in 0.010959 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000170 seconds.
+  path: Assets/Gutty Kreum/Dark Tokyo Game Assets/Tiles/Tilemap_112.asset
+  artifactKey: Guid(26f07b27d5f25204f83ea926ef615eb4) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Gutty Kreum/Dark Tokyo Game Assets/Tiles/Tilemap_112.asset using Guid(26f07b27d5f25204f83ea926ef615eb4) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '769ce8b96937e247e7a8bbb9ae7315d0') in 0.009637 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000192 seconds.
+  path: Assets/Gutty Kreum/Dark Tokyo Game Assets/Tiles/Tilemap_131.asset
+  artifactKey: Guid(7fa26330c84ceaf47a48fb0515c06de6) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Gutty Kreum/Dark Tokyo Game Assets/Tiles/Tilemap_131.asset using Guid(7fa26330c84ceaf47a48fb0515c06de6) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '7d8445cb29330ba0f678db50c565e387') in 0.009184 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000205 seconds.
+  path: Assets/Gutty Kreum/Dark Tokyo Game Assets/Tiles/Tilemap_119.asset
+  artifactKey: Guid(389ce75aa444a404ca37aba3f9d461ad) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Gutty Kreum/Dark Tokyo Game Assets/Tiles/Tilemap_119.asset using Guid(389ce75aa444a404ca37aba3f9d461ad) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '816aabf139e8643cdd30eace16e9dd26') in 0.010505 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000186 seconds.
+  path: Assets/Gutty Kreum/Dark Tokyo Game Assets/Tiles/Tilemap_110.asset
+  artifactKey: Guid(efe7e75f7d7a2d14aab31092afdca46b) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Gutty Kreum/Dark Tokyo Game Assets/Tiles/Tilemap_110.asset using Guid(efe7e75f7d7a2d14aab31092afdca46b) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '9935d3447efa23b000637190d207f0ae') in 0.011222 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000233 seconds.
+  path: Assets/Gutty Kreum/Dark Tokyo Game Assets/Tiles/Tilemap_136.asset
+  artifactKey: Guid(0b598b6f33bc7ef40ac22fb4b85ea0c9) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Gutty Kreum/Dark Tokyo Game Assets/Tiles/Tilemap_136.asset using Guid(0b598b6f33bc7ef40ac22fb4b85ea0c9) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '16d74818473c47a0fe1bdb4127b6b39a') in 0.010395 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000174 seconds.
+  path: Assets/Gutty Kreum/Dark Tokyo Game Assets/Tiles/Tilemap_141.asset
+  artifactKey: Guid(c73ddb235c0dcb644b8fbae043e316be) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Gutty Kreum/Dark Tokyo Game Assets/Tiles/Tilemap_141.asset using Guid(c73ddb235c0dcb644b8fbae043e316be) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '961da8a7f4eb9a96b29422f2b3f9346f') in 0.010602 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000184 seconds.
+  path: Assets/Gutty Kreum/Dark Tokyo Game Assets/Tiles/Tilemap_152.asset
+  artifactKey: Guid(84c6b6b415038494cac09c9b1e549ab9) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Gutty Kreum/Dark Tokyo Game Assets/Tiles/Tilemap_152.asset using Guid(84c6b6b415038494cac09c9b1e549ab9) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '910d554d8d60e5e57a4a10d104f7e6c9') in 0.011075 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000195 seconds.
+  path: Assets/Gutty Kreum/Dark Tokyo Game Assets/Tiles/Tilemap_150.asset
+  artifactKey: Guid(353706bf3f3bc464291724327fcc8aa8) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Gutty Kreum/Dark Tokyo Game Assets/Tiles/Tilemap_150.asset using Guid(353706bf3f3bc464291724327fcc8aa8) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '008f5865ac52e36f47cafdb1143d6e78') in 0.010244 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000173 seconds.
+  path: Assets/Gutty Kreum/Dark Tokyo Game Assets/Tiles/Tilemap_158.asset
+  artifactKey: Guid(39e98d9116a78aa4e8b8ed059c3def0a) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Gutty Kreum/Dark Tokyo Game Assets/Tiles/Tilemap_158.asset using Guid(39e98d9116a78aa4e8b8ed059c3def0a) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'b70ec6207b4f1e92cbf01ece278dd1fb') in 0.010416 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000212 seconds.
+  path: Assets/Gutty Kreum/Dark Tokyo Game Assets/Tiles/Tilemap_146.asset
+  artifactKey: Guid(368af3b48fee42948a24fb73919ece7c) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Gutty Kreum/Dark Tokyo Game Assets/Tiles/Tilemap_146.asset using Guid(368af3b48fee42948a24fb73919ece7c) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'ce21af9f04d7002e0ee068542be70277') in 0.010219 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000145 seconds.
+  path: Assets/Gutty Kreum/Dark Tokyo Game Assets/Tiles/Tilemap_166.asset
+  artifactKey: Guid(4e424118d6457384b9af5715417a20b8) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Gutty Kreum/Dark Tokyo Game Assets/Tiles/Tilemap_166.asset using Guid(4e424118d6457384b9af5715417a20b8) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '04864dded24b344cdc6393038e8b5829') in 0.009085 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000169 seconds.
+  path: Assets/Gutty Kreum/Dark Tokyo Game Assets/Tiles/Tilemap_173.asset
+  artifactKey: Guid(0f7794b0e66a23149973f5d790a85a4d) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Gutty Kreum/Dark Tokyo Game Assets/Tiles/Tilemap_173.asset using Guid(0f7794b0e66a23149973f5d790a85a4d) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'cbf5f8a8e914b677ed4b08428a40310e') in 0.013044 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000215 seconds.
+  path: Assets/Gutty Kreum/Dark Tokyo Game Assets/Tiles/Tilemap_176.asset
+  artifactKey: Guid(018cd6e99b72c8c48993945e47f5d1a2) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Gutty Kreum/Dark Tokyo Game Assets/Tiles/Tilemap_176.asset using Guid(018cd6e99b72c8c48993945e47f5d1a2) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'c72ec893f8440afc9ef1da130fccd48d') in 0.008940 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000170 seconds.
+  path: Assets/Gutty Kreum/Dark Tokyo Game Assets/Tiles/Tilemap_148.asset
+  artifactKey: Guid(16b5aa8babd3fd14b83106c8a5984242) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Gutty Kreum/Dark Tokyo Game Assets/Tiles/Tilemap_148.asset using Guid(16b5aa8babd3fd14b83106c8a5984242) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '52f52d31bc33826ac8112b10fdb764aa') in 0.009818 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000187 seconds.
+  path: Assets/Gutty Kreum/Dark Tokyo Game Assets/Tiles/Tilemap_164.asset
+  artifactKey: Guid(7a07813c49a63da49acaa30ea71e6bfb) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Gutty Kreum/Dark Tokyo Game Assets/Tiles/Tilemap_164.asset using Guid(7a07813c49a63da49acaa30ea71e6bfb) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '79f8c6d112e5ae50506ad98198ecbdd9') in 0.010313 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000172 seconds.
+  path: Assets/Gutty Kreum/Dark Tokyo Game Assets/Tiles/Tilemap_156.asset
+  artifactKey: Guid(5373f0403cae5704f8e30f8a513c04d8) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Gutty Kreum/Dark Tokyo Game Assets/Tiles/Tilemap_156.asset using Guid(5373f0403cae5704f8e30f8a513c04d8) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '3502aa4ffa320081d59aff71a492dbef') in 0.010797 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000181 seconds.
+  path: Assets/Gutty Kreum/Dark Tokyo Game Assets/Tiles/Tilemap_171.asset
+  artifactKey: Guid(6e9f5fc9febf4f5428e1029bacb6768e) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Gutty Kreum/Dark Tokyo Game Assets/Tiles/Tilemap_171.asset using Guid(6e9f5fc9febf4f5428e1029bacb6768e) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'ade02eb71aa7c55a7bddc2aab2c5a4c6') in 0.011080 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000196 seconds.
+  path: Assets/Gutty Kreum/Dark Tokyo Game Assets/Tiles/Tilemap_154.asset
+  artifactKey: Guid(a7cc5be46de34a7468a14e2747ba0fab) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Gutty Kreum/Dark Tokyo Game Assets/Tiles/Tilemap_154.asset using Guid(a7cc5be46de34a7468a14e2747ba0fab) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '81d1c3b12734459b4abd08091a64e745') in 0.010309 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000175 seconds.
+  path: Assets/Gutty Kreum/Dark Tokyo Game Assets/Tiles/Tilemap_149.asset
+  artifactKey: Guid(56878e9f901709947928bcb614e9bbae) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Gutty Kreum/Dark Tokyo Game Assets/Tiles/Tilemap_149.asset using Guid(56878e9f901709947928bcb614e9bbae) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '6b8184601b2e97caf8a3b4a1d68b9719') in 0.010194 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000188 seconds.
+  path: Assets/Gutty Kreum/Dark Tokyo Game Assets/Tiles/Tilemap_133.asset
+  artifactKey: Guid(20cf5400fba60d54d9006e66b8d8fc83) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Gutty Kreum/Dark Tokyo Game Assets/Tiles/Tilemap_133.asset using Guid(20cf5400fba60d54d9006e66b8d8fc83) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '0668179d34d9ae256323cd0eb1bb76e9') in 0.010027 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000194 seconds.
+  path: Assets/Gutty Kreum/Dark Tokyo Game Assets/Tiles/Tilemap_140.asset
+  artifactKey: Guid(7e6ff00c44762a2438487244c9cc9640) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Gutty Kreum/Dark Tokyo Game Assets/Tiles/Tilemap_140.asset using Guid(7e6ff00c44762a2438487244c9cc9640) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'd186febf2570bce0ce9c581cfba383cd') in 0.010691 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000200 seconds.
+  path: Assets/Gutty Kreum/Dark Tokyo Game Assets/Tiles/Tilemap_163.asset
+  artifactKey: Guid(47ff85a8e5288a34ca57e2e0d314927e) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Gutty Kreum/Dark Tokyo Game Assets/Tiles/Tilemap_163.asset using Guid(47ff85a8e5288a34ca57e2e0d314927e) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'ce8735af95c8d4e9cc921a53051e8f99') in 0.010253 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000220 seconds.
+  path: Assets/Gutty Kreum/Dark Tokyo Game Assets/Tiles/Tilemap_144.asset
+  artifactKey: Guid(8f7fdea78b379c441a618713355dd9b4) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Gutty Kreum/Dark Tokyo Game Assets/Tiles/Tilemap_144.asset using Guid(8f7fdea78b379c441a618713355dd9b4) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '971dadc072412da4e40f0bd51b17ea69') in 0.010149 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000174 seconds.
+  path: Assets/Gutty Kreum/Dark Tokyo Game Assets/Tiles/Tilemap_137.asset
+  artifactKey: Guid(535ef512d35c00942b3db83652c8be6c) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Gutty Kreum/Dark Tokyo Game Assets/Tiles/Tilemap_137.asset using Guid(535ef512d35c00942b3db83652c8be6c) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'aba2ace973960b70736746b0e01d8745') in 0.012433 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000170 seconds.
+  path: Assets/Gutty Kreum/Dark Tokyo Game Assets/Tiles/Tilemap_172.asset
+  artifactKey: Guid(bda88ac2977743e4fa722d592fcdb8eb) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Gutty Kreum/Dark Tokyo Game Assets/Tiles/Tilemap_172.asset using Guid(bda88ac2977743e4fa722d592fcdb8eb) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '36a96bd901aeccc1c9dab7545c70f4e3') in 0.009145 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000151 seconds.
+  path: Assets/Gutty Kreum/Dark Tokyo Game Assets/Tiles/Tilemap_115.asset
+  artifactKey: Guid(8f7d7274de74f734ea94646f45fc288b) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Gutty Kreum/Dark Tokyo Game Assets/Tiles/Tilemap_115.asset using Guid(8f7d7274de74f734ea94646f45fc288b) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '601048edce0628a00d3601778f2012cc') in 0.009795 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000160 seconds.
+  path: Assets/Gutty Kreum/Dark Tokyo Game Assets/Tiles/Tilemap_117.asset
+  artifactKey: Guid(ac172389222d71b42a8eea2b8cdbc141) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Gutty Kreum/Dark Tokyo Game Assets/Tiles/Tilemap_117.asset using Guid(ac172389222d71b42a8eea2b8cdbc141) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '86ffb2e847600671be0fda79a1109f87') in 0.011310 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000165 seconds.
+  path: Assets/Gutty Kreum/Dark Tokyo Game Assets/Tiles/Tilemap_135.asset
+  artifactKey: Guid(a204dcdfea2df794e9fb98f3ed626556) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Gutty Kreum/Dark Tokyo Game Assets/Tiles/Tilemap_135.asset using Guid(a204dcdfea2df794e9fb98f3ed626556) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '1c3fa3c2b06b790514401e6a35290264') in 0.009600 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000196 seconds.
+  path: Assets/Gutty Kreum/Dark Tokyo Game Assets/Tiles/Tilemap_168.asset
+  artifactKey: Guid(a02dd5cdf7ac12c4e811e6d22d48e805) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Gutty Kreum/Dark Tokyo Game Assets/Tiles/Tilemap_168.asset using Guid(a02dd5cdf7ac12c4e811e6d22d48e805) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '52d8744764c8a8addbe2d07f49687541') in 0.011621 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000148 seconds.
+  path: Assets/Gutty Kreum/Dark Tokyo Game Assets/Tiles/Tilemap_167.asset
+  artifactKey: Guid(d71189b1698999043bcb2448b9681713) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Gutty Kreum/Dark Tokyo Game Assets/Tiles/Tilemap_167.asset using Guid(d71189b1698999043bcb2448b9681713) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '6e83e10d64b78043b9151dd77a8254ea') in 0.009297 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000193 seconds.
+  path: Assets/Gutty Kreum/Dark Tokyo Game Assets/Tiles/Tilemap_170.asset
+  artifactKey: Guid(cb7a48fec22e57743bb5f4250f744400) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Gutty Kreum/Dark Tokyo Game Assets/Tiles/Tilemap_170.asset using Guid(cb7a48fec22e57743bb5f4250f744400) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '4f89afcc7d954c22cb4305c7a5a5aec1') in 0.011143 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000150 seconds.
+  path: Assets/Gutty Kreum/Dark Tokyo Game Assets/Tiles/Tilemap_187.asset
+  artifactKey: Guid(e95e851615d7ee84c8e7b9e532765d30) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Gutty Kreum/Dark Tokyo Game Assets/Tiles/Tilemap_187.asset using Guid(e95e851615d7ee84c8e7b9e532765d30) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'cb2d69884cff5394a4689f362500710d') in 0.010254 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000199 seconds.
+  path: Assets/Gutty Kreum/Dark Tokyo Game Assets/Tiles/Tilemap_184.asset
+  artifactKey: Guid(42adb02f194e30e4dafcabebca38f89b) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Gutty Kreum/Dark Tokyo Game Assets/Tiles/Tilemap_184.asset using Guid(42adb02f194e30e4dafcabebca38f89b) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '1785665c1f2d300a33fcdce38877d5f0') in 0.010906 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000142 seconds.
+  path: Assets/Gutty Kreum/Dark Tokyo Game Assets/Tiles/Tilemap_190.asset
+  artifactKey: Guid(145341a02e28ef8428d3155159df0950) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Gutty Kreum/Dark Tokyo Game Assets/Tiles/Tilemap_190.asset using Guid(145341a02e28ef8428d3155159df0950) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'b04a732f728c5e53515692ea1fd80ed1') in 0.009767 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000165 seconds.
+  path: Assets/Gutty Kreum/Dark Tokyo Game Assets/Tiles/Tilemap_197.asset
+  artifactKey: Guid(603b9705a90053444925e0a303bff6b4) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Gutty Kreum/Dark Tokyo Game Assets/Tiles/Tilemap_197.asset using Guid(603b9705a90053444925e0a303bff6b4) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '3d5ab11fded072708bc99233b8dae25e') in 0.010480 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000201 seconds.
+  path: Assets/Gutty Kreum/Dark Tokyo Game Assets/Tiles/Tilemap_193.asset
+  artifactKey: Guid(574f204c2b8353e4fb156d1d041de4c9) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Gutty Kreum/Dark Tokyo Game Assets/Tiles/Tilemap_193.asset using Guid(574f204c2b8353e4fb156d1d041de4c9) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '825430890e23f41bb8f4ae508f6182e3') in 0.011766 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000146 seconds.
+  path: Assets/Gutty Kreum/Dark Tokyo Game Assets/Tiles/Tilemap_208.asset
+  artifactKey: Guid(cf953ec549331f640af5f8ae0a84c190) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Gutty Kreum/Dark Tokyo Game Assets/Tiles/Tilemap_208.asset using Guid(cf953ec549331f640af5f8ae0a84c190) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '56967e003302861327e0a4d8243f7f91') in 0.009893 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000173 seconds.
+  path: Assets/Gutty Kreum/Dark Tokyo Game Assets/Tiles/Tilemap_203.asset
+  artifactKey: Guid(73aea70662be5be478b5bb0e2f888f32) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Gutty Kreum/Dark Tokyo Game Assets/Tiles/Tilemap_203.asset using Guid(73aea70662be5be478b5bb0e2f888f32) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '7f2d57eb9d4ac60aeb4af1350a3000ad') in 0.010671 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000182 seconds.
+  path: Assets/Gutty Kreum/Dark Tokyo Game Assets/Tiles/Tilemap_214.asset
+  artifactKey: Guid(577ed8c2acc7bc146a6c2a30bfe9de53) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Gutty Kreum/Dark Tokyo Game Assets/Tiles/Tilemap_214.asset using Guid(577ed8c2acc7bc146a6c2a30bfe9de53) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '7112a9bbbcd890bd88a8daa25d250420') in 0.009881 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000192 seconds.
+  path: Assets/Gutty Kreum/Dark Tokyo Game Assets/Tiles/Tilemap_204.asset
+  artifactKey: Guid(7d0621ab4c600ea489821de43ed21f78) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Gutty Kreum/Dark Tokyo Game Assets/Tiles/Tilemap_204.asset using Guid(7d0621ab4c600ea489821de43ed21f78) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '162adb349d9d52bd3b0562c787e21802') in 0.010689 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000210 seconds.
+  path: Assets/Gutty Kreum/Dark Tokyo Game Assets/Tiles/Tilemap_200.asset
+  artifactKey: Guid(cbee0bbaeb5a6804ab6e3d6b17cf08f5) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Gutty Kreum/Dark Tokyo Game Assets/Tiles/Tilemap_200.asset using Guid(cbee0bbaeb5a6804ab6e3d6b17cf08f5) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '3cf3134f0a96c60afc51e07d3183a69b') in 0.011869 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000138 seconds.
+  path: Assets/Gutty Kreum/Dark Tokyo Game Assets/Tiles/Tilemap_207.asset
+  artifactKey: Guid(1815793d613b3b94d9b6858cda7641cf) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Gutty Kreum/Dark Tokyo Game Assets/Tiles/Tilemap_207.asset using Guid(1815793d613b3b94d9b6858cda7641cf) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '156af6a422c0adba271bd66338730f38') in 0.009684 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000174 seconds.
+  path: Assets/Gutty Kreum/Dark Tokyo Game Assets/Tiles/Tilemap_213.asset
+  artifactKey: Guid(2eff5fed2869a54429255af7200750f1) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Gutty Kreum/Dark Tokyo Game Assets/Tiles/Tilemap_213.asset using Guid(2eff5fed2869a54429255af7200750f1) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '917a16ac029ff79247c67065ec4f83da') in 0.009781 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000201 seconds.
+  path: Assets/Gutty Kreum/Dark Tokyo Game Assets/Tiles/Tilemap_211.asset
+  artifactKey: Guid(5f2e49135ff7bf04aa2f8eb32fb29af4) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Gutty Kreum/Dark Tokyo Game Assets/Tiles/Tilemap_211.asset using Guid(5f2e49135ff7bf04aa2f8eb32fb29af4) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '5e9bd4eaf353dc7fda85507dee562a1b') in 0.011404 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000162 seconds.
+  path: Assets/Gutty Kreum/Dark Tokyo Game Assets/Tiles/Tilemap_199.asset
+  artifactKey: Guid(80899cb60cb0dde4587cfd106a119f1d) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Gutty Kreum/Dark Tokyo Game Assets/Tiles/Tilemap_199.asset using Guid(80899cb60cb0dde4587cfd106a119f1d) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'be5f3d8700d3444ebc716b35b755487c') in 0.009551 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000192 seconds.
+  path: Assets/Gutty Kreum/Dark Tokyo Game Assets/Tiles/Tilemap_206.asset
+  artifactKey: Guid(18a8cd449eae4934bbde826f4b7e31a6) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Gutty Kreum/Dark Tokyo Game Assets/Tiles/Tilemap_206.asset using Guid(18a8cd449eae4934bbde826f4b7e31a6) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '6ef0734fefb3d828f15b9b5f2c117c44') in 0.010481 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000190 seconds.
+  path: Assets/Gutty Kreum/Dark Tokyo Game Assets/Tiles/Tilemap_178.asset
+  artifactKey: Guid(0cad2037eb776b54cac03545eae64710) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Gutty Kreum/Dark Tokyo Game Assets/Tiles/Tilemap_178.asset using Guid(0cad2037eb776b54cac03545eae64710) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'ea909effdd7910e643448f3458511d34') in 0.010825 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000212 seconds.
+  path: Assets/Gutty Kreum/Dark Tokyo Game Assets/Tiles/Tilemap_205.asset
+  artifactKey: Guid(5ed41a0ae98be414fbdd124b0434b5dc) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Gutty Kreum/Dark Tokyo Game Assets/Tiles/Tilemap_205.asset using Guid(5ed41a0ae98be414fbdd124b0434b5dc) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '9ec1e6856049788a599cca5d0a89234c') in 0.011957 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000148 seconds.
+  path: Assets/Gutty Kreum/Dark Tokyo Game Assets/Tiles/Tilemap_191.asset
+  artifactKey: Guid(d96791911a69c014cb7936314f028079) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Gutty Kreum/Dark Tokyo Game Assets/Tiles/Tilemap_191.asset using Guid(d96791911a69c014cb7936314f028079) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '823b5e9293c32b3ade2cf93277fcfd4b') in 0.010312 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000156 seconds.
+  path: Assets/Gutty Kreum/Dark Tokyo Game Assets/Tiles/Tilemap_180.asset
+  artifactKey: Guid(4bced79145fe15149a3e90d454a96ecc) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Gutty Kreum/Dark Tokyo Game Assets/Tiles/Tilemap_180.asset using Guid(4bced79145fe15149a3e90d454a96ecc) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'c28c2dd3afb916cf8873bb0dbc0e53d5') in 0.009520 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000182 seconds.
+  path: Assets/Gutty Kreum/Dark Tokyo Game Assets/Tiles/Tilemap_179.asset
+  artifactKey: Guid(710d52ae154237c4dbb6c213f285b60c) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Gutty Kreum/Dark Tokyo Game Assets/Tiles/Tilemap_179.asset using Guid(710d52ae154237c4dbb6c213f285b60c) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '06d00fe87eaf9658e04eb8a9a736649f') in 0.010054 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000166 seconds.
+  path: Assets/Gutty Kreum/Dark Tokyo Game Assets/Tiles/Tilemap_196.asset
+  artifactKey: Guid(c31e2bacef5f10248bd1403fc1d7db40) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Gutty Kreum/Dark Tokyo Game Assets/Tiles/Tilemap_196.asset using Guid(c31e2bacef5f10248bd1403fc1d7db40) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '970563b58db02b6720959210f416aaba') in 0.011157 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000167 seconds.
+  path: Assets/Gutty Kreum/Dark Tokyo Game Assets/Tiles/Tilemap_182.asset
+  artifactKey: Guid(96fb9fd0ab91d944180138f0dc20098b) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Gutty Kreum/Dark Tokyo Game Assets/Tiles/Tilemap_182.asset using Guid(96fb9fd0ab91d944180138f0dc20098b) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '1dc3d4178345200e84d5cddfd31300a0') in 0.010737 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000175 seconds.
+  path: Assets/Gutty Kreum/Dark Tokyo Game Assets/Tiles/Tilemap_192.asset
+  artifactKey: Guid(57c72fe4aba30db40bf0b2d93a8285b3) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Gutty Kreum/Dark Tokyo Game Assets/Tiles/Tilemap_192.asset using Guid(57c72fe4aba30db40bf0b2d93a8285b3) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '5b3984bef11d1d12e7dc37de8bf72612') in 0.009517 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000171 seconds.
+  path: Assets/Gutty Kreum/Dark Tokyo Game Assets/Tiles/Tilemap_218.asset
+  artifactKey: Guid(48cca43d028c29b40b5d1c300690c37d) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Gutty Kreum/Dark Tokyo Game Assets/Tiles/Tilemap_218.asset using Guid(48cca43d028c29b40b5d1c300690c37d) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '48b7a3ef4fcf2c797660171b6aba05e0') in 0.011736 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000151 seconds.
+  path: Assets/Gutty Kreum/Dark Tokyo Game Assets/Tiles/Tilemap_201.asset
+  artifactKey: Guid(47baacdf159bcb04e8490fec0f0b958c) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Gutty Kreum/Dark Tokyo Game Assets/Tiles/Tilemap_201.asset using Guid(47baacdf159bcb04e8490fec0f0b958c) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '15665ed43814f6dbea3fcfafd69bff90') in 0.009503 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000166 seconds.
+  path: Assets/Gutty Kreum/Dark Tokyo Game Assets/Tiles/Tilemap_181.asset
+  artifactKey: Guid(c89b36449820e9542a98d54499f70945) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Gutty Kreum/Dark Tokyo Game Assets/Tiles/Tilemap_181.asset using Guid(c89b36449820e9542a98d54499f70945) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'f8758e0827f853048bd9849945b0ca4c') in 0.011146 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000148 seconds.
+  path: Assets/Gutty Kreum/Dark Tokyo Game Assets/Tiles/Tilemap_194.asset
+  artifactKey: Guid(46902aab79c53d248b7e05bbe9e80aeb) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Gutty Kreum/Dark Tokyo Game Assets/Tiles/Tilemap_194.asset using Guid(46902aab79c53d248b7e05bbe9e80aeb) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'b3d3b77b521601db0c2dfde05b5d7e4b') in 0.011042 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000167 seconds.
+  path: Assets/Gutty Kreum/Dark Tokyo Game Assets/Tiles/Tilemap_124.asset
+  artifactKey: Guid(474816cc76d651b46b1f2903136631f7) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Gutty Kreum/Dark Tokyo Game Assets/Tiles/Tilemap_124.asset using Guid(474816cc76d651b46b1f2903136631f7) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '223d9a94a01962d3a9eba9a2d4ae8260') in 0.009683 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000185 seconds.
+  path: Assets/Gutty Kreum/Dark Tokyo Game Assets/Tiles/Tilemap_102.asset
+  artifactKey: Guid(bcbf86b884bcd3c4c9d3e7ea88fd9bce) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Gutty Kreum/Dark Tokyo Game Assets/Tiles/Tilemap_102.asset using Guid(bcbf86b884bcd3c4c9d3e7ea88fd9bce) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '518e1dea3af64ed1fe5e369aafe20c73') in 0.012303 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000155 seconds.
+  path: Assets/Gutty Kreum/Dark Tokyo Game Assets/Tiles/Tilemap_209.asset
+  artifactKey: Guid(de580acba5eca9943a0ce82e93c60da1) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Gutty Kreum/Dark Tokyo Game Assets/Tiles/Tilemap_209.asset using Guid(de580acba5eca9943a0ce82e93c60da1) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '238ac6f2e606e04992762e5ccc46bbf6') in 0.009049 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000156 seconds.
+  path: Assets/Gutty Kreum/Dark Tokyo Game Assets/Tiles/Tilemap_153.asset
+  artifactKey: Guid(f9e43975874eafb4fb669a3f15619f14) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Gutty Kreum/Dark Tokyo Game Assets/Tiles/Tilemap_153.asset using Guid(f9e43975874eafb4fb669a3f15619f14) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '36066b9647d06881359dc6197e64279a') in 0.009692 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000168 seconds.
+  path: Assets/Gutty Kreum/Dark Tokyo Game Assets/Tiles/Tilemap_220.asset
+  artifactKey: Guid(69f721c4c0f202f40b23383a25bed3fb) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Gutty Kreum/Dark Tokyo Game Assets/Tiles/Tilemap_220.asset using Guid(69f721c4c0f202f40b23383a25bed3fb) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'be906de7b47443354612bd8be6343612') in 0.010935 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000187 seconds.
+  path: Assets/Gutty Kreum/Dark Tokyo Game Assets/Tiles/Tilemap_165.asset
+  artifactKey: Guid(79b78d1568c5ae648ab5be2265d9091f) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Gutty Kreum/Dark Tokyo Game Assets/Tiles/Tilemap_165.asset using Guid(79b78d1568c5ae648ab5be2265d9091f) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '96a59eddf63e9433a6c27b3943338eae') in 0.011663 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000151 seconds.
+  path: Assets/Gutty Kreum/Dark Tokyo Game Assets/Tiles/Tilemap_147.asset
+  artifactKey: Guid(37ee4b930f445c643b97e33373346c9a) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Gutty Kreum/Dark Tokyo Game Assets/Tiles/Tilemap_147.asset using Guid(37ee4b930f445c643b97e33373346c9a) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '6b9db120bf42298931a5729cc2fe9b9f') in 0.009303 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000170 seconds.
+  path: Assets/Gutty Kreum/Dark Tokyo Game Assets/Tiles/Tilemap_155.asset
+  artifactKey: Guid(c5eb53d51dac35c4c9f59635bf567e41) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Gutty Kreum/Dark Tokyo Game Assets/Tiles/Tilemap_155.asset using Guid(c5eb53d51dac35c4c9f59635bf567e41) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'bac1e087a87954e8a7cb0cfe7dcfca0e') in 0.011074 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000159 seconds.
+  path: Assets/Gutty Kreum/Dark Tokyo Game Assets/Tiles/Tilemap_183.asset
+  artifactKey: Guid(f4a5f6c401bdd7041960709b41f3aaf4) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Gutty Kreum/Dark Tokyo Game Assets/Tiles/Tilemap_183.asset using Guid(f4a5f6c401bdd7041960709b41f3aaf4) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '34542cd33b98b0a1cce22305b72920e2') in 0.010806 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000169 seconds.
+  path: Assets/Gutty Kreum/Dark Tokyo Game Assets/Tiles/Tilemap_160.asset
+  artifactKey: Guid(549cc8098ebdf4b4dbece3437200baef) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Gutty Kreum/Dark Tokyo Game Assets/Tiles/Tilemap_160.asset using Guid(549cc8098ebdf4b4dbece3437200baef) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'd111755a3e9a970b635b65e402f235c6') in 0.009464 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000169 seconds.
+  path: Assets/Gutty Kreum/Dark Tokyo Game Assets/Tiles/Tilemap_104.asset
+  artifactKey: Guid(c17e2789119af0946958363828d4c703) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Gutty Kreum/Dark Tokyo Game Assets/Tiles/Tilemap_104.asset using Guid(c17e2789119af0946958363828d4c703) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '8c9bbffdd99a74803c00396c426ca97b') in 0.009487 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000151 seconds.
+  path: Assets/Gutty Kreum/Dark Tokyo Game Assets/Tiles/Tilemap_157.asset
+  artifactKey: Guid(42477e7d50e74b448a27c94af13085ca) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Gutty Kreum/Dark Tokyo Game Assets/Tiles/Tilemap_157.asset using Guid(42477e7d50e74b448a27c94af13085ca) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'fd296cfdbfa88f819794756b07881479') in 0.009097 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000188 seconds.
+  path: Assets/Gutty Kreum/Dark Tokyo Game Assets/Tiles/Tilemap_116.asset
+  artifactKey: Guid(27204408d16b5184ab63e1529dd00005) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Gutty Kreum/Dark Tokyo Game Assets/Tiles/Tilemap_116.asset using Guid(27204408d16b5184ab63e1529dd00005) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '8cb525dc1a770fa8464f72f7bf444938') in 0.009575 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000158 seconds.
+  path: Assets/Gutty Kreum/Dark Tokyo Game Assets/Tiles/Tilemap_212.asset
+  artifactKey: Guid(e3a8d41952e76224994cada5e8d24cf4) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Gutty Kreum/Dark Tokyo Game Assets/Tiles/Tilemap_212.asset using Guid(e3a8d41952e76224994cada5e8d24cf4) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '1fec8bfee6dc5b512db0d507bb0d8f0a') in 0.009344 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000205 seconds.
+  path: Assets/Gutty Kreum/Dark Tokyo Game Assets/Tiles/Tilemap_195.asset
+  artifactKey: Guid(5a3f0250d7fb5e54db0fdb3a3ec0a764) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Gutty Kreum/Dark Tokyo Game Assets/Tiles/Tilemap_195.asset using Guid(5a3f0250d7fb5e54db0fdb3a3ec0a764) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'fbcc9bc1dc4e68932a5356a7ff417048') in 0.010399 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000255 seconds.
+  path: Assets/Gutty Kreum/Dark Tokyo Game Assets/Tiles/Tilemap_189.asset
+  artifactKey: Guid(2bda4938c9eefa64699ebf4eace3e67f) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Gutty Kreum/Dark Tokyo Game Assets/Tiles/Tilemap_189.asset using Guid(2bda4938c9eefa64699ebf4eace3e67f) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'd5211f0167a8732a88742d2436dda1f5') in 0.011447 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000368 seconds.
+  path: Assets/Gutty Kreum/Dark Tokyo Game Assets/Tiles/Tilemap_162.asset
+  artifactKey: Guid(ae384dc0b31e92b40a724f6d2a334e90) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Gutty Kreum/Dark Tokyo Game Assets/Tiles/Tilemap_162.asset using Guid(ae384dc0b31e92b40a724f6d2a334e90) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '21c1fbfe402b59ffbcfab9dffb54b3b3') in 0.014285 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000249 seconds.
+  path: Assets/Gutty Kreum/Dark Tokyo Game Assets/Tiles/Tilemap_185.asset
+  artifactKey: Guid(00758795aa4fe2e4981049dccc0e4472) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Gutty Kreum/Dark Tokyo Game Assets/Tiles/Tilemap_185.asset using Guid(00758795aa4fe2e4981049dccc0e4472) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '727f27f326c38d8155b5352e54112ae0') in 0.011130 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000221 seconds.
+  path: Assets/Gutty Kreum/Dark Tokyo Game Assets/Tiles/Tilemap_198.asset
+  artifactKey: Guid(491037b1440ecf04aaa9f2c44875317d) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Gutty Kreum/Dark Tokyo Game Assets/Tiles/Tilemap_198.asset using Guid(491037b1440ecf04aaa9f2c44875317d) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '4f8716213963583ac1f84d3f69b8f314') in 0.010627 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000301 seconds.
+  path: Assets/Gutty Kreum/Dark Tokyo Game Assets/Tiles/Tilemap_202.asset
+  artifactKey: Guid(d4e7cf996d2c4cf4e924f9e6200c2948) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Gutty Kreum/Dark Tokyo Game Assets/Tiles/Tilemap_202.asset using Guid(d4e7cf996d2c4cf4e924f9e6200c2948) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'ea8034ba1fdbf2b0c9862953f56f3d6e') in 0.013769 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000262 seconds.
+  path: Assets/Gutty Kreum/Dark Tokyo Game Assets/Tiles/Tilemap_143.asset
+  artifactKey: Guid(2277631885f7641498b9607e7a4b5f2a) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Gutty Kreum/Dark Tokyo Game Assets/Tiles/Tilemap_143.asset using Guid(2277631885f7641498b9607e7a4b5f2a) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '628ca18e842bb08d69e96286aafed43b') in 0.012975 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000284 seconds.
+  path: Assets/Gutty Kreum/Dark Tokyo Game Assets/Tiles/Tilemap_177.asset
+  artifactKey: Guid(c06034f3109b3ed41a76181c4bd02f33) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Gutty Kreum/Dark Tokyo Game Assets/Tiles/Tilemap_177.asset using Guid(c06034f3109b3ed41a76181c4bd02f33) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'b54970b61e8cbecf0a1f42cf5b55f5b1') in 0.010553 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000221 seconds.
+  path: Assets/Gutty Kreum/Dark Tokyo Game Assets/Tiles/Tilemap_169.asset
+  artifactKey: Guid(f8c080e14d7e36b458f033880de7b82b) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Gutty Kreum/Dark Tokyo Game Assets/Tiles/Tilemap_169.asset using Guid(f8c080e14d7e36b458f033880de7b82b) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '4318d497e85b773db7a2f560d3333a83') in 0.010747 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000297 seconds.
+  path: Assets/Gutty Kreum/Dark Tokyo Game Assets/Tiles/Tilemap_210.asset
+  artifactKey: Guid(bf4fb6fb5faf8f844bde5c658880ac16) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Gutty Kreum/Dark Tokyo Game Assets/Tiles/Tilemap_210.asset using Guid(bf4fb6fb5faf8f844bde5c658880ac16) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'da3c91fcd9caa698d558968680ca81ee') in 0.011305 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000193 seconds.
+  path: Assets/Gutty Kreum/Dark Tokyo Game Assets/Tiles/Tilemap_175.asset
+  artifactKey: Guid(d64beb2a2a8f9d04cac17641f5ee2242) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Gutty Kreum/Dark Tokyo Game Assets/Tiles/Tilemap_175.asset using Guid(d64beb2a2a8f9d04cac17641f5ee2242) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'fa5a466e7630c537100495c3d2c2751d') in 0.010953 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000200 seconds.
+  path: Assets/Gutty Kreum/Dark Tokyo Game Assets/Tiles/Tilemap_216.asset
+  artifactKey: Guid(12df19e61d63793478845baac1693009) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Gutty Kreum/Dark Tokyo Game Assets/Tiles/Tilemap_216.asset using Guid(12df19e61d63793478845baac1693009) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '646de80f5538c98d4b480401535a7404') in 0.011511 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000193 seconds.
+  path: Assets/Gutty Kreum/Dark Tokyo Game Assets/Tiles/Tilemap_120.asset
+  artifactKey: Guid(3ec1210494c35614fbe86598484fddbd) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Gutty Kreum/Dark Tokyo Game Assets/Tiles/Tilemap_120.asset using Guid(3ec1210494c35614fbe86598484fddbd) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'ca67ab93c3c2847032b10d15f6ba5233') in 0.011807 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000137 seconds.
+  path: Assets/Gutty Kreum/Dark Tokyo Game Assets/Tiles/Tilemap_215.asset
+  artifactKey: Guid(83b29ea9126cc1c4983d43805b7e29df) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Gutty Kreum/Dark Tokyo Game Assets/Tiles/Tilemap_215.asset using Guid(83b29ea9126cc1c4983d43805b7e29df) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '1c31d483bfc26ada994b7c9281b74a36') in 0.009328 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000166 seconds.
+  path: Assets/Gutty Kreum/Dark Tokyo Game Assets/Tiles/Tilemap_139.asset
+  artifactKey: Guid(a656eb0706aa5ac4e850c16b0a9c0c87) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Gutty Kreum/Dark Tokyo Game Assets/Tiles/Tilemap_139.asset using Guid(a656eb0706aa5ac4e850c16b0a9c0c87) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'e293b1484041b7b62983e4188c5406f9') in 0.010366 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000176 seconds.
+  path: Assets/Gutty Kreum/Dark Tokyo Game Assets/Tiles/Tilemap_159.asset
+  artifactKey: Guid(0332e17e94b1b6c439cc94bbe2017d0c) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Gutty Kreum/Dark Tokyo Game Assets/Tiles/Tilemap_159.asset using Guid(0332e17e94b1b6c439cc94bbe2017d0c) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '57305c09136391a0ed1053447fda34f3') in 0.011239 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000190 seconds.
+  path: Assets/Gutty Kreum/Dark Tokyo Game Assets/Tiles/Tilemap_128.asset
+  artifactKey: Guid(2a184a7a885283347b3da9b2ec71d696) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Gutty Kreum/Dark Tokyo Game Assets/Tiles/Tilemap_128.asset using Guid(2a184a7a885283347b3da9b2ec71d696) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '251ca7b55ae09c5ec47842876ebb0a7d') in 0.010453 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000156 seconds.
+  path: Assets/Gutty Kreum/Dark Tokyo Game Assets/Tiles/Tilemap_188.asset
+  artifactKey: Guid(6936c5310a6e477439c1ffdca5ab1152) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Gutty Kreum/Dark Tokyo Game Assets/Tiles/Tilemap_188.asset using Guid(6936c5310a6e477439c1ffdca5ab1152) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '5e52d53fca1cdef30f91056bbded1e08') in 0.010472 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000171 seconds.
+  path: Assets/Gutty Kreum/Dark Tokyo Game Assets/Tiles/Tilemap_174.asset
+  artifactKey: Guid(8a1be48dd1b2bf94da46fe0b2d07adb1) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Gutty Kreum/Dark Tokyo Game Assets/Tiles/Tilemap_174.asset using Guid(8a1be48dd1b2bf94da46fe0b2d07adb1) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '4a415976f03fbdeaef34903b1e09a844') in 0.010824 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000196 seconds.
+  path: Assets/Gutty Kreum/Dark Tokyo Game Assets/Tiles/Tilemap_138.asset
+  artifactKey: Guid(d9be137b80e7d404bb8c50be27777baa) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Gutty Kreum/Dark Tokyo Game Assets/Tiles/Tilemap_138.asset using Guid(d9be137b80e7d404bb8c50be27777baa) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '9f9d43b32e5e7f73290976c67075e688') in 0.009709 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000188 seconds.
+  path: Assets/Gutty Kreum/Dark Tokyo Game Assets/Tiles/Tilemap_142.asset
+  artifactKey: Guid(31551c199f429104e881fc71b2bc5d8c) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Gutty Kreum/Dark Tokyo Game Assets/Tiles/Tilemap_142.asset using Guid(31551c199f429104e881fc71b2bc5d8c) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'f59295d80d4e15db71e471f1fd5d64e6') in 0.010568 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000166 seconds.
+  path: Assets/Gutty Kreum/Dark Tokyo Game Assets/Tiles/Tilemap_151.asset
+  artifactKey: Guid(319f0d0722fe1cb468b7b3a499c6293b) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Gutty Kreum/Dark Tokyo Game Assets/Tiles/Tilemap_151.asset using Guid(319f0d0722fe1cb468b7b3a499c6293b) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'e89eaee0252605d4651e01e6134239b7') in 0.010526 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000274 seconds.
+  path: Assets/Gutty Kreum/Dark Tokyo Game Assets/Tiles/Tilemap_219.asset
+  artifactKey: Guid(32fae5824e176ba4aaaddf79f7cbfdfb) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Gutty Kreum/Dark Tokyo Game Assets/Tiles/Tilemap_219.asset using Guid(32fae5824e176ba4aaaddf79f7cbfdfb) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '3116995f5de4e8a9a88ce9e800061dcc') in 0.010763 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000196 seconds.
+  path: Assets/Gutty Kreum/Dark Tokyo Game Assets/Tiles/Tilemap_161.asset
+  artifactKey: Guid(5108e6cdf551030488515c6cd323bc6a) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Gutty Kreum/Dark Tokyo Game Assets/Tiles/Tilemap_161.asset using Guid(5108e6cdf551030488515c6cd323bc6a) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '8a1344c57a757011cc791de4f9cf8c9c') in 0.010002 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000189 seconds.
+  path: Assets/Gutty Kreum/Dark Tokyo Game Assets/Tiles/Tilemap_145.asset
+  artifactKey: Guid(7ec4cda1fe638d6429e7ea38c5b6d519) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Gutty Kreum/Dark Tokyo Game Assets/Tiles/Tilemap_145.asset using Guid(7ec4cda1fe638d6429e7ea38c5b6d519) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'caa359da71e75554f2d5fe6f9008887b') in 0.011352 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000173 seconds.
+  path: Assets/Gutty Kreum/Dark Tokyo Game Assets/Tiles/Tilemap_217.asset
+  artifactKey: Guid(671c6a6689bb68b41b0fd3a1dc99224b) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Gutty Kreum/Dark Tokyo Game Assets/Tiles/Tilemap_217.asset using Guid(671c6a6689bb68b41b0fd3a1dc99224b) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'a5660987d1ba6196bbb06818f006442d') in 0.009261 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000176 seconds.
+  path: Assets/Gutty Kreum/Dark Tokyo Game Assets/Tiles/Tilemap_186.asset
+  artifactKey: Guid(20d5615ebdfe3124da41de47c2429f6b) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Gutty Kreum/Dark Tokyo Game Assets/Tiles/Tilemap_186.asset using Guid(20d5615ebdfe3124da41de47c2429f6b) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '7da390601427519b3d7297bec21aba95') in 0.010332 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000189 seconds.
+  path: Assets/Gutty Kreum/Dark Tokyo Game Assets/Tiles/Tilemap_134.asset
+  artifactKey: Guid(960001ce91a713448bbaa0849bfcf480) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Gutty Kreum/Dark Tokyo Game Assets/Tiles/Tilemap_134.asset using Guid(960001ce91a713448bbaa0849bfcf480) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '62da9662f2041a8d57a1388086eb2544') in 0.009879 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000186 seconds.
+  path: Assets/Gutty Kreum/Dark Tokyo Game Assets/Tiles/Tilemap_126.asset
+  artifactKey: Guid(01919c32d2b31e049b4b75ad4b57dd39) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Gutty Kreum/Dark Tokyo Game Assets/Tiles/Tilemap_126.asset using Guid(01919c32d2b31e049b4b75ad4b57dd39) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '9b4de78e93d92dd980ec6729ec3a83c8') in 0.011649 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000245 seconds.
+  path: Assets/Gutty Kreum/Dark Tokyo Game Assets/Tiles/Tilemap_132.asset
+  artifactKey: Guid(4af6450e3d039da4fa34e89f09d4bb82) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Gutty Kreum/Dark Tokyo Game Assets/Tiles/Tilemap_132.asset using Guid(4af6450e3d039da4fa34e89f09d4bb82) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'e098429da5cff5913cb7601f577a78da') in 0.009204 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000252 seconds.
+  path: Assets/Gutty Kreum/Dark Tokyo Game Assets/Tiles/Tilemap_122.asset
+  artifactKey: Guid(fe409e10790d0bd46957d7fc7d8d0755) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Gutty Kreum/Dark Tokyo Game Assets/Tiles/Tilemap_122.asset using Guid(fe409e10790d0bd46957d7fc7d8d0755) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'b29d254546a1613b479c0fb4f7991fd1') in 0.010394 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 30.163313 seconds.
+  path: Assets/Gutty Kreum/JRPG Character Pack/Spritesheets/FemaleCafeMaid
+  artifactKey: Guid(2e33d670f4d7de445acfab4c29a8fecf) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Gutty Kreum/JRPG Character Pack/Spritesheets/FemaleCafeMaid using Guid(2e33d670f4d7de445acfab4c29a8fecf) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '708c381f1c7ef9f52b4358252603dc11') in 0.004337 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.269306 seconds.
+  path: Assets/Gutty Kreum/JRPG Character Pack/Spritesheets/FemaleCafeMaid/FemaleCafeMaid.png
+  artifactKey: Guid(68997065304944a49a8b0e826b453323) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Gutty Kreum/JRPG Character Pack/Spritesheets/FemaleCafeMaid/FemaleCafeMaid.png using Guid(68997065304944a49a8b0e826b453323) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '1cc33c71b10ca20ea127cd15fde51a7b') in 0.097110 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 16.755826 seconds.
+  path: Assets/Gutty Kreum/JRPG Character Pack/Spritesheets/FemaleOfficeWorker/FemaleOfficeWorker.png
+  artifactKey: Guid(958310aaeb233544083f4377ab306bae) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Gutty Kreum/JRPG Character Pack/Spritesheets/FemaleOfficeWorker/FemaleOfficeWorker.png using Guid(958310aaeb233544083f4377ab306bae) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '1682bcb8fcdcc24c40c4b687c2b2b471') in 0.095762 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 1.300720 seconds.
+  path: Assets/Gutty Kreum/JRPG Character Pack/Spritesheets/MaleTrafficCop/MaleTrafficCop.png
+  artifactKey: Guid(e4027654106a7fc4cb0d50f02c815507) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Gutty Kreum/JRPG Character Pack/Spritesheets/MaleTrafficCop/MaleTrafficCop.png using Guid(e4027654106a7fc4cb0d50f02c815507) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '98f3734251a2762cb61b3a09c695134c') in 0.094506 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 179.861787 seconds.
+  path: Assets/Scenes/지울거.unity
+  artifactKey: Guid(59b580978f1397e4b8d250f1a627ea25) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Scenes/지울거.unity using Guid(59b580978f1397e4b8d250f1a627ea25) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '9b485af5916ea6083932c4fc27024713') in 0.003921 seconds 
 ========================================================================
 Received Prepare
 Registering precompiled user dll's ...
-Registered in 0.002702 seconds.
+Registered in 0.002952 seconds.
 Begin MonoManager ReloadAssembly
 Native extension for WindowsStandalone target not found
 Native extension for WebGL target not found
-Refreshing native plugins compatible for Editor in 0.87 ms, found 3 plugins.
+Refreshing native plugins compatible for Editor in 0.73 ms, found 3 plugins.
 Preloading 0 native plugins for Editor in 0.00 ms.
 Mono: successfully reloaded assembly
-- Completed reload, in  0.870 seconds
+- Completed reload, in  0.884 seconds
 Domain Reload Profiling:
-	ReloadAssembly (870ms)
+	ReloadAssembly (884ms)
+		BeginReloadAssembly (109ms)
+			ExecutionOrderSort (0ms)
+			DisableScriptedObjects (6ms)
+			BackupInstance (0ms)
+			ReleaseScriptingObjects (0ms)
+			CreateAndSetChildDomain (30ms)
+		EndReloadAssembly (726ms)
+			LoadAssemblies (96ms)
+			RebuildTransferFunctionScriptingTraits (0ms)
+			SetupTypeCache (257ms)
+			ReleaseScriptCaches (1ms)
+			RebuildScriptCaches (36ms)
+			SetupLoadedEditorAssemblies (260ms)
+				LogAssemblyErrors (0ms)
+				InitializePlatformSupportModulesInManaged (5ms)
+				SetLoadedEditorAssemblies (0ms)
+				RefreshPlugins (1ms)
+				BeforeProcessingInitializeOnLoad (77ms)
+				ProcessInitializeOnLoadAttributes (165ms)
+				ProcessInitializeOnLoadMethodAttributes (8ms)
+				AfterProcessingInitializeOnLoad (3ms)
+				EditorAssembliesLoaded (0ms)
+			ExecutionOrderSort2 (0ms)
+			AwakeInstancesAfterBackupRestoration (7ms)
+Platform modules already initialized, skipping
+Refreshing native plugins compatible for Editor in 0.74 ms, found 3 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Unloading 2197 Unused Serialized files (Serialized files now loaded: 0)
+System memory in use before: 106.0 MB.
+System memory in use after: 105.9 MB.
+
+Unloading 20 unused Assets to reduce memory usage. Loaded Objects now: 2665.
+Total: 2.412800 ms (FindLiveObjects: 0.143300 ms CreateObjectMapping: 0.083400 ms MarkObjects: 2.097100 ms  DeleteObjects: 0.088400 ms)
+
+AssetImportParameters requested are different than current active one (requested -> active):
+  custom:framework-win-MediaFoundation: 216162199b28c13a410421893ffa2e32 -> 
+  custom:video-decoder-ogg-theora: a1e56fd34408186e4bbccfd4996cb3dc -> 
+  custom:container-muxer-webm: aa71ff27fc2769a1b78a27578f13a17b -> 
+  custom:container-demuxer-webm: 4f35f7cbe854078d1ac9338744f61a02 -> 
+  custom:container-demuxer-ogg: 62fdf1f143b41e24485cea50d1cbac27 -> 
+  custom:video-encoder-webm-vp8: eb34c28f22e8b96e1ab97ce403110664 -> 
+  custom:video-decoder-webm-vp8: 9c59270c3fd7afecdb556c50c9e8de78 -> 
+  custom:audio-decoder-ogg-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
+  custom:audio-encoder-webm-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
+========================================================================
+Received Prepare
+Registering precompiled user dll's ...
+Registered in 0.003535 seconds.
+Begin MonoManager ReloadAssembly
+Native extension for WindowsStandalone target not found
+Native extension for WebGL target not found
+Refreshing native plugins compatible for Editor in 0.73 ms, found 3 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Mono: successfully reloaded assembly
+- Completed reload, in  1.013 seconds
+Domain Reload Profiling:
+	ReloadAssembly (1014ms)
+		BeginReloadAssembly (114ms)
+			ExecutionOrderSort (0ms)
+			DisableScriptedObjects (6ms)
+			BackupInstance (0ms)
+			ReleaseScriptingObjects (0ms)
+			CreateAndSetChildDomain (32ms)
+		EndReloadAssembly (845ms)
+			LoadAssemblies (106ms)
+			RebuildTransferFunctionScriptingTraits (0ms)
+			SetupTypeCache (306ms)
+			ReleaseScriptCaches (1ms)
+			RebuildScriptCaches (45ms)
+			SetupLoadedEditorAssemblies (294ms)
+				LogAssemblyErrors (0ms)
+				InitializePlatformSupportModulesInManaged (5ms)
+				SetLoadedEditorAssemblies (0ms)
+				RefreshPlugins (1ms)
+				BeforeProcessingInitializeOnLoad (78ms)
+				ProcessInitializeOnLoadAttributes (194ms)
+				ProcessInitializeOnLoadMethodAttributes (11ms)
+				AfterProcessingInitializeOnLoad (3ms)
+				EditorAssembliesLoaded (0ms)
+			ExecutionOrderSort2 (0ms)
+			AwakeInstancesAfterBackupRestoration (9ms)
+Platform modules already initialized, skipping
+Refreshing native plugins compatible for Editor in 1.26 ms, found 3 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Unloading 2197 Unused Serialized files (Serialized files now loaded: 0)
+System memory in use before: 106.0 MB.
+System memory in use after: 105.9 MB.
+
+Unloading 20 unused Assets to reduce memory usage. Loaded Objects now: 2667.
+Total: 2.823100 ms (FindLiveObjects: 0.168800 ms CreateObjectMapping: 0.090400 ms MarkObjects: 2.457500 ms  DeleteObjects: 0.105500 ms)
+
+AssetImportParameters requested are different than current active one (requested -> active):
+  custom:framework-win-MediaFoundation: 216162199b28c13a410421893ffa2e32 -> 
+  custom:video-decoder-ogg-theora: a1e56fd34408186e4bbccfd4996cb3dc -> 
+  custom:container-muxer-webm: aa71ff27fc2769a1b78a27578f13a17b -> 
+  custom:container-demuxer-webm: 4f35f7cbe854078d1ac9338744f61a02 -> 
+  custom:container-demuxer-ogg: 62fdf1f143b41e24485cea50d1cbac27 -> 
+  custom:video-encoder-webm-vp8: eb34c28f22e8b96e1ab97ce403110664 -> 
+  custom:video-decoder-webm-vp8: 9c59270c3fd7afecdb556c50c9e8de78 -> 
+  custom:audio-decoder-ogg-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
+  custom:audio-encoder-webm-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
+========================================================================
+Received Prepare
+Registering precompiled user dll's ...
+Registered in 0.002567 seconds.
+Begin MonoManager ReloadAssembly
+Native extension for WindowsStandalone target not found
+Native extension for WebGL target not found
+Refreshing native plugins compatible for Editor in 1.17 ms, found 3 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Mono: successfully reloaded assembly
+- Completed reload, in  0.916 seconds
+Domain Reload Profiling:
+	ReloadAssembly (917ms)
 		BeginReloadAssembly (105ms)
 			ExecutionOrderSort (0ms)
 			DisableScriptedObjects (6ms)
 			BackupInstance (0ms)
 			ReleaseScriptingObjects (0ms)
-			CreateAndSetChildDomain (29ms)
-		EndReloadAssembly (718ms)
-			LoadAssemblies (93ms)
+			CreateAndSetChildDomain (28ms)
+		EndReloadAssembly (757ms)
+			LoadAssemblies (98ms)
 			RebuildTransferFunctionScriptingTraits (0ms)
-			SetupTypeCache (248ms)
+			SetupTypeCache (249ms)
 			ReleaseScriptCaches (1ms)
 			RebuildScriptCaches (37ms)
-			SetupLoadedEditorAssemblies (263ms)
+			SetupLoadedEditorAssemblies (284ms)
 				LogAssemblyErrors (0ms)
-				InitializePlatformSupportModulesInManaged (8ms)
+				InitializePlatformSupportModulesInManaged (5ms)
 				SetLoadedEditorAssemblies (1ms)
 				RefreshPlugins (1ms)
-				BeforeProcessingInitializeOnLoad (74ms)
-				ProcessInitializeOnLoadAttributes (168ms)
+				BeforeProcessingInitializeOnLoad (90ms)
+				ProcessInitializeOnLoadAttributes (176ms)
 				ProcessInitializeOnLoadMethodAttributes (9ms)
 				AfterProcessingInitializeOnLoad (2ms)
+				EditorAssembliesLoaded (0ms)
+			ExecutionOrderSort2 (0ms)
+			AwakeInstancesAfterBackupRestoration (8ms)
+Platform modules already initialized, skipping
+Refreshing native plugins compatible for Editor in 0.70 ms, found 3 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Unloading 2197 Unused Serialized files (Serialized files now loaded: 0)
+System memory in use before: 106.1 MB.
+System memory in use after: 106.1 MB.
+
+Unloading 20 unused Assets to reduce memory usage. Loaded Objects now: 2669.
+Total: 2.548600 ms (FindLiveObjects: 0.171000 ms CreateObjectMapping: 0.091800 ms MarkObjects: 2.181900 ms  DeleteObjects: 0.103400 ms)
+
+AssetImportParameters requested are different than current active one (requested -> active):
+  custom:framework-win-MediaFoundation: 216162199b28c13a410421893ffa2e32 -> 
+  custom:video-decoder-ogg-theora: a1e56fd34408186e4bbccfd4996cb3dc -> 
+  custom:container-muxer-webm: aa71ff27fc2769a1b78a27578f13a17b -> 
+  custom:container-demuxer-webm: 4f35f7cbe854078d1ac9338744f61a02 -> 
+  custom:container-demuxer-ogg: 62fdf1f143b41e24485cea50d1cbac27 -> 
+  custom:video-encoder-webm-vp8: eb34c28f22e8b96e1ab97ce403110664 -> 
+  custom:video-decoder-webm-vp8: 9c59270c3fd7afecdb556c50c9e8de78 -> 
+  custom:audio-decoder-ogg-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
+  custom:audio-encoder-webm-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
+========================================================================
+Received Prepare
+Registering precompiled user dll's ...
+Registered in 0.002686 seconds.
+Begin MonoManager ReloadAssembly
+Native extension for WindowsStandalone target not found
+Native extension for WebGL target not found
+Refreshing native plugins compatible for Editor in 0.73 ms, found 3 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Mono: successfully reloaded assembly
+- Completed reload, in  0.872 seconds
+Domain Reload Profiling:
+	ReloadAssembly (872ms)
+		BeginReloadAssembly (105ms)
+			ExecutionOrderSort (0ms)
+			DisableScriptedObjects (6ms)
+			BackupInstance (0ms)
+			ReleaseScriptingObjects (0ms)
+			CreateAndSetChildDomain (27ms)
+		EndReloadAssembly (719ms)
+			LoadAssemblies (95ms)
+			RebuildTransferFunctionScriptingTraits (0ms)
+			SetupTypeCache (251ms)
+			ReleaseScriptCaches (1ms)
+			RebuildScriptCaches (36ms)
+			SetupLoadedEditorAssemblies (260ms)
+				LogAssemblyErrors (0ms)
+				InitializePlatformSupportModulesInManaged (5ms)
+				SetLoadedEditorAssemblies (1ms)
+				RefreshPlugins (1ms)
+				BeforeProcessingInitializeOnLoad (75ms)
+				ProcessInitializeOnLoadAttributes (167ms)
+				ProcessInitializeOnLoadMethodAttributes (9ms)
+				AfterProcessingInitializeOnLoad (3ms)
 				EditorAssembliesLoaded (0ms)
 			ExecutionOrderSort2 (0ms)
 			AwakeInstancesAfterBackupRestoration (7ms)
@@ -241,11 +1816,11 @@ Platform modules already initialized, skipping
 Refreshing native plugins compatible for Editor in 0.68 ms, found 3 plugins.
 Preloading 0 native plugins for Editor in 0.00 ms.
 Unloading 2197 Unused Serialized files (Serialized files now loaded: 0)
-System memory in use before: 102.1 MB.
-System memory in use after: 102.1 MB.
+System memory in use before: 106.1 MB.
+System memory in use after: 106.1 MB.
 
-Unloading 20 unused Assets to reduce memory usage. Loaded Objects now: 2651.
-Total: 2.702900 ms (FindLiveObjects: 0.147700 ms CreateObjectMapping: 0.078100 ms MarkObjects: 2.359400 ms  DeleteObjects: 0.117000 ms)
+Unloading 20 unused Assets to reduce memory usage. Loaded Objects now: 2671.
+Total: 2.501900 ms (FindLiveObjects: 0.138900 ms CreateObjectMapping: 0.096700 ms MarkObjects: 2.149700 ms  DeleteObjects: 0.116000 ms)
 
 AssetImportParameters requested are different than current active one (requested -> active):
   custom:framework-win-MediaFoundation: 216162199b28c13a410421893ffa2e32 -> 
@@ -259,68 +1834,68 @@ AssetImportParameters requested are different than current active one (requested
   custom:audio-encoder-webm-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
 ========================================================================
 Received Import Request.
-  Time since last request: 27.732625 seconds.
-  path: Assets/Scenes/Login2.unity
-  artifactKey: Guid(4448ee4b705922d48892b8a9da2b4ba6) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Scenes/Login2.unity using Guid(4448ee4b705922d48892b8a9da2b4ba6) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'bd1a9e876a79feed7fbd6d2f3017dbed') in 0.011439 seconds 
-========================================================================
-Received Import Request.
-  Time since last request: 6.898455 seconds.
+  Time since last request: 894.785024 seconds.
   path: Assets/Scenes/Signup.unity
   artifactKey: Guid(69e60d43bb28d93408c1f86def449f1e) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Scenes/Signup.unity using Guid(69e60d43bb28d93408c1f86def449f1e) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '00c2ad744a50ef7ff4455415ed764889') in 0.002826 seconds 
+Start importing Assets/Scenes/Signup.unity using Guid(69e60d43bb28d93408c1f86def449f1e) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '094550c887d5d1fe2158e1ed97b62947') in 0.013122 seconds 
 ========================================================================
 Received Import Request.
-  Time since last request: 3.589411 seconds.
+  Time since last request: 9885.707963 seconds.
   path: Assets/Scenes/Login.unity
   artifactKey: Guid(4448ee4b705922d48892b8a9da2b4ba6) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Scenes/Login.unity using Guid(4448ee4b705922d48892b8a9da2b4ba6) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'ffa65c5ddecb906c0a4381c3c63cae34') in 0.003490 seconds 
+Start importing Assets/Scenes/Login.unity using Guid(4448ee4b705922d48892b8a9da2b4ba6) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '70272a660959c9f26d17e3d8c4f3f2c5') in 0.003427 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 23.304378 seconds.
+  path: Assets/Scenes/Login.unity
+  artifactKey: Guid(4448ee4b705922d48892b8a9da2b4ba6) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Scenes/Login.unity using Guid(4448ee4b705922d48892b8a9da2b4ba6) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '800e83cdc00c9a9048492e1365029b1b') in 0.003887 seconds 
 ========================================================================
 Received Prepare
 Registering precompiled user dll's ...
-Registered in 0.002701 seconds.
+Registered in 0.002799 seconds.
 Begin MonoManager ReloadAssembly
 Native extension for WindowsStandalone target not found
 Native extension for WebGL target not found
-Refreshing native plugins compatible for Editor in 0.77 ms, found 3 plugins.
+Refreshing native plugins compatible for Editor in 0.85 ms, found 3 plugins.
 Preloading 0 native plugins for Editor in 0.00 ms.
 Mono: successfully reloaded assembly
-- Completed reload, in  0.860 seconds
+- Completed reload, in  0.907 seconds
 Domain Reload Profiling:
-	ReloadAssembly (861ms)
-		BeginReloadAssembly (102ms)
+	ReloadAssembly (907ms)
+		BeginReloadAssembly (109ms)
 			ExecutionOrderSort (0ms)
-			DisableScriptedObjects (5ms)
+			DisableScriptedObjects (6ms)
 			BackupInstance (0ms)
 			ReleaseScriptingObjects (0ms)
-			CreateAndSetChildDomain (28ms)
-		EndReloadAssembly (713ms)
-			LoadAssemblies (89ms)
+			CreateAndSetChildDomain (30ms)
+		EndReloadAssembly (747ms)
+			LoadAssemblies (100ms)
 			RebuildTransferFunctionScriptingTraits (0ms)
-			SetupTypeCache (236ms)
+			SetupTypeCache (259ms)
 			ReleaseScriptCaches (1ms)
 			RebuildScriptCaches (38ms)
-			SetupLoadedEditorAssemblies (272ms)
+			SetupLoadedEditorAssemblies (265ms)
 				LogAssemblyErrors (0ms)
 				InitializePlatformSupportModulesInManaged (5ms)
-				SetLoadedEditorAssemblies (0ms)
+				SetLoadedEditorAssemblies (1ms)
 				RefreshPlugins (1ms)
-				BeforeProcessingInitializeOnLoad (79ms)
-				ProcessInitializeOnLoadAttributes (175ms)
-				ProcessInitializeOnLoadMethodAttributes (9ms)
+				BeforeProcessingInitializeOnLoad (77ms)
+				ProcessInitializeOnLoadAttributes (169ms)
+				ProcessInitializeOnLoadMethodAttributes (10ms)
 				AfterProcessingInitializeOnLoad (3ms)
 				EditorAssembliesLoaded (0ms)
 			ExecutionOrderSort2 (0ms)
 			AwakeInstancesAfterBackupRestoration (8ms)
 Platform modules already initialized, skipping
-Refreshing native plugins compatible for Editor in 0.78 ms, found 3 plugins.
+Refreshing native plugins compatible for Editor in 0.65 ms, found 3 plugins.
 Preloading 0 native plugins for Editor in 0.00 ms.
 Unloading 2197 Unused Serialized files (Serialized files now loaded: 0)
-System memory in use before: 102.2 MB.
-System memory in use after: 102.1 MB.
+System memory in use before: 106.1 MB.
+System memory in use after: 106.1 MB.
 
-Unloading 20 unused Assets to reduce memory usage. Loaded Objects now: 2653.
-Total: 2.488000 ms (FindLiveObjects: 0.143600 ms CreateObjectMapping: 0.082900 ms MarkObjects: 2.155500 ms  DeleteObjects: 0.105500 ms)
+Unloading 20 unused Assets to reduce memory usage. Loaded Objects now: 2673.
+Total: 2.466600 ms (FindLiveObjects: 0.156600 ms CreateObjectMapping: 0.084400 ms MarkObjects: 2.123700 ms  DeleteObjects: 0.101300 ms)
 
 AssetImportParameters requested are different than current active one (requested -> active):
   custom:framework-win-MediaFoundation: 216162199b28c13a410421893ffa2e32 -> 
@@ -332,4 +1907,10 @@ AssetImportParameters requested are different than current active one (requested
   custom:video-decoder-webm-vp8: 9c59270c3fd7afecdb556c50c9e8de78 -> 
   custom:audio-decoder-ogg-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
   custom:audio-encoder-webm-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
+========================================================================
+Received Import Request.
+  Time since last request: 207.161361 seconds.
+  path: Assets/Scenes/Login.unity
+  artifactKey: Guid(4448ee4b705922d48892b8a9da2b4ba6) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Scenes/Login.unity using Guid(4448ee4b705922d48892b8a9da2b4ba6) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '42afa43cce8861e33e9189d18817013f') in 0.013460 seconds 
 AssetImportWorkerClient::OnTransportError - code=2 error=End of file

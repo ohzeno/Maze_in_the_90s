@@ -4,9 +4,9 @@ using UnityEngine;
 using UnityEngine.SceneManagement;
 public class MovingScenes : MonoBehaviour
 {
-    public void MovingtoMapScene()
+    public string SceneSelect;
+    public void MovingScene()
     {
-        SceneManager.LoadScene("MapScene");
+        SceneManager.LoadScene(SceneSelect);
     }
-    
 }

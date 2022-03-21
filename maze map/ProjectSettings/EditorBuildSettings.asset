@@ -24,6 +24,9 @@ EditorBuildSettings:
     path: Assets/Scenes/Signup.unity
     guid: 69e60d43bb28d93408c1f86def449f1e
   - enabled: 1
+    path: Assets/Scenes/Tutorial.unity
+    guid: 8a55bc3aa202f60458b5c90867ba4ba9
+  - enabled: 1
     path: Assets/Scenes/Lobby.unity
     guid: f2885a48a79f70047b051aa93be198fa
   m_configObjects: {}

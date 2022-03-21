@@ -1,0 +1,10 @@
+<?xml version='1.0' encoding='utf-8'?>
+<resources xmlns:tools="http://schemas.android.com/tools" tools:keep="@string/gcm_defaultSenderId,@string/google_storage_bucket,@string/project_id,@string/google_api_key,@string/google_crash_reporting_api_key,@string/google_app_id,@string/default_web_client_id">
+  <string name="gcm_defaultSenderId" translatable="false">692217043681</string>
+  <string name="google_storage_bucket" translatable="false">maze-in-the-90-s.appspot.com</string>
+  <string name="project_id" translatable="false">maze-in-the-90-s</string>
+  <string name="google_api_key" translatable="false">AIzaSyAGP4uoUWZSPi0auE9DA_ZKlMq1hwn3I2E</string>
+  <string name="google_crash_reporting_api_key" translatable="false">AIzaSyAGP4uoUWZSPi0auE9DA_ZKlMq1hwn3I2E</string>
+  <string name="google_app_id" translatable="false">1:692217043681:android:3a2a459e00a97166c235a0</string>
+  <string name="default_web_client_id" translatable="false">692217043681-cl4br1a55j22iekd0hq5qm2g3nmtn2pj.apps.googleusercontent.com</string>
+</resources>

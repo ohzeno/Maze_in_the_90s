@@ -1,3 +1,4 @@
+from django import views
 from django.shortcuts import render
 from django.views.decorators import gzip
 from django.http import StreamingHttpResponse
@@ -6,7 +7,11 @@ import threading
 import math
 import mediapipe as mp
 import socket
+from rest_framework.response import Response
+from rest_framework import status
+from rest_framework.decorators import api_view
 
+user_list = {}
 
 def dist(a, b):
     return math.sqrt(
@@ -50,7 +55,7 @@ class VideoCamera(object):
             self.frame2.flags.writeable = True
             # 처리한 이미지 다시 BGR로
             self.frame2 = cv2.cvtColor(self.frame2, cv2.COLOR_RGB2BGR)
-            self.text_f = ' '
+            self.text_f = 'Stop'
             # x는 유저 시점 왼쪽 0, y는 위 0. z는 카메라에서 멀수록 0(가까우면 마이너스)
             if results.multi_hand_landmarks:
                 for hand_landmarks in results.multi_hand_landmarks:
@@ -165,24 +170,33 @@ def gen(camera):
 
 
 @gzip.gzip_page
-def detectme(request):
+def detect(request, user_name):
     try:
         # global client_socket, addr
         # HOST = '127.0.0.1'
-        # PORT = '8000
-        # print(1)
+        # PORT = 8001
         # server_socket = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
-        # print(2)
         # server_socket.setsockopt(socket.SOL_SOCKET, socket.SO_REUSEADDR, 1)
-        # print(3)
         # server_socket.bind((HOST, PORT))
-        # print(4)
         # server_socket.listen()
-        # print('어디까지 왔나')
         # client_socket, addr = server_socket.accept()
         # print('Connected by', addr)
         cam = VideoCamera()
+        user_list[f'{user_name}'] = cam
+        print(user_list)
         return StreamingHttpResponse(gen(cam), content_type="multipart/x-mixed-replace;boundary=frame")
     except:  # This is bad! replace it with proper handling
         print("에러입니다...")
         pass
+
+@api_view(['GET'])
+def getControl(request, user_name):
+    context = {
+        'control': user_list[f'{user_name}'].text_f
+    }
+    return Response(context, status=status.HTTP_200_OK)
+
+@api_view(['POST'])
+def delUserControl(request, user_name):
+    del user_list[f'{user_name}']
+    return Response(status=status.HTTP_200_OK)

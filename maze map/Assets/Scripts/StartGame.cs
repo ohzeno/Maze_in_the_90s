@@ -31,7 +31,7 @@ public class StartGame : MonoBehaviour
             if (timeActive)
             {
                 CountTime += Time.deltaTime;
-                text_Timer.text = "½Ã°£ : " + CountTime.ToString("F2");
+                text_Timer.text = "Time : " + CountTime.ToString("F2");
             }
         }
     }

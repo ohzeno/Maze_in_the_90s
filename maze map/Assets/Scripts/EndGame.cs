@@ -7,6 +7,7 @@ public class EndGame : MonoBehaviour
 {
     public GameObject StartBtn;
     public GameObject EndBtn;
+    public GameObject TimeRecord;
 
     public Text text_Timer;
 
@@ -23,6 +24,10 @@ public class EndGame : MonoBehaviour
             EndBtn.SetActive(true);
             StartBtn.GetComponent<StartGame>().timeActive = false;
 
+            // 플레이어가다들어온다면 
+            TimeRecord.SetActive(true);
+            EndBtn.SetActive(false);
+            
         }
     }
 }

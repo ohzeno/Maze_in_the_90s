@@ -29,7 +29,8 @@ class VideoCamera(object):
         self.mp_drawing = mp.solutions.drawing_utils
         self.mp_drawing_styles = mp.solutions.drawing_styles
         self.mp_hands = mp.solutions.hands
-        self.video = cv2.VideoCapture(0)
+        self.video = cv2.VideoCapture(cv2.CAP_DSHOW+0)
+        # self.video = cv2.VideoCapture(0)
         (self.grabbed, self.frame1) = self.video.read()
         threading.Thread(target=self.update, args=()).start()
 

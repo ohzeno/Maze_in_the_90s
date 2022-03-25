@@ -46,7 +46,7 @@ namespace FirebaseWebGL.Examples.Auth
         }
 
         public void CreateUserWithEmailAndPassword() =>
-           FirebaseAuth.CreateUserWithEmailAndPassword(registerEmail.text, registerPassword.text, gameObject.name, "DisPlayInfo", "DisplayError");
+           FirebaseAuth.CreateUserWithEmailAndPassword(registerUsername.text, registerEmail.text, registerPassword.text, gameObject.name, "DisPlayInfo");
 
         public void SignInWithGoogle() =>
            FirebaseAuth.SignInWithGoogle(gameObject.name, "DisPlayInfo", "DisplayError");

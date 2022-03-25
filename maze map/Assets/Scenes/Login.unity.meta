@@ -1,5 +1,9 @@
 fileFormatVersion: 2
+<<<<<<<< HEAD:maze map/Assets/Scenes/Login.unity.meta
 guid: defc5c48b920c514e9e498d057f43a50
+========
+guid: 28d60840acf860d45941015e730569ca
+>>>>>>>> dde6a9668db96cd02f8dbfcb149c84dac9dbb642:maze map/Assets/Scenes/Tutorial.unity.meta
 DefaultImporter:
   externalObjects: {}
   userData: 

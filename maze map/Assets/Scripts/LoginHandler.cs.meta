@@ -1,5 +1,9 @@
 fileFormatVersion: 2
+<<<<<<<< HEAD:maze map/Assets/Scripts/LoginHandler.cs.meta
 guid: 25fd577ee3577854584c4b636e244ba1
+========
+guid: d5d7acfb67ad7464c9d739c6932e9754
+>>>>>>>> dde6a9668db96cd02f8dbfcb149c84dac9dbb642:maze map/Assets/Scripts/MenuManager.cs.meta
 MonoImporter:
   externalObjects: {}
   serializedVersion: 2

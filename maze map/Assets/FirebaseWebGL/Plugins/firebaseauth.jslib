@@ -1,8 +1,7 @@
 mergeInto(LibraryManager.library, {
  
-	CreateUserWithEmailAndPassword: function(username, email, password, objectName, callback, fallback) {
-        
-        var parsedUsername = Pointer_stringify(username);
+	CreateUserWithEmailAndPassword: function(email, password, objectName, callback, fallback) {
+ 
 	    var parsedEmail = Pointer_stringify(email);
         var parsedPassword = Pointer_stringify(password);
         var parsedObjectName = Pointer_stringify(objectName);
@@ -11,29 +10,9 @@ mergeInto(LibraryManager.library, {
  
         try {
  
-            firebase.auth().createUserWithEmailAndPassword(parsedEmail, parsedPassword).then(function (userCredential) {
-                console.log(parsedEmail);
-                console.log(parsedObjectName);
-                console.log(parsedCallback)
-                console.log(parsedFallback)
-
-                const user = userCredential.user;
-                console.log(user)
-
+            firebase.auth().createUserWithEmailAndPassword(parsedEmail, parsedPassword).then(function (unused) {
                 window.unityInstance.SendMessage(parsedObjectName, parsedCallback, "Success: signed up for " + parsedEmail);
-            try {
-                user.updateProfile({
-                displayName: parsedUsername,
-                photoURL: "https://pbs.twimg.com/media/EFKdt0bWsAIfcj9.jpg"
-                }).then(function (unused) {
-                    "프로필 업데이트 완료?"
-                    window.unityInstance.SendMessage('SignUpHandler', 'LoginScreen');
-                })
-                }
-            catch((error) {
-                console.log(error);
-                });
-            
+                window.unityInstance.SendMessage('SignUpHandler', 'LoginScreen');
             }).catch(function (error) {
                 window.unityInstance.SendMessage(parsedObjectName, parsedFallback, JSON.stringify(error, Object.getOwnPropertyNames(error)));
             });
@@ -100,6 +79,11 @@ mergeInto(LibraryManager.library, {
         } catch (error) {
             window.unityInstance.SendMessage(parsedObjectName, parsedFallback, JSON.stringify(error, Object.getOwnPropertyNames(error)));
         }
+    },
+
+    SignOut: function() {
+        firebase.auth().signOut().then(function (unused) {
+            window.unityInstance.SendMessage('LobbyHandler', 'LoginScreen')});
     },
 
  

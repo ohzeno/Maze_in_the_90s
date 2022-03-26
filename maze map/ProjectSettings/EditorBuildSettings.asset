@@ -6,21 +6,12 @@ EditorBuildSettings:
   serializedVersion: 2
   m_Scenes:
   - enabled: 1
-<<<<<<< HEAD
     path: Assets/Scenes/Login.unity
     guid: defc5c48b920c514e9e498d057f43a50
-=======
-    path: Assets/Scenes/MapScene.unity
-    guid: 2cda990e2423bbf4892e6590ba056729
-  - enabled: 1
-    path: Assets/Scenes/Room.unity
-    guid: 7438b528c0474c3429a94ac0b3aa151c
->>>>>>> dde6a9668db96cd02f8dbfcb149c84dac9dbb642
   - enabled: 1
     path: Assets/Scenes/SignUp.unity
     guid: f51a51450efc0f44e9671d380c872785
   - enabled: 1
-<<<<<<< HEAD
     path: Assets/Scenes/MapScene.unity
     guid: 2cda990e2423bbf4892e6590ba056729
   - enabled: 1
@@ -29,16 +20,6 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/Ranking.unity
     guid: 31bec6faf5ad00c4689e301028b4b4e1
-=======
-    path: Assets/Scenes/LogIn.unity
-    guid: 4448ee4b705922d48892b8a9da2b4ba6
-  - enabled: 1
-    path: Assets/Scenes/Ranking.unity
-    guid: 31bec6faf5ad00c4689e301028b4b4e1
-  - enabled: 1
-    path: Assets/Scenes/Signup.unity
-    guid: 69e60d43bb28d93408c1f86def449f1e
->>>>>>> dde6a9668db96cd02f8dbfcb149c84dac9dbb642
   - enabled: 1
     path: Assets/Scenes/Lobby.unity
     guid: f2885a48a79f70047b051aa93be198fa

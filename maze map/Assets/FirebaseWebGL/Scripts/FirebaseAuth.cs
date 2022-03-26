@@ -5,6 +5,12 @@ namespace FirebaseWebGL.Scripts.FirebaseBridge
     public static class FirebaseAuth
     {
         [DllImport("__Internal")]
+        public static extern void CheckAuthState();
+
+        [DllImport("__Internal")]
+        public static extern void CheckAutoLogin();
+
+        [DllImport("__Internal")]
         public static extern void CreateUserWithEmailAndPassword(string username, string email, string password, string objectName, string callback);
 
         [DllImport("__Internal")]
@@ -17,7 +23,19 @@ namespace FirebaseWebGL.Scripts.FirebaseBridge
         public static extern void SignInWithGithub(string objectName, string callback, string fallback);
 
         [DllImport("__Internal")]
+        public static extern void LoginWithGoogle(string objectName, string callback, string fallback);
+
+        [DllImport("__Internal")]
+        public static extern void LoginWithGithub(string objectName, string callback, string fallback);
+
+        [DllImport("__Internal")]
         public static extern void SignOut();
+
+        [DllImport("__Internal")]
+        public static extern void UpdateProfilePicture(string newProfile);
+
+        [DllImport("__Internal")]
+        public static extern void DeleteUser();
 
     }
 }

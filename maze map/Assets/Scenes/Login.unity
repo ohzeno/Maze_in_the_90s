@@ -284,7 +284,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 700370416}
         m_TargetAssemblyTypeName: FirebaseWebGL.Examples.Auth.LoginHandler, Assembly-CSharp
-        m_MethodName: SignInWithGithub
+        m_MethodName: LoginWithGithub
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -2143,6 +2143,7 @@ GameObject:
   - component: {fileID: 1486174174}
   - component: {fileID: 1486174173}
   - component: {fileID: 1486174172}
+  - component: {fileID: 1486174175}
   m_Layer: 5
   m_Name: InputFieldEmail
   m_TagString: Untagged
@@ -2308,6 +2309,19 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1486174170}
   m_CullTransparentMesh: 1
+--- !u!114 &1486174175
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1486174170}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: cc33a39070010f94fb1c2dd721c1286d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  showHtmlElement: 0
 --- !u!1 &1624301551
 GameObject:
   m_ObjectHideFlags: 0
@@ -3324,7 +3338,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 700370416}
         m_TargetAssemblyTypeName: FirebaseWebGL.Examples.Auth.LoginHandler, Assembly-CSharp
-        m_MethodName: SignInWithGoogle
+        m_MethodName: LoginWithGoogle
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -3618,6 +3632,7 @@ GameObject:
   - component: {fileID: 2000143977}
   - component: {fileID: 2000143976}
   - component: {fileID: 2000143975}
+  - component: {fileID: 2000143978}
   m_Layer: 5
   m_Name: InputFieldPassword
   m_TagString: Untagged
@@ -3783,6 +3798,19 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2000143973}
   m_CullTransparentMesh: 1
+--- !u!114 &2000143978
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2000143973}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: cc33a39070010f94fb1c2dd721c1286d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  showHtmlElement: 0
 --- !u!1 &2014332478
 GameObject:
   m_ObjectHideFlags: 0

@@ -1,5 +1,51 @@
 mergeInto(LibraryManager.library, {
- 
+
+    //로비 진입시 유저프로필 가져오기
+    CheckAuthState: function() {
+        
+        const user = firebase.auth().currentUser;
+
+        if (user) {
+            
+            //파이어베이스에서 프로필 정보 가져오기
+
+            var userName = user.displayName;
+            var photoURL = user.photoURL;
+
+            console.log(typeof userName);
+            console.log(typeof photoURL);
+
+            //유니티로 정보 (각각ㅋ) 보내기
+            window.unityInstance.SendMessage('LobbyHandler', 'getUsername', userName);
+            window.unityInstance.SendMessage('LobbyHandler', 'getPhotoURL', photoURL);
+            
+        
+        } else {
+            console.log('user signed out!');
+            window.unityInstance.SendMessage('LobbyHandler', 'LoginScreen');
+        }
+    
+    
+    },
+
+    //자동로그인 확인 
+    CheckAutoLogin: function() {
+        
+        const user = firebase.auth().currentUser;
+
+        if (user) {
+            console.log('autologin!');
+            window.unityInstance.SendMessage('LoginHandler', 'LobbyScreen');
+        
+        } else {
+            console.log('user signed out!');
+        }
+    
+    
+    },
+    
+
+    //이메일로 가입
 	CreateUserWithEmailAndPassword: function(username, email, password, objectName, callback) {
         
         var parsedUsername = Pointer_stringify(username);
@@ -27,6 +73,7 @@ mergeInto(LibraryManager.library, {
                 photoURL: "https://pbs.twimg.com/media/EFKdt0bWsAIfcj9.jpg"
                 }).then(function (unused) {
                     console.log('profile update done!!');
+                    firebase.auth().signOut();
                     window.unityInstance.SendMessage('SignUpHandler', 'LoginScreen');
                 });
 
@@ -41,7 +88,9 @@ mergeInto(LibraryManager.library, {
             window.unityInstance.SendMessage(parsedObjectName, parsedCallback, JSON.stringify(error, Object.getOwnPropertyNames(error)) );
         }
 	},
- 
+    
+
+    //이메일로 로그인
     SignInWithEmailAndPassword: function (email, password, objectName, callback, fallback) {
  
         var parsedEmail = Pointer_stringify(email);
@@ -67,8 +116,81 @@ mergeInto(LibraryManager.library, {
             window.unityInstance.SendMessage(parsedObjectName, parsedFallback, JSON.stringify(error, Object.getOwnPropertyNames(error)) );
         }
     },
-
+    
+    //구글 처음 로그인(프사 디폴트 이미지로 업뎃)
     SignInWithGoogle: function (objectName, callback, fallback) {
+ 
+        var parsedObjectName = Pointer_stringify(objectName);
+        var parsedCallback = Pointer_stringify(callback);
+        var parsedFallback = Pointer_stringify(fallback);
+ 
+        try {
+            var provider = new firebase.auth.GoogleAuthProvider();
+            firebase.auth().signInWithPopup(provider).then(function (unused) {
+                
+                var user = firebase.auth().currentUser;
+                return user;
+
+            }).then(function (user) {
+
+                console.log('google profile update start!!');
+                console.log(user);
+                
+                user.updateProfile({
+                photoURL: "https://pbs.twimg.com/media/EFKdt0bWsAIfcj9.jpg"
+                }).then(function (unused) {
+                    console.log('profile update done!!');
+                    window.unityInstance.SendMessage('SignUpHandler', 'LoginScreen');
+                });
+
+                unityInstance.Module.SendMessage(parsedObjectName, parsedCallback, "Success: signed in with Google!");
+            }).catch(function (error) {
+                unityInstance.Module.SendMessage(parsedObjectName, parsedFallback, JSON.stringify(error, Object.getOwnPropertyNames(error)));
+            });
+ 
+        } catch (error) {
+            unityInstance.Module.SendMessage(parsedObjectName, parsedFallback, JSON.stringify(error, Object.getOwnPropertyNames(error)));
+        }
+    },
+    
+
+    //깃헙 처음 로그인(프사 디폴트 이미지로 업뎃)
+    SignInWithGithub: function (objectName, callback, fallback) {
+        var parsedObjectName = Pointer_stringify(objectName);
+        var parsedCallback = Pointer_stringify(callback);
+        var parsedFallback = Pointer_stringify(fallback);
+ 
+        try {
+            var provider = new firebase.auth.GithubAuthProvider();
+            firebase.auth().signInWithPopup(provider).then(function (unused) {
+
+                var user = firebase.auth().currentUser;
+                return user;
+
+            }).then(function (user) {
+
+                console.log('github profile update start!!');
+                console.log(user);
+                
+                user.updateProfile({
+                photoURL: "https://pbs.twimg.com/media/EFKdt0bWsAIfcj9.jpg"
+                }).then(function (unused) {
+                    console.log('profile update done!!');
+                    window.unityInstance.SendMessage('SignUpHandler', 'LoginScreen');
+                });
+
+                window.unityInstance.SendMessage(parsedObjectName, parsedCallback, "Success: signed in with Github!");
+            }).catch(function (error) {
+                window.unityInstance.SendMessage(parsedObjectName, parsedFallback, JSON.stringify(error, Object.getOwnPropertyNames(error)));
+            });
+ 
+        } catch (error) {
+            window.unityInstance.SendMessage(parsedObjectName, parsedFallback, JSON.stringify(error, Object.getOwnPropertyNames(error)));
+        }
+    },
+
+    //구글 로그인(프사 업뎃x)
+    LoginWithGoogle: function (objectName, callback, fallback) {
  
         var parsedObjectName = Pointer_stringify(objectName);
         var parsedCallback = Pointer_stringify(callback);
@@ -81,6 +203,8 @@ mergeInto(LibraryManager.library, {
                 var user = firebase.auth().currentUser;
                 console.log(user);
 
+                window.unityInstance.SendMessage('LoginHandler', 'LobbyScreen');
+                
                 unityInstance.Module.SendMessage(parsedObjectName, parsedCallback, "Success: signed in with Google!");
             }).catch(function (error) {
                 unityInstance.Module.SendMessage(parsedObjectName, parsedFallback, JSON.stringify(error, Object.getOwnPropertyNames(error)));
@@ -90,8 +214,9 @@ mergeInto(LibraryManager.library, {
             unityInstance.Module.SendMessage(parsedObjectName, parsedFallback, JSON.stringify(error, Object.getOwnPropertyNames(error)));
         }
     },
-    
-    SignInWithGithub: function (objectName, callback, fallback) {
+
+    //깃헙 로그인(프사 업뎃x)
+    LoginWithGithub: function (objectName, callback, fallback) {
         var parsedObjectName = Pointer_stringify(objectName);
         var parsedCallback = Pointer_stringify(callback);
         var parsedFallback = Pointer_stringify(fallback);
@@ -102,6 +227,8 @@ mergeInto(LibraryManager.library, {
 
                 var user = firebase.auth().currentUser;
                 console.log(user);
+                
+                window.unityInstance.SendMessage('LoginHandler', 'LobbyScreen');
 
                 window.unityInstance.SendMessage(parsedObjectName, parsedCallback, "Success: signed in with Github!");
             }).catch(function (error) {
@@ -113,9 +240,34 @@ mergeInto(LibraryManager.library, {
         }
     },
 
+
+    //로그아웃
     SignOut: function() {
         firebase.auth().signOut().then(function (unused) {
             window.unityInstance.SendMessage('LobbyHandler', 'LoginScreen')});
+    },
+
+
+    //프사 변경
+    UpdateProfilePicture: function(newProfile) {
+        var newPfp = Pointer_stringify(newProfile);
+        const user = firebase.auth().currentUser;
+
+        user.updateProfile({
+            photoURL: newPfp
+            }).then(function (unused) {
+                console.log('profile update done!!');
+                window.unityInstance.SendMessage('LobbyHandler', 'ChangePfpSuccess');
+            });
+    },
+
+    //회원탈퇴
+    DeleteUser: function() {
+
+    const user = firebase.auth().currentUser;
+
+    user.delete().then(function (unused) {
+        window.unityInstance.SendMessage('LobbyHandler', 'DeleteUserSuccess')});
     },
 
  

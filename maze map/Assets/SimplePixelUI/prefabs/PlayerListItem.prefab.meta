@@ -1,9 +1,5 @@
 fileFormatVersion: 2
-<<<<<<<< HEAD:maze map/Assets/SimplePixelUI/prefabs/PlayerListItem.prefab.meta
 guid: 5d957e32d0e956540bfc4b0cd67a8c79
-========
-guid: 34a07571e781f6d4a8854b8ea0804413
->>>>>>>> dde6a9668db96cd02f8dbfcb149c84dac9dbb642:maze map/Assets/SimplePixelUI/prefabs/RoomListBtn.prefab.meta
 PrefabImporter:
   externalObjects: {}
   userData: 

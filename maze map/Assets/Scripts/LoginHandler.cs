@@ -27,6 +27,8 @@ namespace FirebaseWebGL.Examples.Auth
                 DisplayError("Webgl 플랫폼이 아니면 Javascript 기능은 인식되지 않습니다.");
                 return;
             }
+
+            CheckAutoLogin();
         }
 
         private void DisplayError(string errortext)
@@ -42,11 +44,14 @@ namespace FirebaseWebGL.Examples.Auth
         public void SignWithEmailAndPassword() =>
             FirebaseAuth.SignInWithEmailAndPassword(loginEmail.text, loginPassword.text, gameObject.name, "DisPlayInfo", "DisplayError");
 
-        public void SignInWithGoogle() =>
-            FirebaseAuth.SignInWithGoogle(gameObject.name, "DisPlayInfo", "DisplayError");
+        public void LoginWithGoogle() =>
+            FirebaseAuth.LoginWithGoogle(gameObject.name, "DisPlayInfo", "DisplayError");
 
-        public void SignInWithGithub() =>
-            FirebaseAuth.SignInWithGithub(gameObject.name, "DisPlayInfo", "DisplayError");
+        public void LoginWithGithub() =>
+            FirebaseAuth.LoginWithGithub(gameObject.name, "DisPlayInfo", "DisplayError");
+
+        public void CheckAutoLogin() =>
+            FirebaseAuth.CheckAutoLogin();
 
 
         public void RegisterScreen()

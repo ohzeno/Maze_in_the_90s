@@ -17,15 +17,15 @@ namespace FirebaseWebGL.Examples.Auth
         [SerializeField]
         //2. 프사 변경페이지
         private GameObject changePfpUI;
-        //[SerializeField]
-        //3. 비밀번호 변경페이지
-        //private GameObject changePasswordUI;
         [SerializeField]
-        //확인페이지
-        private GameObject actionSuccessPanelUI;
+        //3. 비밀번호 변경
+        private GameObject changePasswordUI;
         [SerializeField]
         //4. 회원 탈퇴
         private GameObject deleteUserConfirmUI;
+        [SerializeField]
+        //5. 확인페이지
+        private GameObject actionSuccessPanelUI;
         [Space(5f)]
 
         [Header("Basic Info References")]
@@ -50,6 +50,8 @@ namespace FirebaseWebGL.Examples.Auth
         private TMP_InputField changePasswordInputField;
         [SerializeField]
         private TMP_InputField changePasswordConfirmInputField;
+        [SerializeField]
+        private TMP_Text pwErrorText;
         [Space(5f)]
 
         [Header("Action Success Panel References")]
@@ -67,7 +69,7 @@ namespace FirebaseWebGL.Examples.Auth
             CheckAuthState();
         }
 
-        private void getUsername(string _username)
+        private void GetUsername(string _username)
         {
             userName = _username;
 
@@ -78,7 +80,7 @@ namespace FirebaseWebGL.Examples.Auth
             }
         }
 
-        private void getPhotoURL(string _photoURL)
+        private void GetPhotoURL(string _photoURL)
         {
             photoURL = _photoURL;
 
@@ -100,11 +102,20 @@ namespace FirebaseWebGL.Examples.Auth
         private IEnumerator LoadImage(string _photoUrl)
         {
             UnityWebRequest request = UnityWebRequestTexture.GetTexture(_photoUrl);
+
+            request.SetRequestHeader("Access-Control-Allow-Origin", "*");
+
+            request.SetRequestHeader("Access-Control-Allow-Credentials", "true");
+            request.SetRequestHeader("Access-Control-Allow-Headers", "Accept, Content-Type, X-Access-Token, X-Application-Name, X-Request-Sent-Time");
+            request.SetRequestHeader("Access-Control-Allow-Methods", "GET, POST, PUT, OPTIONS");
+
             yield return request.SendWebRequest();
 
             if (request.error != null)
             {
                 string output = "알 수 없는 에러가 발생하였습니다 다시 시도해주세요";
+                Debug.Log("로드이미지 에러");
+                Debug.Log(request.error);
 
                 if (request.result == UnityWebRequest.Result.ProtocolError)
                 {
@@ -120,7 +131,6 @@ namespace FirebaseWebGL.Examples.Auth
                 lobbyProfilePicture.sprite = Sprite.Create(image, new Rect(0, 0, image.width, image.height), Vector2.zero);
 
                 myPageProfilePicture.sprite = Sprite.Create(image, new Rect(0, 0, image.width, image.height), Vector2.zero);
-
             }
         }
 
@@ -133,9 +143,10 @@ namespace FirebaseWebGL.Examples.Auth
         {
             profileUI.SetActive(false);
             changePfpUI.SetActive(false);
-            //changePasswordUI.SetActive(false);
+            changePasswordUI.SetActive(false);
             actionSuccessPanelUI.SetActive(false);
             deleteUserConfirmUI.SetActive(false);
+            actionSuccessText.text = "";
         }
 
         //1. 마이페이지
@@ -166,25 +177,31 @@ namespace FirebaseWebGL.Examples.Auth
             UpdateProfilePicture(profilePictureLink.text);
         }
 
+        //2. 비번 변경
+        public void ChangePwUI()
+        {
+            ClearUI();
+            changePasswordUI.SetActive(true);
+        }
 
-        //3. 비번 변경
-        //public void ChangePwUI()
-        //{
-        //    ClearUI();
-        //    changePasswordUI.SetActive(true);
-        //}
+        public void ChangePwSuccess()
+        {
+            ClearUI();
+            actionSuccessPanelUI.SetActive(true);
+            actionSuccessText.text = "비밀번호가 성공적으로 변경되었습니다";
+        }
 
-        //public void ChangePwSuccess()
-        //{
-        //    ClearUI();
-        //    actionSuccessPanelUI.SetActive(true);
-        //    actionSuccessText.text = "비밀번호가 성공적으로 변경되었습니다";
-        //}
-
-        //public void SubmitNewPwButton()
-        //{
-        //    UpdateProfilePicture(profilePictureLink.text);
-        //}
+        public void SubmitNewPwButton()
+        {
+            if ((changePasswordInputField.text == changePasswordConfirmInputField.text) == true)
+            {
+                UpdatePw(changePasswordInputField.text);
+            }
+            else
+            {
+                pwErrorText.text = "비밀번호가 일치하지 않습니다";
+            }
+        }
 
         //4. 회원탈퇴
         public void DeleteUserConfirmUI()
@@ -220,11 +237,15 @@ namespace FirebaseWebGL.Examples.Auth
         public void UpdateProfilePicture(string newProfile) =>
            FirebaseAuth.UpdateProfilePicture(newProfile);
 
+        public void UpdatePw(string newPw) =>
+           FirebaseAuth.UpdatePw(newPw);
+
         public void DeleteUser() =>
            FirebaseAuth.DeleteUser();
 
         public void SignOut() =>
            FirebaseAuth.SignOut();
+
 
         public void LoginScreen()
         {

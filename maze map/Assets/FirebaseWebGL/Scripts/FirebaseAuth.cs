@@ -35,6 +35,12 @@ namespace FirebaseWebGL.Scripts.FirebaseBridge
         public static extern void UpdateProfilePicture(string newProfile);
 
         [DllImport("__Internal")]
+        public static extern void UpdatePw(string newPw);
+
+        [DllImport("__Internal")]
+        public static extern void ResetPassword(string email);
+
+        [DllImport("__Internal")]
         public static extern void DeleteUser();
 
     }

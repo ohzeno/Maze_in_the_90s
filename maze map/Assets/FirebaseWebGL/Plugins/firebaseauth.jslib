@@ -16,8 +16,8 @@ mergeInto(LibraryManager.library, {
             console.log(typeof photoURL);
 
             //유니티로 정보 (각각ㅋ) 보내기
-            window.unityInstance.SendMessage('LobbyHandler', 'getUsername', userName);
-            window.unityInstance.SendMessage('LobbyHandler', 'getPhotoURL', photoURL);
+            window.unityInstance.SendMessage('LobbyHandler', 'GetUsername', userName);
+            window.unityInstance.SendMessage('LobbyHandler', 'GetPhotoURL', photoURL);
             
         
         } else {
@@ -106,8 +106,10 @@ mergeInto(LibraryManager.library, {
                 var user = firebase.auth().currentUser;
                 console.log(user);
 
-                window.unityInstance.SendMessage(parsedObjectName, parsedCallback, "Success: signed in for " + parsedEmail);
                 window.unityInstance.SendMessage('LoginHandler', 'LobbyScreen');
+                
+                unityInstance.Module.SendMessage(parsedObjectName, parsedCallback, "Success: signed in for " + parsedEmail);
+
             }).catch(function (error) {
                 window.unityInstance.SendMessage(parsedObjectName, parsedFallback, JSON.stringify(error, Object.getOwnPropertyNames(error)) );
             });
@@ -259,6 +261,29 @@ mergeInto(LibraryManager.library, {
                 console.log('profile update done!!');
                 window.unityInstance.SendMessage('LobbyHandler', 'ChangePfpSuccess');
             });
+    },
+
+    //비밀번호 변경(마이페이지)
+    UpdatePw: function(newPw) {
+        var nextPw = Pointer_stringify(newPw);
+        const user = firebase.auth().currentUser;
+
+        user.updatePassword(nextPw).then(function (unused) {
+        // Update successful.
+        console.log('pw update done!!');
+        window.unityInstance.SendMessage('LobbyHandler', 'ChangePwSuccess');
+        });
+    },
+
+    //비밀번호 재설정(로그인 화면에서 비번 잊었을 때)
+    ResetPassword: function(email) {
+        const user = firebase.auth().currentUser;
+        var email = Pointer_stringify(email);
+
+        firebase.auth().sendPasswordResetEmail(email).then(function (unused) {
+        console.log('pw reset email sent!!');
+        window.unityInstance.SendMessage('LoginHandler', 'EmailSentScreen', email);
+        });
     },
 
     //회원탈퇴

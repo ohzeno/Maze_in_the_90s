@@ -1,6 +1,9 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using Photon.Pun;
+using Photon.Realtime;
+using TMPro;
 
 public class MovingObject : MonoBehaviour
 {
@@ -8,6 +11,8 @@ public class MovingObject : MonoBehaviour
     public static MovingObject instance;
     private BoxCollider2D boxCollider;
     public LayerMask layerMask;
+    private PhotonView pv;
+    public TextMeshProUGUI nickname;
 
     public float speed;
     public int walkCount;
@@ -21,7 +26,11 @@ public class MovingObject : MonoBehaviour
     private bool applyRunFlag = false;
     private bool canMove = true;
 
-    private void Awake()
+    public float turnSpeed = 0.0f;
+    public float turnSpeedValue = 200.0f;
+
+
+    /*private void Awake()
     {
         if (instance == null)
         {
@@ -32,67 +41,87 @@ public class MovingObject : MonoBehaviour
         {
             Destroy(this.gameObject);
         }
-    }
-    private void Start()
+    }*/
+    RaycastHit hit;
+    IEnumerator Start()
     {
         boxCollider = GetComponent<BoxCollider2D>();
         animator = GetComponent<Animator>();
+        pv = GetComponent<PhotonView>();
+        
+
+        turnSpeed = 0.0f;
+        yield return new WaitForSeconds(0.5f);
+
+        if (pv.IsMine)
+        {
+            Camera.main.GetComponent<CameraManager>().target = transform.Find("CamPivot").transform;
+            nickname.text = PhotonNetwork.NickName;
+        }
+        else
+        {
+            GetComponent<Rigidbody2D>().isKinematic = true;
+        }
+        turnSpeed = turnSpeedValue;
     }
 
     IEnumerator MoveCoroutine()
     {
-        while (Input.GetAxisRaw("Vertical") != 0 || Input.GetAxisRaw("Horizontal") != 0)
+        pv = GetComponent<PhotonView>();
+        if (pv.IsMine)
         {
-
-            if (Input.GetKey(KeyCode.LeftShift))
-            {
-                applyRunSpeed = runSpeed;
-                applyRunFlag = true;
-            }
-            else
-            {
-                applyRunSpeed = 0;
-                applyRunFlag = false;
-            }
-
-
-            vector.Set(Input.GetAxisRaw("Horizontal"), Input.GetAxisRaw("Vertical"), transform.position.z);
-
-            if (vector.x != 0)
-                vector.y = 0;
-
-
-            animator.SetFloat("DirX", vector.x);
-            animator.SetFloat("DirY", vector.y);
-
-            RaycastHit2D hit;
-            Vector2 start = transform.position;
-            Vector2 end = start + new Vector2(vector.x * speed * walkCount, vector.y * speed * walkCount);
-
-            boxCollider.enabled = false;
-            hit = Physics2D.Linecast(start, end, layerMask);
-            boxCollider.enabled = true;
-
-            if (hit.transform != null)
-                break;
-
-            animator.SetBool("Walking", true);
-
-            while (currentWalkCount < walkCount)
+            while (Input.GetAxisRaw("Vertical") != 0 || Input.GetAxisRaw("Horizontal") != 0)
             {
 
-                transform.Translate(vector.x * (speed + applyRunSpeed), vector.y * (speed + applyRunSpeed), 0);
-                if (applyRunFlag)
+                if (Input.GetKey(KeyCode.LeftShift))
+                {
+                    applyRunSpeed = runSpeed;
+                    applyRunFlag = true;
+                }
+                else
+                {
+                    applyRunSpeed = 0;
+                    applyRunFlag = false;
+                }
+
+
+                vector.Set(Input.GetAxisRaw("Horizontal"), Input.GetAxisRaw("Vertical"), transform.position.z);
+
+                if (vector.x != 0)
+                    vector.y = 0;
+
+
+                animator.SetFloat("DirX", vector.x);
+                animator.SetFloat("DirY", vector.y);
+
+                RaycastHit2D hit;
+                Vector2 start = transform.position;
+                Vector2 end = start + new Vector2(vector.x * speed * walkCount, vector.y * speed * walkCount);
+
+                boxCollider.enabled = false;
+                hit = Physics2D.Linecast(start, end, layerMask);
+                boxCollider.enabled = true;
+
+                if (hit.transform != null)
+                    break;
+
+                animator.SetBool("Walking", true);
+
+                while (currentWalkCount < walkCount)
+                {
+                    transform.Translate(vector.x * (speed + applyRunSpeed), vector.y * (speed + applyRunSpeed), 0);
+                    if (applyRunFlag)
+                        currentWalkCount++;
                     currentWalkCount++;
-                currentWalkCount++;
-                yield return new WaitForSeconds(0.01f);
+                    yield return new WaitForSeconds(0.01f);
+                }
+                currentWalkCount = 0;
+
+
             }
-            currentWalkCount = 0;
-
+            animator.SetBool("Walking", false);
+            canMove = true;
         }
-        animator.SetBool("Walking", false);
-        canMove = true;
-
     }
 
 

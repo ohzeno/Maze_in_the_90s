@@ -2,14 +2,18 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using Photon.Pun;
+using Photon.Realtime;
+
 
 public class EndGame : MonoBehaviour
 {
     public GameObject StartBtn;
     public GameObject EndBtn;
     public GameObject TimeRecord;
-
     public Text text_Timer;
+    private PhotonView pv;
+    private int playercnt = 0;
 
     // Start is called before the first frame update
     void Start()
@@ -19,15 +23,21 @@ public class EndGame : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        if(collision.gameObject.name == "Witch3")
+
+        if (collision.gameObject.name == "Witch3(Clone)")
         {
             EndBtn.SetActive(true);
             StartBtn.GetComponent<StartGame>().timeActive = false;
+            playercnt += 1;
+            Debug.Log(playercnt);
+            Debug.Log(PhotonNetwork.CurrentRoom.PlayerCount);
 
-            // 플레이어가다들어온다면 
+        }
+
+        if (playercnt == PhotonNetwork.CurrentRoom.PlayerCount)
+        {
             TimeRecord.SetActive(true);
             EndBtn.SetActive(false);
-            
         }
     }
 }

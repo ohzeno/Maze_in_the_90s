@@ -9402,7 +9402,6 @@ GameObject:
   - component: {fileID: 1509417153}
   - component: {fileID: 1509417152}
   - component: {fileID: 1509417151}
-  - component: {fileID: 1509417150}
   m_Layer: 5
   m_Name: StartBtn
   m_TagString: Untagged
@@ -9430,19 +9429,6 @@ RectTransform:
   m_AnchoredPosition: {x: 310.64282, y: -175.35168}
   m_SizeDelta: {x: 93.1097, y: 51.6936}
   m_Pivot: {x: 0.5, y: 0.5}
---- !u!114 &1509417150
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1509417148}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 37bce35396bc3b84e882b730d0c65877, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  SceneSelect: MapScene
 --- !u!114 &1509417151
 MonoBehaviour:
   m_ObjectHideFlags: 0

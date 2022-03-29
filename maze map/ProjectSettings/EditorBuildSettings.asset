@@ -6,6 +6,7 @@ EditorBuildSettings:
   serializedVersion: 2
   m_Scenes:
   - enabled: 1
+<<<<<<< HEAD
     path: Assets/Scenes/Login.unity
     guid: defc5c48b920c514e9e498d057f43a50
   - enabled: 1
@@ -13,6 +14,9 @@ EditorBuildSettings:
     guid: f51a51450efc0f44e9671d380c872785
   - enabled: 1
     path: Assets/Scenes/MapScene.unity
+=======
+    path: Assets/Scenes/MazeForest2.unity
+>>>>>>> 8ad1aef21a7adbdbe0dd036daf22e084fea80da2
     guid: 2cda990e2423bbf4892e6590ba056729
   - enabled: 1
     path: Assets/Scenes/Room.unity

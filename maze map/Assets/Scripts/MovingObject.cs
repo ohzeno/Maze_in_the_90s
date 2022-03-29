@@ -6,7 +6,6 @@ public class MovingObject : MonoBehaviour
 {
 
     public static MovingObject instance;
-
     private BoxCollider2D boxCollider;
     public LayerMask layerMask;
 
@@ -110,6 +109,5 @@ public class MovingObject : MonoBehaviour
                 StartCoroutine(MoveCoroutine());
             }
         }
-
     }
 }

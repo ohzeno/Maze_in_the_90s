@@ -1,26 +1,21 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.UI;
+using Photon.Pun;
+using Photon.Realtime;
 using TMPro;
+using UnityEngine.UI;
 
-public class NicknameUI : MonoBehaviour
+public class NicknameUI : MonoBehaviour, IPunObservable
 {
-    public TextMeshProUGUI nickname;
-    public Camera camera;
-    private Transform target;
-    // Start is called before the first frame update
-    void Start()
+    public TextMeshProUGUI txt;
+    private void Start()
     {
-        target = GetComponent<Transform>();
+        txt.text = PhotonNetwork.NickName;
     }
-
-    // Update is called once per frame
-    void Update()
+    public void OnPhotonSerializeView(PhotonStream stream, PhotonMessageInfo info)
     {
-        Vector3 targetposition = camera.WorldToScreenPoint(target.position);
-        float x = targetposition.x;
-
-        nickname.transform.position = new Vector3(x, targetposition.y + 50, nickname.transform.position.z);
+        if (stream.IsWriting) stream.SendNext(txt.text);
+        else txt.text = (string)stream.ReceiveNext();
     }
 }

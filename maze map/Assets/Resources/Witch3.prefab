@@ -18,6 +18,7 @@ GameObject:
   - component: {fileID: 7371180199081105316}
   - component: {fileID: -7995860023953214055}
   - component: {fileID: 1106850715}
+  - component: {fileID: 1212638341}
   m_Layer: 0
   m_Name: Witch3
   m_TagString: Untagged
@@ -186,7 +187,6 @@ MonoBehaviour:
   layerMask:
     serializedVersion: 2
     m_Bits: 256
-  nickname: {fileID: 8084765864477842803}
   speed: 2.4
   walkCount: 20
   runSpeed: 2.4
@@ -213,6 +213,7 @@ MonoBehaviour:
   ObservedComponents:
   - {fileID: -7995860023953214055}
   - {fileID: 1106850715}
+  - {fileID: 1212638341}
   sceneViewId: 0
   InstantiationId: 0
   isRuntimeInstantiated: 0
@@ -262,6 +263,19 @@ MonoBehaviour:
   m_SynchronizeLayers:
   - SynchronizeType: 0
     LayerIndex: 0
+--- !u!114 &1212638341
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 513894945170487914}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 78e374cb909577141aae00fea8ebf32d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  txt: {fileID: 8084765864477842803}
 --- !u!1 &2057256922708135334
 GameObject:
   m_ObjectHideFlags: 0

@@ -99,7 +99,7 @@ public class Launcher : MonoBehaviourPunCallbacks//다른 포톤 반응 받아들이기
         PhotonNetwork.LoadLevel("MazeForest1");//1인 이유는 빌드에서 scene 번호가 1번씩이기 때문이다. 0은 초기 씬.
     }
 
-    public void LeaveRoom()
+    public void LeaveRoom() // 대기실 퇴장
     {
         PhotonNetwork.LeaveRoom();//방떠나기 포톤 네트워크 기능
         MenuManager.Instance.OpenMenu("loading");//로딩창 열기

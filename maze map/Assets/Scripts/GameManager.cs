@@ -21,11 +21,8 @@ public class GameManager : MonoBehaviour
     IEnumerator CreatePlayer()
     {
         yield return new WaitUntil(() => isConnect);
-        spawnPoints = GameObject.Find("SpawnPointGroup").GetComponentsInChildren<Transform>();
-
-        Vector3 pos = spawnPoints[Random.Range(0,PhotonNetwork.CurrentRoom.PlayerCount)].position;
-        Quaternion rot = spawnPoints[PhotonNetwork.CurrentRoom.PlayerCount].rotation;
-        GameObject playerTemp = PhotonNetwork.Instantiate("Witch3", pos,rot, 0);
+        Vector3 pos = new Vector3(-1030 + Random.Range(-150, 150) * 1.0f, 800 + Random.Range(-80, 80) * 1.0f, 0.0f);
+        GameObject playerTemp = PhotonNetwork.Instantiate("Witch3", pos, Quaternion.identity, 0);
     }
 
     void Update()

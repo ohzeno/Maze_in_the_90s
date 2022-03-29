@@ -100142,8 +100142,8 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 601919833}
-        m_TargetAssemblyTypeName: MovingScenes, Assembly-CSharp
-        m_MethodName: MovingScene
+        m_TargetAssemblyTypeName: LeaveGame, Assembly-CSharp
+        m_MethodName: LeaveRoom
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -100200,10 +100200,9 @@ MonoBehaviour:
   m_GameObject: {fileID: 601919828}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 37bce35396bc3b84e882b730d0c65877, type: 3}
+  m_Script: {fileID: 11500000, guid: 0ab81e6ad50d7024196d929e1ef2a6b6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  SceneSelect: Lobby
 --- !u!1 &636858253
 GameObject:
   m_ObjectHideFlags: 0
@@ -136440,8 +136439,8 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 1440122026}
-        m_TargetAssemblyTypeName: MovingScenes, Assembly-CSharp
-        m_MethodName: MovingScene
+        m_TargetAssemblyTypeName: LeaveGame, Assembly-CSharp
+        m_MethodName: LeaveRoom
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -136498,10 +136497,9 @@ MonoBehaviour:
   m_GameObject: {fileID: 1440122021}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 37bce35396bc3b84e882b730d0c65877, type: 3}
+  m_Script: {fileID: 11500000, guid: 0ab81e6ad50d7024196d929e1ef2a6b6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  SceneSelect: Lobby
 --- !u!1 &1543816969
 GameObject:
   m_ObjectHideFlags: 0

@@ -12,7 +12,7 @@ public class EndGame : MonoBehaviour
     public GameObject EndBtn;
     public GameObject TimeRecord;
     public Text text_Timer;
-    private PhotonView pv;
+
     private int playercnt = 0;
 
     // Start is called before the first frame update
@@ -31,9 +31,12 @@ public class EndGame : MonoBehaviour
             playercnt += 1;
             Debug.Log(playercnt);
             Debug.Log(PhotonNetwork.CurrentRoom.PlayerCount);
-
+            gameObject.SetActive(false);
         }
+    }
 
+    private void Update()
+    {
         if (playercnt == PhotonNetwork.CurrentRoom.PlayerCount)
         {
             TimeRecord.SetActive(true);

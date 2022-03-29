@@ -68,6 +68,7 @@ mergeInto(LibraryManager.library, {
                 console.log('profile update start!!');
                 console.log(user);
                 
+                //Firebase Auth에 등록
                 user.updateProfile({
                 displayName: parsedUsername,
                 photoURL: "https://pbs.twimg.com/media/EFKdt0bWsAIfcj9.jpg"
@@ -77,6 +78,14 @@ mergeInto(LibraryManager.library, {
                     window.unityInstance.SendMessage('SignUpHandler', 'LoginScreen');
                 });
 
+                //Realtime Database에 등록
+                console.log('db 등록 시작!!');
+                firebase.database().ref('users/' + user.uid).set(
+                {
+                    nickname: parsedUsername,
+                    email: parsedEmail,
+                    profile_picture : "https://pbs.twimg.com/media/EFKdt0bWsAIfcj9.jpg"
+                });
 
                 window.unityInstance.SendMessage(parsedObjectName, parsedCallback, "Success: signed up for " + parsedEmail);
                 
@@ -138,11 +147,19 @@ mergeInto(LibraryManager.library, {
                 console.log('google profile update start!!');
                 console.log(user);
                 
+                //Firebase Auth에 등록
                 user.updateProfile({
                 photoURL: "https://pbs.twimg.com/media/EFKdt0bWsAIfcj9.jpg"
                 }).then(function (unused) {
                     console.log('profile update done!!');
                     window.unityInstance.SendMessage('SignUpHandler', 'LoginScreen');
+                });
+
+                //Realtime Database에 등록
+                firebase.database().ref('users/' + user.uid).set({
+                    nickname: user.displayName,
+                    email: user.email,
+                    profile_picture : "https://pbs.twimg.com/media/EFKdt0bWsAIfcj9.jpg"
                 });
 
                 unityInstance.Module.SendMessage(parsedObjectName, parsedCallback, "Success: signed in with Google!");
@@ -174,11 +191,19 @@ mergeInto(LibraryManager.library, {
                 console.log('github profile update start!!');
                 console.log(user);
                 
+                //Firebase Auth에 등록
                 user.updateProfile({
                 photoURL: "https://pbs.twimg.com/media/EFKdt0bWsAIfcj9.jpg"
                 }).then(function (unused) {
                     console.log('profile update done!!');
                     window.unityInstance.SendMessage('SignUpHandler', 'LoginScreen');
+                });
+
+                //Realtime Database에 등록
+                firebase.database().ref('users/' + user.uid).set({
+                    nickname: user.displayName,
+                    email: user.email,
+                    profile_picture : "https://pbs.twimg.com/media/EFKdt0bWsAIfcj9.jpg"
                 });
 
                 window.unityInstance.SendMessage(parsedObjectName, parsedCallback, "Success: signed in with Github!");
@@ -255,12 +280,19 @@ mergeInto(LibraryManager.library, {
         var newPfp = Pointer_stringify(newProfile);
         const user = firebase.auth().currentUser;
 
+        var pfData = { profile_picture : newPfp };
+
+        //Firebase Auth에서 업데이트
         user.updateProfile({
             photoURL: newPfp
             }).then(function (unused) {
                 console.log('profile update done!!');
                 window.unityInstance.SendMessage('LobbyHandler', 'ChangePfpSuccess');
             });
+
+        //Realtime Database에서 업데이트
+        firebase.database().ref('users/' + user.uid).update(pfData);
+        
     },
 
     //비밀번호 변경(마이페이지)
@@ -291,8 +323,14 @@ mergeInto(LibraryManager.library, {
 
     const user = firebase.auth().currentUser;
 
+    //Realtime Database에서 삭제
+    firebase.database().ref('users/' + user.uid).remove().then(function(unused) {
+            window.unityInstance.SendMessage(parsedObjectName, parsedCallback, "Success: " + parsedPath + " was deleted")});
+    
+    //Firebase Auth에서 삭제
     user.delete().then(function (unused) {
         window.unityInstance.SendMessage('LobbyHandler', 'DeleteUserSuccess')});
+    
     },
 
  

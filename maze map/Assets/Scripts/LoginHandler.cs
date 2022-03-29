@@ -2,6 +2,9 @@ using UnityEngine;
 using UnityEngine.UI;
 using FirebaseWebGL.Scripts.FirebaseBridge;
 using TMPro;
+using System;
+using System.Collections;
+using System.Collections.Generic;
 using System.Text.RegularExpressions;
 
 namespace FirebaseWebGL.Examples.Auth
@@ -41,7 +44,17 @@ namespace FirebaseWebGL.Examples.Auth
         [Header("Email Sent References")]
         [SerializeField]
         private TMP_Text usedEmail;
-        [Space(5f)]
+
+
+        //JSON으로 변환할 게임기록데이터
+        [Serializable]
+        public class gameRecord
+        {
+            public int gameMode;
+            public string gameMap;
+            public string nickName;
+            public int time;
+        }
 
         public TMP_Text statusText;
 
@@ -50,6 +63,8 @@ namespace FirebaseWebGL.Examples.Auth
         + @"((([0-1]?[0-9]{1,2}|25[0-5]|2[0-4][0-9])\.([0-1]?[0-9]{1,2}|25[0-5]|2[0-4][0-9])\."
         + @"([0-1]?[0-9]{1,2}|25[0-5]|2[0-4][0-9])\.([0-1]?[0-9]{1,2}|25[0-5]|2[0-4][0-9])){1}|"
         + @"([a-zA-Z]+[\w-]+\.)+[a-zA-Z]{2,4})$";
+
+        private Dictionary<string, int> recordInfo = new Dictionary<string, int>();
 
         public static bool ValidateEmail(string email)
         {
@@ -119,6 +134,22 @@ namespace FirebaseWebGL.Examples.Auth
             }
         }
 
+        //게임데이터 저장, JSON 변환, 전송
+        public void SaveGameRecord()
+        {
+            gameRecord gameRecordObject = new gameRecord();
+
+            gameRecordObject.gameMode = 1;
+            gameRecordObject.gameMap = "Forest1";
+            gameRecordObject.nickName = "보노보노";
+            gameRecordObject.time = 44;
+
+            string json = JsonUtility.ToJson(gameRecordObject);
+
+            FirebaseDatabase.PostGameRecord(json);
+
+        }
+
         public void SignWithEmailAndPassword() =>
             FirebaseAuth.SignInWithEmailAndPassword(loginEmail.text, loginPassword.text, gameObject.name, "DisPlayInfo", "DisplayError");
 
@@ -133,6 +164,8 @@ namespace FirebaseWebGL.Examples.Auth
 
         public void ResetPassword(string email) =>
             FirebaseAuth.ResetPassword(email);
+
+
 
 
         public void RegisterScreen()

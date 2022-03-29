@@ -45,7 +45,9 @@ namespace FirebaseWebGL.Examples.Auth
             statusText.text = Infotext;
         }
 
+
         public void CreateUserWithEmailAndPassword() =>
+           //Firebase Authentication & Realtime Database에 유저 등록
            FirebaseAuth.CreateUserWithEmailAndPassword(registerUsername.text, registerEmail.text, registerPassword.text, gameObject.name, "DisPlayInfo");
 
         public void SignInWithGoogle() =>

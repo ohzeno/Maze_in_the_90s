@@ -90,6 +90,37 @@ mergeInto(LibraryManager.library, {
         }
     },
 
+    //랭킹페이지 Post test
+    PostGameRecord: function(json) {
+    //unity에서 string으로 받은 json
+    var parsedJSON = Pointer_stringify(json);
+        
+    //string
+    console.log(parsedJSON);
+    console.log(typeof parsedJSON);
 
+    //string을 json 오브젝트로 변환
+    var obj = JSON.parse(parsedJSON);
+    console.log(obj);
+    console.log(typeof obj);
+    
+    //오브젝트에서 필요한 value 값을 찾아서 변수로 만듬
+    const mode = obj.gameMode;
+    const map = obj.gameMap;
+    const name = obj.nickName;
+    const time = obj.time;
+
+    //DB 저장 경로는 records/모드/맵
+    //저장할 데이터는 {닉네임 : 걸린 시간}
+    var recordRef = firebase.database().ref('records/' + mode + '/' + map);
+
+    var postData = {};
+    postData[name] = time;
+
+    firebase.database().ref(recordRef).set(postData).then(function(unused) {
+        console.log('gamedata post completed!')
+    });
+    
+    },
 
 });

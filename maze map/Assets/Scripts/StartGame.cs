@@ -10,6 +10,8 @@ public class StartGame : MonoBehaviour
     public bool timeActive = false;
     public float CountTime;
     public Text text_Timer;
+    private PhotonView pv;
+
     public int lifetime = 5;
     // Start is called before the first frame update
     void Start()
@@ -18,24 +20,20 @@ public class StartGame : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
+        pv = GetComponent<PhotonView>();
         if (StartBtn.activeSelf == true)
         {
-            if (collision.gameObject.name == "Witch3(Clone)")
-            {
-                StartBtn.SetActive(false);
-                StartCoroutine("timer");
-            }
+            StartBtn.SetActive(false);
+            Destroy(GameObject.Find("StartLine"), lifetime);
+            timeActive = true;
+            pv.RPC("StartTime", RpcTarget.All);
         }
     }
-    IEnumerator timer()
+
+    [PunRPC]
+    void StartTime( PhotonMessageInfo info)
     {
-        Destroy(GameObject.Find("StartLine"), lifetime);
-        yield return StartCoroutine("timeStart");
-    }
-    IEnumerator timeStart()
-    {
-        timeActive = true;
-        yield return null;
+        GameManager.startTime = info.SentServerTime;
     }
 
     private void Update()

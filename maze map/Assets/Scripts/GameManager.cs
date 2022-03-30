@@ -8,7 +8,9 @@ using Photon.Realtime;
 public class GameManager : MonoBehaviour
 {
     public static Dictionary<string, string> records = new Dictionary<string, string>();
+    public static double startTime;
     public bool isConnect = false;
+
     void Start()
     {
         isConnect = true;

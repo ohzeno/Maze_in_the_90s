@@ -19,7 +19,6 @@ public class RecordListItem : MonoBehaviour
     }
     public void SetUp(int rank,KeyValuePair<string, string> record)
     {
-        Debug.Log(record);
         record1.text = rank.ToString()+"등";
         record2.text = record.Key.ToString();
         record3.text = record.Value.ToString();//플레이어 이름 받아서 그사람 이름이 목록에 뜨게 만들어준다. 

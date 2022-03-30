@@ -29,7 +29,6 @@ public class EndGame : MonoBehaviour
             if (GameManager.records.Count==PhotonNetwork.CurrentRoom.PlayerCount)
             {
                 StartBtn.GetComponent<StartGame>().timeActive = false; //타이머 끄기
-
                 foreach (KeyValuePair<string, string> record in GameManager.records)//존재하는 모든 roomListContent
                 {
                     playercnt += 1;
@@ -45,12 +44,5 @@ public class EndGame : MonoBehaviour
 
     private void Update()
     {
-        /*
-        if (playercnt == PhotonNetwork.CurrentRoom.PlayerCount)
-        {
-            TimeRecord.SetActive(true);
-            EndBtn.SetActive(false);
-        }
-        */
     }
 }

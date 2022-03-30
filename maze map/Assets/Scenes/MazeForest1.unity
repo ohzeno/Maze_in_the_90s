@@ -99859,6 +99859,7 @@ GameObject:
   - component: {fileID: 565156223}
   - component: {fileID: 565156222}
   - component: {fileID: 565156224}
+  - component: {fileID: 565156225}
   m_Layer: 0
   m_Name: StartGame
   m_TagString: Untagged
@@ -99923,6 +99924,28 @@ MonoBehaviour:
   CountTime: 0
   text_Timer: {fileID: 1080033298}
   lifetime: 5
+--- !u!114 &565156225
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 565156221}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: aa584fbee541324448dd18d8409c7a41, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  ObservedComponentsFoldoutOpen: 0
+  Group: 0
+  prefixField: -1
+  Synchronization: 3
+  OwnershipTransfer: 0
+  observableSearch: 2
+  ObservedComponents: []
+  sceneViewId: 2
+  InstantiationId: 0
+  isRuntimeInstantiated: 0
 --- !u!1 &601919828
 GameObject:
   m_ObjectHideFlags: 0

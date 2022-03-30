@@ -29,13 +29,11 @@ public class StartGame : MonoBehaviour
     }
     IEnumerator timer()
     {
-        Debug.Log(Time.time);
         Destroy(GameObject.Find("StartLine"), lifetime);
         yield return StartCoroutine("timeStart");
     }
     IEnumerator timeStart()
     {
-        Debug.Log(Time.time);
         timeActive = true;
         yield return null;
     }

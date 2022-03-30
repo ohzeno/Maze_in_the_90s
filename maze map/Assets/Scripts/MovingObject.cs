@@ -4,7 +4,7 @@ using UnityEngine;
 using Photon.Pun;
 using Photon.Realtime;
 using TMPro;
-
+using UnityEngine.UI;
 public class MovingObject : MonoBehaviour
 {
 
@@ -12,7 +12,6 @@ public class MovingObject : MonoBehaviour
     private BoxCollider2D boxCollider;
     public LayerMask layerMask;
     private PhotonView pv;
-    public TextMeshProUGUI nickname;
 
     public float speed;
     public int walkCount;
@@ -25,10 +24,13 @@ public class MovingObject : MonoBehaviour
     private float applyRunSpeed;
     private bool applyRunFlag = false;
     private bool canMove = true;
+    private bool onGoing = true;
 
     public float turnSpeed = 0.0f;
     public float turnSpeedValue = 200.0f;
+    public GameObject FinishAlert;
 
+    StartGame startgame;
 
     /*private void Awake()
     {
@@ -56,7 +58,6 @@ public class MovingObject : MonoBehaviour
         if (pv.IsMine)
         {
             Camera.main.GetComponent<CameraManager>().target = transform.Find("CamPivot").transform;
-            nickname.text = PhotonNetwork.NickName;
         }
         else
         {
@@ -138,5 +139,27 @@ public class MovingObject : MonoBehaviour
                 StartCoroutine(MoveCoroutine());
             }
         }
+    }
+    private void OnTriggerEnter2D(Collider2D collision)
+    {
+        pv = GetComponent<PhotonView>();
+        if (pv.IsMine)
+        {
+            if (collision.gameObject.name == "EndGame")
+            {
+                if (onGoing)
+                {
+                    FinishAlert.SetActive(true);
+                    onGoing = false;
+                    pv.RPC("ChatMessage", RpcTarget.All, "jup", "and jup!");
+                }
+            }
+        }
+    }
+    [PunRPC]
+    void ChatMessage(string a, string b, PhotonMessageInfo info)
+    {
+        startgame = GameObject.Find("StartGame").GetComponent<StartGame>();
+        GameManager.records.Add(info.Sender.ToString().Substring(5, info.Sender.ToString().Length-6), startgame.CountTime.ToString("F2"));
     }
 }

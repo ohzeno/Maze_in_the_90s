@@ -2,16 +2,13 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using Photon.Pun;
+using UnityEngine.UI;
 using Photon.Realtime;
 
 public class GameManager : MonoBehaviour
 {
-    public static GameManager instance = null;
+    public static Dictionary<string, string> records = new Dictionary<string, string>();
     public bool isConnect = false;
-    public Transform[] spawnPoints;
-
-
-    // Start is called before the first frame update
     void Start()
     {
         isConnect = true;

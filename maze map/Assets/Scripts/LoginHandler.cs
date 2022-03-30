@@ -44,6 +44,18 @@ namespace FirebaseWebGL.Examples.Auth
         [Header("Email Sent References")]
         [SerializeField]
         private TMP_Text usedEmail;
+        public TMP_Text statusText;
+        [Space(5f)]
+
+        [Header("Post Game Data References")]
+        [SerializeField]
+        private TMP_InputField gameMode;
+        [SerializeField]
+        private TMP_InputField gameMap;
+        [SerializeField]
+        private TMP_InputField gamerName;
+        [SerializeField]
+        private TMP_InputField timeSpent;
 
 
         //JSON으로 변환할 게임기록데이터
@@ -56,16 +68,13 @@ namespace FirebaseWebGL.Examples.Auth
             public int time;
         }
 
-        public TMP_Text statusText;
-
         public const string MatchEmailPattern =
         @"^(([\w-]+\.)+[\w-]+|([a-zA-Z]{1}|[\w-]{2,}))@"
         + @"((([0-1]?[0-9]{1,2}|25[0-5]|2[0-4][0-9])\.([0-1]?[0-9]{1,2}|25[0-5]|2[0-4][0-9])\."
         + @"([0-1]?[0-9]{1,2}|25[0-5]|2[0-4][0-9])\.([0-1]?[0-9]{1,2}|25[0-5]|2[0-4][0-9])){1}|"
         + @"([a-zA-Z]+[\w-]+\.)+[a-zA-Z]{2,4})$";
 
-        private Dictionary<string, int> recordInfo = new Dictionary<string, int>();
-
+        //이메일 양식 유효성 검사
         public static bool ValidateEmail(string email)
         {
             if (email != null)
@@ -139,16 +148,26 @@ namespace FirebaseWebGL.Examples.Auth
         {
             gameRecord gameRecordObject = new gameRecord();
 
-            gameRecordObject.gameMode = 1;
-            gameRecordObject.gameMap = "Forest1";
-            gameRecordObject.nickName = "보노보노";
-            gameRecordObject.time = 44;
+            gameRecordObject.gameMode = int.Parse(gameMode.text);
+            gameRecordObject.gameMap = gameMap.text;
+            gameRecordObject.nickName = gamerName.text;
+            gameRecordObject.time = int.Parse(timeSpent.text);
 
             string json = JsonUtility.ToJson(gameRecordObject);
 
             FirebaseDatabase.PostGameRecord(json);
 
+            gameMode.text = "";
+            gameMap.text = "";
+            gamerName.text = "";
+            timeSpent.text = "";
         }
+
+        public void GetGameData(string data)
+        {
+            Debug.Log(data);
+        }
+
 
         public void SignWithEmailAndPassword() =>
             FirebaseAuth.SignInWithEmailAndPassword(loginEmail.text, loginPassword.text, gameObject.name, "DisPlayInfo", "DisplayError");

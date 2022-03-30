@@ -110,17 +110,26 @@ mergeInto(LibraryManager.library, {
     const name = obj.nickName;
     const time = obj.time;
 
-    //DB 저장 경로는 records/모드/맵
-    //저장할 데이터는 {닉네임 : 걸린 시간}
+    //DB 저장 경로는 records/모드(0/1)/맵
+    //저장할 데이터는 {nickname : 닉네임, time : 걸린 시간}
     var recordRef = firebase.database().ref('records/' + mode + '/' + map);
 
+    //{ nickname: asdf, time: 12}
     var postData = {};
     postData[name] = time;
 
-    firebase.database().ref(recordRef).set(postData).then(function(unused) {
-        console.log('gamedata post completed!')
+    firebase.database().ref(recordRef).push().set(postData).then(function(unused) {
+        console.log('gamedata post completed!');
+        console.log('get game data');
+
+        //값으로 정렬해서 읽어오기
+        firebase.database().ref(recordRef).orderByValue().once('value').then(function(snapshot) {
+            console.log(snapshot.val());
+            //유니티로 보내기
+            window.unityInstance.SendMessage('LoginHandler', 'GetGameData', JSON.stringify(snapshot.val()));
+        });
     });
-    
-    },
+   
+   },
 
 });

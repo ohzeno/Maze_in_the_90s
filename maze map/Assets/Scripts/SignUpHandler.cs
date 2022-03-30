@@ -60,7 +60,7 @@ namespace FirebaseWebGL.Examples.Auth
 
         public void LoginScreen()
         {
-            GameManager1.instance.ChangeScene("Login");
+            GameManager.instance.ChangeScene("Login");
         }
 
         

@@ -189,12 +189,12 @@ namespace FirebaseWebGL.Examples.Auth
 
         public void RegisterScreen()
         {
-            GameManager1.instance.ChangeScene("SignUp");
+            GameManager.instance.ChangeScene("SignUp");
         }
 
         public void LobbyScreen()
         {
-            GameManager1.instance.ChangeScene("Lobby");
+            GameManager.instance.ChangeScene("Lobby");
         }
     }
 

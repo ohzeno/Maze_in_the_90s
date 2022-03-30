@@ -110,26 +110,30 @@ mergeInto(LibraryManager.library, {
     const name = obj.nickName;
     const time = obj.time;
 
-    //DB 저장 경로는 records/모드(0/1)/맵
-    //저장할 데이터는 {nickname : 닉네임, time : 걸린 시간}
-    var recordRef = firebase.database().ref('records/' + mode + '/' + map);
+    //DB 저장 경로는 rank/모드(0/1)/맵/닉네임
+    //저장할 데이터는 {time : 걸린 시간}
+    var rankRef = firebase.database().ref('rank/' + mode + '/' + map + '/' + name); //전체 랭킹
+    var recordRef = firebase.database().ref('record/' + name + '/' + mode + '/' + map); //유저 게임전적
 
-    //{ nickname: asdf, time: 12}
-    var postData = {};
-    postData[name] = time;
+    //{ time: 12 }
+    var postData = new Object();
+    postData.time = time;
 
-    firebase.database().ref(recordRef).push().set(postData).then(function(unused) {
-        console.log('gamedata post completed!');
-        console.log('get game data');
+    // 전체 랭킹 테이블과 유저 전적 테이블을 업데이트
+    firebase.database().ref(rankRef).update(postData).then(function(unused) {
+        console.log('rank post completed!');
+    });
 
-        //값으로 정렬해서 읽어오기
-        firebase.database().ref(recordRef).orderByValue().once('value').then(function(snapshot) {
-            console.log(snapshot.val());
-            //유니티로 보내기
-            window.unityInstance.SendMessage('LoginHandler', 'GetGameData', JSON.stringify(snapshot.val()));
-        });
+    firebase.database().ref(recordRef).update(postData).then(function(unused) {
+        console.log('record post completed!');
     });
    
+    //TOP 10 랭킹 값 읽어오기
+    firebase.database().ref('rank/' + mode + '/' + map).orderByChild('time').limitToLast(10).once('value').then(function(snapshot) {
+     console.log(snapshot.val());
+     //유니티로 보내기
+     window.unityInstance.SendMessage('LoginHandler', 'GetGameData', JSON.stringify(snapshot.val()));
+     });
    },
 
 });

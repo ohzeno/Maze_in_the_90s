@@ -9,7 +9,6 @@ using System.Linq;
 public class Launcher : MonoBehaviourPunCallbacks//다른 포톤 반응 받아들이기
 {
     public static Launcher Instance;//Launcher스크립트를 메서드로 사용하기 위해 선언
-
     [SerializeField] TMP_InputField roomNameInputField;
     [SerializeField] TMP_InputField userNameInputField;
     [SerializeField] TMP_Text errorText;
@@ -41,8 +40,9 @@ public class Launcher : MonoBehaviourPunCallbacks//다른 포톤 반응 받아들이기
     {
         MenuManager.Instance.OpenMenu("lobby");//로비에 들어오면 타이틀 메뉴 키기
         Debug.Log("Joined Lobby");
-        PhotonNetwork.NickName = "Player " + Random.Range(0, 1000).ToString("0000");
-        Debug.Log(PhotonNetwork.NickName);
+        //PhotonNetwork.NickName = "Player " + Random.Range(0, 1000).ToString("0000");
+        PhotonNetwork.NickName = FirebaseWebGL.Examples.Auth.LobbyHandler.userName;
+
         //들어온사람 이름 랜덤으로 숫자붙여서 정해주기
     }
     public void CreateRoom()//방만들기

@@ -59,7 +59,8 @@ namespace FirebaseWebGL.Examples.Auth
         private TMP_Text actionSuccessText;
 
         //닉네임, 프사
-        string userName = null;
+        public static LobbyHandler instance;
+        public static string userName = null;
         string photoURL = null;
 
 

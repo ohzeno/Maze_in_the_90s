@@ -6,13 +6,29 @@ using UnityEngine;
 
 public class RoomListItem : MonoBehaviour
 {
-    [SerializeField] TMP_Text text;
+    [SerializeField] TMP_Text nameText;
+    [SerializeField] TMP_Text populationText;
+    [SerializeField] TMP_Text modeText;
+
     // Start is called before the first frame update
     public RoomInfo info;
     public void SetUp(RoomInfo _info)// 방정보 받아오기
     {
         info = _info;
-        text.text = _info.Name;
+        nameText.text = _info.Name;
+        populationText.text = _info.PlayerCount.ToString() + "/" + _info.MaxPlayers.ToString();
+        if (_info.CustomProperties["Mode"].ToString() == "0")
+        {
+            modeText.text = "Maze";
+        }
+        else if (_info.CustomProperties["Mode"].ToString() == "1")
+        {
+            modeText.text = "Hide and Seek";
+        }
+        else
+        {
+            modeText.text = "Mode3";
+        }
     }
 
     // Update is called once per frame

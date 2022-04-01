@@ -23,23 +23,18 @@ public class EndGame : MonoBehaviour
 
     private void OnTriggerExit2D(Collider2D collision)
     {
-
-        if (collision.gameObject.name == "Witch3(Clone)")
+        if (GameManager.records.Count==PhotonNetwork.CurrentRoom.PlayerCount)
         {
-            if (GameManager.records.Count==PhotonNetwork.CurrentRoom.PlayerCount)
+            StartBtn.GetComponent<StartGame>().timeActive = false; //타이머 끄기
+            foreach (KeyValuePair<string, string> record in GameManager.records)//존재하는 모든 roomListContent
             {
-                StartBtn.GetComponent<StartGame>().timeActive = false; //타이머 끄기
-                foreach (KeyValuePair<string, string> record in GameManager.records)//존재하는 모든 roomListContent
-                {
-                    playercnt += 1;
-                    Instantiate(recordListItemPrefab, recordListContent).GetComponent<RecordListItem>().SetUp(playercnt,record);
-                }
-                GameManager.records= new Dictionary<string, string>();
-                gameObject.SetActive(false);
-                TimeRecord.SetActive(true);
+                playercnt += 1;
+                Instantiate(recordListItemPrefab, recordListContent).GetComponent<RecordListItem>().SetUp(playercnt,record);
             }
-            
-        }
+            GameManager.records= new Dictionary<string, string>();
+            gameObject.SetActive(false);
+            TimeRecord.SetActive(true);
+        }          
     }
 
     private void Update()

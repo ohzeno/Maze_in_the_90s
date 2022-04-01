@@ -9,11 +9,24 @@ public class PlayerListItem : MonoBehaviourPunCallbacks//다른 포톤 반응 받아들이
 {
     [SerializeField] TMP_Text text;
     Player player;//포톤 리얼타임은 Player를 선언 할 수 있게 해준다.
+    public GameObject dropbox;
+    public static int char_index;
+    public void OnDropdownEvent(int index)
+    {
+        char_index = index;
+        Debug.Log(char_index);
+    }
 
     public void SetUp(Player _player)
     {
         player = _player;
         text.text = _player.NickName;//플레이어 이름 받아서 그사람 이름이 목록에 뜨게 만들어준다. 
+
+        if (_player.NickName != PhotonNetwork.NickName)
+        {
+            TMP_Dropdown tMP_Dropdown = dropbox.GetComponent<TMP_Dropdown>();
+            tMP_Dropdown.enabled = false;
+        }
     }
 
     public override void OnPlayerLeftRoom(Player otherPlayer)//플레이어가 방떠났을때 호출

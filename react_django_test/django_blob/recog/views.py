@@ -15,6 +15,7 @@ from django.views.generic import TemplateView
 from PIL import Image 
 import json
 from . import models
+import numpy as np
 
 user_list = {}
 
@@ -172,6 +173,139 @@ class VideoCamera(object):
         while True:
             (self.grabbed, self.frame1) = self.video.read()   
 
+def ImageProcessing(input_image):
+    mp_drawing = mp.solutions.drawing_utils
+    mp_drawing_styles = mp.solutions.drawing_styles
+    mp_hands = mp.solutions.hands
+    frame1 = input_image
+    with mp_hands.Hands(
+        static_image_mode=True,
+        model_complexity=0,
+        min_detection_confidence=0.5,
+        min_tracking_confidence=0.5
+        # static_image_mode=True,
+        # max_num_hands=2,
+        # min_detection_confidence=0.5
+    ) as hands:
+        # frame 그대로쓰면 update에서 read로 받아오는 프레임때문에 화면 좌우 중복된다.
+        frame2 = frame1
+        # 필요에 따라 성능 향상을 위해 이미지 작성을 불가능함으로 기본 설정.
+        frame2.flags.writeable = False
+        # cv2.imshow('ata', frame2)
+        # cv2.waitKey(1000)
+
+        # 입력때부터 이미지 뒤집기. OpenCV는 BGR, MediaPipe는 RGB 사용함.
+        # frame2 = cv2.cvtColor(cv2.flip(frame2, 1), cv2.COLOR_BGR2RGB)
+        # ndarray로 변환하면서 이미 BGR2RGB처리됨.
+        frame2 = cv2.flip(frame2, 1)
+        results = hands.process(frame2)
+
+        # 이미지에 손 주석 그리기.
+        frame2.flags.writeable = True
+        # 처리한 이미지 다시 BGR로
+        frame2 = cv2.cvtColor(frame2, cv2.COLOR_RGB2BGR)
+        text_f = 'Stop'
+        # x는 유저 시점 왼쪽 0, y는 위 0. z는 카메라에서 멀수록 0(가까우면 마이너스)
+        if results.multi_hand_landmarks:
+            for hand_landmarks in results.multi_hand_landmarks:
+                if (
+                        (
+                                abs(
+                                    math.degrees(
+                                        math.atan(
+                                            (hand_landmarks.landmark[6].y - hand_landmarks.landmark[8].y) /
+                                            (hand_landmarks.landmark[6].x - hand_landmarks.landmark[8].x)
+                                        )
+                                    )
+                                ) > 55
+                        ) and
+                        (hand_landmarks.landmark[8].y < hand_landmarks.landmark[7].y) and
+                        (dist(hand_landmarks.landmark[8], hand_landmarks.landmark[5]) /
+                        dist(hand_landmarks.landmark[5], hand_landmarks.landmark[0]) > 0.7) and
+                        (dist(hand_landmarks.landmark[5], hand_landmarks.landmark[8]) >
+                        dist(hand_landmarks.landmark[5], hand_landmarks.landmark[17]))
+                ):
+                    text_f = 'Up'
+                elif (
+                        (
+                                abs(
+                                    math.degrees(
+                                        math.atan(
+                                            (hand_landmarks.landmark[6].y - hand_landmarks.landmark[8].y) /
+                                            (hand_landmarks.landmark[6].x - hand_landmarks.landmark[8].x)
+                                        )
+                                    )
+                                ) < 50
+                        ) and
+                        (hand_landmarks.landmark[8].x < hand_landmarks.landmark[7].x) and
+                        (dist(hand_landmarks.landmark[8], hand_landmarks.landmark[5]) /
+                        dist(hand_landmarks.landmark[5], hand_landmarks.landmark[0]) > 0.7) and
+                        (dist(hand_landmarks.landmark[5], hand_landmarks.landmark[8]) >
+                        dist(hand_landmarks.landmark[5], hand_landmarks.landmark[17]))
+                ):
+                    text_f = 'Left'
+                elif (
+                        (
+                                abs(
+                                    math.degrees(
+                                        math.atan(
+                                            (hand_landmarks.landmark[6].y - hand_landmarks.landmark[8].y) /
+                                            (hand_landmarks.landmark[6].x - hand_landmarks.landmark[8].x)
+                                        )
+                                    )
+                                ) < 50
+                        ) and
+                        (hand_landmarks.landmark[8].x > hand_landmarks.landmark[7].x) and
+                        (dist(hand_landmarks.landmark[8], hand_landmarks.landmark[5]) /
+                        dist(hand_landmarks.landmark[5], hand_landmarks.landmark[0]) > 0.6) and
+                        (dist(hand_landmarks.landmark[5], hand_landmarks.landmark[8]) >
+                        dist(hand_landmarks.landmark[5], hand_landmarks.landmark[17]) * 0.8)
+                ):
+                    text_f = 'Right'
+                elif (
+                        (
+                                abs(
+                                    math.degrees(
+                                        math.atan(
+                                            (hand_landmarks.landmark[6].y - hand_landmarks.landmark[8].y) /
+                                            (hand_landmarks.landmark[6].x - hand_landmarks.landmark[8].x)
+                                        )
+                                    )
+                                ) > 55
+                        ) and
+                        (hand_landmarks.landmark[8].y > hand_landmarks.landmark[7].y) and
+                        (dist(hand_landmarks.landmark[8], hand_landmarks.landmark[5]) /
+                        dist(hand_landmarks.landmark[5], hand_landmarks.landmark[0]) > 0.8) and
+                        (dist(hand_landmarks.landmark[5], hand_landmarks.landmark[8]) >
+                        dist(hand_landmarks.landmark[5], hand_landmarks.landmark[17]) * 0.9)
+                ):
+                    text_f = 'Down'
+                else:
+                    text_f = 'Stop'
+
+                cv2.putText(
+                    frame2,
+                    text=text_f,
+                    org=(10, 30),
+                    fontFace=cv2.FONT_HERSHEY_SIMPLEX, fontScale=1,
+                    color=255, thickness=3
+                )
+                mp_drawing.draw_landmarks(
+                    frame2,
+                    hand_landmarks,
+                    mp_hands.HAND_CONNECTIONS,
+                    mp_drawing_styles.get_default_hand_landmarks_style(),
+                    mp_drawing_styles.get_default_hand_connections_style()
+                )
+                
+    # 인식, 반전처리된 프레임만 전송.
+    image = frame2
+    # cv2.imshow('test', image)
+    # cv2.waitKey(1000)
+    _, jpeg = cv2.imencode('.jpg', image)
+    # return jpeg.tobytes()
+    return text_f
+
 
 def gen(camera):
     while True:
@@ -242,9 +376,16 @@ def uploadFile(request):
     try:
         print("request.data: ",request.data)
         img = Image.open(request.data['image'])
-        img.show()
+        # img.show()
+        img = np.asarray(img)
+        # cv2.imshow('ata', img)
+        # cv2.waitKey(1000)
+        context = { 
+            'control': ImageProcessing(img)
+        }
+        return Response(context, status=status.HTTP_200_OK)
     except Exception as err:
-        print(err)
+        print(f'에러: {err}')
     print("request.data의 타입: ",type(request.data))
     print("request.FILES: ",request.FILES)
     print("request.FILES의 타입: ",type(request.FILES))

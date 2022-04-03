@@ -17,7 +17,12 @@ namespace FirebaseWebGL.Scripts.FirebaseBridge
         [DllImport("__Internal")]
         public static extern void PostGameRecord(string json);
 
+        //랭킹페이지에 기록 받아오기
         [DllImport("__Internal")]
         public static extern void SetGameRecord();
+
+        //랭킹페이지 탭 클릭(모드, 맵별 데이터)
+        [DllImport("__Internal")]
+        public static extern void SetByInfo(int mode, string map);
     }
 }

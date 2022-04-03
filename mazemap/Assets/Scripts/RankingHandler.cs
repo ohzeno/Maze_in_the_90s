@@ -41,12 +41,6 @@ public class RankingHandler : MonoBehaviour
 
     int startIdx = 0;
 
-    //랭킹페이지에 들어왔을 때 TOP10 데이터를 받아옴
-    public void Start()
-    {
-        FirebaseDatabase.SetGameRecord();
-    }
-
     public void Update()
     {
         
@@ -56,6 +50,7 @@ public class RankingHandler : MonoBehaviour
     public void GetGameData(KeyValuePair<string, string> _data)
     {
         //{name: 어쩌구, time: 어쩌구} 이렇게 생김
+        //string으로 받아서 float 로 변환
         float recordToFlaot = (float.Parse(_data.Value));
         SendGameRecord(_data.Key, recordToFlaot);
     }
@@ -125,6 +120,14 @@ public class RankingHandler : MonoBehaviour
 
         //RecordListItem.cs로 보내기
         Instantiate(gameRecordPrefab, recordListContent).GetComponent<RankListItem>().SetUp(response);
+    }
+
+    //탭 클릭 (모드, 맵마다 다른 요청)
+    public void ChangeTab(int mode, string map)
+    {
+        //랭킹 인덱스 초기화
+        startIdx = 0;
+        FirebaseDatabase.SetByInfo(mode, map);
     }
 
 

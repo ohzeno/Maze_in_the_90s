@@ -96,10 +96,18 @@ mergeInto(LibraryManager.library, {
 
    },
 
-   //랭킹페이지 진입했을 때
-   SetGameRecord: function() {
-    //TOP 10 랭킹 값 읽어오기
-    firebase.database().ref('rank/' + '0' + '/' + 'forest1').orderByChild('time').limitToFirst(10).once('value').then(function(list) {
+
+   //랭킹페이지 탭 구분
+   SetByInfo: function(mode, map) {
+
+   //파이어베이스로 보내기 위해 string으로 파싱
+   var parsedMode = Pointer_stringify(mode);
+   var parsedMap = Pointer_stringify(map);
+   console.log(parsedMode);
+   console.log(parsedMap);
+
+    //해당하는 경로의 TOP 10 랭킹 값 읽어오기
+    firebase.database().ref('rank/' + parsedMode + '/' + parsedMap).orderByChild('time').limitToFirst(10).once('value').then(function(list) {
     //정렬된 데이터를 가져오기 위해서 하나하나씩 읽음
      list.forEach(function (score) {
         console.log(score.val());

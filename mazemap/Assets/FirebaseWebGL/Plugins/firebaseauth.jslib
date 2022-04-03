@@ -28,6 +28,24 @@ mergeInto(LibraryManager.library, {
     
     },
 
+    //로그인 - 랭킹 페이지 뒤로가기 버튼
+    IsLoggedIn: function() {
+        
+        const user = firebase.auth().currentUser;
+
+        //로그인 상태면 로비
+        if (user) {
+            window.unityInstance.SendMessage('RankingHandler', 'BackBtn', 1);
+            
+        //비로그인 상태면 로그인
+        } else {
+            console.log('user signed out!');
+            window.unityInstance.SendMessage('RankingHandler', 'BackBtn', 2);
+        }
+    
+    
+    },
+
     //자동로그인 확인 
     CheckAutoLogin: function() {
         

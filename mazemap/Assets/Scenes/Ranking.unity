@@ -4768,7 +4768,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 441.3169, y: 241.88}
+  m_AnchoredPosition: {x: 404.7, y: 222.5}
   m_SizeDelta: {x: 77.3664, y: 55.756}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1900940261
@@ -4828,9 +4828,9 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1900940261}
-        m_TargetAssemblyTypeName: MovingScenes, Assembly-CSharp
-        m_MethodName: MovingScene
+      - m_Target: {fileID: 486321794}
+        m_TargetAssemblyTypeName: RankingHandler, Assembly-CSharp
+        m_MethodName: LobbyorLoginScreen
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}

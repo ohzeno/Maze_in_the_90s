@@ -43,5 +43,8 @@ namespace FirebaseWebGL.Scripts.FirebaseBridge
         [DllImport("__Internal")]
         public static extern void DeleteUser();
 
+        [DllImport("__Internal")]
+        public static extern void IsLoggedIn();
+
     }
 }

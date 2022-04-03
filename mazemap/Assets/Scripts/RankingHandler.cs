@@ -126,4 +126,24 @@ public class RankingHandler : MonoBehaviour
         //RecordListItem.cs로 보내기
         Instantiate(gameRecordPrefab, recordListContent).GetComponent<RankListItem>().SetUp(response);
     }
+
+
+    public void LobbyorLoginScreen()
+    {
+        //로그인 상태인지 확인
+        FirebaseAuth.IsLoggedIn();
+    }
+
+    public void BackBtn(int status)
+    {
+        if (status == 1)
+        {
+            GameManager.instance.ChangeScene("Lobby");
+        }
+
+        else
+        {
+            GameManager.instance.ChangeScene("Login");
+        }
+    }
 }

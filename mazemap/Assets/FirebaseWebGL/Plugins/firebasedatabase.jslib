@@ -1,94 +1,36 @@
 mergeInto(LibraryManager.library, {
  
-    PostJSON: function(path, value, objectName, callback, fallback) {
-        var parsedPath = Pointer_stringify(path);
-        var parsedValue = Pointer_stringify(value);
-        var parsedObjectName = Pointer_stringify(objectName);
-        var parsedCallback = Pointer_stringify(callback);
-        var parsedFallback = Pointer_stringify(fallback);
- 
-        try {
- 
-            firebase.database().ref(parsedPath).set(parsedValue).then(function(unused) {
-                window.unityInstance.SendMessage(parsedObjectName, parsedCallback, "Success: " + parsedValue + " was posted to " + parsedPath);
-            });
- 
-        } catch (error) {
-            window.unityInstance.SendMessage(parsedObjectName, parsedFallback, JSON.stringify(error, Object.getOwnPropertyNames(error)));
-        }
-    },
+    //닉네임 중복검사
+    CheckNickname: function(name) {
+    
+    //가입 시도하는 닉네임
+    var parsedNick = Pointer_stringify(name);
+    console.log(parsedNick);
+    // 뒤져볼 경로
+    var nameRef = firebase.database().ref('users'); //전체 유저
+    // 결과 (0 -> 중복 있음 가입 불가능, 1 -> 중복 없음 가입 가능)
+    var result = 1
 
-    GetJSON: function(path, objectName, callback, fallback) {
-        var parsedPath = Pointer_stringify(path);
-        var parsedObjectName = Pointer_stringify(objectName);
-        var parsedCallback = Pointer_stringify(callback);
-        var parsedFallback = Pointer_stringify(fallback);
- 
-        try {
- 
-            firebase.database().ref(parsedPath).once('value').then(function(snapshot) {
-                window.unityInstance.SendMessage(parsedObjectName, parsedCallback, JSON.stringify(snapshot.val()));
-            });
- 
-        } catch (error) {
-            window.unityInstance.SendMessage(parsedObjectName, parsedFallback, JSON.stringify(error, Object.getOwnPropertyNames(error)));
-        }
-    },
+    firebase.database().ref(nameRef).once('value').then(function(list) {
+    //하나씩 읽음
+     list.forEach(function (user) {
+        console.log(user.val());
+        console.log(user.val().nickname);
 
-    PushJSON: function(path, value, objectName, callback, fallback) {
-        var parsedPath = Pointer_stringify(path);
-        var parsedValue = Pointer_stringify(value);
-        var parsedObjectName = Pointer_stringify(objectName);
-        var parsedCallback = Pointer_stringify(callback);
-        var parsedFallback = Pointer_stringify(fallback);
- 
-        try {
- 
-            firebase.database().ref(parsedPath).push().set(parsedValue).then(function(unused) {
-                window.unityInstance.SendMessage(parsedObjectName, parsedCallback, "Success: " + parsedValue + " was pushed to " + parsedPath);
-            });
- 
-        } catch (error) {
-            window.unityInstance.SendMessage(parsedObjectName, parsedFallback, JSON.stringify(error, Object.getOwnPropertyNames(error)));
+        //중복 있음
+        if (user.val().nickname == parsedNick){
+            console.log('중복');
+            result = 0
         }
-    },
+      });
+      //검사 끝 유니티로 결과 보냄
+      console.log(result);
+      console.log(typeof result);
+      window.unityInstance.SendMessage('SignUpHandler', 'CheckedName', result);
+     });
 
-    UpdateJSON: function(path, value, objectName, callback, fallback) {
-        var parsedPath = Pointer_stringify(path);
-        var parsedValue = Pointer_stringify(value);
-        var parsedObjectName = Pointer_stringify(objectName);
-        var parsedCallback = Pointer_stringify(callback);
-        var parsedFallback = Pointer_stringify(fallback);
- 
-        var postData = { Score : parsedValue };
- 
-        try {
- 
-            firebase.database().ref(parsedPath).update(postData).then(function(unused) {
-                window.unityInstance.SendMessage(parsedObjectName, parsedCallback, "Success: " + parsedValue + " was updated in " + parsedPath);
-            });
- 
-        } catch (error) {
-            window.unityInstance.SendMessage(parsedObjectName, parsedFallback, JSON.stringify(error, Object.getOwnPropertyNames(error)));
-        }
-    },
+   },
 
-    DeleteJSON: function(path, objectName, callback, fallback) {
-        var parsedPath = Pointer_stringify(path);
-        var parsedObjectName = Pointer_stringify(objectName);
-        var parsedCallback = Pointer_stringify(callback);
-        var parsedFallback = Pointer_stringify(fallback);
- 
-        try {
- 
-            firebase.database().ref(parsedPath).remove().then(function(unused) {
-                window.unityInstance.SendMessage(parsedObjectName, parsedCallback, "Success: " + parsedPath + " was deleted");
-            });
- 
-        } catch (error) {
-            window.unityInstance.SendMessage(parsedObjectName, parsedFallback, JSON.stringify(error, Object.getOwnPropertyNames(error)));
-        }
-    },
 
     //게임 끝났을 때 유니티에서 받은 데이터 파이어베이스로 보내기(저장만)
     PostGameRecord: function(json) {

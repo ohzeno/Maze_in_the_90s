@@ -46,6 +46,23 @@ namespace FirebaseWebGL.Examples.Auth
         }
 
 
+        private void CheckedName(int result)
+        {
+
+            if (result == 0)
+            {
+                registerNameErrorText.text = "사용할 수 없는 닉네임입니다";
+            }
+            else
+            {
+                registerNameErrorText.text = "사용 가능한 닉네임입니다";
+            }
+
+        }
+
+        public void CheckNickname() =>
+           FirebaseDatabase.CheckNickname(registerUsername.text);
+
         public void CreateUserWithEmailAndPassword() =>
            //Firebase Authentication & Realtime Database에 유저 등록
            FirebaseAuth.CreateUserWithEmailAndPassword(registerUsername.text, registerEmail.text, registerPassword.text, gameObject.name, "DisPlayInfo");

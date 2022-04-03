@@ -62,11 +62,34 @@ mergeInto(LibraryManager.library, {
     postData.name = name;
     postData.time = time;
 
-    // 전체 랭킹 테이블과 유저 전적 테이블을 업데이트
-    firebase.database().ref(rankRef).update(postData).then(function(unused) {
-        console.log('rank post completed!');
-    });
+    //전체 랭킹 테이블 업데이트(해당 유저의 기록이 이미 있는 경우 더 짧은 기록으로 대체할 것)
+    rankRef.get().then(function(snapshot) {
+    //해당 경로에 기록이 이미 있음
+    if (snapshot.exists()) {
+        console.log(snapshot.val());
 
+        //시간 비교
+        //기존에 있는 기록이 같거나 더 짧다면 갱신하지 않음
+        if (snapshot.val().time <= time){
+            console.log('time not replaced...');
+        } 
+        //기록 갱신했으면 데이터 보내서 대체함
+        else{
+            firebase.database().ref(rankRef).update(postData).then(function(unused) {
+            console.log('time replaced!');
+            });
+        }
+
+
+        //해당 경로에 기록이 없음(해당 모드, 맵에서 첫 게임인 경우)
+    } else {
+        firebase.database().ref(rankRef).update(postData).then(function(unused) {
+        console.log('rank post completed!');
+        });
+    }
+    });
+    
+    //유저 전적 테이블 업데이트(여기는 덮어쓰기 없음)
     firebase.database().ref(recordRef).update(postData).then(function(unused) {
         console.log('record post completed!');
     });

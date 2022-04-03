@@ -31,6 +31,37 @@ mergeInto(LibraryManager.library, {
 
    },
 
+   //닉네임 중복검사(소셜)
+    CheckNicknameForSocial: function(name) {
+    
+    //가입 시도하는 닉네임
+    var parsedNick = Pointer_stringify(name);
+    console.log(parsedNick);
+    // 뒤져볼 경로
+    var nameRef = firebase.database().ref('users'); //전체 유저
+    // 결과 (0 -> 중복 있음 가입 불가능, 1 -> 중복 없음 가입 가능)
+    var result = 1
+
+    firebase.database().ref(nameRef).once('value').then(function(list) {
+    //하나씩 읽음
+     list.forEach(function (user) {
+        console.log(user.val());
+        console.log(user.val().nickname);
+
+        //중복 있음
+        if (user.val().nickname == parsedNick){
+            console.log('중복');
+            result = 0
+        }
+      });
+      //검사 끝 유니티로 결과 보냄
+      console.log(result);
+      console.log(typeof result);
+      window.unityInstance.SendMessage('SignUpHandler', 'CheckedNameForSocial', result);
+     });
+
+   },
+
 
     //게임 끝났을 때 유니티에서 받은 데이터 파이어베이스로 보내기(저장만)
     PostGameRecord: function(json) {

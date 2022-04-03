@@ -149,89 +149,81 @@ mergeInto(LibraryManager.library, {
     //구글 처음 로그인(프사 디폴트 이미지로 업뎃)
     SignInWithGoogle: function (objectName, callback, fallback) {
  
-        var parsedObjectName = Pointer_stringify(objectName);
-        var parsedCallback = Pointer_stringify(callback);
-        var parsedFallback = Pointer_stringify(fallback);
- 
-        try {
-            var provider = new firebase.auth.GoogleAuthProvider();
-            firebase.auth().signInWithPopup(provider).then(function (unused) {
-                
-                var user = firebase.auth().currentUser;
-                return user;
+    var parsedObjectName = Pointer_stringify(objectName);
+    var parsedCallback = Pointer_stringify(callback);
+    var parsedFallback = Pointer_stringify(fallback);
 
-            }).then(function (user) {
+    try {
+        var provider = new firebase.auth.GoogleAuthProvider();
+        firebase.auth().signInWithPopup(provider).then(function (unused) {
+            
+            var user = firebase.auth().currentUser;
+            return user;
 
-                console.log('google profile update start!!');
-                console.log(user);
-                
-                //Firebase Auth에 등록
-                user.updateProfile({
-                photoURL: "https://pbs.twimg.com/media/EFKdt0bWsAIfcj9.jpg"
-                }).then(function (unused) {
-                    console.log('profile update done!!');
-                    window.unityInstance.SendMessage('SignUpHandler', 'LoginScreen');
-                });
+        }).then(function (user) {
 
-                //Realtime Database에 등록
-                firebase.database().ref('users/' + user.uid).set({
-                    nickname: user.displayName,
-                    email: user.email,
-                    profile_picture : "https://pbs.twimg.com/media/EFKdt0bWsAIfcj9.jpg"
-                });
+            console.log('google profile update start!!');
+            console.log(user);
+            
+            //닉네임 중복검사를 위해 moreinfo로 보냄
+            window.unityInstance.SendMessage('SignUpHandler', 'CheckNickUI')});
 
-                unityInstance.Module.SendMessage(parsedObjectName, parsedCallback, "Success: signed in with Google!");
-            }).catch(function (error) {
-                unityInstance.Module.SendMessage(parsedObjectName, parsedFallback, JSON.stringify(error, Object.getOwnPropertyNames(error)));
-            });
- 
-        } catch (error) {
-            unityInstance.Module.SendMessage(parsedObjectName, parsedFallback, JSON.stringify(error, Object.getOwnPropertyNames(error)));
-        }
+    } catch (error) {
+        unityInstance.Module.SendMessage(parsedObjectName, parsedFallback, JSON.stringify(error, Object.getOwnPropertyNames(error)));
+    }
     },
     
 
     //깃헙 처음 로그인(프사 디폴트 이미지로 업뎃)
     SignInWithGithub: function (objectName, callback, fallback) {
-        var parsedObjectName = Pointer_stringify(objectName);
-        var parsedCallback = Pointer_stringify(callback);
-        var parsedFallback = Pointer_stringify(fallback);
  
-        try {
-            var provider = new firebase.auth.GithubAuthProvider();
-            firebase.auth().signInWithPopup(provider).then(function (unused) {
+    var parsedObjectName = Pointer_stringify(objectName);
+    var parsedCallback = Pointer_stringify(callback);
+    var parsedFallback = Pointer_stringify(fallback);
 
-                var user = firebase.auth().currentUser;
-                return user;
+    try {
+        var provider = new firebase.auth.GithubAuthProvider();
+        firebase.auth().signInWithPopup(provider).then(function (unused) {
+            
+            var user = firebase.auth().currentUser;
+            return user;
 
-            }).then(function (user) {
+        }).then(function (user) {
 
-                console.log('github profile update start!!');
-                console.log(user);
-                
-                //Firebase Auth에 등록
-                user.updateProfile({
-                photoURL: "https://pbs.twimg.com/media/EFKdt0bWsAIfcj9.jpg"
-                }).then(function (unused) {
-                    console.log('profile update done!!');
-                    window.unityInstance.SendMessage('SignUpHandler', 'LoginScreen');
-                });
+            console.log('github profile update start!!');
+            console.log(user);
+            
+            //닉네임 중복검사를 위해 moreinfo로 보냄
+            window.unityInstance.SendMessage('SignUpHandler', 'CheckNickUI')});
 
-                //Realtime Database에 등록
-                firebase.database().ref('users/' + user.uid).set({
-                    nickname: user.displayName,
-                    email: user.email,
-                    profile_picture : "https://pbs.twimg.com/media/EFKdt0bWsAIfcj9.jpg"
-                });
+    } catch (error) {
+        unityInstance.Module.SendMessage(parsedObjectName, parsedFallback, JSON.stringify(error, Object.getOwnPropertyNames(error)));
+    }
+    },
 
-                window.unityInstance.SendMessage(parsedObjectName, parsedCallback, "Success: signed in with Github!");
-            }).catch(function (error) {
-                window.unityInstance.SendMessage(parsedObjectName, parsedFallback, JSON.stringify(error, Object.getOwnPropertyNames(error)));
-            });
+    //소셜 가입 프로필 등록(닉넴 중복검사 통과 후)
+    UpdateInfoWithGoogleOrGithub: function (username) {
  
-        } catch (error) {
-            window.unityInstance.SendMessage(parsedObjectName, parsedFallback, JSON.stringify(error, Object.getOwnPropertyNames(error)));
-        }
+        var parsedUserName = Pointer_stringify(username);
+        var user = firebase.auth().currentUser;
+        
+        //Firebase Auth에 등록
+        user.updateProfile({
+        displayName: parsedUserName,
+        photoURL: "https://pbs.twimg.com/media/EFKdt0bWsAIfcj9.jpg"
+        });
+
+        //Realtime Database에 등록
+        firebase.database().ref('users/' + user.uid).set({
+            nickname: parsedUserName,
+            email: user.email,
+            profile_picture : "https://pbs.twimg.com/media/EFKdt0bWsAIfcj9.jpg"
+        });
+
+        //일단 로그아웃 시키고 로그인페이지
+        firebase.auth().signOut();
+        console.log('profile update done!!');
+        window.unityInstance.SendMessage('SignUpHandler', 'LoginScreen');
     },
 
     //구글 로그인(프사 업뎃x)

@@ -17,6 +17,10 @@ namespace FirebaseWebGL.Scripts.FirebaseBridge
         [DllImport("__Internal")]
         public static extern void CheckNicknameForSocial(string name);
 
+        //닉네임 변경 중복검사
+        [DllImport("__Internal")]
+        public static extern void CheckNicknameForChange(string name);
+
         //랭킹페이지에 기록 올리기
         [DllImport("__Internal")]
         public static extern void PostGameRecord(string json);

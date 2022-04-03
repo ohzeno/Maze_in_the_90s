@@ -226,6 +226,23 @@ mergeInto(LibraryManager.library, {
         window.unityInstance.SendMessage('SignUpHandler', 'LoginScreen');
     },
 
+    //마이페이지 닉네임 변경
+    UpdateNickname: function (username) {
+ 
+        var parsedUserName = Pointer_stringify(username);
+        var user = firebase.auth().currentUser;
+        
+        //Firebase Auth에서 업뎃
+        user.updateProfile({
+        displayName: parsedUserName,
+        });
+
+        //Realtime Database에서 업뎃
+        firebase.database().ref('users/' + user.uid).set({
+            nickname: parsedUserName
+        });
+    },
+
     //구글 로그인(프사 업뎃x)
     LoginWithGoogle: function (objectName, callback, fallback) {
  

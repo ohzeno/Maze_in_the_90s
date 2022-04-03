@@ -26,6 +26,9 @@ namespace FirebaseWebGL.Scripts.FirebaseBridge
         public static extern void UpdateInfoWithGoogleOrGithub(string username);
 
         [DllImport("__Internal")]
+        public static extern void UpdateNickname(string username);
+
+        [DllImport("__Internal")]
         public static extern void LoginWithGoogle(string objectName, string callback, string fallback);
 
         [DllImport("__Internal")]

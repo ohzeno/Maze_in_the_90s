@@ -22,6 +22,12 @@ mergeInto(LibraryManager.library, {
             console.log('중복');
             result = 0
         }
+
+        //아무것도 입력하지 않음
+        if (parsedNick == ""){
+            console.log('nothing....');
+            result = 3
+        }
       });
       //검사 끝 유니티로 결과 보냄
       console.log(result);
@@ -53,11 +59,64 @@ mergeInto(LibraryManager.library, {
             console.log('중복');
             result = 0
         }
+        //아무것도 입력하지 않음
+        if (parsedNick == ""){
+            console.log('nothing....');
+            result = 3
+        }
       });
       //검사 끝 유니티로 결과 보냄
       console.log(result);
       console.log(typeof result);
       window.unityInstance.SendMessage('SignUpHandler', 'CheckedNameForSocial', result);
+     });
+
+   },
+
+   //닉네임 변경 중복검사
+   CheckNicknameForChange: function(name) {
+    
+    //변경 시도하는 닉네임
+    var parsedNick = Pointer_stringify(name);
+    console.log(parsedNick);
+
+    //현재 유저닉네임
+    var currNick = firebase.auth().currentUser.displayName;
+
+    // 뒤져볼 경로
+    var nameRef = firebase.database().ref('users'); //전체 유저
+    // 결과 (0 -> 중복 있음 변경 불가능, 1 -> 중복 없음 변경 가능, 2 -> 변경 없음)
+    var result = 1
+
+    firebase.database().ref(nameRef).once('value').then(function(list) {
+    //하나씩 읽음
+     list.forEach(function (user) {
+        console.log(user.val());
+        console.log(user.val().nickname);
+
+        //중복 있음
+        if (user.val().nickname == parsedNick){
+            console.log('overlap');
+            result = 0
+        }
+
+        //현재 닉네임과 같음
+        if (currNick == parsedNick){
+            console.log('overlap current nickname');
+            result = 2
+        }
+
+        //아무것도 입력하지 않음
+        if (parsedNick == ""){
+            console.log('nothing....');
+            result = 3
+        }
+
+      });
+      //검사 끝 유니티로 결과 보냄
+      console.log(result);
+      console.log(typeof result);
+      window.unityInstance.SendMessage('LobbyHandler', 'CheckedNameForChange', result);
      });
 
    },

@@ -68,9 +68,13 @@ namespace FirebaseWebGL.Examples.Auth
             {
                 registerNameErrorText.text = "사용할 수 없는 닉네임입니다";
             }
-            else
+            else if (result == 1)
             {
                 registerNameErrorText.text = "사용 가능한 닉네임입니다";
+            }
+            else if (result == 3)
+            {
+                registerNameErrorText.text = "닉네임을 입력해주세요";
             }
         }
 
@@ -81,9 +85,13 @@ namespace FirebaseWebGL.Examples.Auth
             {
                 outputText.text = "사용할 수 없는 닉네임입니다";
             }
-            else
+            else if (result == 1)
             {
                 outputText.text = "사용 가능한 닉네임입니다";
+            }
+            else if (result == 3)
+            {
+                outputText.text = "닉네임을 입력해주세요";
             }
         }
        

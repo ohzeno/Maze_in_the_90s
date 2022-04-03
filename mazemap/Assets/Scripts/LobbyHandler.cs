@@ -15,8 +15,8 @@ namespace FirebaseWebGL.Examples.Auth
         //1. 마이페이지
         private GameObject profileUI;
         [SerializeField]
-        //2. 프사 변경페이지
-        private GameObject changePfpUI;
+        //2. 닉네임 변경페이지
+        private GameObject changeNicknameUI;
         [SerializeField]
         //3. 비밀번호 변경
         private GameObject changePasswordUI;
@@ -35,13 +35,15 @@ namespace FirebaseWebGL.Examples.Auth
         private Text myPageUsernameText;
         [Space(5f)]
 
-        [Header("Profile Picture References")]
+        [Header("Change Nickname References")]
         [SerializeField]
         private Image lobbyProfilePicture;
         [SerializeField]
         private Image myPageProfilePicture;
         [SerializeField]
-        private TMP_InputField profilePictureLink;
+        private TMP_Text currNickname;
+        [SerializeField]
+        private TMP_InputField newNickname;
         [SerializeField]
         private TMP_Text outputText;
 
@@ -123,7 +125,6 @@ namespace FirebaseWebGL.Examples.Auth
                     output = "지원하지 않는 이미지 파일 형식입니다 다른 이미지를 사용하세요";
                 }
 
-                Output(output);
             }
             else
             {
@@ -135,15 +136,10 @@ namespace FirebaseWebGL.Examples.Auth
             }
         }
 
-        public void Output(string _output)
-        {
-            outputText.text = _output;
-        }
-
         public void ClearUI()
         {
             profileUI.SetActive(false);
-            changePfpUI.SetActive(false);
+            changeNicknameUI.SetActive(false);
             changePasswordUI.SetActive(false);
             actionSuccessPanelUI.SetActive(false);
             deleteUserConfirmUI.SetActive(false);
@@ -159,23 +155,48 @@ namespace FirebaseWebGL.Examples.Auth
             CheckAuthState();
         }
 
-        //2. 프사 변경
-        public void ChangePfpUI()
+        //2. 닉넴 변경
+        public void ChangeNickUI()
         {
             ClearUI();
-            changePfpUI.SetActive(true);
+            changeNicknameUI.SetActive(true);
+            currNickname.text = userName;
         }
 
-        public void ChangePfpSuccess()
+        public void CheckNicknameForChange() =>
+           FirebaseDatabase.CheckNicknameForChange(newNickname.text);
+
+        private void CheckedNameForChange(int result)
         {
-            ClearUI();
-            actionSuccessPanelUI.SetActive(true);
-            actionSuccessText.text = "프로필 사진이 성공적으로 변경되었습니다";
+
+            if (result == 0)
+            {
+                outputText.text = "사용할 수 없는 닉네임입니다";
+            }
+            else if (result == 1)
+            {
+                outputText.text = "사용 가능한 닉네임입니다";
+            }
+            else if (result == 2)
+            {
+                outputText.text = "현재 닉네임과 같습니다";
+            }
+            else if (result == 3)
+            {
+                outputText.text = "변경할 닉네임을 입력해주세요";
+            }
         }
 
-        public void SubmitProfileImageButton()
+
+        public void ChangeNicknameSuccess()
         {
-            UpdateProfilePicture(profilePictureLink.text);
+            if (outputText.text == "사용 가능한 닉네임입니다")
+            {
+                ClearUI();
+                actionSuccessPanelUI.SetActive(true);
+                actionSuccessText.text = "닉네임이 성공적으로 변경되었습니다";
+                FirebaseAuth.UpdateNickname(newNickname.text);
+            }
         }
 
         //2. 비번 변경

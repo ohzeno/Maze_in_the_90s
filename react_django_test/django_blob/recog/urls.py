@@ -10,7 +10,7 @@ urlpatterns = [
     path("upload/<str:user_name>/", views.uploadFile, name = "uploadFile"),
     path('detect/<str:user_name>/', views.detect, name="detect"),
     path('detect/<str:user_name>/control', views.getControl, name = "getControl"),
-    path('detect/<str:user_name>/delete', views.getControl, name = "getControl"),
+    path('detect/<str:user_name>/delete', views.delUserControl, name = "delUserControl"),
 ]
 
 if settings.DEBUG: 

@@ -34,13 +34,12 @@ const get_time = () => {
   console.log(minutes + " : " + seconds + " : " + milseconds);
 };
 let outterCamState = 0;
+
 const changeState = () => {
   if (outterCamState === 1) {
     outterCamState = 0;
-    console.log(outterCamState);
   } else if (outterCamState === 0) {
     outterCamState = 1;
-    console.log(outterCamState);
   }
 };
 const WebcamStreamCapture = () => {
@@ -146,6 +145,7 @@ const WebcamStreamCapture = () => {
     height: 180,
     facingMode: "user",
   };
+  handleObserveClick();
   return (
     <>
       <div>input webcam</div>

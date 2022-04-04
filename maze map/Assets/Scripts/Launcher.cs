@@ -82,6 +82,7 @@ public class Launcher : MonoBehaviourPunCallbacks//다른 포톤 반응 받아들이기
 
     public override void OnJoinedRoom()//방에 들어갔을때 작동
     {
+        GameManager.records = new Dictionary<string, string>();
         MenuManager.Instance.OpenMenu("room");//룸 메뉴 열기
         roomNameText.text = PhotonNetwork.CurrentRoom.Name;//들어간 방 이름표시
         inRoomModeDropdown.value = (int)PhotonNetwork.CurrentRoom.CustomProperties["Mode"];
@@ -94,7 +95,12 @@ public class Launcher : MonoBehaviourPunCallbacks//다른 포톤 반응 받아들이기
         for (int i = 0; i < players.Count(); i++)
         {
             Instantiate(playerListItemPrefab, playerListContent).GetComponent<PlayerListItem>().SetUp(players[i]);
+
+            //GameObject dassadasf = PhotonNetwork.Instantiate("PlayerListItem", Vector3.one, Quaternion.identity);
+            //dassadasf.transform.parent = playerListContent.transform;
+            //dassadasf.GetComponent<PlayerListItem>().SetUp(players[i]);
             //내가 방에 들어가면 방에있는 사람 목록 만큼 이름표 뜨게 하기
+
         }
         startGameButton.SetActive(PhotonNetwork.IsMasterClient);//방장만 게임시작 버튼 누르기 가능
         //inGameOptionButton.SetActive(PhotonNetwork.IsMasterClient);//방장만 게임시작 버튼 누르기 가능
@@ -122,7 +128,7 @@ public class Launcher : MonoBehaviourPunCallbacks//다른 포톤 반응 받아들이기
         else
         {
             PhotonNetwork.LoadLevel(MapDropdown.hideAndSeek_list[(int)PhotonNetwork.CurrentRoom.CustomProperties["Map"]]);//1인 이유는 빌드에서 scene 번호가 1번씩이기 때문이다. 0은 초기 씬.
-        }
+        }        
     }
 
     public void LeaveRoom() // 대기실 퇴장

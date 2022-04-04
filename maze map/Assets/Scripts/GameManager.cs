@@ -11,8 +11,9 @@ public class GameManager : MonoBehaviour
     public static double startTime;
     public bool isConnect = false;
     private string[] CharList = new string[] { "Baker", "CafeMaid", "Casual", "Cop", "Dog", "FElder", "FStudent", "FWorker", "FYouth", "MElder", "MStudent1", "MStudent2", "MWorker", "MYouth", "Punk", "Template", "Traditional", "Trendy", "Witch3" };
+
     void Start()
-    {
+    {        
         isConnect = true;
         StartCoroutine(CreatePlayer());
     }

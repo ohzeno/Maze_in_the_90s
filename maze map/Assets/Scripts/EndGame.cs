@@ -31,7 +31,6 @@ public class EndGame : MonoBehaviour
                 playercnt += 1;
                 Instantiate(recordListItemPrefab, recordListContent).GetComponent<RecordListItem>().SetUp(playercnt,record);
             }
-            GameManager.records= new Dictionary<string, string>();
             gameObject.SetActive(false);
             TimeRecord.SetActive(true);
         }          

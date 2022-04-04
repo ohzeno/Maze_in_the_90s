@@ -32,18 +32,6 @@ public class MovingObject : MonoBehaviour
 
     StartGame startgame;
 
-    /*private void Awake()
-    {
-        if (instance == null)
-        {
-            DontDestroyOnLoad(this.gameObject);
-            instance = this;
-        }
-        else
-        {
-            Destroy(this.gameObject);
-        }
-    }*/
     RaycastHit hit;
     IEnumerator Start()
     {
@@ -160,6 +148,6 @@ public class MovingObject : MonoBehaviour
     void ChatMessage(string a, string b, PhotonMessageInfo info)
     {
         startgame = GameObject.Find("StartGame").GetComponent<StartGame>();
-        GameManager.records.Add(info.Sender.ToString().Substring(5, info.Sender.ToString().Length-6), startgame.CountTime.ToString("F2"));
+        GameManager.records.Add(info.Sender.ToString().Substring(5, info.Sender.ToString().Length-6) , string.Format("{0:0.###}",info.SentServerTime-GameManager.startTime));
     }
 }

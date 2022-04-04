@@ -23,35 +23,22 @@ public class EndGame : MonoBehaviour
 
     private void OnTriggerExit2D(Collider2D collision)
     {
-
-        if (collision.gameObject.name == "Witch3(Clone)")
+        if (GameManager.records.Count==PhotonNetwork.CurrentRoom.PlayerCount)
         {
-            if (GameManager.records.Count==PhotonNetwork.CurrentRoom.PlayerCount)
-            {
-                StartBtn.GetComponent<StartGame>().timeActive = false; //Å¸ÀÌ¸Ó ²ô±â
+            StartBtn.GetComponent<StartGame>().timeActive = false; //Å¸ï¿½Ì¸ï¿½ ï¿½ï¿½ï¿½ï¿½
 
-                foreach (KeyValuePair<string, string> record in GameManager.records)//Á¸ÀçÇÏ´Â ¸ðµç roomListContent
-                {
-                    playercnt += 1;
-                    Instantiate(recordListItemPrefab, recordListContent).GetComponent<RecordListItem>().SetUp(playercnt,record);
-                    RankingHandler.instance.GetGameData(record);//RankingHandler·Î °ÔÀÓ±â·Ï º¸³¿
-                }
-                GameManager.records= new Dictionary<string, string>();
-                gameObject.SetActive(false);
-                TimeRecord.SetActive(true);
+            foreach (KeyValuePair<string, string> record in GameManager.records)//ï¿½ï¿½ï¿½ï¿½ï¿½Ï´ï¿½ ï¿½ï¿½ï¿½ roomListContent
+            {
+                playercnt += 1;
+                Instantiate(recordListItemPrefab, recordListContent).GetComponent<RecordListItem>().SetUp(playercnt,record);
+                RankingHandler.instance.GetGameData(record);//RankingHandlerï¿½ï¿½ ï¿½ï¿½ï¿½Ó±ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½
             }
-            
-        }
+            gameObject.SetActive(false);
+            TimeRecord.SetActive(true);
+        }          
     }
 
     private void Update()
     {
-        /*
-        if (playercnt == PhotonNetwork.CurrentRoom.PlayerCount)
-        {
-            TimeRecord.SetActive(true);
-            EndBtn.SetActive(false);
-        }
-        */
     }
 }

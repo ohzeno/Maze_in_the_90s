@@ -7,7 +7,7 @@ using TMPro;
 
 public class RecordListItem : MonoBehaviour
 {
-    // ±â·Ï ÇÁ¸®ÆÕ ¼³Á¤
+    // ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½
     StartGame startgame;
     public TextMeshProUGUI record1;
     public TextMeshProUGUI record2;
@@ -19,10 +19,9 @@ public class RecordListItem : MonoBehaviour
     }
     public void SetUp(int rank, KeyValuePair<string, string> record)
     {
-        Debug.Log(record);
-        record1.text = rank.ToString() + "µî";
+        record1.text = rank.ToString()+"ï¿½ï¿½";
         record2.text = record.Key.ToString();
-        record3.text = record.Value.ToString();//ÇÃ·¹ÀÌ¾î ÀÌ¸§ ¹Þ¾Æ¼­ ±×»ç¶÷ ÀÌ¸§ÀÌ ¸ñ·Ï¿¡ ¶ß°Ô ¸¸µé¾îÁØ´Ù. 
+        record3.text = record.Value.ToString();//ï¿½Ã·ï¿½ï¿½Ì¾ï¿½ ï¿½Ì¸ï¿½ ï¿½Þ¾Æ¼ï¿½ ï¿½×»ï¿½ï¿½ ï¿½Ì¸ï¿½ï¿½ï¿½ ï¿½ï¿½Ï¿ï¿½ ï¿½ß°ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ø´ï¿½. 
     }
 
     // Update is called once per frame

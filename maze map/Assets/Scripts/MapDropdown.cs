@@ -1,66 +1,70 @@
 using TMPro;
 using UnityEngine;
 using System.Collections.Generic;
+using Photon.Pun;//ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½
 
 public class MapDropdown : MonoBehaviour
 {
     [SerializeField] private TMP_Dropdown mode_dropdown;
     [SerializeField] private TMP_Dropdown map_dropdown;
     [SerializeField] private TextMeshProUGUI text;
-    private string[] maze_list = new string[4] { "-", "Forest Stage1", "Forest Stage2", "Tokyo Stage1" };
-    private string[] sullae_list = new string[5] { "-", "apple", "mango", "juice", "pepper" };
+
+    public static string[] mode_list = new string[3] { "-", "Maze", "Hide and Seek" };
+    public static string[] maze_list = new string[6] { "-","MazeForest1", "MazeForest2", "MazeForest3", "MazeForest4", "MazeGrave1" };
+    public static string[] hideAndSeek_list = new string[3] {"-", "MazeForest1", "MazeForest2"};
 
     public void OnModeSelect()
     {
-        // ÇöÀç dropdown¿¡ ÀÖ´Â ¸ðµç ¿É¼ÇÀ» Á¦°Å
+        // ï¿½ï¿½ï¿½ï¿½ dropdownï¿½ï¿½ ï¿½Ö´ï¿½ ï¿½ï¿½ï¿½ ï¿½É¼ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½
         map_dropdown.ClearOptions();
-
-        // »õ·Î¿î ¿É¼Ç ¼³Á¤À» À§ÇÑ OptionData »ý¼º
+        if (PhotonNetwork.CurrentRoom != null)
+        {
+            PhotonNetwork.CurrentRoom.CustomProperties["Mode"] = mode_list[mode_dropdown.value];
+        }
+        // ï¿½ï¿½ï¿½Î¿ï¿½ ï¿½É¼ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ OptionData ï¿½ï¿½ï¿½ï¿½
         List<TMP_Dropdown.OptionData> optionList = new List<TMP_Dropdown.OptionData>();
 
-        if (mode_dropdown.value == 2)
+        if (mode_dropdown.value == 1)
         {
-            // sullae_list ¹è¿­¿¡ ÀÖ´Â ¸ðµç ¹®ÀÚ¿­ µ¥ÀÌÅÍ¸¦ ºÒ·¯¿Í¼­ optionList¿¡ ÀúÀå
-            foreach (string str in sullae_list)
+            // sullae_list ï¿½è¿­ï¿½ï¿½ ï¿½Ö´ï¿½ ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½Ú¿ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½Í¸ï¿½ ï¿½Ò·ï¿½ï¿½Í¼ï¿½ optionListï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½
+            foreach (string str in hideAndSeek_list)
             {
                 optionList.Add(new TMP_Dropdown.OptionData(str));
             }
         }
-        else if (mode_dropdown.value == 1)
+        else
         {
-            // maze_list ¹è¿­¿¡ ÀÖ´Â ¸ðµç ¹®ÀÚ¿­ µ¥ÀÌÅÍ¸¦ ºÒ·¯¿Í¼­ optionList¿¡ ÀúÀå
+            // maze_list ï¿½è¿­ï¿½ï¿½ ï¿½Ö´ï¿½ ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½Ú¿ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½Í¸ï¿½ ï¿½Ò·ï¿½ï¿½Í¼ï¿½ optionListï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½
             foreach (string str in maze_list)
             {
                 optionList.Add(new TMP_Dropdown.OptionData(str));
             }
         }
 
-        // À§¿¡¼­ »ý¼ºÇÑ optionList¸¦ dropdownÀÇ ¿É¼Ç °ª¿¡ Ãß°¡
+        // ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ optionListï¿½ï¿½ dropdownï¿½ï¿½ ï¿½É¼ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½ß°ï¿½
         map_dropdown.AddOptions(optionList);
 
-        // ÇöÀç dropdown¿¡ ¼±ÅÃµÈ ¿É¼ÇÀ» 0¹øÀ¸·Î ¼³Á¤
+        // ï¿½ï¿½ï¿½ï¿½ dropdownï¿½ï¿½ ï¿½ï¿½ï¿½Ãµï¿½ ï¿½É¼ï¿½ï¿½ï¿½ 0ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½
         map_dropdown.value = 0;
     }
-
     
     public void OnDropdownEvent(int index)
     {
-        // ¼±ÅÃÇÑ map ÀÌ¸§À» º¸¿©ÁÜ (1 -> ¹Ì·Î 2-> ¼ú·¡)
+        // ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ map ï¿½Ì¸ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ 
         if (mode_dropdown.value == 2)
         {
-            text.text = $"{sullae_list[map_dropdown.value]}";
-            Debug.Log(mode_dropdown.value);
-            Debug.Log(text.text);
-
-        } else if (mode_dropdown.value == 1)
+            text.text = $"{hideAndSeek_list[map_dropdown.value]}";
+        }
+        else if (mode_dropdown.value == 1)
         {
             text.text = $"{maze_list[map_dropdown.value]}";
-            Debug.Log(mode_dropdown.value);
-            Debug.Log(text.text);
         }
-
-        //±â·Ï ¹Þ¾Æ¿Ã ¿äÃ» º¸³¿
         RankingHandler.instance.ChangeTab(mode_dropdown.value, text.text);
-
+    }
+    public void mapChange()
+    {
+        PhotonNetwork.CurrentRoom.CustomProperties["Mode"] = mode_dropdown.value;
+        PhotonNetwork.CurrentRoom.CustomProperties["Map"] = map_dropdown.value;
+        PhotonNetwork.CurrentRoom.SetCustomProperties(PhotonNetwork.CurrentRoom.CustomProperties);
     }
 }

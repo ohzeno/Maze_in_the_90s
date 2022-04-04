@@ -49,6 +49,7 @@ public class Launcher : MonoBehaviourPunCallbacks//�ٸ� ���� ���
         Debug.Log("Joined Lobby");
         //PhotonNetwork.NickName = "Player " + Random.Range(0, 1000).ToString("0000");
         PhotonNetwork.NickName = FirebaseWebGL.Examples.Auth.LobbyHandler.userName;
+        Debug.Log(PhotonNetwork.NickName);
 
         //���»�� �̸� �������� ���ںٿ��� �����ֱ�
     }

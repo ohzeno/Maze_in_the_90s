@@ -25,6 +25,8 @@ public class RankingHandler : MonoBehaviour
     [Serializable]
     public class gameRecord
     {
+        public int totalPlayers;
+        public int rank;
         public int gameMode;       
         public string gameMap;
         public string nickName;
@@ -57,19 +59,26 @@ public class RankingHandler : MonoBehaviour
         //{name: 어쩌구, time: 어쩌구} 이렇게 생김
         //string으로 받아서 float 로 변환
         float recordToFlaot = (float.Parse(_data.Value));
-        SendGameRecord(_data.Key, recordToFlaot);
+        SendGameRecord(players, rank, _data.Key, recordToFlaot, mode, map);
     }
 
     //게임데이터 저장, JSON 변환, 전송
-    public void SendGameRecord(string username, float time)
+    public void SendGameRecord(int players, int rank, string username, float time, int mode, int map)
     {
         gameRecord gameRecordObject = new gameRecord();
 
-        gameRecordObject.gameMode = 1;
-        gameRecordObject.gameMap = "forest1";
+        //MapDropdown.cs에 있는 거 내용 참고
+        //public static string[] mode_list = new string[3] { "-", "Maze", "Hide and Seek" };
+        //public static string[] maze_list = new string[6] { "-", "MazeForest1", "MazeForest2", "MazeForest3", "MazeForest4", "MazeGrave1" };
+        //public static string[] hideAndSeek_list = new string[3] { "-", "MazeForest1", "MazeForest2" };
+        
+        gameRecordObject.totalPlayers = players;
+        gameRecordObject.rank = rank;
         gameRecordObject.nickName = username;
         gameRecordObject.time = time;
-
+        gameRecordObject.gameMode = mode;
+        gameRecordObject.gameMap = MapDropdown.maze_list[map];
+        
         string json = JsonUtility.ToJson(gameRecordObject);
 
         //파이어베이스로 보냄

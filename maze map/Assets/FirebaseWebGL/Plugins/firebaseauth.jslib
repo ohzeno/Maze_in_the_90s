@@ -231,16 +231,18 @@ mergeInto(LibraryManager.library, {
  
         var parsedUserName = Pointer_stringify(username);
         var user = firebase.auth().currentUser;
+        console.log(parsedUserName);
         
         //Firebase Auth에서 업뎃
         user.updateProfile({
         displayName: parsedUserName,
         });
 
-        //Realtime Database에서 업뎃
-        firebase.database().ref('users/' + user.uid).set({
-            nickname: parsedUserName
-        });
+        var data = { nickname : parsedUserName };
+
+        //Realtime Database에서 업데이트
+        firebase.database().ref('users/' + user.uid).update(data);
+
     },
 
     //구글 로그인(프사 업뎃x)

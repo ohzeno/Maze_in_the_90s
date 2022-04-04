@@ -16,7 +16,7 @@ public class Launcher : MonoBehaviourPunCallbacks//ï¿½Ù¸ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï
     [SerializeField] TMP_Dropdown roomMapDropdown;
     [SerializeField] TMP_Dropdown inRoomModeDropdown;
     [SerializeField] TMP_Dropdown inRoomMapDropdown;
-    [SerializeField] TMP_InputField userNameInputField;
+    [SerializeField] TMP_Text userNameInputField;
     [SerializeField] TMP_Text errorText;
     [SerializeField] TMP_Text roomNameText;
     [SerializeField] Transform roomListContent;

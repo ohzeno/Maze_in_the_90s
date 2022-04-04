@@ -8716,6 +8716,65 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 648371471}
   m_CullTransparentMesh: 1
+--- !u!1 &651178642
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 651178644}
+  - component: {fileID: 651178643}
+  m_Layer: 0
+  m_Name: LobbyHandler
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &651178643
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 651178642}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 45ce38de5f127a04e8ac9c74bf727a5b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  profileUI: {fileID: 559178500}
+  changeNicknameUI: {fileID: 820139113}
+  changePasswordUI: {fileID: 827744924}
+  deleteUserConfirmUI: {fileID: 795922361}
+  actionSuccessPanelUI: {fileID: 899158864}
+  lobbyUsernameText: {fileID: 282062122}
+  myPageUsernameText: {fileID: 9981992}
+  lobbyProfilePicture: {fileID: 0}
+  myPageProfilePicture: {fileID: 0}
+  currNickname: {fileID: 1672084332}
+  newNickname: {fileID: 867824001}
+  outputText: {fileID: 127598401}
+  changePasswordInputField: {fileID: 1320313587}
+  changePasswordConfirmInputField: {fileID: 1465011004}
+  pwErrorText: {fileID: 940552587}
+  actionSuccessText: {fileID: 340708231}
+--- !u!4 &651178644
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 651178642}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 93.89204, y: -41.78311, z: -38.25274}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 4
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &658976463
 GameObject:
   m_ObjectHideFlags: 0
@@ -10084,7 +10143,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 229.03998, y: -95.34799}
+  m_AnchoredPosition: {x: 229.04004, y: -95.34796}
   m_SizeDelta: {x: -830.4954, y: 44.4295}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &741114580
@@ -16668,7 +16727,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &1233675895
 RectTransform:
   m_ObjectHideFlags: 0
@@ -17631,6 +17690,7 @@ MonoBehaviour:
   - {fileID: 1727653089}
   - {fileID: 803403019}
   - {fileID: 1023476460}
+  - {fileID: 1158669489}
 --- !u!114 &1324309255
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -17663,7 +17723,7 @@ MonoBehaviour:
   roomMapDropdown: {fileID: 2142209646}
   inRoomModeDropdown: {fileID: 1882500151}
   inRoomMapDropdown: {fileID: 1340358440}
-  userNameInputField: {fileID: 0}
+  userNameInputField: {fileID: 282062122}
   errorText: {fileID: 881754912}
   roomNameText: {fileID: 741114580}
   roomListContent: {fileID: 488406425}
@@ -18171,12 +18231,12 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
+      - m_Target: {fileID: 1324309254}
         m_TargetAssemblyTypeName: MenuManager, Assembly-CSharp
         m_MethodName: OpenMenu
         m_Mode: 2
         m_Arguments:
-          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgument: {fileID: 1727653089}
           m_ObjectArgumentAssemblyTypeName: Menu, Assembly-CSharp
           m_IntArgument: 0
           m_FloatArgument: 0
@@ -21048,12 +21108,12 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
+      - m_Target: {fileID: 1324309254}
         m_TargetAssemblyTypeName: MenuManager, Assembly-CSharp
         m_MethodName: OpenMenu
         m_Mode: 2
         m_Arguments:
-          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgument: {fileID: 1158669489}
           m_ObjectArgumentAssemblyTypeName: Menu, Assembly-CSharp
           m_IntArgument: 0
           m_FloatArgument: 0

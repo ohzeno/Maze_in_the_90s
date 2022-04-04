@@ -16,7 +16,7 @@ public class Launcher : MonoBehaviourPunCallbacks//�ٸ� ���� ���
     [SerializeField] TMP_Dropdown roomMapDropdown;
     [SerializeField] TMP_Dropdown inRoomModeDropdown;
     [SerializeField] TMP_Dropdown inRoomMapDropdown;
-    [SerializeField] TMP_InputField userNameInputField;
+    [SerializeField] TMP_Text userNameInputField;
     [SerializeField] TMP_Text errorText;
     [SerializeField] TMP_Text roomNameText;
     [SerializeField] Transform roomListContent;
@@ -49,6 +49,7 @@ public class Launcher : MonoBehaviourPunCallbacks//�ٸ� ���� ���
         Debug.Log("Joined Lobby");
         //PhotonNetwork.NickName = "Player " + Random.Range(0, 1000).ToString("0000");
         PhotonNetwork.NickName = FirebaseWebGL.Examples.Auth.LobbyHandler.userName;
+        Debug.Log(PhotonNetwork.NickName);
 
         //���»�� �̸� �������� ���ںٿ��� �����ֱ�
     }

@@ -16,6 +16,8 @@ from PIL import Image
 import json
 from . import models
 import numpy as np
+import base64
+import io
 
 user_list = {}
 
@@ -195,9 +197,16 @@ def ImageProcessing(input_image):
         # cv2.waitKey(1000)
 
         # 입력때부터 이미지 뒤집기. OpenCV는 BGR, MediaPipe는 RGB 사용함.
+        # cv2.imshow('test', frame2)  # 리사이즈로 들어오면 세피아색이지만 rgb채널이 없음.
+        # cv2.waitKey(1000)
         # frame2 = cv2.cvtColor(cv2.flip(frame2, 1), cv2.COLOR_BGR2RGB)
-        # ndarray로 변환하면서 이미 BGR2RGB처리됨.
+        
+        # ndarray로 변환하면서 세피아색 된 상태.
         frame2 = cv2.flip(frame2, 1)
+        # cv2.imshow('test', frame2)
+        # cv2.waitKey(1000)
+        # 이미지변환으로 오면서 4차원임. 불투명도 제거
+        # frame2 = cv2.cvtColor(frame2, cv2.COLOR_RGBA2RGB)
         results = hands.process(frame2)
 
         # 이미지에 손 주석 그리기.
@@ -282,7 +291,6 @@ def ImageProcessing(input_image):
                     text_f = 'Down'
                 else:
                     text_f = 'Stop'
-
                 cv2.putText(
                     frame2,
                     text=text_f,
@@ -337,8 +345,12 @@ def detect(request, user_name):
 
 @api_view(['GET'])
 def getControl(request, user_name):
+    try:
+        data = user_list[f'{user_name}']
+    except:
+        data = 'Stop'
     context = {
-        'control': user_list[f'{user_name}'].text_f
+        'control': data
     }
     return Response(context, status=status.HTTP_200_OK)
 
@@ -347,51 +359,47 @@ def delUserControl(request, user_name):
     del user_list[f'{user_name}']
     return Response(status=status.HTTP_200_OK)
 
-@api_view(['PUT'])
-def getBlob(request):
-    try:
-        print(request.files['file'])
-    except:
-        try:
-            file = request.files['file']
-            img = Image.open(request.POST["file"].read())
-            img = Image.open(file.stream)
-            img.show()
-        except:
-            pass
-    data = json.loads(request.body.decode('utf-8'))
-    print(data['data'])
-    print(data['data'].read())
-    # file = request.files['file']
-    # img = Image.open(request.POST["file"].read())
-    print('blob')
-    # img = Image.open(file.stream)
-    # img.show()
-    return Response(status=status.HTTP_200_OK)
-
 
 @api_view(['POST'])
-def uploadFile(request):
-    print("request",request)
+def uploadFile(request, user_name):
+    # print("request",request)
     try:
-        print("request.data: ",request.data)
-        img = Image.open(request.data['image'])
-        # img.show()
-        img = np.asarray(img)
-        # cv2.imshow('ata', img)
-        # cv2.waitKey(1000)
-        context = { 
-            'control': ImageProcessing(img)
-        }
-        return Response(context, status=status.HTTP_200_OK)
+        # print("request.data: ",request.data)
+        # print(f"type: {type(request.data['image'])}")
+        # print(request.data['image'])
+        try:
+            imgdata = base64.b64decode(request.data['image'][23:])
+            img = Image.open(io.BytesIO(imgdata))
+            # img = Image.open(request.data['image'])
+            # print(request.data['image'])
+        except Exception as err:
+            print(f'Image.open에러: {err}')
+        try:
+            img = np.array(img)
+            # print(img.shape)
+        except Exception as err:
+            print(f'np.asarray에러: {err}')
+        # try:
+        #     cv2.imshow('ata', img)
+        #     cv2.waitKey(1000)
+        # except Exception as err:
+        #     print(f'imshow에러: {err}')
+        # context = { 
+        #     'control': ImageProcessing(img)
+        # }
+        # print(context)
+        user_list[f'{user_name}'] = ImageProcessing(img)
+        print(user_list['zeno'])
+        # return Response(context, status=status.HTTP_200_OK)
+        # return Response(status=status.HTTP_200_OK)
     except Exception as err:
         print(f'에러: {err}')
-    print("request.data의 타입: ",type(request.data))
-    print("request.FILES: ",request.FILES)
-    print("request.FILES의 타입: ",type(request.FILES))
-    print("request.method: "+str(request.method))
-    print("request.content_type: ",request.content_type)
-    print("request.stream: ",request.stream)
+    # print("request.data의 타입: ",type(request.data))
+    # print("request.FILES: ",request.FILES)
+    # print("request.FILES의 타입: ",type(request.FILES))
+    # print("request.method: "+str(request.method))
+    # print("request.content_type: ",request.content_type)
+    # print("request.stream: ",request.stream)
     # print(request.read())
     # with open('file_name.txt', 'wb') as output:
     #     output.write(request.read())

@@ -47,8 +47,13 @@ public class RankingHandler : MonoBehaviour
     }
 
     //게임이 끝났을 때 EndGamd에서 받은 게임데이터
-    public void GetGameData(KeyValuePair<string, string> _data)
+    public void GetGameData(int players, int rank, KeyValuePair<string, string> _data, int mode, int map)
     {
+        Debug.Log("!!!!!!!!!!!");
+        Debug.Log(players);
+        Debug.Log(rank);
+        Debug.Log(mode);
+        Debug.Log(map);
         //{name: 어쩌구, time: 어쩌구} 이렇게 생김
         //string으로 받아서 float 로 변환
         float recordToFlaot = (float.Parse(_data.Value));

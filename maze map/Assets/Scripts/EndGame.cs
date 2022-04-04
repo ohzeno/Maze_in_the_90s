@@ -31,7 +31,7 @@ public class EndGame : MonoBehaviour
             {
                 playercnt += 1;
                 Instantiate(recordListItemPrefab, recordListContent).GetComponent<RecordListItem>().SetUp(playercnt,record);
-                RankingHandler.instance.GetGameData(record);//RankingHandler�� ���ӱ�� ����
+                RankingHandler.instance.GetGameData(GameManager.records.Count, playercnt, record, (int)PhotonNetwork.CurrentRoom.CustomProperties["Mode"], (int)PhotonNetwork.CurrentRoom.CustomProperties["Map"]);//RankingHandler�� ���ӱ�� ����
             }
             gameObject.SetActive(false);
             TimeRecord.SetActive(true);

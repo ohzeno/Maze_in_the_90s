@@ -123,6 +123,8 @@ public class Launcher : MonoBehaviourPunCallbacks//�ٸ� ���� ���
 
     public void StartGame()
     {
+        PhotonNetwork.CurrentRoom.IsVisible = false;
+        PhotonNetwork.CurrentRoom.IsOpen = false;
         if ((int)PhotonNetwork.CurrentRoom.CustomProperties["Mode"] == 0)
         {
             PhotonNetwork.LoadLevel(MapDropdown.maze_list[(int)PhotonNetwork.CurrentRoom.CustomProperties["Map"]]);//1�� ������ ���忡�� scene ��ȣ�� 1�����̱� �����̴�. 0�� �ʱ� ��.

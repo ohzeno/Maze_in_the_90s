@@ -6,37 +6,17 @@ using Photon.Realtime;
 using TMPro;
 using UnityEngine.UI;
 
-public class CharSelect : MonoBehaviour, IPunObservable
+public class CharSelect : MonoBehaviour
 {
-    private PhotonView pv;
-
     public TMP_Dropdown charselect;
 
-    public static int char_index;
-    private void Start()
-    {
-        pv = GetComponent<PhotonView>();
-        charselect.value = 0;
-    }
-    
+    public Image lobby_image;
     public void OnDropdownEvent(int index)
     {
-        if (pv.IsMine)
         {
-            char_index = index;
-        }        
-    }
-    public void OnPhotonSerializeView(PhotonStream stream, PhotonMessageInfo info)
-    {
-        if (stream.IsWriting)
-        {
-            stream.SendNext(charselect.options[char_index].text);
-            // stream.SendNext(charselect.options[char_index].image);
-        }
-        if (stream.IsReading)
-        {
-            charselect.captionText.text = (string)stream.ReceiveNext();
-            //charselect.captionImage = (Image)stream.ReceiveNext();
+            GameManager.char_idx = index;
+            Debug.Log(index);
+            lobby_image.sprite = charselect.captionImage.sprite;
         }
     }
 }

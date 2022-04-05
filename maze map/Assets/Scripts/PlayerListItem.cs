@@ -3,30 +3,27 @@ using Photon.Realtime;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using TMPro; 
+using TMPro;
 
 public class PlayerListItem : MonoBehaviourPunCallbacks, IPunObservable//다른 포톤 반응 받아들이기 
 {
     [SerializeField] TMP_Text text;
-    public PhotonView pv;
-
     public TMP_Dropdown charselect;
     Player player;//포톤 리얼타임은 Player를 선언 할 수 있게 해준다.
     public GameObject dropbox;
-    public static int char_index;
     public int photon_index;
 
+    void Start()
+    {
+        charselect.value = GameManager.char_idx;
+    }
     public void OnDropdownEvent(int index)
     {
-            char_index = index;
-            photon_index = index;
-            Debug.Log(char_index);
-        
+        GameManager.char_idx = index;
     }
 
     public void SetUp(Player _player)
     {
-        pv = GetComponent<PhotonView>();
         player = _player;
         text.text = _player.NickName;//플레이어 이름 받아서 그사람 이름이 목록에 뜨게 만들어준다. 
 

@@ -3,9 +3,14 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 using Photon.Pun;//Æ÷Åæ ±â´É »ç¿ë
+using System.Runtime.InteropServices;
 
 public class StartGame : MonoBehaviour
 {
+    [DllImport("__Internal")]
+    private static extern void CallCamera(string userName, int score);
+
+
     public GameObject StartBtn;
     public bool timeActive = false;
     public float CountTime;
@@ -16,6 +21,7 @@ public class StartGame : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        UnityCall();
     }
 
     private void OnTriggerEnter2D(Collider2D collision)
@@ -46,5 +52,12 @@ public class StartGame : MonoBehaviour
                 text_Timer.text = "Time : " + CountTime.ToString("F2");
             }
         }
+    }
+
+    public void UnityCall()
+    {
+#if UNITY_WEBGL == true && UNITY_EDITOR == false
+    CallCamera("¶Ñ·ç·ç", lifetime);
+#endif
     }
 }

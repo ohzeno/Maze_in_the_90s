@@ -1,0 +1,57 @@
+.App{
+    width: 100vw;
+    height: 100vh;
+    background-color: seashell;
+}
+
+ body{
+    margin: 0;
+}
+
+img{
+    object-fit: cover;
+    width: 100%;
+    display: block;
+}
+
+.unity{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100vw;
+    height: 100vh;
+    background: linear-gradient(
+        rgba(20, 20, 20, 0.1) 10%,
+        rgba(20, 20, 20, 0.7) 70%,
+        rgba(20, 20, 20, 1)
+        ),
+        url(https://i.pinimg.com/736x/b8/45/c4/b845c4dd4ca5fd8e5e4ff8907b511c54.jpg);
+        /* url(https://i.pinimg.com/564x/cb/a7/62/cba7627e2f39775a1aff23eb0aab4536.jpg); */
+    background-size: cover;
+    position: absolute;
+}
+
+.gameBox{
+    margin: 0px 30px;
+    width: 50%;
+    height: 65%;
+    background-color: gainsboro;
+    border-radius: 2%;
+    position: relative;
+    z-index: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.cameraBox{
+    background-color: gainsboro;
+    width: 16%;
+    height: 27%;
+    border-radius: 3%;
+    position: relative;
+    z-index: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}

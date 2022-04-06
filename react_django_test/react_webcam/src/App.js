@@ -97,7 +97,7 @@ const WebcamStreamCapture = () => {
         // console.log("clear");
         // clearInterval(caputuring);
       }
-    }, 5000);
+    }, 250);
   };
 
   const videoConstraints = {

@@ -8,19 +8,11 @@
 
 2. [기술스택](#triangular_flag_on_post-기술스택)
 
-3. [Project Period](#triangular_flag_on_post-Project-Period)
+3. [Project Period](#triangular_flag_on_post-project-period)
 
-4. [Contributors](#triangular_flag_on_post-Contributors)
+4. [Contributors](#triangular_flag_on_post-contributors)
 
 5. [프로젝트세팅](#triangular_flag_on_post-프로젝트-세팅)
-   
-   - [시작하기에 앞서](#시작하기에-앞서)
-   
-   - [설치하기](#설치하기)
-   
-   - [실행하기](#실행하기)
-   
-   - [배포하기](#배포하기)
 
 6. [ERD](#triangular_flag_on_post-ERD)
 
@@ -32,7 +24,7 @@
 
 10. [개발기록](#triangular_flag_on_post-개발기록)
 
-## :triangular_flag_on_post:프로젝트 소개
+## :triangular_flag_on_post: 프로젝트 소개
 
 - #### 프로젝트 개요
   
@@ -46,11 +38,12 @@
   - 미로 찾기 Multi Play 
   - 마이페이지
 
+
 - #### 프로젝트 영상:
 
 - #### 노션: https://www.notion.so/17acef0785ee447f89aca7375e65307f
 
-## :triangular_flag_on_post: 기술 스택
+## :triangular_flag_on_post: 기술스택
 
 | 용도       | 스택                                                                                                                                                                                                             | 버전                 |
 | -------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ------------------ |
@@ -58,7 +51,7 @@
 | C# 편집    | <img src="https://img.shields.io/badge/Visual Studio-5C2D91?style=plastic&logo=Visual Studio&logoColor=white">                                                                                                 | 2019, community    |
 | 배포서버     | <img src="https://img.shields.io/badge/AWS-EC2-orange">                                                                                                                                                              |                    |
 | DB       |            <img src="https://img.shields.io/badge/Firebase-SDK-yellow">      <img src="https://img.shields.io/badge/Photon-SDK-blue">                                                                                                                                                                                  |  |
-| 서버 설계    | <img alt="Python" src ="https://img.shields.io/badge/Python-3776AB.svg?&style=for-the-badge&logo=Python&logoColor=white"/>                                                                                     |                    |
+| 서버 설계    | <img src ="https://img.shields.io/badge/Python-3.10.1-green"/>                                                                                     |         3.10.1           |
 | 인게임 개발   | <img src="https://img.shields.io/badge/Unity-색상?style=plastic&logo=Unity&logoColor=white">                                                                                                                     | 2020.3.30f1 (LTS)  |
 | 웹빌드      | <img src="https://img.shields.io/badge/WebGL-990000?style=plastic&logo=WebGL&logoColor=white">                                                                                                                 |                    |
 | 형상관리     | <img src="https://img.shields.io/badge/git-F05032?style=plastic&logo=git&logoColor=white">                                                                                                                     |                    |

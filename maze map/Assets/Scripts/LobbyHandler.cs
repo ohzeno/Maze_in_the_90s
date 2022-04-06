@@ -71,6 +71,8 @@ namespace FirebaseWebGL.Examples.Auth
         {
             //최초 진입 시 프로필 로드
             CheckAuthState();
+            Debug.Log("lobby scene");
+            Debug.Log(FirebaseWebGL.Examples.Auth.LoginHandler.UserUid);
         }
 
         private void GetUsername(string _username)

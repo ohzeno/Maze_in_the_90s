@@ -133,7 +133,7 @@ mergeInto(LibraryManager.library, {
                 var user = firebase.auth().currentUser;
                 console.log(user);
 
-                window.unityInstance.SendMessage('LoginHandler', 'LobbyScreen');
+                window.unityInstance.SendMessage('LoginHandler', 'LobbyScreen', user.uid);
                 
                 unityInstance.Module.SendMessage(parsedObjectName, parsedCallback, "Success: signed in for " + parsedEmail);
 
@@ -245,7 +245,7 @@ mergeInto(LibraryManager.library, {
 
     },
 
-    //±¸±Û ·Î±×ÀÎ(ÇÁ»ç ¾÷µ«x)
+    //±¸±Û ·Î±×ÀÎ
     LoginWithGoogle: function (objectName, callback, fallback) {
  
         var parsedObjectName = Pointer_stringify(objectName);
@@ -259,7 +259,7 @@ mergeInto(LibraryManager.library, {
                 var user = firebase.auth().currentUser;
                 console.log(user);
 
-                window.unityInstance.SendMessage('LoginHandler', 'LobbyScreen');
+                window.unityInstance.SendMessage('LoginHandler', 'LobbyScreen', user.uid);
                 
                 unityInstance.Module.SendMessage(parsedObjectName, parsedCallback, "Success: signed in with Google!");
             }).catch(function (error) {
@@ -271,7 +271,7 @@ mergeInto(LibraryManager.library, {
         }
     },
 
-    //±êÇé ·Î±×ÀÎ(ÇÁ»ç ¾÷µ«x)
+    //±êÇé ·Î±×ÀÎ
     LoginWithGithub: function (objectName, callback, fallback) {
         var parsedObjectName = Pointer_stringify(objectName);
         var parsedCallback = Pointer_stringify(callback);
@@ -284,7 +284,7 @@ mergeInto(LibraryManager.library, {
                 var user = firebase.auth().currentUser;
                 console.log(user);
                 
-                window.unityInstance.SendMessage('LoginHandler', 'LobbyScreen');
+                window.unityInstance.SendMessage('LoginHandler', 'LobbyScreen', user.uid);
 
                 window.unityInstance.SendMessage(parsedObjectName, parsedCallback, "Success: signed in with Github!");
             }).catch(function (error) {

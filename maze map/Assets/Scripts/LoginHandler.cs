@@ -12,6 +12,7 @@ namespace FirebaseWebGL.Examples.Auth
     public class LoginHandler : MonoBehaviour
     {
         public static LoginHandler instance;
+        public static string UserUid;
 
         [Header("UI References")]
         [SerializeField]
@@ -146,8 +147,11 @@ namespace FirebaseWebGL.Examples.Auth
             GameManager.instance.ChangeScene("SignUp");
         }
 
-        public void LobbyScreen()
+        public void LobbyScreen(string uid)
         {
+            UserUid = uid;
+            Debug.Log("from login to lobby");
+            Debug.Log(uid);
             GameManager.instance.ChangeScene("Lobby");
         }
 

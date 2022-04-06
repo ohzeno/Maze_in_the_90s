@@ -50,9 +50,9 @@ const WebcamStreamCapture = () => {
   const zeno = "http://127.0.0.1:8000";
   const ssafy = "https://j6e101.p.ssafy.io:8001/";
   const zeno_sub = "/recog/upload/";
-  const ssafy_sub = "/recog/upload";
+  const ssafy_sub = "/recog/upload/";
   const id_class = document.querySelector("#root");
-  const api = axios.create({ baseURL: zeno });
+  const api = axios.create({ baseURL: ssafy });
   const resizeImg = (file) =>
     new Promise((resolve) => {
       Resizer.imageFileResizer(
@@ -90,7 +90,7 @@ const WebcamStreamCapture = () => {
         const sub_uid = id_class.className;
         // const sub_uid = "ㅇㄹㅇㄹ";
         if (sub_uid !== "test") {
-          const url_sub = zeno_sub + sub_uid + "/";
+          const url_sub = ssafy_sub + sub_uid + "/";
           const { data } = api.post(url_sub, form);
         }
       } else if (id_class.className === "test") {

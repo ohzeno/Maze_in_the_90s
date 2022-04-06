@@ -109,7 +109,7 @@
 
 - **튜토리얼**
   
-  ![Tutorial.PNG](C:\Users\SSAFY\Desktop\S06P22E101\README.assets\Tutorial.PNG)
+  ![Tutorial.PNG](README.assets/Tutorial.PNG)
 
 - **게임방 목록 확인 가능**
 
@@ -139,9 +139,9 @@
 
 - **총 10가지의 맵 제공**
   
-  ![MazeForest1.PNG](C:\Users\SSAFY\Desktop\S06P22E101\README.assets\MazeForest1.PNG)
+  ![MazeForest1.PNG](README.assets/MazeForest1.PNG)
   
-  ![MazeForest2.PNG](C:\Users\SSAFY\Desktop\S06P22E101\README.assets\MazeForest2.PNG)
+  ![MazeForest2.PNG](README.assets/MazeForest2.PNG)
 
 ### 6. 랭킹
 

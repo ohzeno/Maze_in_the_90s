@@ -49,7 +49,7 @@ const WebcamStreamCapture = () => {
   const [imageSrc, setImageSrc] = React.useState(null);
   const zeno = "http://127.0.0.1:8000";
   const ssafy = "https://j6e101.p.ssafy.io:8001/";
-  const zeno_sub = "/recog/upload/zeno/";
+  const zeno_sub = "/recog/upload/";
   const ssafy_sub = "/recog/upload";
   const id_class = document.querySelector("#root");
   const api = axios.create({ baseURL: zeno });
@@ -86,7 +86,11 @@ const WebcamStreamCapture = () => {
         // } else if (id_class.display === "block") {
         //   console.log("켜져있음");
         // }
-        const { data } = api.post(zeno_sub, form);
+        const sub_uid = id_class.className;
+        if (sub_uid !== "test") {
+          const url_sub = zeno_sub + sub_uid + "/";
+          const { data } = api.post(url_sub, form);
+        }
       } else if (id_class.style.display === "none") {
         // console.log("clear");
         // clearInterval(caputuring);

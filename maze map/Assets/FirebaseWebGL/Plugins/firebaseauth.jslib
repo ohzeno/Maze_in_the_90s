@@ -10,14 +10,14 @@ mergeInto(LibraryManager.library, {
             //파이어베이스에서 프로필 정보 가져오기
 
             var userName = user.displayName;
-            var photoURL = user.photoURL;
+            var character = user.character;
 
             console.log(typeof userName);
-            console.log(typeof photoURL);
+            console.log(typeof character);
 
             //유니티로 정보 (각각ㅋ) 보내기
             window.unityInstance.SendMessage('LobbyHandler', 'GetUsername', userName);
-            window.unityInstance.SendMessage('LobbyHandler', 'GetPhotoURL', photoURL);
+            window.unityInstance.SendMessage('LobbyHandler', 'GetPhotoURL', character);
             
         
         } else {
@@ -89,7 +89,8 @@ mergeInto(LibraryManager.library, {
                 //Firebase Auth에 등록
                 user.updateProfile({
                 displayName: parsedUsername,
-                photoURL: "https://pbs.twimg.com/media/EFKdt0bWsAIfcj9.jpg"
+                email: parsedEmail,
+                character: 0
                 }).then(function (unused) {
                     console.log('profile update done!!');
                     firebase.auth().signOut();
@@ -102,7 +103,7 @@ mergeInto(LibraryManager.library, {
                 {
                     nickname: parsedUsername,
                     email: parsedEmail,
-                    profile_picture : "https://pbs.twimg.com/media/EFKdt0bWsAIfcj9.jpg"
+                    character : 0
                 });
 
                 window.unityInstance.SendMessage(parsedObjectName, parsedCallback, "Success: signed up for " + parsedEmail);
@@ -146,60 +147,97 @@ mergeInto(LibraryManager.library, {
         }
     },
     
-    //구글 처음 로그인(프사 디폴트 이미지로 업뎃)
-    SignInWithGoogle: function (objectName, callback, fallback) {
+    //구글 로그인 및 회원가입
+    LoginWithGoogle: function (objectName, callback, fallback) {
  
     var parsedObjectName = Pointer_stringify(objectName);
     var parsedCallback = Pointer_stringify(callback);
     var parsedFallback = Pointer_stringify(fallback);
 
-    try {
-        var provider = new firebase.auth.GoogleAuthProvider();
-        firebase.auth().signInWithPopup(provider).then(function (unused) {
-            
-            var user = firebase.auth().currentUser;
-            return user;
+      //로그인인지 회원가입인지 DB 확인
+      var userRef = firebase.database().ref('users'); // 전체 유저테이블
+      var result = 1; // 0이면 로그인 1이면 회원가입
 
-        }).then(function (user) {
+      var provider = new firebase.auth.GoogleAuthProvider();
+      firebase.auth().signInWithPopup(provider).then(function (unused) {
+          
+          var user = firebase.auth().currentUser;
+          return user;
 
-            console.log('google profile update start!!');
-            console.log(user);
-            
-            //닉네임 중복검사를 위해 moreinfo로 보냄
-            window.unityInstance.SendMessage('SignUpHandler', 'CheckNickUI')});
+      }).then(function (user) {
 
-    } catch (error) {
-        unityInstance.Module.SendMessage(parsedObjectName, parsedFallback, JSON.stringify(error, Object.getOwnPropertyNames(error)));
-    }
-    },
-    
+        //유저테이블 뒤져봄
+        userRef.get().then(function(snapshot) {
+          snapshot.forEach(function (users) {
+                console.log(users.val());
+                console.log(users.val().email);
+                //이미 가입, 로그인 시도임
+                if (users.val().email == user.email) {
+                console.log('user already exists - login');
+                result = 0;
+                console.log(result);
+                }
+            });
+            if (result == 0){
+        //로그인, uid 가지고 로비
+        window.unityInstance.SendMessage('LoginHandler', 'LobbyScreen', user.uid);
+      }
+      else if (result == 1){
+        //유저 없음, 회원가입 시도임
+        //회원가입, 닉네임 중복검사
+        window.unityInstance.SendMessage('LoginHandler', 'SignUpNicknameCheck')
+      }
+        });
 
-    //깃헙 처음 로그인(프사 디폴트 이미지로 업뎃)
-    SignInWithGithub: function (objectName, callback, fallback) {
+      
+  });
+  },
+
+    //깃헙 로그인 및 회원가입
+    LoginWithGithub: function (objectName, callback, fallback) {
  
     var parsedObjectName = Pointer_stringify(objectName);
     var parsedCallback = Pointer_stringify(callback);
     var parsedFallback = Pointer_stringify(fallback);
 
-    try {
-        var provider = new firebase.auth.GithubAuthProvider();
-        firebase.auth().signInWithPopup(provider).then(function (unused) {
-            
-            var user = firebase.auth().currentUser;
-            return user;
+      //로그인인지 회원가입인지 DB 확인
+      var userRef = firebase.database().ref('users'); // 전체 유저테이블
+      var result = 1; // 0이면 로그인 1이면 회원가입
 
-        }).then(function (user) {
+      var provider = new firebase.auth.GithubAuthProvider();
+      firebase.auth().signInWithPopup(provider).then(function (unused) {
+          
+          var user = firebase.auth().currentUser;
+          return user;
 
-            console.log('github profile update start!!');
-            console.log(user);
-            
-            //닉네임 중복검사를 위해 moreinfo로 보냄
-            window.unityInstance.SendMessage('SignUpHandler', 'CheckNickUI')});
+      }).then(function (user) {
 
-    } catch (error) {
-        unityInstance.Module.SendMessage(parsedObjectName, parsedFallback, JSON.stringify(error, Object.getOwnPropertyNames(error)));
-    }
-    },
+        //유저테이블 뒤져봄
+        userRef.get().then(function(snapshot) {
+          snapshot.forEach(function (users) {
+                console.log(users.val());
+                console.log(users.val().email);
+                //이미 가입, 로그인 시도임
+                if (users.val().email == user.email) {
+                console.log('user already exists - login');
+                result = 0;
+                console.log(result);
+                }
+            });
+            if (result == 0){
+        //로그인, uid 가지고 로비
+        window.unityInstance.SendMessage('LoginHandler', 'LobbyScreen', user.uid);
+      }
+      else if (result == 1){
+        //유저 없음, 회원가입 시도임
+        //회원가입, 닉네임 중복검사
+        window.unityInstance.SendMessage('LoginHandler', 'SignUpNicknameCheck')
+      }
+        });
+
+      
+  });
+  },
 
     //소셜 가입 프로필 등록(닉넴 중복검사 통과 후)
     UpdateInfoWithGoogleOrGithub: function (username) {
@@ -210,20 +248,21 @@ mergeInto(LibraryManager.library, {
         //Firebase Auth에 등록
         user.updateProfile({
         displayName: parsedUserName,
-        photoURL: "https://pbs.twimg.com/media/EFKdt0bWsAIfcj9.jpg"
+        email: user.email,
+        character : 0
         });
 
         //Realtime Database에 등록
         firebase.database().ref('users/' + user.uid).set({
             nickname: parsedUserName,
             email: user.email,
-            profile_picture : "https://pbs.twimg.com/media/EFKdt0bWsAIfcj9.jpg"
+            character : 0
         });
 
         //일단 로그아웃 시키고 로그인페이지
         firebase.auth().signOut();
         console.log('profile update done!!');
-        window.unityInstance.SendMessage('SignUpHandler', 'LoginScreen');
+        window.unityInstance.SendMessage('LoginHandler', 'LoginScreen');
     },
 
     //마이페이지 닉네임 변경
@@ -243,57 +282,6 @@ mergeInto(LibraryManager.library, {
         //Realtime Database에서 업데이트
         firebase.database().ref('users/' + user.uid).update(data);
 
-    },
-
-    //구글 로그인
-    LoginWithGoogle: function (objectName, callback, fallback) {
- 
-        var parsedObjectName = Pointer_stringify(objectName);
-        var parsedCallback = Pointer_stringify(callback);
-        var parsedFallback = Pointer_stringify(fallback);
- 
-        try {
-            var provider = new firebase.auth.GoogleAuthProvider();
-            firebase.auth().signInWithPopup(provider).then(function (unused) {
-                
-                var user = firebase.auth().currentUser;
-                console.log(user);
-
-                window.unityInstance.SendMessage('LoginHandler', 'LobbyScreen', user.uid);
-                
-                unityInstance.Module.SendMessage(parsedObjectName, parsedCallback, "Success: signed in with Google!");
-            }).catch(function (error) {
-                unityInstance.Module.SendMessage(parsedObjectName, parsedFallback, JSON.stringify(error, Object.getOwnPropertyNames(error)));
-            });
- 
-        } catch (error) {
-            unityInstance.Module.SendMessage(parsedObjectName, parsedFallback, JSON.stringify(error, Object.getOwnPropertyNames(error)));
-        }
-    },
-
-    //깃헙 로그인
-    LoginWithGithub: function (objectName, callback, fallback) {
-        var parsedObjectName = Pointer_stringify(objectName);
-        var parsedCallback = Pointer_stringify(callback);
-        var parsedFallback = Pointer_stringify(fallback);
- 
-        try {
-            var provider = new firebase.auth.GithubAuthProvider();
-            firebase.auth().signInWithPopup(provider).then(function (unused) {
-
-                var user = firebase.auth().currentUser;
-                console.log(user);
-                
-                window.unityInstance.SendMessage('LoginHandler', 'LobbyScreen', user.uid);
-
-                window.unityInstance.SendMessage(parsedObjectName, parsedCallback, "Success: signed in with Github!");
-            }).catch(function (error) {
-                window.unityInstance.SendMessage(parsedObjectName, parsedFallback, JSON.stringify(error, Object.getOwnPropertyNames(error)));
-            });
- 
-        } catch (error) {
-            window.unityInstance.SendMessage(parsedObjectName, parsedFallback, JSON.stringify(error, Object.getOwnPropertyNames(error)));
-        }
     },
 
 

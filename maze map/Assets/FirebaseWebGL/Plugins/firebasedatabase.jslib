@@ -68,7 +68,7 @@ mergeInto(LibraryManager.library, {
       //검사 끝 유니티로 결과 보냄
       console.log(result);
       console.log(typeof result);
-      window.unityInstance.SendMessage('SignUpHandler', 'CheckedNameForSocial', result);
+      window.unityInstance.SendMessage('LoginHandler', 'CheckedNameForSocial', result);
      });
 
    },

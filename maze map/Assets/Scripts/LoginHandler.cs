@@ -24,6 +24,9 @@ namespace FirebaseWebGL.Examples.Auth
         [SerializeField]
         //3. 이메일 전송 확인
         private GameObject emailSentUI;
+        [SerializeField]
+        //4. 닉넴체크
+        private GameObject checkNicknameUI;
         [Space(5f)]
 
         [Header("Login References")]
@@ -48,6 +51,13 @@ namespace FirebaseWebGL.Examples.Auth
         [SerializeField]
         private TMP_Text usedEmail;
         public TMP_Text statusText;
+        [Space(5f)]
+
+        [Header("Nickname References")]
+        [SerializeField]
+        private TMP_InputField checkUsernameText;
+        [SerializeField]
+        private TMP_Text outputText;
         [Space(5f)]
 
         public const string MatchEmailPattern =
@@ -86,11 +96,24 @@ namespace FirebaseWebGL.Examples.Auth
             statusText.text = Infotext;
         }
 
+        public void SignUpNicknameCheck()
+        {
+            CheckNickUI();
+        }
+
         public void ClearUI()
         {
             loginUI.SetActive(false);
             resetPwUI.SetActive(false);
             emailSentUI.SetActive(false);
+            checkNicknameUI.SetActive(false);
+            checkUsernameText.text = "";
+        }
+
+        public void CheckNickUI()
+        {
+            ClearUI();
+            checkNicknameUI.SetActive(true);
         }
 
         public void LoginScreen()
@@ -125,6 +148,23 @@ namespace FirebaseWebGL.Examples.Auth
             }
         }
 
+        private void CheckedNameForSocial(int result)
+        {
+
+            if (result == 0)
+            {
+                outputText.text = "사용할 수 없는 닉네임입니다";
+            }
+            else if (result == 1)
+            {
+                outputText.text = "사용 가능한 닉네임입니다";
+            }
+            else if (result == 3)
+            {
+                outputText.text = "닉네임을 입력해주세요";
+            }
+        }
+
 
         public void SignWithEmailAndPassword() =>
             FirebaseAuth.SignInWithEmailAndPassword(loginEmail.text, loginPassword.text, gameObject.name, "DisPlayInfo", "DisplayError");
@@ -140,6 +180,19 @@ namespace FirebaseWebGL.Examples.Auth
 
         public void ResetPassword(string email) =>
             FirebaseAuth.ResetPassword(email);
+
+        public void CheckNicknameForSocial() =>
+           FirebaseDatabase.CheckNicknameForSocial(checkUsernameText.text);
+
+
+        public void CheckComplete()
+        {
+            if (outputText.text == "사용 가능한 닉네임입니다")
+            {
+                FirebaseAuth.UpdateInfoWithGoogleOrGithub(checkUsernameText.text);
+            }
+
+        }
 
 
         public void RegisterScreen()

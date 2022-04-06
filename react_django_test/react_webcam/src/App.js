@@ -48,7 +48,7 @@ const WebcamStreamCapture = () => {
   const mediaRecorderRef = React.useRef(null);
   const [imageSrc, setImageSrc] = React.useState(null);
   const zeno = "http://127.0.0.1:8000";
-  const ssafy = "https://j6e101.p.ssafy.io:8001/";
+  const ssafy = "https://j6e101.p.ssafy.io/";
   const zeno_sub = "/recog/upload/";
   const ssafy_sub = "/recog/upload/";
   const id_class = document.querySelector("#root");

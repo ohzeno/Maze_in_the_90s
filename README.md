@@ -108,13 +108,13 @@
 
 ## :triangular_flag_on_post: ERD
 
-![ERD.png](C:\Users\SSAFY\Desktop\README.assets\ERD.png)
+![ERD.png](README.assets/ERD.png)
 
 
 
 ## :triangular_flag_on_post: 시스템 아키텍쳐
 
-![Architecture.png](C:\Users\SSAFY\Desktop\README.assets\Architecture.png)
+![Architecture.png](README.assets/Architecture.png)
 
 
 
@@ -140,11 +140,11 @@
 
 - **랭킹 확인**: 로그인 없이 랭킹 확인 가능 
   
-  ![](C:\Users\SSAFY\Desktop\README.assets\Login.png)
+  ![](README.assets/Login.png)
 
 - **회원가입**
   
-  ![](C:\Users\SSAFY\Desktop\README.assets\Signup.png)
+  ![](README.assets/Signup.png)
   
   ---
   
@@ -154,15 +154,15 @@
 
 - **프로필, 마이페이지, 랭킹, 방 목록 확인 가능**
   
-  ![Lobby.png](C:\Users\SSAFY\Desktop\README.assets\Lobby.png)
+  ![Lobby.png](README.assets/Lobby.png)
 
 - **방생성**
   
-  ![RoomCreate.png](C:\Users\SSAFY\Desktop\README.assets\RoomCreate.png)
+  ![RoomCreate.png](README.assets/RoomCreate.png)
 
 - **튜토리얼**
   
-  ![Tutorial.PNG](C:\Users\SSAFY\Desktop\S06P22E101\README.assets\Tutorial.PNG)
+  ![Tutorial.PNG](README.assets/Tutorial.PNG)
   
   ---
   
@@ -182,7 +182,7 @@
 
 - **회원탈퇴**
   
-  ![Mypage.png](C:\Users\SSAFY\Desktop\README.assets\Mypage.png)
+  ![Mypage.png](README.assets/Mypage.png)
   
   ---
   
@@ -196,7 +196,7 @@
 
 - **'레디' 클릭 시 게임 준비 완료 상태**
   
-  ![Room.png](C:\Users\SSAFY\Desktop\README.assets\Room.png)
+  ![Room.png](README.assets/Room.png)
   
   ---
   
@@ -206,19 +206,19 @@
 
 - **총 10가지의 맵 제공**
   
-  ![MazeForest1.PNG](C:\Users\SSAFY\Desktop\S06P22E101\README.assets\MazeForest1.PNG)
+  ![MazeForest1.PNG](README.assets/MazeForest1.PNG)
   
-  ![MazeForest2.PNG](C:\Users\SSAFY\Desktop\S06P22E101\README.assets\MazeForest2.PNG)
+  ![MazeForest2.PNG](README.assets/MazeForest2.PNG)
 
 - **게임 시작 화면**
   
-  ![GameStart.png](C:\Users\SSAFY\Desktop\README.assets\GameStart.png)
+  ![GameStart.png](README.assets/GameStart.png)
 
 - **게임 종료 화면**
 
 - **Menu 버튼 클릭 시**
   
-  ![GameStop.png](C:\Users\SSAFY\Desktop\README.assets\GameStop.png)
+  ![GameStop.png](README.assets/GameStop.png)
   
   ---
 
@@ -226,7 +226,7 @@
 
 - **모드와 맵에 따른 게임 랭킹 확인 가능**
   
-  ![Ranking.png](C:\Users\SSAFY\Desktop\README.assets\Ranking.png)
+  ![Ranking.png](README.assets/Ranking.png)
 
 ## :triangular_flag_on_post: 개발기록
 

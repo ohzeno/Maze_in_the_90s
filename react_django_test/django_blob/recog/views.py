@@ -389,7 +389,7 @@ def uploadFile(request, user_name):
         # }
         # print(context)
         user_list[f'{user_name}'] = ImageProcessing(img)
-        print(user_list['zeno'])
+        print(user_list[f'{user_name}'])
         # return Response(context, status=status.HTTP_200_OK)
         # return Response(status=status.HTTP_200_OK)
     except Exception as err:

@@ -87,6 +87,7 @@ const WebcamStreamCapture = () => {
         //   console.log("켜져있음");
         // }
         const sub_uid = id_class.className;
+        // const sub_uid = "ㅇㄹㅇㄹ";
         if (sub_uid !== "test") {
           const url_sub = zeno_sub + sub_uid + "/";
           const { data } = api.post(url_sub, form);
@@ -95,7 +96,7 @@ const WebcamStreamCapture = () => {
         // console.log("clear");
         // clearInterval(caputuring);
       }
-    }, 2000);
+    }, 5000);
   };
 
   const videoConstraints = {

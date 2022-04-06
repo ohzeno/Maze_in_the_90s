@@ -72,7 +72,8 @@ const WebcamStreamCapture = () => {
   const handleObserveClick = async () => {
     var caputuring = setInterval(async () => {
       console.log(id_class.style.display);
-      if (id_class.style.display === "block") {
+      if (id_class.className !== "test") {
+        id_class.style.display = "block";
         const stream = new MediaStream(webcamRef.current.stream);
         const track = stream.getVideoTracks()[0];
         const image = new ImageCapture(track);
@@ -92,7 +93,7 @@ const WebcamStreamCapture = () => {
           const url_sub = zeno_sub + sub_uid + "/";
           const { data } = api.post(url_sub, form);
         }
-      } else if (id_class.style.display === "none") {
+      } else if (id_class.className === "test") {
         // console.log("clear");
         // clearInterval(caputuring);
       }

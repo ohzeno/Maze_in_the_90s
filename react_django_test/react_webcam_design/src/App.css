@@ -6,6 +6,7 @@
 
  body{
     margin: 0;
+    overflow: hidden;
 }
 
 img{
@@ -44,6 +45,13 @@ img{
     align-items: center;
 }
 
+.unity-desktop{
+    width: 93%;
+    height: 90%;
+    /* position: absolute; */
+
+
+}
 .cameraBox{
     background-color: gainsboro;
     width: 16%;

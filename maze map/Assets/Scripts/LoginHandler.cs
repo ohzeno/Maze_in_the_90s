@@ -15,6 +15,7 @@ namespace FirebaseWebGL.Examples.Auth
         public static string UserUid;
         public static int UserChar;
 
+
         [Header("UI References")]
         [SerializeField]
         //1. ·Î±×ÀÎ

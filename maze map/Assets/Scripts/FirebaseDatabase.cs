@@ -41,5 +41,13 @@ namespace FirebaseWebGL.Scripts.FirebaseBridge
         [DllImport("__Internal")]
         public static extern void GetRanks(string username);
 
+        //캐릭터 가져오기
+        [DllImport("__Internal")]
+        public static extern void GetUserCharacter();
+
+        //캐릭터 변경
+        [DllImport("__Internal")]
+        public static extern void UpdateCharacter(int UpdateCharacter);
+
     }
 }

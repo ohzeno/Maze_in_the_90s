@@ -872,7 +872,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
+      - m_Target: {fileID: 700370416}
         m_TargetAssemblyTypeName: FirebaseWebGL.Examples.Auth.LoginHandler, Assembly-CSharp
         m_MethodName: CheckNicknameForSocial
         m_Mode: 1
@@ -2474,8 +2474,8 @@ MonoBehaviour:
   loginUI: {fileID: 313797712}
   resetPwUI: {fileID: 1214593341}
   emailSentUI: {fileID: 423996084}
-  checkNicknameUI: {fileID: 0}
-  loginEmail: {fileID: 0}
+  checkNicknameUI: {fileID: 546600608}
+  loginEmail: {fileID: 86820585}
   loginPassword: {fileID: 2000143975}
   emailErrorText: {fileID: 735191095}
   passwordErrorText: {fileID: 1856815211}
@@ -2483,8 +2483,8 @@ MonoBehaviour:
   resetEmailErrorText: {fileID: 1665152758}
   usedEmail: {fileID: 988896854}
   statusText: {fileID: 1856815211}
-  checkUsernameText: {fileID: 0}
-  outputText: {fileID: 0}
+  checkUsernameText: {fileID: 522997644}
+  outputText: {fileID: 655826733}
 --- !u!4 &700370417
 Transform:
   m_ObjectHideFlags: 0
@@ -5750,7 +5750,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
+      - m_Target: {fileID: 700370416}
         m_TargetAssemblyTypeName: FirebaseWebGL.Examples.Auth.LoginHandler, Assembly-CSharp
         m_MethodName: CheckComplete
         m_Mode: 1

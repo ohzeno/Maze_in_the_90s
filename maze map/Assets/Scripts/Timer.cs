@@ -31,7 +31,7 @@ public class Timer : MonoBehaviour
         {
             CountTime += Time.deltaTime;
             text_Timer.text = "Time : " + CountTime.ToString("F2");
-            if (CountTime > 3) //시간 초과 시 생존자 승리
+            if (CountTime > 200) //시간 초과 시 생존자 승리
             {
                 timeActive = false; //타이머 끄기
                 foreach (int i in PhotonNetwork.CurrentRoom.Players.Keys)//존재하는 모든 roomListContent

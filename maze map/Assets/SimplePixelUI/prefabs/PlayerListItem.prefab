@@ -1053,8 +1053,6 @@ MonoBehaviour:
       m_Image: {fileID: 21300000, guid: f6aa52aab7cabaa4aa0c334ad6b0bafc, type: 3}
     - m_Text: Punk
       m_Image: {fileID: 21300000, guid: fa3326ba68c16e742b7de438726d0473, type: 3}
-    - m_Text: Template
-      m_Image: {fileID: 21300000, guid: 9fb5d0a0c2402314c86a02ddb00add99, type: 3}
     - m_Text: Traditional
       m_Image: {fileID: 21300000, guid: 5200cd183b0c9874fb020acd16575c00, type: 3}
     - m_Text: Trendy

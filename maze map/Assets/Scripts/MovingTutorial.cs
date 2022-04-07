@@ -61,8 +61,8 @@ public class MovingTutorial : MonoBehaviour
     }
     IEnumerator LoadData() //json 문자열 받아오기
     {
-        //string GetDataUrl = $"https://j6e101.p.ssafy.io/recog/detect/{uid}/control";
-        string GetDataUrl = $"http://127.0.0.1:8000/recog/detect/{uid}/control";
+        string GetDataUrl = $"https://j6e101.p.ssafy.io/recog/detect/{uid}/control";
+        //string GetDataUrl = $"http://127.0.0.1:8000/recog/detect/{uid}/control";
         using (UnityWebRequest request = UnityWebRequest.Get(GetDataUrl))
         {
             yield return request.Send();

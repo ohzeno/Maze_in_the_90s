@@ -13,7 +13,7 @@ public class GameManager : MonoBehaviour
     public static List<object> dataList = new List<object>();
     public static double startTime;
     public bool isConnect = false;
-    private string[] CharList = new string[] { "Baker", "CafeMaid", "Casual", "Cop", "Dog", "FElder", "FStudent", "FWorker", "FYouth", "MElder", "MStudent1", "MStudent2", "MWorker", "MYouth", "Punk", "Template", "Traditional", "Trendy", "Witch3" };
+    private string[] CharList = new string[] { "Baker", "CafeMaid", "Casual", "Cop", "Dog", "FElder", "FStudent", "FWorker", "FYouth", "MElder", "MStudent1", "MStudent2", "MWorker", "MYouth", "Punk", "Traditional", "Trendy", "Witch3" };
 
     public static bool[] Tagged = new bool[7];
     public static int mykey;

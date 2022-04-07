@@ -232,6 +232,20 @@ mergeInto(LibraryManager.library, {
         window.unityInstance.SendMessage('MyPageHandler', 'SetUp', JSON.stringify(record.val()));
         });
      });
+   },
+
+   GetRanks: function(username) {
+        var parsedUsername = Pointer_stringify(username);
+
+        // 뒤져볼 경로
+        var rankRef = firebase.database().ref('rank'); //전체 유저
+
+        firebase.database().ref(rankRef).once('value').then(function(mode) {
+        mode.forEach(function (map) {
+        console.log(mode.val());
+        console.log(mode.val().name);
+        });
+      });
    }
 
 

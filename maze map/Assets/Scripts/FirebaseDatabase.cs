@@ -33,9 +33,13 @@ namespace FirebaseWebGL.Scripts.FirebaseBridge
         [DllImport("__Internal")]
         public static extern void SetByInfo(string mode, string map);
 
-        //마이페이지에 기록 받아오기
+        //마이페이지에 기록 받아오기(전적)
         [DllImport("__Internal")]
         public static extern void GetRecords(string username);
-        
+
+        //마이페이지에 기록 받아오기(랭킹)
+        [DllImport("__Internal")]
+        public static extern void GetRanks(string username);
+
     }
 }

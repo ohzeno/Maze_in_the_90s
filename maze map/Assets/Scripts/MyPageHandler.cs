@@ -13,17 +13,22 @@ namespace FirebaseWebGL.Examples.Auth
 {
     public class MyPageHandler : MonoBehaviour
     {
-        public static RankingHandler instance;
-        //¹Ø¿¡ ÇÁ¸®ÆÕ ¸¸µé ¿ÀºêÁ§Æ®
+        public static MyPageHandler instance;
+        //¹Ø¿¡ ÇÁ¸®ÆÕ ¸¸µé ¿ÀºêÁ§Æ®(ÀüÀû)
         [SerializeField] Transform recordListContent;
         //ÇÁ¸®ÆÕ
         [SerializeField] GameObject gameRecordPrefab;
+        //¹Ø¿¡ ÇÁ¸®ÆÕ ¸¸µé ¿ÀºêÁ§Æ®(·©Å·)
+        [SerializeField] Transform rankListContent;
+        //ÇÁ¸®ÆÕ
+        [SerializeField] GameObject gameRankPrefab;
 
 
 
         void Start()
         {
             GetRecords(FirebaseWebGL.Examples.Auth.LobbyHandler.userName);
+            GetRanks(FirebaseWebGL.Examples.Auth.LobbyHandler.userName);
         }
 
 
@@ -87,5 +92,8 @@ namespace FirebaseWebGL.Examples.Auth
 
         public void GetRecords(string username) =>
                FirebaseDatabase.GetRecords(username);
+
+        public void GetRanks(string username) =>
+               FirebaseDatabase.GetRanks(username);
     }
 }

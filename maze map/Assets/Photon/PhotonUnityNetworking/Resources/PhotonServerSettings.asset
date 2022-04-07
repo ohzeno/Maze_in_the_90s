@@ -39,6 +39,10 @@ MonoBehaviour:
   - DestroySpaceship
   - Fire
   - RespawnSpaceship
+  - ChatRPC
+  - ChatMessage
+  - StartTime
+  - HideAndSeekMsg
   DisableAutoOpenWizard: 1
   ShowSettings: 0
   DevRegionSetOnce: 1

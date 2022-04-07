@@ -67,17 +67,12 @@ namespace FirebaseWebGL.Examples.Auth
         public static string userName = null;
         public static int UserChar = 0;
 
-        void Start()
+        public void Start()
         {
             //최초 진입 시 프로필 로드
             CheckAuthState();
             Debug.Log("lobby scene");
             Debug.Log(FirebaseWebGL.Examples.Auth.LoginHandler.UserUid);
-        }
-
-        void Awake()
-        {
-            instance = this;
         }
 
         public void GetUsername(string _username)
@@ -219,8 +214,14 @@ namespace FirebaseWebGL.Examples.Auth
             ClearUI();
             actionSuccessPanelUI.SetActive(true);
             actionSuccessText.text = "회원탈퇴가 완료되었습니다";
+        }
+
+        public void DeleteUserButton()
+        {
+            PhotonNetwork.Disconnect();
             DeleteUser();
         }
+
 
         //로그아웃
         public void SignOutButton()

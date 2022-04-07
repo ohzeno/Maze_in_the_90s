@@ -47,7 +47,7 @@ namespace FirebaseWebGL.Scripts.FirebaseBridge
 
         //캐릭터 변경
         [DllImport("__Internal")]
-        public static extern void UpdateCharacter(int UpdateCharacter);
+        public static extern void UpdateCharacter(int charIdx);
 
     }
 }

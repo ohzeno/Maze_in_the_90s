@@ -256,17 +256,14 @@ mergeInto(LibraryManager.library, {
     },
 
    UpdateCharacter: function(charIdx) {
-        var parsedIdx = Pointer_stringify(charIdx);
+
+        console.log("updating character");
+        console.log(charIdx);
+        console.log(typeof charIdx);
 
         var user = firebase.auth().currentUser;
-        console.log(parsedIdx);
-        
-        //Firebase Auth에서 업뎃
-        user.updateProfile({
-        character: parsedIdx,
-        });
 
-        var data = { character : parsedIdx };
+        var data = { character : charIdx };
 
         //Realtime Database에서 업데이트
         firebase.database().ref('users/' + user.uid).update(data);

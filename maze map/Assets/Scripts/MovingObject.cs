@@ -38,11 +38,16 @@ public class MovingObject : MonoBehaviour
     public float turnSpeedValue = 200.0f;
     public GameObject FinishAlert;
     private string uid;
+    private string mode;
 
     [DllImport("__Internal")]
-    private static extern void CallCam(string data);
+    private static extern void CallCam(string _uid);
+    [DllImport("__Internal")]
+    private static extern void SelectControl(string _mode);
     void Awake()
     {
+        mode = Jscall.controlmode;
+        SelectControl(mode);
         uid = FirebaseWebGL.Examples.Auth.LoginHandler.UserUid;
         CallCam(uid);
     }
@@ -90,7 +95,7 @@ public class MovingObject : MonoBehaviour
                 {
                     isOnLoading = false;
                     Dictionary<string, object> response = Json.Deserialize(request.downloadHandler.text) as Dictionary<string, object>;
-                    Debug.Log(response["control"]);
+                    //Debug.Log(response["control"]);
                     string dir = response["control"].ToString();
                     if (dir == "Up") 
                     {

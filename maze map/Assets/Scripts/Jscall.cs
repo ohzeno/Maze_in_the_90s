@@ -10,9 +10,8 @@ public class Jscall : MonoBehaviour
     public static Jscall instance;
     List<string> maplist = new List<string>{"MazeForest1", "MazeForest2", "MazeForest3", "MazeForest4", "MazeGrave1", "MazeForest1", "MazeForest2" };
     private string uid;
-
-    
-
+    public static string controlmode = "hand";
+      
     [DllImport("__Internal")]
     private static extern void CallCam(string _uid);
 

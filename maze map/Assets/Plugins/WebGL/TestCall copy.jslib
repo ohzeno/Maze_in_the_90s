@@ -1,5 +1,5 @@
 mergeInto(LibraryManager.library, {
-  CallCam: function (data) {
+  CallCamtest: function (data) {
     const datatostr = Pointer_stringify(data);
     var bb = document.querySelector("#root"); 
     if (bb.style.display === "none") {

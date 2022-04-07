@@ -41,7 +41,7 @@ public class GameManager : MonoBehaviour
     IEnumerator CreatePlayer()
     {
         yield return new WaitUntil(() => isConnect);
-        if ((int)PhotonNetwork.CurrentRoom.CustomProperties["Mode"] == 0)
+        if ((int)PhotonNetwork.CurrentRoom.CustomProperties["Mode"] == 1)
         {
             Vector3 pos = new Vector3(-1030 + Random.Range(-150, 150) * 1.0f, 800 + Random.Range(-80, 80) * 1.0f, 0.0f);
             GameObject playerTemp = PhotonNetwork.Instantiate(CharList[char_idx], pos, Quaternion.identity, 0);

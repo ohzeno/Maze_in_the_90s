@@ -64,7 +64,7 @@ namespace FirebaseWebGL.Examples.Auth
         //닉네임, 프사
         public static LobbyHandler instance;
         public static string userName = null;
-        string photoURL = null;
+        string character = null;
 
 
         private void Start()
@@ -80,64 +80,24 @@ namespace FirebaseWebGL.Examples.Auth
             userName = _username;
 
             //둘 다 모이면 로드프로필 실행
-            if (userName != null && photoURL != null)
+            if (userName != null)
             {
-                LoadProfile();
+                LoadUsername();
             }
         }
 
-        private void GetPhotoURL(string _photoURL)
+        private void GetCharacter(string _character)
         {
-            photoURL = _photoURL;
-
-            //둘 다 모이면 로드프로필 실행
-            if (userName != null && photoURL != null)
-            {
-                LoadProfile();
-            }
+            character = _character;
         }
 
-        private void LoadProfile()
+        private void LoadUsername()
         {
-            //Set UI
-            StartCoroutine(LoadImage(photoURL.ToString()));
             lobbyUsernameText.text = userName.ToString();
             myPageUsernameText.text = userName.ToString();
         }
 
-        private IEnumerator LoadImage(string _photoUrl)
-        {
-            UnityWebRequest request = UnityWebRequestTexture.GetTexture(_photoUrl);
 
-            request.SetRequestHeader("Access-Control-Allow-Origin", "*");
-
-            request.SetRequestHeader("Access-Control-Allow-Credentials", "true");
-            request.SetRequestHeader("Access-Control-Allow-Headers", "Accept, Content-Type, X-Access-Token, X-Application-Name, X-Request-Sent-Time");
-            request.SetRequestHeader("Access-Control-Allow-Methods", "GET, POST, PUT, OPTIONS");
-
-            yield return request.SendWebRequest();
-
-            if (request.error != null)
-            {
-                string output = "알 수 없는 에러가 발생하였습니다 다시 시도해주세요";
-                Debug.Log("로드이미지 에러");
-                Debug.Log(request.error);
-
-                if (request.result == UnityWebRequest.Result.ProtocolError)
-                {
-                    output = "지원하지 않는 이미지 파일 형식입니다 다른 이미지를 사용하세요";
-                }
-
-            }
-            else
-            {
-                Texture2D image = ((DownloadHandlerTexture)request.downloadHandler).texture;
-
-                lobbyProfilePicture.sprite = Sprite.Create(image, new Rect(0, 0, image.width, image.height), Vector2.zero);
-
-                myPageProfilePicture.sprite = Sprite.Create(image, new Rect(0, 0, image.width, image.height), Vector2.zero);
-            }
-        }
 
         public void ClearUI()
         {

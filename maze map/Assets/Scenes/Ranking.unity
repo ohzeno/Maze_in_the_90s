@@ -1612,7 +1612,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Forest Stage1
+  m_text: 
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 2e4a6cfa4021bbd419e2e6587b44494c, type: 2}
   m_sharedMaterial: {fileID: 2695523295560581075, guid: 2e4a6cfa4021bbd419e2e6587b44494c, type: 2}
@@ -3699,7 +3699,7 @@ MonoBehaviour:
     m_Right: 0
     m_Top: 0
     m_Bottom: 0
-  m_ChildAlignment: 0
+  m_ChildAlignment: 1
   m_Spacing: 0
   m_ChildForceExpandWidth: 1
   m_ChildForceExpandHeight: 1
@@ -4688,7 +4688,7 @@ MonoBehaviour:
       - m_Target: {fileID: 226809962}
         m_TargetAssemblyTypeName: MapDropdown, Assembly-CSharp
         m_MethodName: OnDropdownEvent
-        m_Mode: 3
+        m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
@@ -4772,8 +4772,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 404.7, y: 222.5}
-  m_SizeDelta: {x: 77.3664, y: 55.756}
+  m_AnchoredPosition: {x: 404, y: 222}
+  m_SizeDelta: {x: 77, y: 55}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1900940261
 MonoBehaviour:

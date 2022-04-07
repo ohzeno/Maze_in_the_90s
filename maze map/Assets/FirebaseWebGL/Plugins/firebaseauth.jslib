@@ -1,23 +1,23 @@
 mergeInto(LibraryManager.library, {
 
-    //·Îºñ ÁøÀÔ½Ã À¯ÀúÇÁ·ÎÇÊ °¡Á®¿À±â
+    //ï¿½Îºï¿½ ï¿½ï¿½ï¿½Ô½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
     CheckAuthState: function() {
         
         const user = firebase.auth().currentUser;
 
         if (user) {
             
-            //ÆÄÀÌ¾îº£ÀÌ½º¿¡¼­ ÇÁ·ÎÇÊ Á¤º¸ °¡Á®¿À±â
+            //ï¿½ï¿½ï¿½Ì¾îº£ï¿½Ì½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
 
             var userName = user.displayName;
-            var photoURL = user.photoURL;
+            var character = user.character;
 
             console.log(typeof userName);
-            console.log(typeof photoURL);
+            console.log(typeof character);
 
-            //À¯´ÏÆ¼·Î Á¤º¸ (°¢°¢¤») º¸³»±â
+            //ï¿½ï¿½ï¿½ï¿½Æ¼ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ (ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½) ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
             window.unityInstance.SendMessage('LobbyHandler', 'GetUsername', userName);
-            window.unityInstance.SendMessage('LobbyHandler', 'GetPhotoURL', photoURL);
+            window.unityInstance.SendMessage('LobbyHandler', 'GetCharacter', character);
             
         
         } else {
@@ -28,16 +28,16 @@ mergeInto(LibraryManager.library, {
     
     },
 
-    //·Î±×ÀÎ - ·©Å· ÆäÀÌÁö µÚ·Î°¡±â ¹öÆ°
+    //ï¿½Î±ï¿½ï¿½ï¿½ - ï¿½ï¿½Å· ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½Ú·Î°ï¿½ï¿½ï¿½ ï¿½ï¿½Æ°
     IsLoggedIn: function() {
         
         const user = firebase.auth().currentUser;
 
-        //·Î±×ÀÎ »óÅÂ¸é ·Îºñ
+        //ï¿½Î±ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½Â¸ï¿½ ï¿½Îºï¿½
         if (user) {
             window.unityInstance.SendMessage('RankingHandler', 'BackBtn', 1);
             
-        //ºñ·Î±×ÀÎ »óÅÂ¸é ·Î±×ÀÎ
+        //ï¿½ï¿½Î±ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½Â¸ï¿½ ï¿½Î±ï¿½ï¿½ï¿½
         } else {
             console.log('user signed out!');
             window.unityInstance.SendMessage('RankingHandler', 'BackBtn', 2);
@@ -46,14 +46,14 @@ mergeInto(LibraryManager.library, {
     
     },
 
-    //ÀÚµ¿·Î±×ÀÎ È®ÀÎ 
+    //ï¿½Úµï¿½ï¿½Î±ï¿½ï¿½ï¿½ È®ï¿½ï¿½ 
     CheckAutoLogin: function() {
         
         const user = firebase.auth().currentUser;
 
         if (user) {
             console.log('autologin!');
-            window.unityInstance.SendMessage('LoginHandler', 'LobbyScreen');
+            window.unityInstance.SendMessage('LoginHandler', 'LobbyScreen', user.uid);
         
         } else {
             console.log('user signed out!');
@@ -63,7 +63,7 @@ mergeInto(LibraryManager.library, {
     },
     
 
-    //ÀÌ¸ÞÀÏ·Î °¡ÀÔ
+    //ï¿½Ì¸ï¿½ï¿½Ï·ï¿½ ï¿½ï¿½ï¿½ï¿½
 	CreateUserWithEmailAndPassword: function(username, email, password, objectName, callback) {
         
         var parsedUsername = Pointer_stringify(username);
@@ -86,23 +86,24 @@ mergeInto(LibraryManager.library, {
                 console.log('profile update start!!');
                 console.log(user);
                 
-                //Firebase Auth¿¡ µî·Ï
+                //Firebase Authï¿½ï¿½ ï¿½ï¿½ï¿½
                 user.updateProfile({
                 displayName: parsedUsername,
-                photoURL: "https://pbs.twimg.com/media/EFKdt0bWsAIfcj9.jpg"
+                email: parsedEmail,
+                character: 0
                 }).then(function (unused) {
                     console.log('profile update done!!');
                     firebase.auth().signOut();
                     window.unityInstance.SendMessage('SignUpHandler', 'LoginScreen');
                 });
 
-                //Realtime Database¿¡ µî·Ï
-                console.log('db µî·Ï ½ÃÀÛ!!');
+                //Realtime Databaseï¿½ï¿½ ï¿½ï¿½ï¿½
+                console.log('db ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½!!');
                 firebase.database().ref('users/' + user.uid).set(
                 {
                     nickname: parsedUsername,
                     email: parsedEmail,
-                    profile_picture : "https://pbs.twimg.com/media/EFKdt0bWsAIfcj9.jpg"
+                    character : 0
                 });
 
                 window.unityInstance.SendMessage(parsedObjectName, parsedCallback, "Success: signed up for " + parsedEmail);
@@ -117,7 +118,7 @@ mergeInto(LibraryManager.library, {
 	},
     
 
-    //ÀÌ¸ÞÀÏ·Î ·Î±×ÀÎ
+    //ï¿½Ì¸ï¿½ï¿½Ï·ï¿½ ï¿½Î±ï¿½ï¿½ï¿½
     SignInWithEmailAndPassword: function (email, password, objectName, callback, fallback) {
  
         var parsedEmail = Pointer_stringify(email);
@@ -146,172 +147,158 @@ mergeInto(LibraryManager.library, {
         }
     },
     
-    //±¸±Û Ã³À½ ·Î±×ÀÎ(ÇÁ»ç µðÆúÆ® ÀÌ¹ÌÁö·Î ¾÷µ«)
-    SignInWithGoogle: function (objectName, callback, fallback) {
+    //ï¿½ï¿½ï¿½ï¿½ ï¿½Î±ï¿½ï¿½ï¿½ ï¿½ï¿½ È¸ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
+    LoginWithGoogle: function (objectName, callback, fallback) {
  
     var parsedObjectName = Pointer_stringify(objectName);
     var parsedCallback = Pointer_stringify(callback);
     var parsedFallback = Pointer_stringify(fallback);
 
-    try {
-        var provider = new firebase.auth.GoogleAuthProvider();
-        firebase.auth().signInWithPopup(provider).then(function (unused) {
-            
-            var user = firebase.auth().currentUser;
-            return user;
+      //ï¿½Î±ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ È¸ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ DB È®ï¿½ï¿½
+      var userRef = firebase.database().ref('users'); // ï¿½ï¿½Ã¼ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ìºï¿½
+      var result = 1; // 0ï¿½Ì¸ï¿½ ï¿½Î±ï¿½ï¿½ï¿½ 1ï¿½Ì¸ï¿½ È¸ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
 
-        }).then(function (user) {
+      var provider = new firebase.auth.GoogleAuthProvider();
+      firebase.auth().signInWithPopup(provider).then(function (unused) {
+          
+          var user = firebase.auth().currentUser;
+          return user;
 
-            console.log('google profile update start!!');
-            console.log(user);
-            
-            //´Ð³×ÀÓ Áßº¹°Ë»ç¸¦ À§ÇØ moreinfo·Î º¸³¿
-            window.unityInstance.SendMessage('SignUpHandler', 'CheckNickUI')});
+      }).then(function (user) {
 
-    } catch (error) {
-        unityInstance.Module.SendMessage(parsedObjectName, parsedFallback, JSON.stringify(error, Object.getOwnPropertyNames(error)));
-    }
-    },
-    
+        //ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ìºï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
+        userRef.get().then(function(snapshot) {
+          snapshot.forEach(function (users) {
+                console.log(users.val());
+                console.log(users.val().email);
+                //ï¿½Ì¹ï¿½ ï¿½ï¿½ï¿½ï¿½, ï¿½Î±ï¿½ï¿½ï¿½ ï¿½Ãµï¿½ï¿½ï¿½
+                if (users.val().email == user.email) {
+                console.log('user already exists - login');
+                result = 0;
+                console.log(result);
+                }
+            });
+            if (result == 0){
+        //ï¿½Î±ï¿½ï¿½ï¿½, uid ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½Îºï¿½
+        window.unityInstance.SendMessage('LoginHandler', 'LobbyScreen', user.uid);
+      }
+      else if (result == 1){
+        //ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½, È¸ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½Ãµï¿½ï¿½ï¿½
+        //È¸ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½, ï¿½Ð³ï¿½ï¿½ï¿½ ï¿½ßºï¿½ï¿½Ë»ï¿½
+        window.unityInstance.SendMessage('LoginHandler', 'SignUpNicknameCheck')
+      }
+        });
 
-    //±êÇé Ã³À½ ·Î±×ÀÎ(ÇÁ»ç µðÆúÆ® ÀÌ¹ÌÁö·Î ¾÷µ«)
-    SignInWithGithub: function (objectName, callback, fallback) {
+      
+  });
+  },
+
+    //ï¿½ï¿½ï¿½ï¿½ ï¿½Î±ï¿½ï¿½ï¿½ ï¿½ï¿½ È¸ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
+    LoginWithGithub: function (objectName, callback, fallback) {
  
     var parsedObjectName = Pointer_stringify(objectName);
     var parsedCallback = Pointer_stringify(callback);
     var parsedFallback = Pointer_stringify(fallback);
 
-    try {
-        var provider = new firebase.auth.GithubAuthProvider();
-        firebase.auth().signInWithPopup(provider).then(function (unused) {
-            
-            var user = firebase.auth().currentUser;
-            return user;
+      //ï¿½Î±ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ È¸ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ DB È®ï¿½ï¿½
+      var userRef = firebase.database().ref('users'); // ï¿½ï¿½Ã¼ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ìºï¿½
+      var result = 1; // 0ï¿½Ì¸ï¿½ ï¿½Î±ï¿½ï¿½ï¿½ 1ï¿½Ì¸ï¿½ È¸ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
 
-        }).then(function (user) {
+      var provider = new firebase.auth.GithubAuthProvider();
+      firebase.auth().signInWithPopup(provider).then(function (unused) {
+          
+          var user = firebase.auth().currentUser;
+          return user;
 
-            console.log('github profile update start!!');
-            console.log(user);
-            
-            //´Ð³×ÀÓ Áßº¹°Ë»ç¸¦ À§ÇØ moreinfo·Î º¸³¿
-            window.unityInstance.SendMessage('SignUpHandler', 'CheckNickUI')});
+      }).then(function (user) {
 
-    } catch (error) {
-        unityInstance.Module.SendMessage(parsedObjectName, parsedFallback, JSON.stringify(error, Object.getOwnPropertyNames(error)));
-    }
-    },
+        //ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ìºï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
+        userRef.get().then(function(snapshot) {
+          snapshot.forEach(function (users) {
+                console.log(users.val());
+                console.log(users.val().email);
+                //ï¿½Ì¹ï¿½ ï¿½ï¿½ï¿½ï¿½, ï¿½Î±ï¿½ï¿½ï¿½ ï¿½Ãµï¿½ï¿½ï¿½
+                if (users.val().email == user.email) {
+                console.log('user already exists - login');
+                result = 0;
+                console.log(result);
+                }
+            });
+            if (result == 0){
+        //ï¿½Î±ï¿½ï¿½ï¿½, uid ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½Îºï¿½
+        window.unityInstance.SendMessage('LoginHandler', 'LobbyScreen', user.uid);
+      }
+      else if (result == 1){
+        //ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½, È¸ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½Ãµï¿½ï¿½ï¿½
+        //È¸ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½, ï¿½Ð³ï¿½ï¿½ï¿½ ï¿½ßºï¿½ï¿½Ë»ï¿½
+        window.unityInstance.SendMessage('LoginHandler', 'SignUpNicknameCheck')
+      }
+        });
 
-    //¼Ò¼È °¡ÀÔ ÇÁ·ÎÇÊ µî·Ï(´Ð³Û Áßº¹°Ë»ç Åë°ú ÈÄ)
+      
+  });
+  },
+
+    //ï¿½Ò¼ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½(ï¿½Ð³ï¿½ ï¿½ßºï¿½ï¿½Ë»ï¿½ ï¿½ï¿½ï¿½ ï¿½ï¿½)
     UpdateInfoWithGoogleOrGithub: function (username) {
  
         var parsedUserName = Pointer_stringify(username);
         var user = firebase.auth().currentUser;
         
-        //Firebase Auth¿¡ µî·Ï
+        //Firebase Authï¿½ï¿½ ï¿½ï¿½ï¿½
         user.updateProfile({
         displayName: parsedUserName,
-        photoURL: "https://pbs.twimg.com/media/EFKdt0bWsAIfcj9.jpg"
+        email: user.email,
+        character : 0
         });
 
-        //Realtime Database¿¡ µî·Ï
+        //Realtime Databaseï¿½ï¿½ ï¿½ï¿½ï¿½
         firebase.database().ref('users/' + user.uid).set({
             nickname: parsedUserName,
             email: user.email,
-            profile_picture : "https://pbs.twimg.com/media/EFKdt0bWsAIfcj9.jpg"
+            character : 0
         });
 
-        //ÀÏ´Ü ·Î±×¾Æ¿ô ½ÃÅ°°í ·Î±×ÀÎÆäÀÌÁö
-        firebase.auth().signOut();
+        //ï¿½Îºï¿½ï¿½ ï¿½Ìµï¿½
         console.log('profile update done!!');
-        window.unityInstance.SendMessage('SignUpHandler', 'LoginScreen');
+        window.unityInstance.SendMessage('LoginHandler', 'LobbyScreen', user.uid);
     },
 
-    //¸¶ÀÌÆäÀÌÁö ´Ð³×ÀÓ º¯°æ
+    //ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½Ð³ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½
     UpdateNickname: function (username) {
  
         var parsedUserName = Pointer_stringify(username);
         var user = firebase.auth().currentUser;
         console.log(parsedUserName);
         
-        //Firebase Auth¿¡¼­ ¾÷µ«
+        //Firebase Authï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½
         user.updateProfile({
         displayName: parsedUserName,
         });
 
         var data = { nickname : parsedUserName };
 
-        //Realtime Database¿¡¼­ ¾÷µ¥ÀÌÆ®
+        //Realtime Databaseï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Æ®
         firebase.database().ref('users/' + user.uid).update(data);
 
     },
 
-    //±¸±Û ·Î±×ÀÎ
-    LoginWithGoogle: function (objectName, callback, fallback) {
- 
-        var parsedObjectName = Pointer_stringify(objectName);
-        var parsedCallback = Pointer_stringify(callback);
-        var parsedFallback = Pointer_stringify(fallback);
- 
-        try {
-            var provider = new firebase.auth.GoogleAuthProvider();
-            firebase.auth().signInWithPopup(provider).then(function (unused) {
-                
-                var user = firebase.auth().currentUser;
-                console.log(user);
 
-                window.unityInstance.SendMessage('LoginHandler', 'LobbyScreen', user.uid);
-                
-                unityInstance.Module.SendMessage(parsedObjectName, parsedCallback, "Success: signed in with Google!");
-            }).catch(function (error) {
-                unityInstance.Module.SendMessage(parsedObjectName, parsedFallback, JSON.stringify(error, Object.getOwnPropertyNames(error)));
-            });
- 
-        } catch (error) {
-            unityInstance.Module.SendMessage(parsedObjectName, parsedFallback, JSON.stringify(error, Object.getOwnPropertyNames(error)));
-        }
-    },
-
-    //±êÇé ·Î±×ÀÎ
-    LoginWithGithub: function (objectName, callback, fallback) {
-        var parsedObjectName = Pointer_stringify(objectName);
-        var parsedCallback = Pointer_stringify(callback);
-        var parsedFallback = Pointer_stringify(fallback);
- 
-        try {
-            var provider = new firebase.auth.GithubAuthProvider();
-            firebase.auth().signInWithPopup(provider).then(function (unused) {
-
-                var user = firebase.auth().currentUser;
-                console.log(user);
-                
-                window.unityInstance.SendMessage('LoginHandler', 'LobbyScreen', user.uid);
-
-                window.unityInstance.SendMessage(parsedObjectName, parsedCallback, "Success: signed in with Github!");
-            }).catch(function (error) {
-                window.unityInstance.SendMessage(parsedObjectName, parsedFallback, JSON.stringify(error, Object.getOwnPropertyNames(error)));
-            });
- 
-        } catch (error) {
-            window.unityInstance.SendMessage(parsedObjectName, parsedFallback, JSON.stringify(error, Object.getOwnPropertyNames(error)));
-        }
-    },
-
-
-    //·Î±×¾Æ¿ô
+    //ï¿½Î±×¾Æ¿ï¿½
     SignOut: function() {
         firebase.auth().signOut().then(function (unused) {
             window.unityInstance.SendMessage('LobbyHandler', 'LoginScreen')});
     },
 
 
-    //ÇÁ»ç º¯°æ
+    //ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½
     UpdateProfilePicture: function(newProfile) {
         var newPfp = Pointer_stringify(newProfile);
         const user = firebase.auth().currentUser;
 
         var pfData = { profile_picture : newPfp };
 
-        //Firebase Auth¿¡¼­ ¾÷µ¥ÀÌÆ®
+        //Firebase Authï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Æ®
         user.updateProfile({
             photoURL: newPfp
             }).then(function (unused) {
@@ -319,12 +306,12 @@ mergeInto(LibraryManager.library, {
                 window.unityInstance.SendMessage('LobbyHandler', 'ChangePfpSuccess');
             });
 
-        //Realtime Database¿¡¼­ ¾÷µ¥ÀÌÆ®
+        //Realtime Databaseï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Æ®
         firebase.database().ref('users/' + user.uid).update(pfData);
         
     },
 
-    //ºñ¹Ð¹øÈ£ º¯°æ(¸¶ÀÌÆäÀÌÁö)
+    //ï¿½ï¿½Ð¹ï¿½È£ ï¿½ï¿½ï¿½ï¿½(ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½)
     UpdatePw: function(newPw) {
         var nextPw = Pointer_stringify(newPw);
         const user = firebase.auth().currentUser;
@@ -336,7 +323,7 @@ mergeInto(LibraryManager.library, {
         });
     },
 
-    //ºñ¹Ð¹øÈ£ Àç¼³Á¤(·Î±×ÀÎ È­¸é¿¡¼­ ºñ¹ø ÀØ¾úÀ» ¶§)
+    //ï¿½ï¿½Ð¹ï¿½È£ ï¿½ç¼³ï¿½ï¿½(ï¿½Î±ï¿½ï¿½ï¿½ È­ï¿½é¿¡ï¿½ï¿½ ï¿½ï¿½ï¿½ ï¿½Ø¾ï¿½ï¿½ï¿½ ï¿½ï¿½)
     ResetPassword: function(email) {
         const user = firebase.auth().currentUser;
         var email = Pointer_stringify(email);
@@ -347,16 +334,16 @@ mergeInto(LibraryManager.library, {
         });
     },
 
-    //È¸¿øÅ»Åð
+    //È¸ï¿½ï¿½Å»ï¿½ï¿½
     DeleteUser: function() {
 
     const user = firebase.auth().currentUser;
 
-    //Realtime Database¿¡¼­ »èÁ¦
+    //Realtime Databaseï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½
     firebase.database().ref('users/' + user.uid).remove().then(function(unused) {
             window.unityInstance.SendMessage(parsedObjectName, parsedCallback, "Success: " + parsedPath + " was deleted")});
     
-    //Firebase Auth¿¡¼­ »èÁ¦
+    //Firebase Authï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½
     user.delete().then(function (unused) {
         window.unityInstance.SendMessage('LobbyHandler', 'DeleteUserSuccess')});
     

@@ -65,7 +65,7 @@ namespace FirebaseWebGL.Examples.Auth
         //닉네임, 프사
         public static LobbyHandler instance;
         public static string userName = null;
-        public static int UserChar = 0;
+        
 
         public void Start()
         {
@@ -86,11 +86,7 @@ namespace FirebaseWebGL.Examples.Auth
             }
         }
 
-        public void GetCharacter(string _character)
-        {
-            int intChar = Int32.Parse(_character);
-            UserChar = intChar;
-        }
+        
 
         private void LoadUsername()
         {
@@ -235,9 +231,6 @@ namespace FirebaseWebGL.Examples.Auth
 
         public void CheckAuthState() =>
            FirebaseAuth.CheckAuthState();
-
-        public void GetUserCharacter() =>
-           FirebaseDatabase.GetUserCharacter();
 
         public void UpdateProfilePicture(string newProfile) =>
            FirebaseAuth.UpdateProfilePicture(newProfile);

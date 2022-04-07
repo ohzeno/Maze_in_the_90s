@@ -1540,7 +1540,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   recordListContent: {fileID: 1595843744}
-  gameRecordPrefab: {fileID: 6611101964928492697, guid: 254b033a9c5ad8742b3bf906fb847c19, type: 3}
+  gameRecordPrefab: {fileID: 7468146171985586577, guid: 7a340e73cc9449e419ebabcae7a01840, type: 3}
 --- !u!4 &486321795
 Transform:
   m_ObjectHideFlags: 0
@@ -3700,9 +3700,9 @@ MonoBehaviour:
     m_Top: 0
     m_Bottom: 0
   m_ChildAlignment: 1
-  m_Spacing: 0
-  m_ChildForceExpandWidth: 1
-  m_ChildForceExpandHeight: 1
+  m_Spacing: 10
+  m_ChildForceExpandWidth: 0
+  m_ChildForceExpandHeight: 0
   m_ChildControlWidth: 0
   m_ChildControlHeight: 0
   m_ChildScaleWidth: 0
@@ -4432,7 +4432,7 @@ MonoBehaviour:
   m_HandleRect: {fileID: 1641325268}
   m_Direction: 2
   m_Value: 1
-  m_Size: 0.999996
+  m_Size: 0.99999607
   m_NumberOfSteps: 0
   m_OnValueChanged:
     m_PersistentCalls:

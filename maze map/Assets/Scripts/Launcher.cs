@@ -60,6 +60,10 @@ public class Launcher : MonoBehaviourPunCallbacks//�ٸ� ���� ���
         {
             return;//�� �̸��� ���̸� �� �ȸ������
         }
+        if (byte.Parse(roomPopulationInputField.text) > 6)
+        {
+            return;
+        }
         if (!string.IsNullOrWhiteSpace(userNameInputField.text))
         {
             PhotonNetwork.NickName = userNameInputField.text;

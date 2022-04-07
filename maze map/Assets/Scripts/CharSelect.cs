@@ -16,7 +16,8 @@ public class CharSelect : MonoBehaviour
     public void Start()
     {
         Debug.Log("set character");
-        charselect.value = FirebaseWebGL.Examples.Auth.LobbyHandler.UserChar;
+        charselect.value = FirebaseWebGL.Examples.Auth.LoginHandler.UserChar;
+        Debug.Log(charselect.value);
         lobby_image.sprite = charselect.captionImage.sprite;
     }
 

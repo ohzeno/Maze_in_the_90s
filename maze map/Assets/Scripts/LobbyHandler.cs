@@ -97,6 +97,8 @@ namespace FirebaseWebGL.Examples.Auth
             myPageUsernameText.text = userName.ToString();
         }
 
+
+
         public void ClearUI()
         {
             profileUI.SetActive(false);

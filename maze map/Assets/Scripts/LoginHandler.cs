@@ -77,12 +77,6 @@ namespace FirebaseWebGL.Examples.Auth
 
         private void Start()
         {
-            if (Application.platform != RuntimePlatform.WebGLPlayer)
-            {
-                DisplayError("Webgl 플랫폼이 아니면 Javascript 기능은 인식되지 않습니다.");
-                return;
-            }
-
             CheckAutoLogin();
         }
 

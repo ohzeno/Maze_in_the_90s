@@ -1,6 +1,7 @@
 using TMPro;
 using UnityEngine;
 using System.Collections.Generic;
+using System.Threading.Tasks;
 using Photon.Pun;//���� ��� ���
 
 public class MapDropdown : MonoBehaviour
@@ -48,7 +49,7 @@ public class MapDropdown : MonoBehaviour
         map_dropdown.value = 0;
     }
     
-    public void OnDropdownEvent(int index)
+    public void OnDropdownEvent()
     {
         // ������ map �̸��� ������ 
         if (mode_dropdown.value == 2)
@@ -59,8 +60,22 @@ public class MapDropdown : MonoBehaviour
         {
             text.text = $"{maze_list[map_dropdown.value]}";
         }
-        RankingHandler.instance.ChangeTab(mode_dropdown.value, text.text);
+        Debug.Log("dropdown event!");
+        Debug.Log(mode_list[mode_dropdown.value]);
+        Debug.Log(text.text);
+
+        //먼저 내용 리셋
+        RankingHandler.instance.ClearContents();
+
+        //다시 정보 요청
+        RankingHandler.instance.ChangeTab(mode_list[mode_dropdown.value], text.text);
+        Debug.Log("~~~");
+
+        //ClearTab(mode_list[mode_dropdown.value], text.text);
+        //RankingHandler.instance.ClearTab(mode_list[mode_dropdown.value], text.text);
+        //RankingHandler.instance.ChangeTab(mode_list[mode_dropdown.value], text.text);
     }
+
     public void mapChange()
     {
         PhotonNetwork.CurrentRoom.CustomProperties["Mode"] = mode_dropdown.value;

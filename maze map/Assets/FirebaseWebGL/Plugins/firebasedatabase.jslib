@@ -137,20 +137,31 @@ mergeInto(LibraryManager.library, {
     console.log(typeof obj);
     
     //오브젝트에서 필요한 value 값을 찾아서 변수로 만듬
-    //const mode = obj.gameMode;
-    //const map = obj.gameMap;
+    const players = obj.totalPlayers;
+    const rank = obj.rank;    
     const name = obj.nickName;
     const time = obj.time;
+    const mode = obj.gameMode;
+    const map = obj.gameMap;
 
-    //DB 저장 경로는 rank/모드(0/1)/맵/닉네임
+
+    //DB 저장 경로는 rank/모드(1/2)/맵/닉네임
     //저장할 데이터는 {time : 걸린 시간}
-    var rankRef = firebase.database().ref('rank/' + '0' + '/' + 'forest1' + '/' + name); //전체 랭킹
-    var recordRef = firebase.database().ref('record/' + name + '/' + '0' + '/' + 'forest1'); //유저 게임전적
+    var rankRef = firebase.database().ref('rank/' + mode + '/' + map + '/' + name); //전체 랭킹
+    var recordRef = firebase.database().ref('record/' + name); //마이페이지 유저별 게임전적
 
-    //{ name: 어쩌구, time: 12 }
-    var postData = new Object();
-    postData.name = name;
-    postData.time = time;
+    //랭킹페이지 { name: 어쩌구, time: 12 }
+    var rankData = new Object();
+    rankData.name = name;
+    rankData.time = time;
+
+    //마이페이지 { mode: 어쩌구, map: 어쩌구, players: 몇명, rank: 몇등, time: 시간 }
+    var recordData = new Object();
+    recordData.mode = mode;
+    recordData.map = map;
+    recordData.players = players;
+    recordData.rank = rank;
+    recordData.time = time;
 
     //전체 랭킹 테이블 업데이트(해당 유저의 기록이 이미 있는 경우 더 짧은 기록으로 대체할 것)
     rankRef.get().then(function(snapshot) {
@@ -165,7 +176,7 @@ mergeInto(LibraryManager.library, {
         } 
         //기록 갱신했으면 데이터 보내서 대체함
         else{
-            firebase.database().ref(rankRef).update(postData).then(function(unused) {
+            firebase.database().ref(rankRef).update(rankData).then(function(unused) {
             console.log('time replaced!');
             });
         }
@@ -173,14 +184,14 @@ mergeInto(LibraryManager.library, {
 
         //해당 경로에 기록이 없음(해당 모드, 맵에서 첫 게임인 경우)
     } else {
-        firebase.database().ref(rankRef).update(postData).then(function(unused) {
+        firebase.database().ref(rankRef).update(rankData).then(function(unused) {
         console.log('rank post completed!');
         });
     }
     });
     
-    //유저 전적 테이블 업데이트(여기는 덮어쓰기 없음)
-    firebase.database().ref(recordRef).update(postData).then(function(unused) {
+    //유저 전적 테이블 업데이트(여기는 덮어쓰기 없음 계속 추가)
+    firebase.database().ref(recordRef).push().set(recordData).then(function(unused) {
         console.log('record post completed!');
     });
 
@@ -198,6 +209,8 @@ mergeInto(LibraryManager.library, {
 
     //해당하는 경로의 TOP 10 랭킹 값 읽어오기
     firebase.database().ref('rank/' + parsedMode + '/' + parsedMap).orderByChild('time').limitToFirst(10).once('value').then(function(list) {
+    console.log(list.length);
+
     //정렬된 데이터를 가져오기 위해서 하나하나씩 읽음
      list.forEach(function (score) {
         console.log(score.val());
@@ -206,5 +219,20 @@ mergeInto(LibraryManager.library, {
         });
      });
    },
+
+   GetRecords: function(username) {
+        var parsedUsername = Pointer_stringify(username);
+
+        //해당하는 유저의 전적 읽어오기
+        firebase.database().ref('record/' + parsedUsername).once('value').then(function(list) {
+        //정렬된 데이터를 가져오기 위해서 하나하나씩 읽음
+        list.forEach(function (record) {
+        console.log(record.val());
+        //게임데이터를 다시 유니티로 보냄
+        window.unityInstance.SendMessage('MyPageHandler', 'SetUp', JSON.stringify(record.val()));
+        });
+     });
+   }
+
 
 });

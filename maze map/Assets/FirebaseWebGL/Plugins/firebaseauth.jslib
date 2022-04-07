@@ -17,7 +17,7 @@ mergeInto(LibraryManager.library, {
 
             //유니티로 정보 (각각ㅋ) 보내기
             window.unityInstance.SendMessage('LobbyHandler', 'GetUsername', userName);
-            window.unityInstance.SendMessage('LobbyHandler', 'GetPhotoURL', character);
+            window.unityInstance.SendMessage('LobbyHandler', 'GetCharacter', character);
             
         
         } else {
@@ -53,7 +53,7 @@ mergeInto(LibraryManager.library, {
 
         if (user) {
             console.log('autologin!');
-            window.unityInstance.SendMessage('LoginHandler', 'LobbyScreen');
+            window.unityInstance.SendMessage('LoginHandler', 'LobbyScreen', user.uid);
         
         } else {
             console.log('user signed out!');
@@ -259,10 +259,9 @@ mergeInto(LibraryManager.library, {
             character : 0
         });
 
-        //일단 로그아웃 시키고 로그인페이지
-        firebase.auth().signOut();
+        //로비로 이동
         console.log('profile update done!!');
-        window.unityInstance.SendMessage('LoginHandler', 'LoginScreen');
+        window.unityInstance.SendMessage('LoginHandler', 'LobbyScreen', user.uid);
     },
 
     //마이페이지 닉네임 변경

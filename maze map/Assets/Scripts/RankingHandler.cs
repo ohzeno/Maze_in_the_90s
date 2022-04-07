@@ -7,6 +7,7 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using System.Text.RegularExpressions;
+using System.Threading.Tasks;
 using Newtonsoft.Json;
 using Newtonsoft.Json.Linq;
 using MiniJSON;
@@ -16,6 +17,7 @@ public class RankingHandler : MonoBehaviour
 {
         
     public static RankingHandler instance;
+    
     //밑에 프리팹 만들 오브젝트
     [SerializeField] Transform recordListContent;
     //프리팹
@@ -27,7 +29,7 @@ public class RankingHandler : MonoBehaviour
     {
         public int totalPlayers;
         public int rank;
-        public int gameMode;       
+        public string gameMode;       
         public string gameMap;
         public string nickName;
         public float time;
@@ -43,9 +45,9 @@ public class RankingHandler : MonoBehaviour
 
     int startIdx = 0;
 
-    public void Update()
+    void Awake()
     {
-        
+        instance = this;
     }
 
     //게임이 끝났을 때 EndGamd에서 받은 게임데이터
@@ -76,8 +78,16 @@ public class RankingHandler : MonoBehaviour
         gameRecordObject.rank = rank;
         gameRecordObject.nickName = username;
         gameRecordObject.time = time;
-        gameRecordObject.gameMode = mode;
-        gameRecordObject.gameMap = MapDropdown.maze_list[map];
+        gameRecordObject.gameMode = MapDropdown.mode_list[mode];
+
+        if (mode == 1)
+        {
+            gameRecordObject.gameMap = MapDropdown.maze_list[map];
+        }
+        else if (mode == 2)
+        {
+            gameRecordObject.gameMap = MapDropdown.hideAndSeek_list[map];
+        }
         
         string json = JsonUtility.ToJson(gameRecordObject);
 
@@ -85,9 +95,10 @@ public class RankingHandler : MonoBehaviour
         FirebaseDatabase.PostGameRecord(json);
     }
 
-    //TOP10 데이터를 받아서 랭킹 씬에 연결(씬 시작할 때)
+    //TOP10 데이터를 받아서 랭킹 씬에 연결(탭클릭하면 실행)
     public void SetUp(string record)
     {
+        Debug.Log("setup start!");
         var text = "";
 
         //JSON 문자열 상태에서 다시 Deserialize
@@ -136,12 +147,30 @@ public class RankingHandler : MonoBehaviour
         Instantiate(gameRecordPrefab, recordListContent).GetComponent<RankListItem>().SetUp(response);
     }
 
-    //탭 클릭 (모드, 맵마다 다른 요청)
-    public void ChangeTab(int mode, string map)
+    //초기화
+    public void ClearContents()
     {
+        Debug.Log("clearing start!");
+        
+        //기존 프리팹들을 삭제
+ 
+        if (recordListContent.transform.childCount > 0)
+        {
+            for (int i = 0; i < recordListContent.transform.childCount; i++)
+                Destroy(recordListContent.transform.GetChild(i).gameObject);
+        }
+        
         //랭킹 인덱스 초기화
         startIdx = 0;
+        Debug.Log(startIdx);
+        Debug.Log("layout cleared!");
+    }
+
+    //탭 클릭 (모드, 맵마다 다른 요청)
+     public void ChangeTab(string mode, string map)
+    {
         FirebaseDatabase.SetByInfo(mode, map);
+        Debug.Log("go to firebase");
     }
 
 

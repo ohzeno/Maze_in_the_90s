@@ -3,7 +3,7 @@
   <head>
     <meta charset="utf-8" />
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-    <title>Unity WebGL Player | maze map</title>
+    <title>Maze in the 90's</title>
     <link rel="shortcut icon" href="TemplateData/favicon.ico" />
     <link rel="stylesheet" href="TemplateData/style.css" />
     <link rel="icon" href="%PUBLIC_URL%/favicon.ico" />
@@ -24,7 +24,7 @@
         <img src="Assets/title.png">
         <div class="eachButton" style="right: 4%;">
           <img src="Assets/button_2.png" >
-          <span class="tooltiptext tooltip-left">모션 인식 기반의 게임! 드루와!</span>
+          <span class="tooltiptext tooltip-left">Maze in the 90's: 박수아, 박신영, 박준영, 이승훈, 오제노, 조은누리</span>
         </div>
         <div class="eachButton" style="right: 1%;">
           <img src="Assets/button_1.png" >
@@ -35,7 +35,7 @@
 
         <div class="gameBox">
           <div class="monitor">
-            <img src="Assets/Monitor.png" alt="Monitor">
+            <img src="Assets/NewMonitor.png" alt="Monitor">
             <div id="unity-container" class="unity-desktop">
               <canvas id="unity-canvas">
                 <div id="unity-loading-bar">
@@ -48,7 +48,6 @@
                 <div id="unity-footer">
                   <div id="unity-webgl-logo"></div>
                   <div id="unity-fullscreen-button"></div>
-                  <!-- <div id="unity-build-title">maze map</div> -->
                 </div>
               </canvas>
             </div>
@@ -65,9 +64,6 @@
       </div>
     </div>
     <script>
-      function summaryBtn(){
-
-      }
 
       var container = document.querySelector("#unity-container");
       var canvas = document.querySelector("#unity-canvas");

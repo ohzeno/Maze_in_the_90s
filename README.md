@@ -125,7 +125,7 @@
 
 - **랭킹 확인**: 로그인 없이 랭킹 확인 가능 
   
-  ![](C:\Users\SSAFY\Desktop\S06P22E101\README.assets\Login.gif)
+  ![](README.assets/Login.gif)
   
   
 
@@ -143,7 +143,7 @@
 
 - **방생성**
   
-  ![RoomCreateCute.gif](C:\Users\SSAFY\Desktop\S06P22E101\README.assets\RoomCreateCute.gif)
+  ![RoomCreateCute.gif](README.assets/RoomCreateCute.gif)
   
   
 
@@ -161,11 +161,11 @@
 
 - **프로필 이미지 변경**
   
-  ![ProfileImageChange.gif](C:\Users\SSAFY\Desktop\S06P22E101\README.assets\ProfileImageChange.gif)
+  ![ProfileImageChange.gif](README.assets/ProfileImageChange.gif)
 
 - **닉네임 및 비밀번호 변경**
   
-  ![NicknameChange.gif](C:\Users\SSAFY\Desktop\움짤\NicknameChange.gif)
+  ![NicknameChange.gif](README.assets/NicknameChange.gif)
 
 - **로그아웃**
 
@@ -185,7 +185,7 @@
 
 - **'레디' 클릭 시 게임 준비 완료 상태**
   
-  ![](C:\Users\SSAFY\Desktop\S06P22E101\README.assets\RoomToGame.gif)
+  ![](README.assets/RoomToGame.gif)
   
   
   
@@ -203,27 +203,27 @@
   
   ![MazeForest1.PNG](README.assets/MazeForest1.PNG)
   
-  ![MazeGrave4.PNG](C:\Users\SSAFY\Desktop\S06P22E101\README.assets\MazeGrave4.PNG)
+  ![MazeGrave4.PNG](README.assets/MazeGrave4.PNG)
   
   
 
 - **게임 시작 화면**: 5초 카운타다운 후 게임 시작 
   
-  ![](C:\Users\SSAFY\Desktop\S06P22E101\README.assets\GameStart.gif)
+  ![](README.assets/GameStart.gif)
 
 - **게임 진행 화면**
   
-  ![](C:\Users\SSAFY\Desktop\S06P22E101\README.assets\Walking.gif)
+  ![](README.assets/Walking.gif)
 
 - **게임 종료 화면**: 전원이 End Point에 들어오면 결과 확인 가능
   
-  ![Finish.gif](C:\Users\SSAFY\Desktop\S06P22E101\README.assets\Finish.gif)
+  ![Finish.gif](README.assets/Finish.gif)
   
   
 
 - **Menu 버튼 클릭 시**
   
-  ![](C:\Users\SSAFY\Desktop\S06P22E101\README.assets\GameExit.gif)
+  ![](README.assets/GameExit.gif)
   
   
   

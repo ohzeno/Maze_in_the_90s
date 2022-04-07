@@ -196,10 +196,9 @@ namespace FirebaseWebGL.Examples.Auth
             GameManager.instance.ChangeScene("SignUp");
         }
 
-        public void LobbyScreen(string uid, int character)
+        public void LobbyScreen(string uid)
         {
             UserUid = uid;
-            UserChar = character;
             Debug.Log("from login to lobby");
             Debug.Log(uid);
             GameManager.instance.ChangeScene("Lobby");

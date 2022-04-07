@@ -7,7 +7,7 @@ EditorBuildSettings:
   m_Scenes:
   - enabled: 1
     path: Assets/Scenes/Login.unity
-    guid: defc5c48b920c514e9e498d057f43a50
+    guid: f9d199d79376dfb4281c0625fe43ac70
   - enabled: 1
     path: Assets/Scenes/SignUp.unity
     guid: f51a51450efc0f44e9671d380c872785
@@ -45,9 +45,6 @@ EditorBuildSettings:
     path: Assets/Scenes/MazeGrave2.unity
     guid: a2757f6cb86fc0b44ad77082d324a4c8
   - enabled: 1
-    path: Assets/Scenes/SullaeGrave1.unity
-    guid: 7fdda26d6bbfa51418d8c37d22065121
-  - enabled: 1
     path: Assets/Scenes/MazeGrave3.unity
     guid: a8d0dbb7c4b69334685d7a628eddef98
   - enabled: 1
@@ -56,4 +53,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/MazeGrave5.unity
     guid: b7e12733142dea34c84917fc121193c8
+  - enabled: 1
+    path: Assets/Scenes/SullaeGrave1.unity
+    guid: 180a5fade1474bc4ebbbe317b1939adc
   m_configObjects: {}

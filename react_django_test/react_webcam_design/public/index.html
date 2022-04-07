@@ -20,34 +20,45 @@
   </head>
   <body>
     <div class="App">
-      <div class="navBar">
-        <img src="../src/Images/windowbar.png">
-        <!-- <img src="./Images/windowbar.png"> -->
+      <div style="position: relative;">
+        <img src="Assets/title.png">
+        <div class="eachButton" style="right: 1%;">
+          <img src="Assets/button_1.png" >
+        </div>
+        <div class="eachButton" style="right: 4%;">
+          <img src="Assets/button_2.png" >
+        </div>
       </div>
 
       <div class="unity">
 
         <div class="gameBox">
-          <div id="unity-container" class="unity-desktop">
-            <canvas id="unity-canvas" width="150" height="150">
-              <div id="unity-loading-bar">
-                <div id="unity-logo"></div>
-                <div id="unity-progress-bar-empty">
-                  <div id="unity-progress-bar-full"></div>
+          <div class="monitor">
+            <img src="Assets/Monitor.png" alt="Monitor">
+            <div id="unity-container" class="unity-desktop">
+              <canvas id="unity-canvas">
+                <div id="unity-loading-bar">
+                  <div id="unity-logo"></div>
+                  <div id="unity-progress-bar-empty">
+                    <div id="unity-progress-bar-full"></div>
+                  </div>
                 </div>
-              </div>
-              <div id="unity-warning"></div>
-              <div id="unity-footer">
-                <div id="unity-webgl-logo"></div>
-                <div id="unity-fullscreen-button"></div>
-                <!-- <div id="unity-build-title">maze map</div> -->
-              </div>
-            </canvas>
+                <div id="unity-warning"></div>
+                <div id="unity-footer">
+                  <div id="unity-webgl-logo"></div>
+                  <div id="unity-fullscreen-button"></div>
+                  <!-- <div id="unity-build-title">maze map</div> -->
+                </div>
+              </canvas>
+            </div>
           </div>
         </div>
 
         <div class="cameraBox">
-          <div id="root" style="display: none"></div>
+          <div class="camBox">
+            <img src="Assets/CamBox.png" alt="CamBox">
+          </div>
+          <div id="root" ></div>
         </div>
 
       </div>

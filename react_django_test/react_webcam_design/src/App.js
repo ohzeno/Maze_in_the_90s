@@ -7,7 +7,6 @@ import Unity, { UnityContext } from "react-unity-webgl";
 import Resizer from "react-image-file-resizer";
 import { useState, useEffect } from "react";
 import './App.css';
-import windowBar from "./Images/windowbar.png"
 
 const unityContext = new UnityContext({
   loaderUrl: "Build/public.loader.js",
@@ -112,7 +111,7 @@ const WebcamStreamCapture = () => {
           width: "80%",
           height: "100%",
           position: "absolute",
-          top: "0",
+          top: "-34.5%",
           left: "10%"
         }}
         onUserMedia={(stream) => {

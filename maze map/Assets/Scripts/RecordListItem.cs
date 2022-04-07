@@ -19,7 +19,7 @@ public class RecordListItem : MonoBehaviour
     }
     public void SetUp(int rank, KeyValuePair<string, string> record)
     {
-        record1.text = rank.ToString()+"��";
+        record1.text = rank.ToString()+"등";
         record2.text = record.Key.ToString();
         record3.text = record.Value.ToString();//�÷��̾� �̸� �޾Ƽ� �׻�� �̸��� ��Ͽ� �߰� ������ش�. 
     }

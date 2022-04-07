@@ -26,6 +26,7 @@ public class Launcher : MonoBehaviourPunCallbacks//�ٸ� ���� ���
     [SerializeField] GameObject startGameButton;
     [SerializeField] GameObject inGameOptionButton;
 
+    public Jscall jscall;
     void Awake()
     {
         Instance = this;//�޼���� ���
@@ -125,14 +126,15 @@ public class Launcher : MonoBehaviourPunCallbacks//�ٸ� ���� ���
     {
         PhotonNetwork.CurrentRoom.IsVisible = false;
         PhotonNetwork.CurrentRoom.IsOpen = false;
-        if ((int)PhotonNetwork.CurrentRoom.CustomProperties["Mode"] == 0)
+        if ((int)PhotonNetwork.CurrentRoom.CustomProperties["Mode"] == 1)
         {
             PhotonNetwork.LoadLevel(MapDropdown.maze_list[(int)PhotonNetwork.CurrentRoom.CustomProperties["Map"]]);//1�� ������ ���忡�� scene ��ȣ�� 1�����̱� �����̴�. 0�� �ʱ� ��.
         }
-        else
+        else if((int)PhotonNetwork.CurrentRoom.CustomProperties["Mode"] == 2)
         {
             PhotonNetwork.LoadLevel(MapDropdown.hideAndSeek_list[(int)PhotonNetwork.CurrentRoom.CustomProperties["Map"]]);//1�� ������ ���忡�� scene ��ȣ�� 1�����̱� �����̴�. 0�� �ʱ� ��.
         }        
+        
     }
 
     public void LeaveRoom() // ���� ����

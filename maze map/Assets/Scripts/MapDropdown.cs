@@ -10,8 +10,8 @@ public class MapDropdown : MonoBehaviour
     [SerializeField] private TextMeshProUGUI text;
 
     public static string[] mode_list = new string[3] { "-", "Maze", "Hide and Seek" };
-    public static string[] maze_list = new string[6] { "-","MazeForest1", "MazeForest2", "MazeForest3", "MazeForest4", "MazeGrave1" };
-    public static string[] hideAndSeek_list = new string[3] {"-", "MazeForest1", "MazeForest2"};
+    public static string[] maze_list = new string[10] { "-","MazeForest1", "MazeForest2", "MazeForest3", "MazeForest4", "MazeGrave1", "MazeGrave2", "MazeGrave3", "MazeGrave4", "MazeGrave5" };
+    public static string[] hideAndSeek_list = new string[2] {"-", "MazeForest1" };
 
     public void OnModeSelect()
     {
@@ -24,7 +24,7 @@ public class MapDropdown : MonoBehaviour
         // ���ο� �ɼ� ������ ���� OptionData ����
         List<TMP_Dropdown.OptionData> optionList = new List<TMP_Dropdown.OptionData>();
 
-        if (mode_dropdown.value == 1)
+        if (mode_dropdown.value == 2)
         {
             // sullae_list �迭�� �ִ� ��� ���ڿ� �����͸� �ҷ��ͼ� optionList�� ����
             foreach (string str in hideAndSeek_list)

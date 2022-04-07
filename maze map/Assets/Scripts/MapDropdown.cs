@@ -12,7 +12,7 @@ public class MapDropdown : MonoBehaviour
 
     public static string[] mode_list = new string[3] { "-", "Maze", "Hide and Seek" };
     public static string[] maze_list = new string[10] { "-","MazeForest1", "MazeForest2", "MazeForest3", "MazeForest4", "MazeGrave1", "MazeGrave2", "MazeGrave3", "MazeGrave4", "MazeGrave5" };
-    public static string[] hideAndSeek_list = new string[2] {"-", "MazeForest1" };
+    public static string[] hideAndSeek_list = new string[2] {"-", "SullaeGrave1" };
 
     public void OnModeSelect()
     {
@@ -20,7 +20,7 @@ public class MapDropdown : MonoBehaviour
         map_dropdown.ClearOptions();
         if (PhotonNetwork.CurrentRoom != null)
         {
-            PhotonNetwork.CurrentRoom.CustomProperties["Mode"] = mode_list[mode_dropdown.value];
+            PhotonNetwork.CurrentRoom.CustomProperties["Mode"] = mode_dropdown.value;
         }
         // ���ο� �ɼ� ������ ���� OptionData ����
         List<TMP_Dropdown.OptionData> optionList = new List<TMP_Dropdown.OptionData>();

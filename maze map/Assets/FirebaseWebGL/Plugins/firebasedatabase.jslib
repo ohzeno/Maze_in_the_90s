@@ -246,7 +246,32 @@ mergeInto(LibraryManager.library, {
         console.log(mode.val().name);
         });
       });
-   }
+   },
+
+   GetUserCharacter: function () {
+        var user = firebase.auth().currentUser;
+        console.log(user.character);
+        console.log(typeof user.character);
+        window.unityInstance.SendMessage('LobbyHandler', 'GetCharacter', user.character);
+    },
+
+   UpdateCharacter: function(charIdx) {
+        var parsedIdx = Pointer_stringify(charIdx);
+
+        var user = firebase.auth().currentUser;
+        console.log(parsedIdx);
+        
+        //Firebase Auth에서 업뎃
+        user.updateProfile({
+        character: parsedIdx,
+        });
+
+        var data = { character : parsedIdx };
+
+        //Realtime Database에서 업데이트
+        firebase.database().ref('users/' + user.uid).update(data);
+        console.log("character update complete!");
+   },
 
 
 });

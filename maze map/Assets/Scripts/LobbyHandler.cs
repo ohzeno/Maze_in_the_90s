@@ -2,6 +2,7 @@ using UnityEngine;
 using UnityEngine.UI;
 using FirebaseWebGL.Scripts.FirebaseBridge;
 using TMPro;
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine.Networking;
@@ -64,10 +65,9 @@ namespace FirebaseWebGL.Examples.Auth
         //닉네임, 프사
         public static LobbyHandler instance;
         public static string userName = null;
-        string character = null;
+        public static int UserChar = 0;
 
-
-        private void Start()
+        void Start()
         {
             //최초 진입 시 프로필 로드
             CheckAuthState();
@@ -75,7 +75,12 @@ namespace FirebaseWebGL.Examples.Auth
             Debug.Log(FirebaseWebGL.Examples.Auth.LoginHandler.UserUid);
         }
 
-        private void GetUsername(string _username)
+        void Awake()
+        {
+            instance = this;
+        }
+
+        public void GetUsername(string _username)
         {
             userName = _username;
 
@@ -86,9 +91,10 @@ namespace FirebaseWebGL.Examples.Auth
             }
         }
 
-        private void GetCharacter(string _character)
+        public void GetCharacter(string _character)
         {
-            character = _character;
+            int intChar = Int32.Parse(_character);
+            UserChar = intChar;
         }
 
         private void LoadUsername()
@@ -228,6 +234,9 @@ namespace FirebaseWebGL.Examples.Auth
 
         public void CheckAuthState() =>
            FirebaseAuth.CheckAuthState();
+
+        public void GetUserCharacter() =>
+           FirebaseDatabase.GetUserCharacter();
 
         public void UpdateProfilePicture(string newProfile) =>
            FirebaseAuth.UpdateProfilePicture(newProfile);

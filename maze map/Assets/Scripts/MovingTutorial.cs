@@ -11,7 +11,7 @@ using System.Runtime.InteropServices;
 
 public class MovingTutorial : MonoBehaviour
 {
-
+    
     public static MovingObject instance;
     private BoxCollider2D boxCollider;
     public LayerMask layerMask;
@@ -33,21 +33,26 @@ public class MovingTutorial : MonoBehaviour
     private float dirV = 0;
     string jsonResult;
     bool isOnLoading = true;
-
     public float turnSpeed = 0.0f;
     public float turnSpeedValue = 200.0f;
     private string uid;
+    private string mode;
 
     [DllImport("__Internal")]
-    private static extern void CallCam(string data);
+    private static extern void CallCam(string _uid);
+
+    [DllImport("__Internal")]
+    private static extern void SelectControl(string _mode);
 
     void Awake()
     {
+        mode = Jscall.controlmode;
+        Debug.Log("Æ©Åä¸®¾ó " + mode);
+        SelectControl(mode);
         uid = FirebaseWebGL.Examples.Auth.LoginHandler.UserUid;
-        CallCam(uid);
+        Debug.Log("Æ©Åä¸®¾ó " + uid);        
+        CallCam(uid);        
     }
-
-
 
     private void Start()
     {

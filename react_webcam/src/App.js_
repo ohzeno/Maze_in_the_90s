@@ -1,0 +1,116 @@
+import React from "react";
+import Webcam from "react-webcam";
+
+const sleep = async (ms) => {
+  return new Promise((resolve, reject) => setTimeout(resolve, ms));
+};
+
+const WebcamStreamCapture = () => {
+  const webcamRef = React.useRef(null);
+  const mediaRecorderRef = React.useRef(null);
+  const [imageSrc, setImageSrc] = React.useState(null);
+
+  // const [capturing, setCapturing] = React.useState(false);
+  // const [recordedChunks, setRecordedChunks] = React.useState([]);
+
+  // const handleStartCaptureClick = React.useCallback(async () => {
+  //   setCapturing(true);
+  //   // console.log("webCamRef.current.stream", webcamRef.current.stream);
+
+  //   const stream = new MediaStream(webcamRef.current.stream);
+  //   // console.log("stream", stream);
+  //   // console.log("stream.getVideoTracks()", stream.getVideoTracks());
+  //   const track = stream.getVideoTracks()[0];
+  //   const image = new ImageCapture(track);
+  //   console.log("image", image);
+  //   console.log("image.takePhoto", await image.takePhoto()); // Blob(size=~, type=image/jpeg)
+
+  //   mediaRecorderRef.current = new MediaRecorder(webcamRef.current.stream, {
+  //     mimeType: "video/webm",
+  //   });
+  //   mediaRecorderRef.current.addEventListener(
+  //     "dataavailable",
+  //     handleDataAvailable
+  //   );
+  //   mediaRecorderRef.current.start();
+  // }, [webcamRef, setCapturing, mediaRecorderRef]);
+
+  // const handleDataAvailable = React.useCallback(
+  //   async ({ data }) => {
+  //     console.log(data);
+  //     console.log(await data.arrayBuffer());
+  //     if (data.size > 0) {
+  //       setRecordedChunks((prev) => {
+  //         return prev.concat(data);
+  //       });
+  //     }
+  //   },
+  //   [setRecordedChunks]
+  // );
+
+  // const handleStopCaptureClick = React.useCallback(() => {
+  //   mediaRecorderRef.current.stop();
+  //   setCapturing(false);
+  // }, [mediaRecorderRef, webcamRef, setCapturing]);
+
+  // const handleDownload = React.useCallback(() => {
+  //   if (recordedChunks.length) {
+  //     const blob = new Blob(recordedChunks, {
+  //       type: "video/webm",
+  //     });
+  //     const url = URL.createObjectURL(blob);
+  //     const a = document.createElement("a");
+  //     document.body.appendChild(a);
+  //     a.style = "display: none";
+  //     a.href = url;
+  //     a.download = "react-webcam-stream-capture.webm";
+  //     a.click();
+  //     window.URL.revokeObjectURL(url);
+  //     setRecordedChunks([]);
+  //   }
+  // }, [recordedChunks]);
+
+  const handleObserveClick = async () => {
+    await sleep(100);
+    setInterval(async () => {
+      const stream = new MediaStream(webcamRef.current.stream);
+      const track = stream.getVideoTracks()[0];
+      const image = new ImageCapture(track);
+      const blob = await image.takePhoto(); // Blob(size=~, type=image/jpeg)
+      console.log("blob", blob);
+      setImageSrc(URL.createObjectURL(blob));
+
+      // const { data } = await axios.post("url", blob);
+    }, 50);
+  };
+
+  return (
+    <>
+      <Webcam
+        audio={false}
+        ref={webcamRef}
+        onUserMedia={(stream) => {
+          console.log(stream);
+        }}
+      />
+      {/* {capturing ? (
+        <button onClick={handleStopCaptureClick}>Stop Capture</button>
+      ) : (
+        <button onClick={handleStartCaptureClick}>Start Capture</button>
+      )}
+      {recordedChunks.length > 0 && (
+        <button onClick={handleDownload}>Download</button>
+      )} */}
+      <button onClick={handleObserveClick}>observe</button>
+      <img src={imageSrc}></img>
+    </>
+  );
+};
+
+// https://www.npmjs.com/package/react-webcam
+
+function App() {
+  return <WebcamStreamCapture></WebcamStreamCapture>;
+}
+
+export default App;

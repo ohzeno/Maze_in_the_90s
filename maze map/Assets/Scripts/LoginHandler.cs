@@ -13,11 +13,7 @@ namespace FirebaseWebGL.Examples.Auth
     {
         public static LoginHandler instance;
         public static string UserUid;
-<<<<<<< HEAD
         public static int UserChar = 0;
-=======
-        public static int UserChar;
->>>>>>> b6a07fe7f57cba48da88a49610f15a0069ac72b1
 
 
         [Header("UI References")]
@@ -208,7 +204,6 @@ namespace FirebaseWebGL.Examples.Auth
             Debug.Log(uid);
             GameManager.instance.ChangeScene("Lobby");
         }
-<<<<<<< HEAD
 
         public void GetCharacter(string _character)
         {
@@ -220,8 +215,6 @@ namespace FirebaseWebGL.Examples.Auth
             Debug.Log(UserChar);
         }
 
-=======
->>>>>>> b6a07fe7f57cba48da88a49610f15a0069ac72b1
         public void RankingScreen()
         {
             GameManager.instance.ChangeScene("Ranking");

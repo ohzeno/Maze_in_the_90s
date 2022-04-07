@@ -6,7 +6,7 @@ import FormData from "form-data";
 import Unity, { UnityContext } from "react-unity-webgl";
 import Resizer from "react-image-file-resizer";
 import { useState, useEffect } from "react";
-import './App.css';
+import "./App.css";
 
 const unityContext = new UnityContext({
   loaderUrl: "Build/public.loader.js",
@@ -99,6 +99,7 @@ const WebcamStreamCapture = () => {
           const { data } = api.post(url_sub, form);
         }
       } else if (id_class.className === "test") {
+        id_class.style.display = "none";
         // console.log("clear");
         // clearInterval(caputuring);
       }
@@ -122,7 +123,7 @@ const WebcamStreamCapture = () => {
           height: "100%",
           position: "absolute",
           top: "-18%",
-          left: "10%"
+          left: "10%",
         }}
         onUserMedia={(stream) => {
           console.log(stream);

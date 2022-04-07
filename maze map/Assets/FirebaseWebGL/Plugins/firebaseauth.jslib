@@ -293,7 +293,7 @@ UpdateInfoWithGoogleOrGithub: function (username) {
             console.log(user.displayName);
             console.log(typeof user.character);
             console.log('profile update done!!');
-            charIdx = users.val().character;
+            charIdx = user.character;
             console.log(typeof charIdx);
             textIdx = charIdx.toString();
             console.log(textIdx);

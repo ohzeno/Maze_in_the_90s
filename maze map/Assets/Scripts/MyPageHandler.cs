@@ -46,25 +46,45 @@ namespace FirebaseWebGL.Examples.Auth
             //시간은 12:11 이런 형식으로 변환
             //string time1 = time.Substring(0, 4);
 
-            for (int i = 0; i < 10; i++)
+            if (time.Length >= 6)
             {
-                if (time[i] == '.')
+                for (int i = 0; i < time.Length; i++)
                 {
-                    text += ':';
-
-                    for (int j = i + 1; j < i + 3; j++)
+                    if (time[i] == '.')
                     {
-                        text += time[j];
+                        text += ':';
+
+                        for (int j = i + 1; j < i + 3; j++)
+                        {
+                            text += time[j];
+                        }
+                        break;
                     }
-                    break;
+                    else
+                    {
+                        text += time[i];
+                    }
                 }
-                else
-                {
-                    text += time[i];
-                }
+
+                response["time"] = text;
             }
 
-            response["time"] = text;
+            else
+            {
+                for (int i = 0; i < time.Length; i++)
+                {
+                    if (time[i] == '.')
+                    {
+                        text += ':';
+                    }
+                    else
+                    {
+                        text += time[i];
+                    }
+                }
+
+                response["time"] = text;
+            }
 
 
             //Debug

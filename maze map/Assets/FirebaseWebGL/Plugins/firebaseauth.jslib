@@ -133,7 +133,7 @@ mergeInto(LibraryManager.library, {
                 var user = firebase.auth().currentUser;
                 console.log(user);
 
-                window.unityInstance.SendMessage('LoginHandler', 'LobbyScreen');
+                window.unityInstance.SendMessage('LoginHandler', 'LobbyScreen', user.uid);
                 
                 unityInstance.Module.SendMessage(parsedObjectName, parsedCallback, "Success: signed in for " + parsedEmail);
 
@@ -231,19 +231,21 @@ mergeInto(LibraryManager.library, {
  
         var parsedUserName = Pointer_stringify(username);
         var user = firebase.auth().currentUser;
+        console.log(parsedUserName);
         
         //Firebase Auth에서 업뎃
         user.updateProfile({
         displayName: parsedUserName,
         });
 
-        //Realtime Database에서 업뎃
-        firebase.database().ref('users/' + user.uid).set({
-            nickname: parsedUserName
-        });
+        var data = { nickname : parsedUserName };
+
+        //Realtime Database에서 업데이트
+        firebase.database().ref('users/' + user.uid).update(data);
+
     },
 
-    //구글 로그인(프사 업뎃x)
+    //구글 로그인
     LoginWithGoogle: function (objectName, callback, fallback) {
  
         var parsedObjectName = Pointer_stringify(objectName);
@@ -257,7 +259,7 @@ mergeInto(LibraryManager.library, {
                 var user = firebase.auth().currentUser;
                 console.log(user);
 
-                window.unityInstance.SendMessage('LoginHandler', 'LobbyScreen');
+                window.unityInstance.SendMessage('LoginHandler', 'LobbyScreen', user.uid);
                 
                 unityInstance.Module.SendMessage(parsedObjectName, parsedCallback, "Success: signed in with Google!");
             }).catch(function (error) {
@@ -269,7 +271,7 @@ mergeInto(LibraryManager.library, {
         }
     },
 
-    //깃헙 로그인(프사 업뎃x)
+    //깃헙 로그인
     LoginWithGithub: function (objectName, callback, fallback) {
         var parsedObjectName = Pointer_stringify(objectName);
         var parsedCallback = Pointer_stringify(callback);
@@ -282,7 +284,7 @@ mergeInto(LibraryManager.library, {
                 var user = firebase.auth().currentUser;
                 console.log(user);
                 
-                window.unityInstance.SendMessage('LoginHandler', 'LobbyScreen');
+                window.unityInstance.SendMessage('LoginHandler', 'LobbyScreen', user.uid);
 
                 window.unityInstance.SendMessage(parsedObjectName, parsedCallback, "Success: signed in with Github!");
             }).catch(function (error) {

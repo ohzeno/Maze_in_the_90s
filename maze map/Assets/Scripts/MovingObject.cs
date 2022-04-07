@@ -5,9 +5,12 @@ using Photon.Pun;
 using Photon.Realtime;
 using TMPro;
 using UnityEngine.UI;
+using MiniJSON;
+using UnityEngine.Networking;
+using System.Runtime.InteropServices;
+
 public class MovingObject : MonoBehaviour
 {
-
     public static MovingObject instance;
     private BoxCollider2D boxCollider;
     public LayerMask layerMask;
@@ -25,10 +28,23 @@ public class MovingObject : MonoBehaviour
     private bool applyRunFlag = false;
     private bool canMove = true;
     private bool onGoing = true;
+    private float dirH = 0;
+    private float dirV = 0;
+    string jsonResult;
+    bool isOnLoading = true;
 
     public float turnSpeed = 0.0f;
     public float turnSpeedValue = 200.0f;
     public GameObject FinishAlert;
+    private string uid;
+
+    [DllImport("__Internal")]
+    private static extern void CallCam(string data);
+    void Awake()
+    {
+        uid = FirebaseWebGL.Examples.Auth.LoginHandler.UserUid;
+        CallCam(uid);
+    }
 
     StartGame startgame;
 
@@ -37,12 +53,11 @@ public class MovingObject : MonoBehaviour
     {
         boxCollider = GetComponent<BoxCollider2D>();
         animator = GetComponent<Animator>();
-        pv = GetComponent<PhotonView>();
-        
+        pv = GetComponent<PhotonView>();        
 
         turnSpeed = 0.0f;
         yield return new WaitForSeconds(0.5f);
-
+        
         if (pv.IsMine)
         {
             Camera.main.GetComponent<CameraManager>().target = transform.Find("CamPivot").transform;
@@ -54,14 +69,69 @@ public class MovingObject : MonoBehaviour
         turnSpeed = turnSpeedValue;
     }
 
+        IEnumerator LoadData() //json 문자열 받아오기
+    {
+        string GetDataUrl = $"https://j6e101.p.ssafy.io/recog/detect/{uid}/control";
+        //string GetDataUrl = "http://127.0.0.1:8000/recog/detect/zeno/control";
+        using (UnityWebRequest request = UnityWebRequest.Get(GetDataUrl))
+        {
+            yield return request.Send();
+            if (request.isNetworkError || request.isHttpError) //불러오기 실패 시
+            {
+                Debug.Log(request.error);
+                dirV = 0;
+                dirH = 0;                    
+            }
+            else
+            {
+                if (request.isDone)
+                {
+                    isOnLoading = false;
+                    Dictionary<string, object> response = Json.Deserialize(request.downloadHandler.text) as Dictionary<string, object>;
+                    Debug.Log(response["control"]);
+                    string dir = response["control"].ToString();
+                    if (dir == "Up") 
+                    {
+                        dirV = 1;
+                        dirH = 0;
+                    } 
+                    else if (dir == "Down") 
+                    {
+                        dirV = -1;
+                        dirH = 0;
+                    } 
+                    else if (dir == "Left") 
+                    {
+                        dirV = 0;
+                        dirH = -1;
+                    } 
+                    else if (dir == "Right") 
+                    {
+                        dirV = 0;
+                        dirH = 1;
+                    } 
+                    else if (dir == "Stop") 
+                    {
+                        dirV = 0;
+                        dirH = 0;
+                    }
+                }
+            }
+        }
+    }
+
+    void FixedUpdate() 
+    {
+        StartCoroutine(LoadData());      
+    } 
+
     IEnumerator MoveCoroutine()
     {
         pv = GetComponent<PhotonView>();
         if (pv.IsMine)
         {
-            while (Input.GetAxisRaw("Vertical") != 0 || Input.GetAxisRaw("Horizontal") != 0)
+            while (dirV != 0 || dirH != 0)
             {
-
                 if (Input.GetKey(KeyCode.LeftShift))
                 {
                     applyRunSpeed = runSpeed;
@@ -73,12 +143,10 @@ public class MovingObject : MonoBehaviour
                     applyRunFlag = false;
                 }
 
-
-                vector.Set(Input.GetAxisRaw("Horizontal"), Input.GetAxisRaw("Vertical"), transform.position.z);
+                vector.Set(dirH, dirV, transform.position.z);
 
                 if (vector.x != 0)
                     vector.y = 0;
-
 
                 animator.SetFloat("DirX", vector.x);
                 animator.SetFloat("DirY", vector.y);
@@ -105,23 +173,17 @@ public class MovingObject : MonoBehaviour
                     yield return new WaitForSeconds(0.01f);
                 }
                 currentWalkCount = 0;
-
-
             }
             animator.SetBool("Walking", false);
             canMove = true;
         }
     }
-
-
-
     // Update is called once per frame
     void Update()
     {
-
         if (canMove)
         {
-            if (Input.GetAxisRaw("Horizontal") != 0 || Input.GetAxisRaw("Vertical") != 0)
+            if (dirH != 0 || dirV != 0)
             {
                 canMove = false;
                 StartCoroutine(MoveCoroutine());

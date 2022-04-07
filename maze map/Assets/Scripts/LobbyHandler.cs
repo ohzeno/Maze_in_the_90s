@@ -5,6 +5,7 @@ using TMPro;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine.Networking;
+using Photon.Pun;
 
 namespace FirebaseWebGL.Examples.Auth
 {
@@ -70,6 +71,8 @@ namespace FirebaseWebGL.Examples.Auth
         {
             //최초 진입 시 프로필 로드
             CheckAuthState();
+            Debug.Log("lobby scene");
+            Debug.Log(FirebaseWebGL.Examples.Auth.LoginHandler.UserUid);
         }
 
         private void GetUsername(string _username)
@@ -144,6 +147,12 @@ namespace FirebaseWebGL.Examples.Auth
             actionSuccessPanelUI.SetActive(false);
             deleteUserConfirmUI.SetActive(false);
             actionSuccessText.text = "";
+            currNickname.text = "";
+            newNickname.text = "";
+            outputText.text = "";
+            changePasswordInputField.text = "";
+            changePasswordConfirmInputField.text = "";
+            pwErrorText.text = "";
         }
 
         //1. 마이페이지
@@ -192,10 +201,12 @@ namespace FirebaseWebGL.Examples.Auth
         {
             if (outputText.text == "사용 가능한 닉네임입니다")
             {
-                ClearUI();
+                changeNicknameUI.SetActive(false);
                 actionSuccessPanelUI.SetActive(true);
                 actionSuccessText.text = "닉네임이 성공적으로 변경되었습니다";
                 FirebaseAuth.UpdateNickname(newNickname.text);
+                Debug.Log("newnickname@@");
+                Debug.Log(newNickname.text);
             }
         }
 
@@ -215,11 +226,16 @@ namespace FirebaseWebGL.Examples.Auth
 
         public void SubmitNewPwButton()
         {
-            if ((changePasswordInputField.text == changePasswordConfirmInputField.text) == true)
+            if ((changePasswordInputField.text == changePasswordConfirmInputField.text) == true && changePasswordConfirmInputField.text.Length >= 6)
             {
                 UpdatePw(changePasswordInputField.text);
+                ChangePwSuccess();
             }
-            else
+            else if ((changePasswordInputField.text == changePasswordConfirmInputField.text) == true && changePasswordConfirmInputField.text.Length < 6)
+            {
+                pwErrorText.text = "비밀번호는 최소 6자리 이상으로 만들어주세요";
+            }
+            else if ((changePasswordInputField.text == changePasswordConfirmInputField.text) == false)
             {
                 pwErrorText.text = "비밀번호가 일치하지 않습니다";
             }
@@ -237,16 +253,13 @@ namespace FirebaseWebGL.Examples.Auth
             ClearUI();
             actionSuccessPanelUI.SetActive(true);
             actionSuccessText.text = "회원탈퇴가 완료되었습니다";
-        }
-
-        public void DeleteUserButton()
-        {
             DeleteUser();
         }
 
         //로그아웃
         public void SignOutButton()
         {
+            PhotonNetwork.Disconnect();
             SignOut();
         }
 

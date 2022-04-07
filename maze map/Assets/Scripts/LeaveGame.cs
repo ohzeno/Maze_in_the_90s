@@ -3,12 +3,56 @@ using System.Collections.Generic;
 using UnityEngine;
 using Photon.Pun;//포톤 기능 사용
 using Photon.Realtime;
-
+using System.Runtime.InteropServices;
+using UnityEngine.Networking;
 
 public class LeaveGame : MonoBehaviourPunCallbacks
 {
     [SerializeField] Transform roomListContent;
     [SerializeField] GameObject roomListItemPrefab;
+
+    [DllImport("__Internal")]
+    private static extern void RemoveCam();
+    private string uid;
+    [System.Serializable]
+    public class FormData
+    {
+        public string data;
+    }
+
+    IEnumerator Exit_in()
+    {
+        IEnumerator DelData()
+        {
+            uid = FirebaseWebGL.Examples.Auth.LoginHandler.UserUid;
+            FormData data1 = new FormData();
+            data1.data = uid;
+            string data2 = JsonUtility.ToJson(data1);
+            string GetDataUrl = $"https://j6e101.p.ssafy.io/recog/detect/{uid}/delete";
+            using (UnityWebRequest request = UnityWebRequest.Post(GetDataUrl, data2))
+            {
+                yield return request.Send();
+                if (request.isNetworkError || request.isHttpError) //불러오기 실패 시
+                {
+                    Debug.Log(request.error);
+                }
+                else
+                {
+                    if (request.isDone)
+                    {
+                        Debug.Log(data1.data + "삭제완료");
+                    }
+                }
+            }
+        }
+        yield return StartCoroutine(DelData());
+        RemoveCam();
+    }
+    public void Exit_to()
+    {
+        StartCoroutine(Exit_in());
+
+    }
     // Start is called before the first frame update
     void Start()
     {
@@ -21,9 +65,16 @@ public class LeaveGame : MonoBehaviourPunCallbacks
 
     }
 
+    public void LeaveTutorial()
+    {
+        Exit_to();
+        PhotonNetwork.LoadLevel("Lobby");
+    }
+
     public void LeaveRoom() // 대기실 퇴장
     {
         PhotonNetwork.LeaveRoom();//방떠나기 포톤 네트워크 기능
+        Exit_to();        
     }
 
     public override void OnLeftRoom()//방을 떠나면 호출

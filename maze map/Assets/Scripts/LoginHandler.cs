@@ -13,21 +13,25 @@ namespace FirebaseWebGL.Examples.Auth
     {
         public static LoginHandler instance;
         public static string UserUid;
+<<<<<<< HEAD
         public static int UserChar = 0;
+=======
+        public static int UserChar;
+>>>>>>> b6a07fe7f57cba48da88a49610f15a0069ac72b1
 
 
         [Header("UI References")]
         [SerializeField]
-        //1. ·Î±×ÀÎ
+        //1. ë¡œê·¸ì¸
         private GameObject loginUI;
         [SerializeField]
-        //2. ºñ¹Ğ¹øÈ£ Àç¼³Á¤
+        //2. ë¹„ë°€ë²ˆí˜¸ ì¬ì„¤ì •
         private GameObject resetPwUI;
         [SerializeField]
-        //3. ÀÌ¸ŞÀÏ Àü¼Û È®ÀÎ
+        //3. ì´ë©”ì¼ ì „ì†¡ í™•ì¸
         private GameObject emailSentUI;
         [SerializeField]
-        //4. ´Ğ³ÛÃ¼Å©
+        //4. ë‹‰ë„´ì²´í¬
         private GameObject checkNicknameUI;
         [Space(5f)]
 
@@ -68,7 +72,7 @@ namespace FirebaseWebGL.Examples.Auth
         + @"([0-1]?[0-9]{1,2}|25[0-5]|2[0-4][0-9])\.([0-1]?[0-9]{1,2}|25[0-5]|2[0-4][0-9])){1}|"
         + @"([a-zA-Z]+[\w-]+\.)+[a-zA-Z]{2,4})$";
 
-        //ÀÌ¸ŞÀÏ ¾ç½Ä À¯È¿¼º °Ë»ç
+        //ì´ë©”ì¼ ì–‘ì‹ ìœ íš¨ì„± ê²€ì‚¬
         public static bool ValidateEmail(string email)
         {
             if (email != null)
@@ -140,7 +144,7 @@ namespace FirebaseWebGL.Examples.Auth
             }
             else
             {
-                resetEmailErrorText.text = "À¯È¿ÇÑ ÀÌ¸ŞÀÏÀÌ ¾Æ´Ï°Å³ª ÀÏÄ¡ÇÏ´Â »ç¿ëÀÚ°¡ ¾ø½À´Ï´Ù!";
+                resetEmailErrorText.text = "ìœ íš¨í•œ ì´ë©”ì¼ì´ ì•„ë‹ˆê±°ë‚˜ ì¼ì¹˜í•˜ëŠ” ì‚¬ìš©ìê°€ ì—†ìŠµë‹ˆë‹¤!";
             }
         }
 
@@ -149,15 +153,15 @@ namespace FirebaseWebGL.Examples.Auth
 
             if (result == 0)
             {
-                outputText.text = "»ç¿ëÇÒ ¼ö ¾ø´Â ´Ğ³×ÀÓÀÔ´Ï´Ù";
+                outputText.text = "ì‚¬ìš©í•  ìˆ˜ ì—†ëŠ” ë‹‰ë„¤ì„ì…ë‹ˆë‹¤";
             }
             else if (result == 1)
             {
-                outputText.text = "»ç¿ë °¡´ÉÇÑ ´Ğ³×ÀÓÀÔ´Ï´Ù";
+                outputText.text = "ì‚¬ìš© ê°€ëŠ¥í•œ ë‹‰ë„¤ì„ì…ë‹ˆë‹¤";
             }
             else if (result == 3)
             {
-                outputText.text = "´Ğ³×ÀÓÀ» ÀÔ·ÂÇØÁÖ¼¼¿ä";
+                outputText.text = "ë‹‰ë„¤ì„ì„ ì…ë ¥í•´ì£¼ì„¸ìš”";
             }
         }
 
@@ -183,7 +187,7 @@ namespace FirebaseWebGL.Examples.Auth
 
         public void CheckComplete()
         {
-            if (outputText.text == "»ç¿ë °¡´ÉÇÑ ´Ğ³×ÀÓÀÔ´Ï´Ù")
+            if (outputText.text == "ì‚¬ìš© ê°€ëŠ¥í•œ ë‹‰ë„¤ì„ì…ë‹ˆë‹¤")
             {
 
                 FirebaseAuth.UpdateInfoWithGoogleOrGithub(checkUsernameText.text);
@@ -204,6 +208,7 @@ namespace FirebaseWebGL.Examples.Auth
             Debug.Log(uid);
             GameManager.instance.ChangeScene("Lobby");
         }
+<<<<<<< HEAD
 
         public void GetCharacter(string _character)
         {
@@ -215,6 +220,8 @@ namespace FirebaseWebGL.Examples.Auth
             Debug.Log(UserChar);
         }
 
+=======
+>>>>>>> b6a07fe7f57cba48da88a49610f15a0069ac72b1
         public void RankingScreen()
         {
             GameManager.instance.ChangeScene("Ranking");

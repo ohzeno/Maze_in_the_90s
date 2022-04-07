@@ -22,11 +22,12 @@
     <div class="App">
       <div style="position: relative;">
         <img src="Assets/title.png">
-        <div class="eachButton" style="right: 1%;">
-          <img src="Assets/button_1.png" >
-        </div>
         <div class="eachButton" style="right: 4%;">
           <img src="Assets/button_2.png" >
+          <span class="tooltiptext tooltip-left">모션 인식 기반의 게임! 드루와!</span>
+        </div>
+        <div class="eachButton" style="right: 1%;">
+          <img src="Assets/button_1.png" >
         </div>
       </div>
 
@@ -57,13 +58,17 @@
         <div class="cameraBox">
           <div class="camBox">
             <img src="Assets/CamBox.png" alt="CamBox">
+            <div id="root"></div>
           </div>
-          <div id="root" ></div>
         </div>
 
       </div>
     </div>
     <script>
+      function summaryBtn(){
+
+      }
+
       var container = document.querySelector("#unity-container");
       var canvas = document.querySelector("#unity-canvas");
       var loadingBar = document.querySelector("#unity-loading-bar");

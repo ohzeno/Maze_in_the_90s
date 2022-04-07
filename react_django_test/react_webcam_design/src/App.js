@@ -111,7 +111,7 @@ const WebcamStreamCapture = () => {
           width: "80%",
           height: "100%",
           position: "absolute",
-          top: "-34.5%",
+          top: "-18%",
           left: "10%"
         }}
         onUserMedia={(stream) => {

@@ -1,0 +1,118 @@
+.App{
+    width: 100vw;
+    height: 100vh;
+    background-color: seashell;
+}
+
+ body{
+    margin: 0;
+    overflow: hidden;
+}
+
+img{
+    object-fit: cover;
+    width: 100%;
+    display: block;
+}
+
+
+.eachButton{
+    position: absolute;
+    top: 0;
+    z-index: 1;
+    width: 2%;
+    cursor: pointer;
+}
+
+.eachButton:hover{
+    transform : scale(1.2);
+    transition : all 300ms ease-in;
+
+}
+
+.tooltiptext {
+    visibility: hidden;
+    width: 1800%;
+    height: 90%;
+    background-color: black;
+    color: #fff;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 1rem;
+    border-radius: 6px;
+    padding: 5px 0;
+    position: absolute;
+    z-index: 1;
+}
+
+.eachButton:hover .tooltiptext {
+    visibility: visible;
+}
+
+.eachButton .tooltip-left {
+    top: -5px;
+    right: 105%;
+}
+  
+.eachButton .tooltip-left::after {
+top: 50%;
+left: 100%;
+margin-top: -5px;
+border-color: transparent transparent transparent black;
+}
+
+.unity{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100vw;
+    height: 100vh;
+    background: linear-gradient(
+        rgba(20, 20, 20, 0.1) 10%,
+        rgba(20, 20, 20, 0.7) 70%,
+        rgba(20, 20, 20, 1)
+        ),
+        url(https://i.pinimg.com/736x/b8/45/c4/b845c4dd4ca5fd8e5e4ff8907b511c54.jpg);
+        /* url(https://i.pinimg.com/564x/cb/a7/62/cba7627e2f39775a1aff23eb0aab4536.jpg); */
+    background-size: cover;
+    position: absolute;
+}
+
+.gameBox{
+    margin: 0px 30px;
+    width: 60%;
+    height: 70%;
+    border-radius: 2%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.monitor{
+    position: relative;
+    width: 100%;
+}
+
+.unity-desktop{
+    width: 79%;
+    height: 65.5%;
+    position: absolute;
+    top: 11%;
+    left: 10.5%;
+
+
+}
+.cameraBox{
+    width: 16%;
+    height: 27%;
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.camBox{
+    position:relative;
+    width: 100%;
+}

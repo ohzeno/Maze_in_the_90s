@@ -93,7 +93,7 @@ public class MovingObject : MonoBehaviour
                 {
                     isOnLoading = false;
                     Dictionary<string, object> response = Json.Deserialize(request.downloadHandler.text) as Dictionary<string, object>;
-                    Debug.Log(response["control"]);
+                    //Debug.Log(response["control"]);
                     string dir = response["control"].ToString();
                     if (dir == "Up") 
                     {

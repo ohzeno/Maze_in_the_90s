@@ -272,9 +272,6 @@ UpdateInfoWithGoogleOrGithub: function (username) {
     var user = firebase.auth().currentUser;
     console.log(user);
     console.log(parsedUserName);
-
-    var charIdx = null;
-    var textIdx = null;
     
     //Firebase Auth에 등록
     user.updateProfile({
@@ -290,15 +287,10 @@ UpdateInfoWithGoogleOrGithub: function (username) {
             character : 0
             })}).then(function (unused) {
             //로비로 이동
-            console.log(user.displayName);
-            console.log(typeof user.character);
+
             console.log('profile update done!!');
-            charIdx = user.character;
-            console.log(typeof charIdx);
-            textIdx = charIdx.toString();
-            console.log(textIdx);
             window.unityInstance.SendMessage('LoginHandler', 'LobbyScreen', user.uid);
-            window.unityInstance.SendMessage('LoginHandler', 'GetCharacter', textIdx);
+            
             });
 },
 

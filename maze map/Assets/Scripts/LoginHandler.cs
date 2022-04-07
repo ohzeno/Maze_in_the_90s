@@ -13,6 +13,7 @@ namespace FirebaseWebGL.Examples.Auth
     {
         public static LoginHandler instance;
         public static string UserUid;
+        public static int UserChar = 0;
 
 
         [Header("UI References")]
@@ -202,6 +203,16 @@ namespace FirebaseWebGL.Examples.Auth
             Debug.Log("from login to lobby");
             Debug.Log(uid);
             GameManager.instance.ChangeScene("Lobby");
+        }
+
+        public void GetCharacter(string _character)
+        {
+            Debug.Log("get character!");
+            Debug.Log(_character);
+            var intChar = Int32.Parse(_character);
+            Debug.Log(intChar);
+            UserChar = intChar;
+            Debug.Log(UserChar);
         }
 
         public void RankingScreen()

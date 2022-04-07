@@ -248,13 +248,6 @@ mergeInto(LibraryManager.library, {
       });
    },
 
-   GetUserCharacter: function () {
-        var user = firebase.auth().currentUser;
-        console.log(user.character);
-        console.log(typeof user.character);
-        window.unityInstance.SendMessage('LobbyHandler', 'GetCharacter', user.character);
-    },
-
    UpdateCharacter: function(charIdx) {
 
         console.log("updating character");

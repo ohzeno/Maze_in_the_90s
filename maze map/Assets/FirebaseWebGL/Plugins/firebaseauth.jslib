@@ -16,27 +16,29 @@ mergeInto(LibraryManager.library, {
 
             //유니티로 정보 보내기
             window.unityInstance.SendMessage('LobbyHandler', 'GetUsername', userName);
-            
+            var nameRef = firebase.database().ref('users'); //전체 유저
+
+            firebase.database().ref(nameRef).once('value').then(function(list) {
+
+            list.forEach(function (user) {
+            console.log(user.val());
+            console.log(user.val().nickname);
+            console.log(user.val().character);
+            console.log(typeof user.val().character);
+
+            if (user.val().nickname == userName) {
+                console.log("nickname found!!!!!!!!!!!!!!!!!!!!!!");
+                var str = (user.val().character).toString();
+                console.log(str);
+                window.unityInstance.SendMessage('LoginHandler', 'GetCharacter', str);
+            }
+            });
+        });    
         
         } else {
             console.log('user signed out!');
             window.unityInstance.SendMessage('LobbyHandler', 'LoginScreen');
         }
-
-        var nameRef = firebase.database().ref('users'); //전체 유저
-
-        firebase.database().ref(nameRef).once('value').then(function(list) {
-
-        list.forEach(function (user) {
-        console.log(user.val());
-        console.log(user.val().character);
-
-        if (user.val().nickname == userName) {
-            
-          window.unityInstance.SendMessage('LobbyHandler', 'GetCharacter', character);
-        }
-        });
-      });
     },
 
     //로그인 - 랭킹 페이지 뒤로가기 버튼
@@ -167,6 +169,8 @@ mergeInto(LibraryManager.library, {
       //로그인인지 회원가입인지 DB 확인
       var userRef = firebase.database().ref('users'); // 전체 유저테이블
       var result = 1; // 0이면 로그인 1이면 회원가입
+      var charIdx = null;
+      var textIdx = null;
 
       var provider = new firebase.auth.GoogleAuthProvider();
       firebase.auth().signInWithPopup(provider).then(function (unused) {
@@ -181,16 +185,21 @@ mergeInto(LibraryManager.library, {
           snapshot.forEach(function (users) {
                 console.log(users.val());
                 console.log(users.val().email);
+                console.log(users.val().character);
                 //이미 가입, 로그인 시도임
                 if (users.val().email == user.email) {
                 console.log('user already exists - login');
                 result = 0;
-                console.log(result);
+                charIdx = users.val().character;
+                console.log(typeof charIdx);
+                textIdx = charIdx.toString();
+                console.log(textIdx);
                 }
             });
             if (result == 0){
         //로그인, uid 가지고 로비
         window.unityInstance.SendMessage('LoginHandler', 'LobbyScreen', user.uid);
+        window.unityInstance.SendMessage('LoginHandler', 'GetCharacter', textIdx);
       }
       else if (result == 1){
         //유저 없음, 회원가입 시도임
@@ -213,6 +222,8 @@ mergeInto(LibraryManager.library, {
       //로그인인지 회원가입인지 DB 확인
       var userRef = firebase.database().ref('users'); // 전체 유저테이블
       var result = 1; // 0이면 로그인 1이면 회원가입
+      var charIdx = null;
+      var textIdx = null;
 
       var provider = new firebase.auth.GithubAuthProvider();
       firebase.auth().signInWithPopup(provider).then(function (unused) {
@@ -227,16 +238,21 @@ mergeInto(LibraryManager.library, {
           snapshot.forEach(function (users) {
                 console.log(users.val());
                 console.log(users.val().email);
+                console.log(users.val().character);
                 //이미 가입, 로그인 시도임
                 if (users.val().email == user.email) {
                 console.log('user already exists - login');
                 result = 0;
-                console.log(result);
+                charIdx = users.val().character;
+                console.log(typeof charIdx);
+                textIdx = charIdx.toString();
+                console.log(textIdx);
                 }
             });
             if (result == 0){
         //로그인, uid 가지고 로비
         window.unityInstance.SendMessage('LoginHandler', 'LobbyScreen', user.uid);
+        window.unityInstance.SendMessage('LoginHandler', 'GetCharacter', textIdx);
       }
       else if (result == 1){
         //유저 없음, 회원가입 시도임
@@ -256,6 +272,9 @@ UpdateInfoWithGoogleOrGithub: function (username) {
     var user = firebase.auth().currentUser;
     console.log(user);
     console.log(parsedUserName);
+
+    var charIdx = null;
+    var textIdx = null;
     
     //Firebase Auth에 등록
     user.updateProfile({
@@ -274,7 +293,12 @@ UpdateInfoWithGoogleOrGithub: function (username) {
             console.log(user.displayName);
             console.log(typeof user.character);
             console.log('profile update done!!');
+            charIdx = users.val().character;
+            console.log(typeof charIdx);
+            textIdx = charIdx.toString();
+            console.log(textIdx);
             window.unityInstance.SendMessage('LoginHandler', 'LobbyScreen', user.uid);
+            window.unityInstance.SendMessage('LoginHandler', 'GetCharacter', textIdx);
             });
 },
 

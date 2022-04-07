@@ -28,7 +28,8 @@ public class LeaveGame : MonoBehaviourPunCallbacks
             FormData data1 = new FormData();
             data1.data = uid;
             string data2 = JsonUtility.ToJson(data1);
-            string GetDataUrl = $"https://j6e101.p.ssafy.io/recog/detect/{uid}/delete";
+            //string GetDataUrl = $"https://j6e101.p.ssafy.io/recog/detect/{uid}/delete";
+            string GetDataUrl = $"http://127.0.0.1:8000/recog/detect/{uid}/delete";
             using (UnityWebRequest request = UnityWebRequest.Post(GetDataUrl, data2))
             {
                 yield return request.Send();

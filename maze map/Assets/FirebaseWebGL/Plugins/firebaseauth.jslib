@@ -32,6 +32,7 @@ mergeInto(LibraryManager.library, {
         console.log(user.val().character);
 
         if (user.val().nickname == userName) {
+            
           window.unityInstance.SendMessage('LobbyHandler', 'GetCharacter', character);
         }
         });
@@ -99,8 +100,7 @@ mergeInto(LibraryManager.library, {
                 //Firebase Auth에 등록
                 user.updateProfile({
                 displayName: parsedUsername,
-                email: parsedEmail,
-                character: 0
+                email: parsedEmail
                 }).then(function (unused) {
                     console.log('profile update done!!');
                     firebase.auth().signOut();
@@ -249,32 +249,34 @@ mergeInto(LibraryManager.library, {
   });
   },
 
-    //소셜 가입 프로필 등록(닉넴 중복검사 통과 후)
-    UpdateInfoWithGoogleOrGithub: function (username) {
+//소셜 가입 프로필 등록(닉넴 중복검사 통과 후)
+UpdateInfoWithGoogleOrGithub: function (username) {
  
-        var parsedUserName = Pointer_stringify(username);
-        var user = firebase.auth().currentUser;
-        console.log(user);
-        
-        //Firebase Auth에 등록
-        user.updateProfile({
-        displayName: parsedUserName,
-        email: user.email,
-        character: 0
-        });
-
-        //Realtime Database에 등록
-        firebase.database().ref('users/' + user.uid).set({
+    var parsedUserName = Pointer_stringify(username);
+    var user = firebase.auth().currentUser;
+    console.log(user);
+    console.log(parsedUserName);
+    
+    //Firebase Auth에 등록
+    user.updateProfile({
+    displayName: parsedUserName,
+    }).then(function (unused) {
+            console.log('displayName changed');
+            console.log(user.displayName);
+        }).then(function (unused) {
+            //Realtime Database에 등록
+            firebase.database().ref('users/' + user.uid).set({
             nickname: parsedUserName,
             email: user.email,
             character : 0
-        });
-
-        //로비로 이동
-        console.log(user.displayName);
-        console.log('profile update done!!');
-        window.unityInstance.SendMessage('LoginHandler', 'LobbyScreen', user.uid);
-    },
+            })}).then(function (unused) {
+            //로비로 이동
+            console.log(user.displayName);
+            console.log(typeof user.character);
+            console.log('profile update done!!');
+            window.unityInstance.SendMessage('LoginHandler', 'LobbyScreen', user.uid);
+            });
+},
 
     //마이페이지 닉네임 변경
     UpdateNickname: function (username) {

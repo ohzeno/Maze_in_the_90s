@@ -16,8 +16,8 @@ public class CharSelect : MonoBehaviour
     public void Start()
     {
         Debug.Log("set character");
-        charselect.value = 3;
-        //charselect.value = FirebaseWebGL.Examples.Auth.LobbyHandler.UserChar;
+        charselect.value = FirebaseWebGL.Examples.Auth.LobbyHandler.UserChar;
+        lobby_image.sprite = charselect.captionImage.sprite;
     }
 
     public void OnDropdownEvent(int index)
@@ -26,6 +26,7 @@ public class CharSelect : MonoBehaviour
         GameManager.char_idx = index;
         Debug.Log(index);
         lobby_image.sprite = charselect.captionImage.sprite;
+        UpdateCharacter(index);
     }
 
     public void UpdateCharacter(int charIdx) =>

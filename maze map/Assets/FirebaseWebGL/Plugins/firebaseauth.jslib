@@ -371,7 +371,8 @@ UpdateInfoWithGoogleOrGithub: function (username) {
 
     //Realtime Database에서 삭제
     firebase.database().ref('users/' + user.uid).remove().then(function(unused) {
-            window.unityInstance.SendMessage(parsedObjectName, parsedCallback, "Success: " + parsedPath + " was deleted")});
+        console.log("user deleted!");
+    });
     
     //Firebase Auth에서 삭제
     user.delete().then(function (unused) {

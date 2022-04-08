@@ -36,7 +36,7 @@
   - 미로 찾기 Multi Play 
   - 마이페이지
 
-- #### 프로젝트 영상:
+- #### 프로젝트 영상: https://youtu.be/pJqKolIzO7I
 
 - #### 노션: https://www.notion.so/17acef0785ee447f89aca7375e65307f
 

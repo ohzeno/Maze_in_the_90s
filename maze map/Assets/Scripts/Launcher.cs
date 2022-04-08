@@ -16,7 +16,7 @@ public class Launcher : MonoBehaviourPunCallbacks//�ٸ� ���� ���
     [SerializeField] TMP_Dropdown roomMapDropdown;
     [SerializeField] TMP_Dropdown inRoomModeDropdown;
     [SerializeField] TMP_Dropdown inRoomMapDropdown;
-    [SerializeField] TMP_Text userNameInputField;
+    [SerializeField] TMP_InputField userNameInputField;
     [SerializeField] TMP_Text errorText;
     [SerializeField] TMP_Text roomNameText;
     [SerializeField] Transform roomListContent;
@@ -60,13 +60,19 @@ public class Launcher : MonoBehaviourPunCallbacks//�ٸ� ���� ���
         {
             return;//�� �̸��� ���̸� �� �ȸ������
         }
+        if (byte.Parse(roomPopulationInputField.text) > 6)
+        {
+            return;
+        }
         if (!string.IsNullOrWhiteSpace(userNameInputField.text))
         {
             PhotonNetwork.NickName = userNameInputField.text;
         }
-        string[] propertiesListedInLobby = new string[2];
+        string[] propertiesListedInLobby = new string[3];
         propertiesListedInLobby[0] = "Mode";
         propertiesListedInLobby[1] = "Map";
+        propertiesListedInLobby[2] = "Tagger";
+
 
         ExitGames.Client.Photon.Hashtable openWith = new ExitGames.Client.Photon.Hashtable();
         openWith.Add("Mode", roomModeDropdown.value);
@@ -132,6 +138,9 @@ public class Launcher : MonoBehaviourPunCallbacks//�ٸ� ���� ���
         }
         else if((int)PhotonNetwork.CurrentRoom.CustomProperties["Mode"] == 2)
         {
+            int a = Random.Range(1, PhotonNetwork.CurrentRoom.Players.Count + 1);
+            PhotonNetwork.CurrentRoom.CustomProperties["Tagger"] = a;
+            PhotonNetwork.CurrentRoom.SetCustomProperties(PhotonNetwork.CurrentRoom.CustomProperties);
             PhotonNetwork.LoadLevel(MapDropdown.hideAndSeek_list[(int)PhotonNetwork.CurrentRoom.CustomProperties["Map"]]);//1�� ������ ���忡�� scene ��ȣ�� 1�����̱� �����̴�. 0�� �ʱ� ��.
         }        
         

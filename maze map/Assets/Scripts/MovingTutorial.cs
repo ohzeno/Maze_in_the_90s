@@ -11,7 +11,7 @@ using System.Runtime.InteropServices;
 
 public class MovingTutorial : MonoBehaviour
 {
-
+    
     public static MovingObject instance;
     private BoxCollider2D boxCollider;
     public LayerMask layerMask;
@@ -33,21 +33,26 @@ public class MovingTutorial : MonoBehaviour
     private float dirV = 0;
     string jsonResult;
     bool isOnLoading = true;
-
     public float turnSpeed = 0.0f;
     public float turnSpeedValue = 200.0f;
     private string uid;
+    private string mode;
 
     [DllImport("__Internal")]
-    private static extern void CallCam(string data);
+    private static extern void CallCam(string _uid);
+
+    [DllImport("__Internal")]
+    private static extern void SelectControl(string _mode);
 
     void Awake()
     {
+        mode = Jscall.controlmode;
+        Debug.Log("튜토리얼 " + mode);
+        SelectControl(mode);
         uid = FirebaseWebGL.Examples.Auth.LoginHandler.UserUid;
-        CallCam(uid);
+        Debug.Log("튜토리얼 " + uid);        
+        CallCam(uid);        
     }
-
-
 
     private void Start()
     {
@@ -56,8 +61,8 @@ public class MovingTutorial : MonoBehaviour
     }
     IEnumerator LoadData() //json 문자열 받아오기
     {
-        //string GetDataUrl = $"https://j6e101.p.ssafy.io/recog/detect/{uid}/control";
-        string GetDataUrl = $"http://127.0.0.1:8000/recog/detect/{uid}/control";
+        string GetDataUrl = $"https://j6e101.p.ssafy.io/recog/detect/{uid}/control";
+        //string GetDataUrl = $"http://127.0.0.1:8000/recog/detect/{uid}/control";
         using (UnityWebRequest request = UnityWebRequest.Get(GetDataUrl))
         {
             yield return request.Send();
@@ -73,7 +78,7 @@ public class MovingTutorial : MonoBehaviour
                 {
                     isOnLoading = false;
                     Dictionary<string, object> response = Json.Deserialize(request.downloadHandler.text) as Dictionary<string, object>;
-                    Debug.Log(response["control"]);
+                    // Debug.Log(response["control"]);
                     string dir = response["control"].ToString();
                     if (dir == "Up")
                     {

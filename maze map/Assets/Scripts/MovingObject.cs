@@ -32,16 +32,22 @@ public class MovingObject : MonoBehaviour
     private float dirV = 0;
     string jsonResult;
     bool isOnLoading = true;
+    AudioSource audioSrc;
 
     public float turnSpeed = 0.0f;
     public float turnSpeedValue = 200.0f;
     public GameObject FinishAlert;
     private string uid;
+    private string mode;
 
     [DllImport("__Internal")]
-    private static extern void CallCam(string data);
+    private static extern void CallCam(string _uid);
+    [DllImport("__Internal")]
+    private static extern void SelectControl(string _mode);
     void Awake()
     {
+        mode = Jscall.controlmode;
+        SelectControl(mode);
         uid = FirebaseWebGL.Examples.Auth.LoginHandler.UserUid;
         CallCam(uid);
     }
@@ -53,7 +59,8 @@ public class MovingObject : MonoBehaviour
     {
         boxCollider = GetComponent<BoxCollider2D>();
         animator = GetComponent<Animator>();
-        pv = GetComponent<PhotonView>();        
+        pv = GetComponent<PhotonView>();
+        audioSrc = GetComponent<AudioSource>();
 
         turnSpeed = 0.0f;
         yield return new WaitForSeconds(0.5f);
@@ -71,8 +78,8 @@ public class MovingObject : MonoBehaviour
 
         IEnumerator LoadData() //json 문자열 받아오기
     {
-        //string GetDataUrl = $"https://j6e101.p.ssafy.io/recog/detect/{uid}/control";
-        string GetDataUrl = $"http://127.0.0.1:8000/recog/detect/{uid}/control";
+        string GetDataUrl = $"https://j6e101.p.ssafy.io/recog/detect/{uid}/control";
+        //string GetDataUrl = $"http://127.0.0.1:8000/recog/detect/{uid}/control";
         using (UnityWebRequest request = UnityWebRequest.Get(GetDataUrl))
         {
             yield return request.Send();
@@ -88,7 +95,7 @@ public class MovingObject : MonoBehaviour
                 {
                     isOnLoading = false;
                     Dictionary<string, object> response = Json.Deserialize(request.downloadHandler.text) as Dictionary<string, object>;
-                    Debug.Log(response["control"]);
+                    //Debug.Log(response["control"]);
                     string dir = response["control"].ToString();
                     if (dir == "Up") 
                     {
@@ -163,6 +170,7 @@ public class MovingObject : MonoBehaviour
                     break;
 
                 animator.SetBool("Walking", true);
+                audioSrc.Play();
 
                 while (currentWalkCount < walkCount)
                 {
@@ -176,6 +184,7 @@ public class MovingObject : MonoBehaviour
             }
             animator.SetBool("Walking", false);
             canMove = true;
+            audioSrc.Stop();
         }
     }
     // Update is called once per frame
@@ -206,10 +215,43 @@ public class MovingObject : MonoBehaviour
             }
         }
     }
-    [PunRPC]
-    void ChatMessage(string a, string b, PhotonMessageInfo info)
+    private void OnCollisionEnter2D(Collision2D collision)
     {
-        startgame = GameObject.Find("StartGame").GetComponent<StartGame>();
-        GameManager.records.Add(info.Sender.ToString().Substring(5, info.Sender.ToString().Length-6) , string.Format("{0:0.###}",info.SentServerTime-GameManager.startTime));
+        if (collision.gameObject.name == "Template(Clone)")
+        {
+            pv = GetComponent<PhotonView>();
+            if (pv.IsMine)
+            {
+                if (onGoing)
+                {
+                    FinishAlert.SetActive(true);
+                    onGoing = false;
+                    speed = 0;
+                    runSpeed = 0;
+                    pv.RPC("HideAndSeekMsg", RpcTarget.All, GameManager.mykey);
+                }
+            }
+        }
+    }
+    [PunRPC]
+    public void ChatMessage(string a, string b, PhotonMessageInfo info)
+    {
+        GameManager.records.Add(info.Sender.ToString().Substring(5, info.Sender.ToString().Length - 6), string.Format("{0:0.###}", info.SentServerTime - GameManager.startTime));
+    }
+    [PunRPC]
+    public void HideAndSeekMsg(int key, PhotonMessageInfo info)
+    {
+        GameManager.Tagged[key] = true;
+        GameManager.records.Add(info.Sender.ToString().Substring(5, info.Sender.ToString().Length - 6), string.Format("{0:0.###}", info.SentServerTime - GameManager.startTime));
+        if (GameManager.records.Count + 1 == PhotonNetwork.CurrentRoom.PlayerCount)
+        {
+            foreach (int i in PhotonNetwork.CurrentRoom.Players.Keys)//존재하는 모든 roomListContent
+            {
+                if (!GameManager.Tagged[i])
+                {
+                    Timer.instance.crush(i);
+                }
+            }
+        }
     }
 }

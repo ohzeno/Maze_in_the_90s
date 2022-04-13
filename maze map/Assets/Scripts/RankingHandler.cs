@@ -67,6 +67,7 @@ public class RankingHandler : MonoBehaviour
     //게임데이터 저장, JSON 변환, 전송
     public void SendGameRecord(int players, int rank, string username, float time, int mode, int map)
     {
+        int cnt = 0;
         gameRecord gameRecordObject = new gameRecord();
 
         //MapDropdown.cs에 있는 거 내용 참고
@@ -92,7 +93,18 @@ public class RankingHandler : MonoBehaviour
         string json = JsonUtility.ToJson(gameRecordObject);
 
         //파이어베이스로 보냄
+        if (cnt == 0)
+        {
+            FirebaseDatabase.PostMyRecord(json);
+        }
+        
         FirebaseDatabase.PostGameRecord(json);
+        cnt += 1;
+
+        if (cnt == players)
+        {
+            cnt = 0;
+        }
     }
 
     //TOP10 데이터를 받아서 랭킹 씬에 연결(탭클릭하면 실행)
@@ -205,6 +217,7 @@ public class RankingHandler : MonoBehaviour
         if (status == 1)
         {
             GameManager.instance.ChangeScene("Lobby");
+            CheckAuthState();
         }
 
         else
@@ -212,4 +225,7 @@ public class RankingHandler : MonoBehaviour
             GameManager.instance.ChangeScene("Login");
         }
     }
+
+    public void CheckAuthState() =>
+           FirebaseAuth.CheckAuthState();
 }

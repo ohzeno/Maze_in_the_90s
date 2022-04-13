@@ -180,10 +180,6 @@ mergeInto(LibraryManager.library, {
             console.log('time replaced!');
             });
         }
-        //유저 전적 테이블 업데이트(여기는 덮어쓰기 없음 계속 추가)
-    firebase.database().ref(recordRef).push().set(recordData).then(function(unused) {
-        console.log('record post completed!');
-    });
 
         //해당 경로에 기록이 없음(해당 모드, 맵에서 첫 게임인 경우)
     } else {

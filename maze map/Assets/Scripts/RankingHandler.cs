@@ -18,12 +18,12 @@ public class RankingHandler : MonoBehaviour
         
     public static RankingHandler instance;
     
-    //¹Ø¿¡ ÇÁ¸®ÆÕ ¸¸µé ¿ÀºêÁ§Æ®
+    //ï¿½Ø¿ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Æ®
     [SerializeField] Transform recordListContent;
-    //ÇÁ¸®ÆÕ
+    //ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
     [SerializeField] GameObject gameRecordPrefab;
 
-    //JSONÀ¸·Î º¯È¯ÇÒ °ÔÀÓ±â·Ïµ¥ÀÌÅÍ(ÆÄÀÌ¾îº£ÀÌ½º·Î º¸³¾ ¶§)
+    //JSONï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½È¯ï¿½ï¿½ ï¿½ï¿½ï¿½Ó±ï¿½Ïµï¿½ï¿½ï¿½ï¿½ï¿½(ï¿½ï¿½ï¿½Ì¾îº£ï¿½Ì½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½)
     [Serializable]
     public class gameRecord
     {
@@ -35,7 +35,7 @@ public class RankingHandler : MonoBehaviour
         public float time;
     }
 
-    //¿ÀºêÁ§Æ®·Î º¯È¯ÇÒ °ÔÀÓ±â·Ïµ¥ÀÌÅÍ(ÆÄÀÌ¾îº£ÀÌ½º¿¡¼­ ¹Þ¾ÒÀ» ¶§)
+    //ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Æ®ï¿½ï¿½ ï¿½ï¿½È¯ï¿½ï¿½ ï¿½ï¿½ï¿½Ó±ï¿½Ïµï¿½ï¿½ï¿½ï¿½ï¿½(ï¿½ï¿½ï¿½Ì¾îº£ï¿½Ì½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½Þ¾ï¿½ï¿½ï¿½ ï¿½ï¿½)
     [Serializable]
     public class saveRecord
     {
@@ -50,7 +50,7 @@ public class RankingHandler : MonoBehaviour
         instance = this;
     }
 
-    //°ÔÀÓÀÌ ³¡³µÀ» ¶§ EndGamd¿¡¼­ ¹ÞÀº °ÔÀÓµ¥ÀÌÅÍ
+    //ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ EndGamdï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½Óµï¿½ï¿½ï¿½ï¿½ï¿½
     public void GetGameData(int players, int rank, KeyValuePair<string, string> _data, int mode, int map)
     {
         Debug.Log("!!!!!!!!!!!");
@@ -58,23 +58,23 @@ public class RankingHandler : MonoBehaviour
         Debug.Log(rank);
         Debug.Log(mode);
         Debug.Log(map);
-        //{name: ¾îÂ¼±¸, time: ¾îÂ¼±¸} ÀÌ·¸°Ô »ý±è
-        //stringÀ¸·Î ¹Þ¾Æ¼­ float ·Î º¯È¯
+        //{name: ï¿½ï¿½Â¼ï¿½ï¿½, time: ï¿½ï¿½Â¼ï¿½ï¿½} ï¿½Ì·ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½
+        //stringï¿½ï¿½ï¿½ï¿½ ï¿½Þ¾Æ¼ï¿½ float ï¿½ï¿½ ï¿½ï¿½È¯
         float recordToFlaot = (float.Parse(_data.Value));
         SendGameRecord(players, rank, _data.Key, recordToFlaot, mode, map);
     }
 
-    //°ÔÀÓµ¥ÀÌÅÍ ÀúÀå, JSON º¯È¯, Àü¼Û
+    //ï¿½ï¿½ï¿½Óµï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½, JSON ï¿½ï¿½È¯, ï¿½ï¿½ï¿½ï¿½
     public void SendGameRecord(int players, int rank, string username, float time, int mode, int map)
     {
-        int cnt = 0;
+
         gameRecord gameRecordObject = new gameRecord();
 
-        //MapDropdown.cs¿¡ ÀÖ´Â °Å ³»¿ë Âü°í
+        //MapDropdown.csï¿½ï¿½ ï¿½Ö´ï¿½ ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½
         //public static string[] mode_list = new string[3] { "-", "Maze", "Hide and Seek" };
         //public static string[] maze_list = new string[6] { "-", "MazeForest1", "MazeForest2", "MazeForest3", "MazeForest4", "MazeGrave1" };
         //public static string[] hideAndSeek_list = new string[3] { "-", "MazeForest1", "MazeForest2" };
-        
+
         gameRecordObject.totalPlayers = players;
         gameRecordObject.rank = rank;
         gameRecordObject.nickName = username;
@@ -89,37 +89,31 @@ public class RankingHandler : MonoBehaviour
         {
             gameRecordObject.gameMap = MapDropdown.hideAndSeek_list[map];
         }
-        
+
         string json = JsonUtility.ToJson(gameRecordObject);
 
-        //ÆÄÀÌ¾îº£ÀÌ½º·Î º¸³¿
-        if (cnt == 0)
+        //ï¿½ï¿½ï¿½Ì¾îº£ï¿½Ì½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½
+        if (username == FirebaseWebGL.Examples.Auth.LobbyHandler.userName)
         {
             FirebaseDatabase.PostMyRecord(json);
         }
-        
-        FirebaseDatabase.PostGameRecord(json);
-        cnt += 1;
 
-        if (cnt == players)
-        {
-            cnt = 0;
-        }
+        FirebaseDatabase.PostGameRecord(json);
     }
 
-    //TOP10 µ¥ÀÌÅÍ¸¦ ¹Þ¾Æ¼­ ·©Å· ¾À¿¡ ¿¬°á(ÅÇÅ¬¸¯ÇÏ¸é ½ÇÇà)
+    //TOP10 ï¿½ï¿½ï¿½ï¿½ï¿½Í¸ï¿½ ï¿½Þ¾Æ¼ï¿½ ï¿½ï¿½Å· ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½(ï¿½ï¿½Å¬ï¿½ï¿½ï¿½Ï¸ï¿½ ï¿½ï¿½ï¿½ï¿½)
     public void SetUp(string record)
     {
         Debug.Log("setup start!");
         var text = "";
 
-        //JSON ¹®ÀÚ¿­ »óÅÂ¿¡¼­ ´Ù½Ã Deserialize
+        //JSON ï¿½ï¿½ï¿½Ú¿ï¿½ ï¿½ï¿½ï¿½Â¿ï¿½ï¿½ï¿½ ï¿½Ù½ï¿½ Deserialize
         Dictionary<string, object> response = Json.Deserialize(record) as Dictionary<string, object>;
 
-        //ÀÎµ¦¼­¸¦ »ç¿ëÇÏ¿© ½Ã°£ °ªÀ» ¸®ÅÏ
+        //ï¿½Îµï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½Ï¿ï¿½ ï¿½Ã°ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½
         string time = response["time"].ToString();
 
-        //½Ã°£Àº 12:11 ÀÌ·± Çü½ÄÀ¸·Î º¯È¯
+        //ï¿½Ã°ï¿½ï¿½ï¿½ 12:11 ï¿½Ì·ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½È¯
         //string time1 = time.Substring(0, 4);
 
         if (time.Length >= 6)
@@ -162,7 +156,7 @@ public class RankingHandler : MonoBehaviour
             response["time"] = text;
         }
 
-        //¼øÀ§µµ Ãß°¡
+        //ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ß°ï¿½
         response["idx"] = (startIdx + 1).ToString();
         startIdx += 1;
 
@@ -175,16 +169,16 @@ public class RankingHandler : MonoBehaviour
         Debug.Log(response["time"].GetType().Name);
         Debug.Log(response["idx"].GetType().Name);
 
-        //RecordListItem.cs·Î º¸³»±â
+        //RecordListItem.csï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
         Instantiate(gameRecordPrefab, recordListContent).GetComponent<RankListItem>().SetUp(response);
     }
 
-    //ÃÊ±âÈ­
+    //ï¿½Ê±ï¿½È­
     public void ClearContents()
     {
         Debug.Log("clearing start!");
         
-        //±âÁ¸ ÇÁ¸®ÆÕµéÀ» »èÁ¦
+        //ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½Õµï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½
  
         if (recordListContent.transform.childCount > 0)
         {
@@ -192,13 +186,13 @@ public class RankingHandler : MonoBehaviour
                 Destroy(recordListContent.transform.GetChild(i).gameObject);
         }
         
-        //·©Å· ÀÎµ¦½º ÃÊ±âÈ­
+        //ï¿½ï¿½Å· ï¿½Îµï¿½ï¿½ï¿½ ï¿½Ê±ï¿½È­
         startIdx = 0;
         Debug.Log(startIdx);
         Debug.Log("layout cleared!");
     }
 
-    //ÅÇ Å¬¸¯ (¸ðµå, ¸Ê¸¶´Ù ´Ù¸¥ ¿äÃ»)
+    //ï¿½ï¿½ Å¬ï¿½ï¿½ (ï¿½ï¿½ï¿½, ï¿½Ê¸ï¿½ï¿½ï¿½ ï¿½Ù¸ï¿½ ï¿½ï¿½Ã»)
      public void ChangeTab(string mode, string map)
     {
         FirebaseDatabase.SetByInfo(mode, map);
@@ -208,7 +202,7 @@ public class RankingHandler : MonoBehaviour
 
     public void LobbyorLoginScreen()
     {
-        //·Î±×ÀÎ »óÅÂÀÎÁö È®ÀÎ
+        //ï¿½Î±ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ È®ï¿½ï¿½
         FirebaseAuth.IsLoggedIn();
     }
 

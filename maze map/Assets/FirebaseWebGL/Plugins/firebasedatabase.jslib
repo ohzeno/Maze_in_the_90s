@@ -180,21 +180,57 @@ mergeInto(LibraryManager.library, {
             console.log('time replaced!');
             });
         }
-
+        //유저 전적 테이블 업데이트(여기는 덮어쓰기 없음 계속 추가)
+    firebase.database().ref(recordRef).push().set(recordData).then(function(unused) {
+        console.log('record post completed!');
+    });
 
         //해당 경로에 기록이 없음(해당 모드, 맵에서 첫 게임인 경우)
     } else {
         firebase.database().ref(rankRef).update(rankData).then(function(unused) {
         console.log('rank post completed!');
         });
+        
+    
     }
     });
-    
-    //유저 전적 테이블 업데이트(여기는 덮어쓰기 없음 계속 추가)
-    firebase.database().ref(recordRef).push().set(recordData).then(function(unused) {
-        console.log('record post completed!');
-    });
 
+   },
+
+   //유저전적 한 번만 보내기
+    PostMyRecord: function(json) {
+        //unity에서 string으로 받은 json
+        var parsedJSON = Pointer_stringify(json);
+        
+        //string을 json 오브젝트로 변환
+        var obj = JSON.parse(parsedJSON);
+    
+        //오브젝트에서 필요한 value 값을 찾아서 변수로 만듬
+        const players = obj.totalPlayers;
+        const rank = obj.rank;    
+        const name = obj.nickName;
+        const time = obj.time;
+        const mode = obj.gameMode;
+        const map = obj.gameMap;
+
+
+        //DB 저장 경로는 rank/모드(1/2)/맵/닉네임
+        //저장할 데이터는 {time : 걸린 시간}
+        var recordRef = firebase.database().ref('record/' + name); //마이페이지 유저별 게임전적
+
+        //마이페이지 { mode: 어쩌구, map: 어쩌구, players: 몇명, rank: 몇등, time: 시간 }
+        var recordData = new Object();
+        recordData.mode = mode;
+        recordData.map = map;
+        recordData.players = players;
+        recordData.rank = rank;
+        recordData.time = time;
+
+
+        //유저 전적 테이블 업데이트(여기는 덮어쓰기 없음 계속 추가)
+        firebase.database().ref(recordRef).push().set(recordData).then(function(unused) {
+        console.log('record post completed!');
+        });
    },
 
 

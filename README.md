@@ -40,6 +40,8 @@
 
 - #### 노션: https://www.notion.so/17acef0785ee447f89aca7375e65307f
 
+- [내가 기여 작업 연구한 부분들](내가_기여작업연구한_부분들.md)
+
 ## :triangular_flag_on_post: 기술스택
 
 | 용도       | 스택                                                                                                                                                                                                             | 버전                |

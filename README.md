@@ -117,7 +117,9 @@
 
 - React
 
-- Django 
+- Django
+ 
+- MediaPipe 
 
 ## :triangular_flag_on_post: 서비스 소개
 

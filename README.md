@@ -79,7 +79,7 @@
   
   > ```javascript
   > # 라이브러리 설치 및 실행 
-  > yarn install
+  > yarn install  # npm 사용시 오류 생기는 경우 있어서 yarn 사용
   > npm start
   > ```
 
@@ -88,7 +88,7 @@
   > ```python
   > # 가상환경 생성 후 활성화   
   > python -m venv venv 
-  > source venv/Scripts/activate
+  > source venv/Scripts/activate  # 리눅스/우분투/맥 환경에서는 source venv/bin/activate
   > 
   > # 라이브러리 설치 
   > pip install -r requirements.txt

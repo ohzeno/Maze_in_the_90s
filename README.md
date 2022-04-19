@@ -64,14 +64,14 @@
 
 ## :triangular_flag_on_post: Contributors
 
-| 팀원   | 역할      | 비고                              | 깃헙                                 |
-| ---- | ------- | ------------------------------- | ---------------------------------- |
-| 오제노  | 팀장, 백엔드 | AI 및 전반적인 통신 연구                 | https://github.com/ohzeno          |
-| 이승훈  | 백엔드     | Photonserver 담당 및 멀티플레이 게임 제작   | https://github.com/SeungHunL       |
-| 조은누리 | 백엔드     | Firebase 및 회원 관리 담당             | https://github.com/eunnuricho      |
-| 박수아  | 프론트엔드   | react-django 통신 연구, 컴포넌트 제작     | https://github.com/pakrsua         |
-| 박신영  | 프론트엔드   | Unity - Scene 제작, React - UI 제작 | https://github.com/shinyoung-angel |
-| 박준영  | 프론트엔    | 싱글플레이 및 멀티플레이 맵 제작, 배포 담당       | https://github.com/JUNYOUNG31      |
+| 팀원     | 역할         | 비고                                                         | 깃헙                               |
+| -------- | ------------ | ------------------------------------------------------------ | ---------------------------------- |
+| 오제노   | 팀장, 백엔드 | AI, Django, React, React-Django 통신, React-Unity 통신, Unity-Django 통신, Unity 전반, 배포 | https://github.com/ohzeno          |
+| 이승훈   | 백엔드       | Photonserver 담당 및 멀티플레이 게임 제작                    | https://github.com/SeungHunL       |
+| 조은누리 | 백엔드       | Firebase 및 회원 관리 담당                                   | https://github.com/eunnuricho      |
+| 박수아   | 프론트엔드   | react-django 통신 연구, 컴포넌트 제작                        | https://github.com/pakrsua         |
+| 박신영   | 프론트엔드   | Unity - Scene 제작, React - UI 제작                          | https://github.com/shinyoung-angel |
+| 박준영   | 프론트엔     | 싱글플레이 및 멀티플레이 맵 제작, 배포 담당                  | https://github.com/JUNYOUNG31      |
 
 ## :triangular_flag_on_post: 프로젝트 세팅
 

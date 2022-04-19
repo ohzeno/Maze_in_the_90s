@@ -66,7 +66,7 @@
 
 | 팀원     | 역할         | 비고                                                         | 깃헙                               |
 | -------- | ------------ | ------------------------------------------------------------ | ---------------------------------- |
-| 오제노   | 팀장, 백엔드 | AI, Django, React, React-Django 통신, React-Unity 통신, Unity-Django 통신, Unity 전반, 배포 | https://github.com/ohzeno          |
+| 오제노   | 팀장, 백엔드 | AI, Django, React, React-Django 통신, <br />React-Unity 통신, Unity-Django 통신, <br />Unity 전반, 배포 | https://github.com/ohzeno          |
 | 이승훈   | 백엔드       | Photonserver 담당 및 멀티플레이 게임 제작                    | https://github.com/SeungHunL       |
 | 조은누리 | 백엔드       | Firebase 및 회원 관리 담당                                   | https://github.com/eunnuricho      |
 | 박수아   | 프론트엔드   | react-django 통신 연구, 컴포넌트 제작                        | https://github.com/pakrsua         |

@@ -111,7 +111,7 @@
 
 - Unity
 
-- PhotoServer
+- PhotonServer
 
 - Firebase
 
